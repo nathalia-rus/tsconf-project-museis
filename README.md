@@ -1,8 +1,12 @@
-# Welcome ! Below are the instructions.
+# Welcome ! 
 
-We have provided you with a project which already has Redux, react, Styled Components and basic router all set up, also with an example of an action using Redux from the page you will be working on. We left the UI as bare as possible so to give you a fresh start on that part.
+We have provided you with a project (Tasks app) which already has Redux, React, Styled Components and a basic Router all set up. <br>
+We also have provided you with an example of a Redux action being dispatched (archiveTask). <br>
+We left the UI as bare as possible so to give you a fresh start on that part.<br><br>
 
-Add to this project the following:
+Below are the instructions.
+
+### please add to this project the following:
 
 - on the UI side : 
 
@@ -17,7 +21,7 @@ Ignore any mobile version.
 Toggle the completion status of the task (completed - outstanding ) with a redux action. 
 Don't forget to change the UI of the completion status accordingly on the task card (see UI above).
 
-- bonus *(Note: his is by no means required.)*
+- bonus *(Note: this is by no means required.)*
 
 If you'd like to add anything, feel free to do it! It is completely up to you. 
 
