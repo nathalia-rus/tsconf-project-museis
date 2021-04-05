@@ -1,5 +1,9 @@
 # Welcome ! Below are the instructions.
 
+We have provided you with a project which already has Redux, react, Styled Components and basic router all set up, also with an example of an action using Redux from the page you will be working on. We left the UI as bare as possible so to give you a fresh start on that part.
+
+Add to this project the following:
+
 - on the UI side : 
 
 Please recreate this UI as closely as you can : 
