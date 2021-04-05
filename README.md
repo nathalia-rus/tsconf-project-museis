@@ -1,3 +1,34 @@
+# Welcome ! Below are the instructions.
+
+- on the UI side : 
+
+Please recreate this UI as closely as you can : 
+
+![tasks - Desktop UI](https://user-images.githubusercontent.com/26336692/113589994-fac56c80-9629-11eb-80aa-30cb23187353.jpg)
+
+Ignore any mobile version. 
+
+- on the functionality side : 
+
+Toggle the completion status of the task (completed - outstanding ) with a redux action. 
+Don't forget to change the UI of the completion status accordingly on the task card (see UI above).
+
+- bonus *This is by no means required.*
+
+If you'd like to add anything, feel free to do it! It is completely up to you. 
+
+You could for example display the current tasks separately from the archived tasks, like so :
+
+![image](https://user-images.githubusercontent.com/26336692/113590593-c3a38b00-962a-11eb-9eef-647df29c22d5.png)
+
+Or you could test your code. Or hook up any other form functionality! 
+
+
+Have fun! 
+
+If you have any questions. email Nathalia at : nathalia.rus@custodian.club and she will come back to you ASAP!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
