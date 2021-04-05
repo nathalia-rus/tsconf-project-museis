@@ -34,8 +34,10 @@ class Home extends React.Component {
       <button onClick={() => {
       this.props.archiveTask(3)
     }}>
-      Redux action example: by clicking this, you archive the task of ID 3. Check what happens in the Redux Dev Tools.
+      Redux action example: by clicking this, you archive the task of ID 3. 
       </button>
+
+    {/* On clicking, check what happens in the Redux Dev Tools. It is going to be helpful for your own debugging. */}
 
     </DesktopPageContainer>)
   }
