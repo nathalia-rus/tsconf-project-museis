@@ -13,7 +13,7 @@ Ignore any mobile version.
 Toggle the completion status of the task (completed - outstanding ) with a redux action. 
 Don't forget to change the UI of the completion status accordingly on the task card (see UI above).
 
-- bonus *This is by no means required.*
+- bonus *(Note: his is by no means required.)*
 
 If you'd like to add anything, feel free to do it! It is completely up to you. 
 
