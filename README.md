@@ -44,7 +44,9 @@ Or you could test your code. Or hook up any other form functionality!
 
 Have fun! 
 
-If you have any questions. email Nathalia at : nathalia.rus@custodian.club and she will come back to you ASAP!
+Once done, please send us the link to your repository (`custodian-aplication`) - and please send us the access to it, if the repository you created is set to private.
+
+If you have any questions, feel free to email Nathalia at : nathalia.rus@custodian.club and she will come back to you ASAP!
 
 
 # Getting Started with Create React App
