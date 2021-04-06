@@ -20,11 +20,10 @@ Below are the instructions.
 
 - on the UI side : 
 
-Please recreate this UI as closely as you can : 
+Please recreate this UI as closely as you can (ignore any mobile version! We actually have put a wrapper already on the page to hide any UI on mobile.): 
 
 ![tasks - Desktop UI](https://user-images.githubusercontent.com/26336692/113589994-fac56c80-9629-11eb-80aa-30cb23187353.jpg)
 
-Ignore any mobile version. 
 
 - on the functionality side : 
 
