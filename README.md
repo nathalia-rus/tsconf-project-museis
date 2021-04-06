@@ -13,10 +13,10 @@ We left the UI as bare as possible so to give you a fresh start on that part. We
 - Don't forget to install the dependencies with `npm i` .
 - In the event that you do not have Node v12+ installed on your machine: if you don't have Node installed, we recommend using nvm to install the latest LTS version (run the install script: https://github.com/nvm-sh/nvm#install--update-script, https://itnext.io/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b).
 
-<br>
+
 Below are the instructions.
 
-### please add to this project the following:
+### Please add to this project the following:
 
 - on the UI side : 
 
