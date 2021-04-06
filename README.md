@@ -1,6 +1,6 @@
 # Welcome ! 
 
-We have provided you with a project (Tasks app) which already has Redux, React, Styled Components and a basic Router all set up. <br>
+We have provided you with a project (Tasks app) which already has [Redux](https://redux.js.org/), [React](https://reactjs.org/), [Styled Components](https://github.com/styled-components/styled-components) and a basic Router all set up. <br>
 We also have provided you with an example of a Redux action being dispatched (archiveTask). <br>
 We left the UI as bare as possible so to give you a fresh start on that part. We however have already provided you with the assets you need: please use the assets in the the `src/assets` folder for the image and the icons. <br><br>
 
@@ -8,7 +8,7 @@ We left the UI as bare as possible so to give you a fresh start on that part. We
 
 - Create a new empty repository in your Github account called `custodian-application`.
 - Clone **this** repository to your local machine.
-- Set the new remote url to your new empty `custodian-application` repository ( command : ` git remote set-url origin [URL-OF-custodian-application]`, more here if you are struggling: https://linuxize.com/post/how-to-change-git-remote-url/). 
+- Set the new remote url to your new empty `custodian-application` repository ( command : ` git remote set-url origin [URL-OF-custodian-application]`. 
 - In order to verify that you have your repository as the Git Url, check with : `git remote -v` . 
 - Don't forget to install the dependencies with `npm i` .
 - In the event that you do not have Node v12+ installed on your machine: if you don't have Node installed, we recommend using nvm to install the latest LTS version (run the install script: https://github.com/nvm-sh/nvm#install--update-script, https://itnext.io/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b).
@@ -29,6 +29,7 @@ Please recreate this UI as closely as you can (ignore any mobile version! We act
 
 Toggle the completion status of the task (completed - outstanding ) with a redux action. 
 Don't forget to change the UI of the completion status accordingly on the task card (see UI above).
+That's it. You don't have to worry about any other functionality (unless if you would like to do anything else as a bonus, see below - not required.). 
 
 - bonus *(Note: this is by no means required.)*
 
