@@ -2,7 +2,7 @@
 
 We have provided you with a project (Tasks app) which already has Redux, React, Styled Components and a basic Router all set up. <br>
 We also have provided you with an example of a Redux action being dispatched (archiveTask). <br>
-We left the UI as bare as possible so to give you a fresh start on that part.<br><br>
+We left the UI as bare as possible so to give you a fresh start on that part. We however have already provided you with the assets you need: please use the assets in the the `src/assets` folder for the image and the icons. <br><br>
 
 ### Setting yourself up
 
@@ -13,8 +13,7 @@ We left the UI as bare as possible so to give you a fresh start on that part.<br
 - Don't forget to install the dependencies with `npm i` .
 - In the event that you do not have Node v12+ installed on your machine: if you don't have Node installed, we recommend using nvm to install the latest LTS version (run the install script: https://github.com/nvm-sh/nvm#install--update-script, https://itnext.io/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b).
 
-
-
+<br>
 Below are the instructions.
 
 ### please add to this project the following:
