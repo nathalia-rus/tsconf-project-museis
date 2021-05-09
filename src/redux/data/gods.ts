@@ -1,4 +1,4 @@
-import { IGodObj, IQuoteObj } from 'stateInterfaces'
+import { IGodObj, IImgObj, IQuoteObj } from 'stateInterfaces'
 import artemis from '../../assets/gods/artemis.png'
 import athena from '../../assets/gods/athena.png'
 import athena2 from '../../assets/gods/athena2.png'
@@ -91,67 +91,90 @@ export const gods_list: string[] = [
     'ares',
 ]
 
+export const god_images: IImgObj = {
+    artemis_img_1: {
+        id: 'artemis_img_1',
+        url: artemis,
+    },
+    athena_img_1: {
+        id: 'athena_img_1',
+        url: athena,
+    },
+    demeter_img_1: {
+        id: 'demeter_img_1',
+        url: athena2,
+    },
+    hera_img_1: {
+        id: 'hera_img_1',
+        url: hera,
+    },
+    dyonisus_img_1: {
+        id: 'dyonisus_img_1',
+        url: dyonisus,
+    },
+}
+
 export const gods: IGodObj = {
     demeter: {
         id: 'demeter',
         name: 'demeter',
         main_quote_id: 'dem-q-1',
-        image: athena2,
+        image: 'demeter_img_1',
     },
     hera: {
         id: 'hera',
         name: 'hera',
         main_quote_id: 'h-q-1',
-        image: hera,
+        image: 'hera_img_1',
     },
     artemis: {
         id: 'artemis',
         name: 'artemis',
         main_quote_id: 'a-q-1',
-        image: artemis,
+        image: 'artemis_img_1',
     },
     athena: {
         id: 'athena',
         name: 'athena',
         main_quote_id: 'ath-q-1',
-        image: athena,
+        image: 'hera_img_1',
     },
     dyonisus: {
         id: 'dyonisus',
         name: 'dyonisus',
         main_quote_id: 'dio-q-1',
-        image: dyonisus,
+        image: 'dyonisus_img_1',
     },
 
     zeus: {
         id: 'zeus',
         name: 'zeus',
         main_quote_id: 'z-q-1',
-        image: artemis,
+        image: 'demeter_img_1',
     },
 
     apollo: {
         id: 'apollo',
         name: 'apollo',
         main_quote_id: 'apo-q-1',
-        image: artemis,
+        image: 'hera_img_1',
     },
     hephaistos: {
         id: 'hephaistos',
         name: 'hephaistos',
         main_quote_id: 'heph-q-1',
-        image: artemis,
+        image: 'hera_img_1',
     },
     poseidon: {
         id: 'poseidon',
         name: 'poseidon',
         main_quote_id: 'pos-q-1',
-        image: artemis,
+        image: 'demeter_img_1',
     },
     ares: {
         id: 'ares',
         name: 'ares',
         main_quote_id: 'ares-q-1',
-        image: artemis,
+        image: 'hera_img_1',
     },
 }

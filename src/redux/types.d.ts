@@ -8,13 +8,14 @@ declare module 'stateInterfaces' {
 
     interface IImage {
         id: string
-        small_url: string
-        medium_url: string
-        big_url: string
+        url: string
+        small_url?: string
+        medium_url?: string
+        big_url?: string
     }
 
     interface IImgObj {
-        [key: string]: IGod
+        [key: string]: IImage
     }
 
     interface IGod {
