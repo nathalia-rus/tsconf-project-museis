@@ -19,6 +19,12 @@ body {
 }
 
 @font-face {
+    font-family: 'Average-Regular';
+    src: local('Average-Regular'),
+        url(./fonts/Average-Regular.woff) format('opentype');
+}
+
+@font-face {
     font-family: 'Antonio-ExtraLight';
     src: local('Antonio-ExtraLight'),
         url(./fonts/Antonio-ExtraLight.woff) format('opentype');
