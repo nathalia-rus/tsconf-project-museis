@@ -16,6 +16,7 @@ const PageWrapper = styled.div`
     @media (max-width: 768px) {
         display: none;
     }
+    z-index: 5;
 `
 
 const RelDiv = styled.div`
@@ -34,7 +35,11 @@ const ImgCell = styled.img<IStyle>`
     height: 100%;
     object-fit: contain;
     transform: ${(props) =>
-        props.idHovered === props.elemId ? 'scale(1.01)' : 'scale(1)'};
+        props.idHovered === props.elemId
+            ? 'scale(1.01)'
+            : props.idHovered === ''
+            ? 'scale(1)'
+            : 'scale(0.95)'};
     transition: all 300ms;
 `
 
@@ -67,7 +72,7 @@ const AbsoluteText = styled.div<IStyle>`
     position: absolute;
     transition: opacity 500ms, transform 200ms;
     opacity: ${(props) => (props.idHovered === props.elemId ? '1' : '0')};
-    left: 50%;
+    left: 30%;
     bottom: 10vh;
     transform: ${(props) =>
         props.idHovered === props.elemId
@@ -84,9 +89,21 @@ const AbsoluteText = styled.div<IStyle>`
     font-family: Antonio-Light;
     text-transform: uppercase;
 `
-const Title1 = styled.div``
+const Title1 = styled.div`
+    font-size: 70px;
+`
 
-const Title2 = styled.div``
+const Title2 = styled.div`
+    font-size: 78px;
+    transform: rotate(180deg) translate(30px, 30px);
+    color: rgba(146, 121, 84, 0.1);
+`
+const Col = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
 
 const mapStateToProps = (state: any) => {
     return { gods: state.gods }
@@ -127,8 +144,10 @@ class TrioGridDesktop extends React.Component<{}, IState> {
                     />
 
                     <AbsoluteText elemId={'athena2'} idHovered={idHovered}>
-                        <Title1>Athena</Title1>
-                        <Title2>Athena</Title2>
+                        <Col>
+                            <Title1>Athena</Title1>
+                            <Title2>Athena</Title2>
+                        </Col>
                         <ImgCell
                             elemId={'athena2'}
                             idHovered={idHovered}
@@ -141,6 +160,12 @@ class TrioGridDesktop extends React.Component<{}, IState> {
                     onMouseOver={() => this.setIdHovered('hera')}
                     onMouseLeave={() => this.setIdHovered('')}
                 >
+                    <AbsoluteText elemId={'hera'} idHovered={idHovered}>
+                        <Col>
+                            <Title1>Hera</Title1>
+                            <Title2>Hera</Title2>
+                        </Col>
+                    </AbsoluteText>
                     <ImgCell elemId={'hera'} idHovered={idHovered} src={hera} />
                     <AbsoluteGradientBottom
                         elemId={'hera'}
@@ -150,10 +175,6 @@ class TrioGridDesktop extends React.Component<{}, IState> {
                         elemId={'hera'}
                         idHovered={idHovered}
                     />
-                    <AbsoluteText elemId={'hera'} idHovered={idHovered}>
-                        <img src={golden_arrow_left} alt="golden-arrow" />
-                        <div></div>
-                    </AbsoluteText>
                 </RelDiv>
                 <RelDiv
                     onMouseOver={() => this.setIdHovered('artemis')}
@@ -173,6 +194,10 @@ class TrioGridDesktop extends React.Component<{}, IState> {
                         idHovered={idHovered}
                     />
                     <AbsoluteText elemId={'artemis'} idHovered={idHovered}>
+                        <Col>
+                            <Title1>Artemis</Title1>
+                            <Title2>Artemis</Title2>
+                        </Col>
                         <img src={golden_arrow_left} alt="golden-arrow" />
                     </AbsoluteText>
                 </RelDiv>
