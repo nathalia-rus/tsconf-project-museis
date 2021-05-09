@@ -25,7 +25,7 @@ export interface IPaginationMenuProps {
     up: boolean
 }
 
-const MainPaginatorDefault: React.SFC<IPaginationMenuProps> = (props) => (
+const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => (
     <MenuContainer id="paginator">
         <PaginationTextStyled>hello</PaginationTextStyled>
 
@@ -49,4 +49,4 @@ const MainPaginatorDefault: React.SFC<IPaginationMenuProps> = (props) => (
     </MenuContainer>
 )
 
-export default MainPaginatorDefault
+export default MainThemePaginatorMenu

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactFullpage from '@fullpage/react-fullpage'
 import styled from 'styled-components'
-import MainPaginatorDefault from '../../atoms/paginator/mainPaginatorDefault'
+import MainThemePaginatorMenu from '../../atoms/paginator/mainThemePaginatorMenu'
 
 type OwnProps = {}
 
@@ -52,7 +52,7 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                     render={({ ...fullpageprops }) => {
                         return (
                             <ReactFullpage.Wrapper>
-                                <MainPaginatorDefault
+                                <MainThemePaginatorMenu
                                     paginationtext={`${this.state.currentSection}/${this.state.totalSections}`}
                                     down={
                                         this.state.currentSection ===
