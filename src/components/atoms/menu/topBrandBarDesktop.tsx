@@ -9,8 +9,8 @@ const Container = styled.div`
     color: white;
     z-index: 3;
     position: absolute;
-    top: 35px;
-    left: 35px;
+    top: 10px;
+    left: 20px;
     text-transform: uppercase;
     @media (max-width: 768px) {
         display: none;

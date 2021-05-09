@@ -7,7 +7,7 @@ const MenuContainer = styled.div`
     position: absolute;
     top: 0px;
     bottom: 0px;
-    right: 35px;
+    right: 20px;
 
     padding-top: 30px;
     padding-bottom: 30px;

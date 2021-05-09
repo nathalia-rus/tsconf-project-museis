@@ -2,16 +2,34 @@ import React from 'react'
 import ReactFullpage from '@fullpage/react-fullpage'
 import styled from 'styled-components'
 import MainThemePaginatorMenu from '../../atoms/paginator/mainThemePaginatorMenu'
+import TrioGridDesktop from '../../molecules/grid/triogridDesktop'
+import './styles.css'
+import { device } from '../../templates/devices/devices'
 
 type OwnProps = {}
 
+type StyledProps = {
+    transformYN?: string
+}
+
 const Wrapper = styled.div`
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
+    padding-left: 5vw;
+    padding-right: 8vw;
+    @media ${device.large_desktop} {
+        padding-right: 9vw;
+        padding-left: 7vw;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+`
+const TransformYWrap = styled.div<StyledProps>`
+    transform: ${(props) =>
+        props.transformYN ? `translateY(${props.transformYN})` : 'auto'};
 `
 
 type LocalState = {
@@ -43,7 +61,7 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                 <ReactFullpage
                     //fullpage options
                     licenseKey={'C49A94F7-3AA84744-B2808534-82E8BCD1'}
-                    scrollingSpeed={600} /* Options here */
+                    scrollingSpeed={800} /* Options here */
                     fixedElements="#paginator"
                     anchors={['god_1', 'god_2', 'god_3', 'god_4', 'lastPage']}
                     onEnter={(
@@ -89,17 +107,24 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                     }
                                 />
 
-                                <Wrapper className="section">
-                                    <div>1</div>
+                                <Wrapper className="section fp-auto-height">
+                                    <TrioGridDesktop />
                                 </Wrapper>
-                                <Wrapper className="section">
-                                    <div>2</div>
+                                <Wrapper className="section fp-auto-height">
+                                    <TransformYWrap transformYN={'-10vh'}>
+                                        <TrioGridDesktop />
+                                    </TransformYWrap>
                                 </Wrapper>
-                                <Wrapper className="section">
-                                    <div>3</div>
+
+                                <Wrapper className="section fp-auto-height">
+                                    <TransformYWrap transformYN={'-20vh'}>
+                                        <TrioGridDesktop />
+                                    </TransformYWrap>
                                 </Wrapper>
-                                <Wrapper className="section">
-                                    <div>4</div>
+                                <Wrapper className="section fp-auto-height">
+                                    <TransformYWrap transformYN={'-24vh'}>
+                                        <TrioGridDesktop />
+                                    </TransformYWrap>
                                 </Wrapper>
                             </ReactFullpage.Wrapper>
                         )
