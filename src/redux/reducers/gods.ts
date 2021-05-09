@@ -1,11 +1,14 @@
-const initialState = [
-    {
-        id: 'god_artemis',
-        name: 'artemis',
-        body:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
-    },
-]
+import { IGodsState } from 'stateInterfaces'
+import { gods_list, godsData, god_images, gods_quotes } from '../data/gods'
+
+const initialState: IGodsState = {
+    gods: godsData,
+    gods_list: gods_list,
+    images: god_images,
+    quotes: gods_quotes,
+    isLoading: false,
+    error: null,
+}
 
 const gods = (state = initialState, action: any) => {
     switch (action.type) {

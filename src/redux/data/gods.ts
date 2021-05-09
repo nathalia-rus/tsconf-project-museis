@@ -114,7 +114,7 @@ export const god_images: IImgObj = {
     },
 }
 
-export const gods: IGodObj = {
+export const godsData: IGodObj = {
     demeter: {
         id: 'demeter',
         name: 'demeter',
