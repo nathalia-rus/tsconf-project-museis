@@ -23,6 +23,8 @@ const DotsCol = styled.div`
     justify-content: center;
     flex-direction: column;
     display: flex;
+    background-color: black;
+    padding-bottom: 20px;
 `
 
 const PaginationTextStyled = styled.div`
@@ -33,6 +35,15 @@ const PaginationTextStyled = styled.div`
     text-align: center;
     transform: rotate(90deg);
     letter-spacing: 9px;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+`
+
+const Line = styled.div`
+    background-color: #787878;
+    height: 100%;
+    width: 1px;
 `
 
 export interface IPaginationMenuProps {
@@ -68,8 +79,10 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => (
             />
         </DotsCol>
 
-        <PaginationTextStyled>gods edition</PaginationTextStyled>
+        <Line />
 
+        <PaginationTextStyled>gods edition</PaginationTextStyled>
+        <Line />
         <div
             style={{
                 opacity: props.up === true ? '1' : '0.3',
