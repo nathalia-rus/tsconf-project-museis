@@ -1,0 +1,14 @@
+@media screen and (max-width: 30em) {
+    .ipad-displayed {
+        display: none;
+    }
+    .desktop-displayed {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 30em) {
+    .mobile-displayed {
+        display: none;
+    }
+}
