@@ -7,9 +7,11 @@ const initialState = [
     },
 ]
 
-export default function tasks(state = initialState, action: any) {
+const gods = (state = initialState, action: any) => {
     switch (action.type) {
         default:
             return state
     }
 }
+
+export default gods
