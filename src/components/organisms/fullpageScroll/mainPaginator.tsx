@@ -76,13 +76,16 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                 />
 
                                 <Wrapper className="section">
-                                    <div>hi</div>
+                                    <div>1</div>
                                 </Wrapper>
                                 <Wrapper className="section">
-                                    <div>hi</div>
+                                    <div>2</div>
                                 </Wrapper>
                                 <Wrapper className="section">
-                                    <div>hi</div>
+                                    <div>3</div>
+                                </Wrapper>
+                                <Wrapper className="section">
+                                    <div>4</div>
                                 </Wrapper>
                             </ReactFullpage.Wrapper>
                         )

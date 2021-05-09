@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import MainPaginator from '../organisms/fullpageScroll/mainPaginator'
 
-const DesktopPageContainer = styled.div`
+const PageWrapper = styled.div`
     @media (max-width: 768px) {
         display: none;
     }
@@ -15,9 +16,9 @@ const mapStateToProps = (state: any) => {
 class Home extends React.Component {
     render() {
         return (
-            <DesktopPageContainer>
-                <div>This is the main page</div>
-            </DesktopPageContainer>
+            <PageWrapper>
+                <MainPaginator />
+            </PageWrapper>
         )
     }
 }

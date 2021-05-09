@@ -3,13 +3,18 @@ import styled from 'styled-components'
 
 const MenuContainer = styled.div`
     position: absolute;
+    top: 0px;
+    left: 0px;
     align-items: center;
     justify-content: center;
+    background-color: red;
+    height: 300px;
+    width: 300px;
 `
 
 const PaginationTextStyled = styled.div`
-    color: #2a979a;
-    font-family: Cinzel;
+    color: pink;
+    font-family: Antonio-Light;
 `
 
 export interface IPaginationMenuProps {
@@ -22,7 +27,7 @@ export interface IPaginationMenuProps {
 
 const MainPaginatorDefault: React.SFC<IPaginationMenuProps> = (props) => (
     <MenuContainer id="paginator">
-        <PaginationTextStyled>{props.paginationtext}</PaginationTextStyled>
+        <PaginationTextStyled>hello</PaginationTextStyled>
 
         <div
             style={{
@@ -33,8 +38,14 @@ const MainPaginatorDefault: React.SFC<IPaginationMenuProps> = (props) => (
             {/* orientation="up" */}
             <button onClick={props.goUp}>UP</button>
         </div>
-
-        <button onClick={props.goUp}>DOWN</button>
+        <div
+            style={{
+                opacity: props.down === true ? '1' : '0.3',
+                pointerEvents: props.down === true ? 'auto' : 'none',
+            }}
+        >
+            <button onClick={props.goUp}>DOWN</button>
+        </div>
     </MenuContainer>
 )
 
