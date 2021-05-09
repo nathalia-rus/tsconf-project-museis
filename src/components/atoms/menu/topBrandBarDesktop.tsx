@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { connect } from 'react-redux'
 
 const Container = styled.div`
     display: flex;
@@ -10,8 +9,8 @@ const Container = styled.div`
     color: white;
     z-index: 3;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 35px;
+    left: 35px;
     text-transform: uppercase;
     @media (max-width: 768px) {
         display: none;
@@ -28,8 +27,6 @@ const Artist = styled.div`
     padding-bottom: 10px;
 `
 
-const mapStateToProps = (state: any) => {}
-
 class TopBrandBarDesktop extends React.Component {
     render() {
         return (
@@ -42,4 +39,4 @@ class TopBrandBarDesktop extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, {})(TopBrandBarDesktop)
+export default TopBrandBarDesktop

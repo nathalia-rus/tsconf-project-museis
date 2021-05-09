@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion'
 
 type Props = {
-    active: boolean
+    isActive: boolean
     height: string
     width: string
 }
 
-const MainThemePaginatorDotIcon = ({ active, width, height }: Props) => (
+const MainThemePaginatorDotIcon = (props: Props) => (
     <motion.div whileTap={{ scale: 1.3 }}>
         <svg
-            width={width}
-            height={height}
+            width={props.width}
+            height={props.height}
             viewBox="0 0 23 23"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -32,17 +32,17 @@ const MainThemePaginatorDotIcon = ({ active, width, height }: Props) => (
             />
             <path
                 d="M14.8038 18.4555C11.2863 20.2072 7.01483 18.7757 5.26313 15.2582C3.51143 11.7407 4.94288 7.4692 8.46037 5.7175C11.9778 3.9658 16.2494 5.39725 18.0011 8.91474C19.7528 12.4322 18.3213 16.7038 14.8038 18.4555Z"
-                stroke={active ? '#BDBA78' : 'white'}
+                stroke={props.isActive ? '#BDBA78' : 'white'}
                 stroke-width="1.41047"
             />
             <path
                 d="M14.0151 18.0026C10.4976 19.7543 6.22607 18.3228 4.47437 14.8053C2.72267 11.2878 4.15413 7.01632 7.67161 5.26462C11.1891 3.51292 15.4606 4.94437 17.2123 8.46186C18.964 11.9794 17.5326 16.2509 14.0151 18.0026Z"
-                stroke={active ? '#BDBA78' : 'white'}
+                stroke={props.isActive ? '#BDBA78' : 'white'}
                 stroke-width="1.41047"
             />
             <path
                 d="M13.7911 16.987C10.7725 18.4902 7.10674 17.2618 5.60347 14.2432C4.1002 11.2245 5.32864 7.55879 8.34727 6.05552C11.3659 4.55225 15.0316 5.78069 16.5349 8.79932C18.0382 11.818 16.8097 15.4837 13.7911 16.987Z"
-                stroke={active ? '#BDBA78' : 'white'}
+                stroke={props.isActive ? '#BDBA78' : 'white'}
                 stroke-width="1.41047"
             />
             <path
@@ -75,7 +75,7 @@ const MainThemePaginatorDotIcon = ({ active, width, height }: Props) => (
                 cy="11.1836"
                 r="3.52085"
                 transform="rotate(89.8469 11.1827 11.1836)"
-                fill={active ? '#59F5FF' : 'white'}
+                fill={props.isActive ? '#59F5FF' : 'black'}
             />
         </svg>
     </motion.div>
