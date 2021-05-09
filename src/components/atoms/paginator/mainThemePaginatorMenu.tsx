@@ -12,7 +12,6 @@ const MenuContainer = styled.div`
     padding-top: 30px;
     padding-bottom: 30px;
     width: 50px;
-    z-index: 500;
     display: flex;
     flex-direction: column;
     align-items: center;

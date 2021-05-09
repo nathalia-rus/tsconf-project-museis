@@ -15,11 +15,11 @@ type StyledProps = {
 const Wrapper = styled.div`
     height: 80vh;
     width: 100vw;
-    padding-left: 5vw;
-    padding-right: 8vw;
+    padding-left: 18vw;
+    padding-right: 18vw;
     @media ${device.large_desktop} {
-        padding-right: 9vw;
-        padding-left: 7vw;
+        padding-right: 20vw;
+        padding-left: 20vw;
     }
 
     display: flex;
@@ -28,6 +28,9 @@ const Wrapper = styled.div`
     justify-content: flex-start;
 `
 const TransformYWrap = styled.div<StyledProps>`
+    position: relative;
+    height: 100%;
+    wifth: 100%;
     transform: ${(props) =>
         props.transformYN ? `translateY(${props.transformYN})` : 'auto'};
 `
