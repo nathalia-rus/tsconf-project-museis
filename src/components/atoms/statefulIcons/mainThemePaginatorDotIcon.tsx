@@ -6,7 +6,7 @@ type Props = {
     width: string
 }
 
-const MainThemePaginatorDot = ({ active, width, height }: Props) => (
+const MainThemePaginatorDotIcon = ({ active, width, height }: Props) => (
     <motion.div whileTap={{ scale: 1.3 }}>
         <svg
             width={width}
@@ -81,4 +81,4 @@ const MainThemePaginatorDot = ({ active, width, height }: Props) => (
     </motion.div>
 )
 
-export default MainThemePaginatorDot
+export default MainThemePaginatorDotIcon
