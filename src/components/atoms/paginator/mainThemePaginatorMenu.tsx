@@ -4,12 +4,13 @@ import styled from 'styled-components'
 const MenuContainer = styled.div`
     position: absolute;
     top: 0px;
-    right: 0px;
+    bottom: 0px;
+    right: 35px;
     align-items: center;
     justify-content: center;
     background-color: red;
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 50px;
 `
 
 const PaginationTextStyled = styled.div`
