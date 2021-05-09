@@ -6,10 +6,22 @@ declare module 'stateInterfaces' {
         source: string
     }
 
+    interface IImage {
+        id: string
+        small_url: string
+        medium_url: string
+        big_url: string
+    }
+
+    interface IImgObj {
+        [key: string]: IGod
+    }
+
     interface IGod {
         id: string
         name: string
         main_quote_id: string
+        image: string
     }
 
     interface IGodObj {
@@ -24,6 +36,7 @@ declare module 'stateInterfaces' {
         gods: IGodObj
         gods_list: string[]
         quotes: IQuoteObj
+        images: IImgObj
         isLoading: boolean
         error: any
     }
