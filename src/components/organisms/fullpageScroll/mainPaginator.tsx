@@ -13,10 +13,11 @@ type StyledProps = {
 }
 
 const Wrapper = styled.div`
-    height: 80vh;
+    height: auto;
     width: 100vw;
     padding-left: 18vw;
     padding-right: 18vw;
+
     @media ${device.large_desktop} {
         padding-right: 20vw;
         padding-left: 20vw;
@@ -111,10 +112,12 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                 />
 
                                 <Wrapper className="section fp-auto-height">
-                                    <TrioGridDesktop />
+                                    <TransformYWrap>
+                                        <TrioGridDesktop />
+                                    </TransformYWrap>
                                 </Wrapper>
                                 <Wrapper className="section fp-auto-height">
-                                    <TransformYWrap transformYN={'-10vh'}>
+                                    <TransformYWrap transformYN={'-8vh'}>
                                         <TrioGridDesktop />
                                     </TransformYWrap>
                                 </Wrapper>

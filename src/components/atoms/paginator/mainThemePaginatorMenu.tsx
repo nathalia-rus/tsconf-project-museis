@@ -52,7 +52,7 @@ const FirstRec = styled.div`
     flex-direction: column;
     display: flex;
     background-color: black;
-    border: 1px solid white;
+    border: 1px solid #8f947f;
     height: 230px;
     width: 30px;
     padding-top: 10px;
@@ -64,7 +64,7 @@ const SecondRec = styled.div`
     flex-direction: column;
     display: flex;
     background-color: black;
-    border: 1px solid white;
+    border: 1px solid #8f947f;
     height: 200px;
     width: 30px;
     font-size: 16px;

@@ -11,7 +11,8 @@ const PageWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    height: 80vh;
+    height: 70vh;
+    padding-top: 16vh;
 
     @media (max-width: 768px) {
         display: none;
@@ -72,8 +73,8 @@ const AbsoluteText = styled.div<IStyle>`
     position: absolute;
     transition: opacity 500ms, transform 200ms;
     opacity: ${(props) => (props.idHovered === props.elemId ? '1' : '0')};
-    left: 30%;
-    bottom: 10vh;
+    left: 20%;
+    bottom: 5vh;
     transform: ${(props) =>
         props.idHovered === props.elemId
             ? 'translate(0px, 0px)'
@@ -89,6 +90,7 @@ const AbsoluteText = styled.div<IStyle>`
     font-family: Antonio-Light;
     text-transform: uppercase;
 `
+
 const Title1 = styled.div`
     font-size: 70px;
 `
@@ -96,13 +98,24 @@ const Title1 = styled.div`
 const Title2 = styled.div`
     font-size: 78px;
     transform: rotate(180deg) translate(30px, 30px);
-    color: rgba(146, 121, 84, 0.1);
+    color: rgba(146, 121, 84, 0.2);
 `
 const Col = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+`
+
+const Arrow = styled.img<IStyle>`
+    width: 100%;
+    height: 150px;
+    transition: all 500ms;
+    opacity: ${(props) => (props.idHovered === props.elemId ? '1' : '0')};
+    transform: ${(props) =>
+        props.idHovered === props.elemId
+            ? 'translate(20px, -44px);'
+            : 'translate(-200px, -44px);'};
 `
 
 const mapStateToProps = (state: any) => {
@@ -148,7 +161,7 @@ class TrioGridDesktop extends React.Component<{}, IState> {
                             <Title1>Athena</Title1>
                             <Title2>Athena</Title2>
                         </Col>
-                        <ImgCell
+                        <Arrow
                             elemId={'athena2'}
                             idHovered={idHovered}
                             src={golden_arrow_left}
@@ -165,6 +178,12 @@ class TrioGridDesktop extends React.Component<{}, IState> {
                             <Title1>Hera</Title1>
                             <Title2>Hera</Title2>
                         </Col>
+                        <Arrow
+                            elemId={'hera'}
+                            idHovered={idHovered}
+                            src={golden_arrow_left}
+                            alt="golden-arrow"
+                        />
                     </AbsoluteText>
                     <ImgCell elemId={'hera'} idHovered={idHovered} src={hera} />
                     <AbsoluteGradientBottom
@@ -198,7 +217,12 @@ class TrioGridDesktop extends React.Component<{}, IState> {
                             <Title1>Artemis</Title1>
                             <Title2>Artemis</Title2>
                         </Col>
-                        <img src={golden_arrow_left} alt="golden-arrow" />
+                        <Arrow
+                            elemId={'artemis'}
+                            idHovered={idHovered}
+                            src={golden_arrow_left}
+                            alt="golden-arrow"
+                        />
                     </AbsoluteText>
                 </RelDiv>
             </PageWrapper>
