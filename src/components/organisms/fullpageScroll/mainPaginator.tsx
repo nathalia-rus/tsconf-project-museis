@@ -25,14 +25,18 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
         totalSections: 4,
     }
 
-    componentWillUnmount() {
-        document.getElementById('paginator')!.style.display = 'none'
-    }
+    componentWillUnmount() {}
 
     render() {
         const changeSection = (section: number) => {
             this.setState({ currentSection: section })
         }
+
+        // let down =
+        //     this.state.currentSection === this.state.totalSections
+        //         ? false
+        //         : true
+        // let up = this.state.currentSection === 1 ? false : true
 
         return (
             <div>
@@ -41,6 +45,15 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                     licenseKey={'C49A94F7-3AA84744-B2808534-82E8BCD1'}
                     scrollingSpeed={600} /* Options here */
                     fixedElements="#paginator"
+                    anchors={['god_1', 'god_2', 'god_3', 'god_4', 'lastPage']}
+                    onEnter={(
+                        section: any,
+                        origin: any,
+                        destination: any,
+                        direction: any
+                    ) => {
+                        changeSection(origin.index)
+                    }}
                     onLeave={(
                         section: any,
                         origin: any,
@@ -53,7 +66,7 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                         return (
                             <ReactFullpage.Wrapper>
                                 <MainThemePaginatorMenu
-                                    paginationtext={`${this.state.currentSection}/${this.state.totalSections}`}
+                                    paginationtext={`${this.state.currentSection} / ${this.state.totalSections}`}
                                     down={
                                         this.state.currentSection ===
                                         this.state.totalSections
@@ -65,14 +78,15 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                             ? false
                                             : true
                                     }
-                                    goDown={(e: any) => {
-                                        e.preventDefault()
-                                        return fullpageprops.fullpageApi.moveSectionDown()
+                                    goDown={(e?: any) => {
+                                        e && e.preventDefault()
                                     }}
                                     goUp={(e: any) => {
-                                        e.preventDefault()
-                                        return fullpageprops.fullpageApi.moveSectionUp()
+                                        e && e.preventDefault(e)
                                     }}
+                                    currentSectionIndex={
+                                        this.state.currentSection
+                                    }
                                 />
 
                                 <Wrapper className="section">
