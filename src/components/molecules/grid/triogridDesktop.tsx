@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import artemis from '../../../assets/gods/artemis.png'
-import athena2 from '../../../assets/gods/athena2.png'
-import hera from '../../../assets/gods/hera.png'
+
 import purple_arrow_left from '../../../assets/icons/purple_arrow_left.svg'
 import './styles.css'
 import { device } from '../../templates/devices/devices'
+import { IGod, IGodObj, IImgObj } from 'stateInterfaces'
 
 const PageWrapper = styled.div`
     position: relative;
@@ -151,21 +150,101 @@ const mapStateToProps = (state: any) => {
 
 type IState = {
     idHovered: string
+    gods_ids_to_map: string[]
 }
 
-class TrioGridDesktop extends React.Component<{}, IState> {
+type Props = {
+    gods_list: string[]
+    gods_data: IGodObj
+    god_images: IImgObj
+    index: number
+}
+
+class TrioGridDesktop extends React.Component<Props, IState> {
     state = {
         idHovered: '',
+        gods_ids_to_map: [],
     }
 
     setIdHovered = (id: string) => {
         this.setState({ ...this.state, idHovered: id })
     }
+
+    componentDidMount() {
+        let { index, gods_list } = this.props
+        if (index === 0) {
+            let gods_ids_to_map = gods_list.slice(0, 3)
+            this.setState({ gods_ids_to_map })
+        } else if (index === 1) {
+            let gods_ids_to_map = gods_list.slice(3, 6)
+            this.setState({ gods_ids_to_map })
+        } else if (index === 2) {
+            let gods_ids_to_map = gods_list.slice(6, 9)
+            this.setState({ gods_ids_to_map })
+        }
+    }
+
     render() {
         let { idHovered } = this.state
+
+        let { god_images } = this.props
+
         return (
             <PageWrapper>
-                <RelDiv
+                {this.state.gods_ids_to_map.length > 0 &&
+                    this.state.gods_ids_to_map.map(
+                        (godId: string, index: number) => {
+                            let god: IGod = this.props.gods_data[godId]
+
+                            console.log('GID', god)
+
+                            return (
+                                <RelDiv
+                                    onMouseOver={() =>
+                                        this.setIdHovered(god.id)
+                                    }
+                                    onMouseLeave={() => this.setIdHovered('')}
+                                >
+                                    <ImgCell
+                                        src={god_images[god.image].url}
+                                        elemId={god.id}
+                                        idHovered={idHovered}
+                                    />
+                                    <AbsoluteGradientBottom
+                                        elemId={god.id}
+                                        idHovered={idHovered}
+                                    />
+                                    <AbsoluteGradientTop
+                                        elemId={god.id}
+                                        idHovered={idHovered}
+                                    />
+
+                                    <AbsoluteText
+                                        elemId={god.id}
+                                        idHovered={idHovered}
+                                    >
+                                        <Col>
+                                            <Title1
+                                                className="glitch"
+                                                data-glitch={god.name}
+                                            >
+                                                {god.name}
+                                            </Title1>
+                                            <Title2>{god.name}</Title2>
+                                        </Col>
+                                        <Arrow
+                                            elemId={god.id}
+                                            idHovered={idHovered}
+                                            src={purple_arrow_left}
+                                            alt="golden-arrow"
+                                        />
+                                    </AbsoluteText>
+                                </RelDiv>
+                            )
+                        }
+                    )}
+
+                {/* <RelDiv
                     onMouseOver={() => this.setIdHovered('athena2')}
                     onMouseLeave={() => this.setIdHovered('')}
                 >
@@ -258,7 +337,7 @@ class TrioGridDesktop extends React.Component<{}, IState> {
                             alt="golden-arrow"
                         />
                     </AbsoluteText>
-                </RelDiv>
+                </RelDiv> */}
             </PageWrapper>
         )
     }

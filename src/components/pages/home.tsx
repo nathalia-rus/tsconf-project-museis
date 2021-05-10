@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 import MainPaginator from '../organisms/fullpageScroll/mainPaginator'
 import TopBrandBarDesktop from '../atoms/menu/topBrandBarDesktop'
+import { IGodsState } from 'stateInterfaces'
 
 const PageWrapper = styled.div`
     @media (max-width: 768px) {
@@ -10,17 +11,21 @@ const PageWrapper = styled.div`
     }
 `
 
+type Props = {
+    gods: IGodsState
+}
+
 const mapStateToProps = (state: any) => {
     return { gods: state.gods }
 }
 
-class Home extends React.Component {
+class Home extends React.Component<Props> {
     render() {
+        let gods: IGodsState = this.props.gods
         return (
             <PageWrapper>
                 <TopBrandBarDesktop />
-
-                <MainPaginator />
+                <MainPaginator gods={gods} />
             </PageWrapper>
         )
     }

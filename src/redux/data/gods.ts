@@ -84,7 +84,6 @@ export const gods_list: string[] = [
     'hera',
     'dyonisus',
     'zeus',
-
     'apollo',
     'hephaistos',
     'poseidon',
