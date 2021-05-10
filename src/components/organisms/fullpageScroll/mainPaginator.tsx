@@ -112,12 +112,12 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                 />
 
                                 <Wrapper className="section fp-auto-height">
-                                    <TransformYWrap>
+                                    <TransformYWrap transformYN={'-8vh'}>
                                         <TrioGridDesktop />
                                     </TransformYWrap>
                                 </Wrapper>
                                 <Wrapper className="section fp-auto-height">
-                                    <TransformYWrap transformYN={'-8vh'}>
+                                    <TransformYWrap transformYN={'-14vh'}>
                                         <TrioGridDesktop />
                                     </TransformYWrap>
                                 </Wrapper>
