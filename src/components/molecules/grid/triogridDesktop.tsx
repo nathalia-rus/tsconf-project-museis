@@ -25,7 +25,7 @@ const RelDiv = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
-    transition: all 1s;
+    transition: all 2s;
 `
 type IStyle = {
     idHovered?: string
@@ -41,7 +41,7 @@ const ImgCell = styled.img<IStyle>`
             : props.idHovered === ''
             ? 'scale(1)'
             : 'scale(0.95)'};
-    transition: all 300ms;
+    transition: all 800ms;
 `
 
 const AbsoluteGradientBottom = styled.div<IStyle>`

@@ -22,8 +22,8 @@ const Wrapper = styled.div`
     padding-right: 18vw;
 
     @media ${device.large_desktop} {
-        padding-right: 20vw;
-        padding-left: 20vw;
+        padding-right: 18vw;
+        padding-left: 18vw;
     }
 
     display: flex;
@@ -131,7 +131,11 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                             <>
                                                 <Wrapper className="section fp-auto-height">
                                                     <TransformYWrap
-                                                        transformYN={'-8vh'}
+                                                        transformYN={
+                                                            index === 0
+                                                                ? '-8vh'
+                                                                : '-10vh'
+                                                        }
                                                     >
                                                         <TrioGridDesktop
                                                             gods_data={godsData}

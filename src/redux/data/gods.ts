@@ -4,6 +4,10 @@ import athena from '../../assets/gods/athena.png'
 import athena2 from '../../assets/gods/athena2.png'
 import hera from '../../assets/gods/hera.png'
 import dyonisus from '../../assets/gods/dyonisus.png'
+import apollo from '../../assets/gods/apollo.png'
+import ares from '../../assets/gods/ares.png'
+import zeus from '../../assets/gods/zeus.png'
+import athena3 from '../../assets/gods/athena3.png'
 
 export const gods_quotes: IQuoteObj = {
     'a-q-1': {
@@ -80,13 +84,13 @@ export const gods_quotes: IQuoteObj = {
 
 export const gods_list: string[] = [
     'athena',
-    'artemis',
     'hera',
+    'artemis',
     'dyonisus',
-    'zeus',
     'apollo',
-    'hephaistos',
+    'zeus',
     'poseidon',
+    'hephaistos',
     'ares',
 ]
 
@@ -97,11 +101,15 @@ export const god_images: IImgObj = {
     },
     athena_img_1: {
         id: 'athena_img_1',
-        url: athena,
+        url: athena2,
     },
     demeter_img_1: {
         id: 'demeter_img_1',
-        url: athena2,
+        url: athena,
+    },
+    athena_img_2: {
+        id: 'athena_img_1',
+        url: athena3,
     },
     hera_img_1: {
         id: 'hera_img_1',
@@ -111,6 +119,15 @@ export const god_images: IImgObj = {
         id: 'dyonisus_img_1',
         url: dyonisus,
     },
+    apollo_img_1: {
+        id: 'apollo_img_1',
+        url: apollo,
+    },
+    ares_img_1: {
+        id: 'ares_img_1',
+        url: ares,
+    },
+    zeus_img_1: { id: 'zeus_img_1', url: zeus },
 }
 
 export const godsData: IGodObj = {
@@ -136,7 +153,7 @@ export const godsData: IGodObj = {
         id: 'athena',
         name: 'athena',
         main_quote_id: 'ath-q-1',
-        image: 'hera_img_1',
+        image: 'athena_img_1',
     },
     dyonisus: {
         id: 'dyonisus',
@@ -149,14 +166,14 @@ export const godsData: IGodObj = {
         id: 'zeus',
         name: 'zeus',
         main_quote_id: 'z-q-1',
-        image: 'demeter_img_1',
+        image: 'zeus_img_1',
     },
 
     apollo: {
         id: 'apollo',
         name: 'apollo',
         main_quote_id: 'apo-q-1',
-        image: 'hera_img_1',
+        image: 'apollo_img_1',
     },
     hephaistos: {
         id: 'hephaistos',
@@ -174,6 +191,6 @@ export const godsData: IGodObj = {
         id: 'ares',
         name: 'ares',
         main_quote_id: 'ares-q-1',
-        image: 'hera_img_1',
+        image: 'ares_img_1',
     },
 }
