@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { connect } from 'react-redux'
 
 import purple_arrow_left from '../../../assets/icons/purple_arrow_left.svg'
@@ -30,19 +30,8 @@ const RelDiv = styled.div`
 type IStyle = {
     idHovered?: string
     elemId?: string
+    index?: number
 }
-const ImgCell = styled.img<IStyle>`
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transform: ${(props) =>
-        props.idHovered === props.elemId
-            ? 'scale(1.01)'
-            : props.idHovered === ''
-            ? 'scale(1)'
-            : 'scale(0.95)'};
-    transition: all 800ms;
-`
 
 const AbsoluteGradientBottom = styled.div<IStyle>`
     height: 50vh;
@@ -143,6 +132,103 @@ const Arrow = styled.img<IStyle>`
         height: 70px;
     }
 `
+const float = (idHovered: any, elemId: any) => keyframes`
+	0% {
+    opacity:${elemId === idHovered ? 0.5 : 0.25}
+		box-shadow: 0 10px 15px 0px rgba(0,0,0,0.8);
+		transform: translate(0px) rotate(0deg);
+	}
+	50% {
+    opacity:${elemId === idHovered ? 1 : 1}
+    	box-shadow: 0 10px 15px 0px rgba(0,0,0,0.8);
+	
+    transform: ${
+        elemId === idHovered
+            ? 'translate(0px, 0px) scale(1.5)'
+            : idHovered === ''
+            ? ' translate(-10px, 10px) rotate(-0.8deg) scale(1)'
+            : 'translate(-10px, 10px) scale(0.95)'
+    };
+	}
+	100% {
+    opacity:${elemId === idHovered ? 0.5 : 0.25}
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.0);
+		transform: translate(0px) rotate(0deg);
+	}
+`
+const float1 = (idHovered: any, elemId: any) => keyframes`
+	0% {
+     opacity:${elemId === idHovered ? 0.5 : 0.25}
+		background: 0 5px 15px 0px rgba(0,0,0,0.8);
+		transform: translate(0px) rotate(0deg);
+	}
+	50% {
+    opacity:${elemId === idHovered ? 1 : 1}
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    		transform: ${
+                elemId === idHovered
+                    ? 'translate(0px, 0px) rotate(-2deg) scale(1.5)'
+                    : idHovered === ''
+                    ? ' translate(-10px, -10px) scale(1)'
+                    : 'translate(-10px, -10px) scale(0.95)'
+            };
+	}
+	100% {
+   opacity:${elemId === idHovered ? 0.5 : 0.25}
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.8);
+		transform: translate(0px) rotate(0deg);
+	}
+`
+
+const float2 = (idHovered: any, elemId: any) => keyframes`
+	0% {
+   opacity:${elemId === idHovered ? 0.5 : 0.25}
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translate(0px) rotate(0deg);
+
+	}
+	50% {
+    opacity:${elemId === idHovered ? 1 : 1}
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: ${
+            elemId === idHovered
+                ? 'translate(0px, 0px) scale(1.5)'
+                : idHovered === ''
+                ? ' translate(-10px, -8px) rotate(-1deg) scale(1)'
+                : 'translate(-10px, -8px) scale(0.95)'
+        };
+	}
+	100% {
+     opacity:${elemId === idHovered ? 0.5 : 0.25}
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translate(0px) rotate(0deg);
+	}
+`
+
+const ImgCell = styled.img<IStyle>`
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: ${(props) =>
+        props.idHovered === props.elemId
+            ? 'scale(1.01)'
+            : props.idHovered === ''
+            ? 'scale(1)'
+            : 'scale(0.95)'};
+    transition: all 800ms;
+
+    animation-name: ${(props) =>
+        props.index === 0
+            ? float(props.idHovered, props.elemId)
+            : props.index === 1
+            ? float1(props.idHovered, props.elemId)
+            : float2(props.idHovered, props.elemId)};
+    animation-duration: ${(props) =>
+        props.idHovered === props.elemId ? '60s' : '10s'};
+    animation-transition: all ease-in-out infinite;
+    transition: all ease-in-out infinite;
+    animation-iteration-count: infinite;
+`
 
 const mapStateToProps = (state: any) => {
     return { gods: state.gods }
@@ -196,8 +282,6 @@ class TrioGridDesktop extends React.Component<Props, IState> {
                         (godId: string, index: number) => {
                             let god: IGod = this.props.gods_data[godId]
 
-                            console.log('GID', god)
-
                             return (
                                 <RelDiv
                                     onMouseOver={() =>
@@ -209,6 +293,7 @@ class TrioGridDesktop extends React.Component<Props, IState> {
                                         src={god_images[god.image].url}
                                         elemId={god.id}
                                         idHovered={idHovered}
+                                        index={index}
                                     />
                                     <AbsoluteGradientBottom
                                         elemId={god.id}

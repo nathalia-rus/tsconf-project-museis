@@ -134,7 +134,9 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                                         transformYN={
                                                             index === 0
                                                                 ? '-8vh'
-                                                                : '-10vh'
+                                                                : index === 1
+                                                                ? '-12vh'
+                                                                : '-20vh'
                                                         }
                                                     >
                                                         <TrioGridDesktop
