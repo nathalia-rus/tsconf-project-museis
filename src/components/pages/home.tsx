@@ -4,8 +4,11 @@ import { connect } from 'react-redux'
 import MainPaginator from '../organisms/fullpageScroll/mainPaginator'
 import TopBrandBarDesktop from '../atoms/menu/topBrandBarDesktop'
 import { IGodsState } from 'stateInterfaces'
+import './styles.css'
+import CursorProvider from '../organisms/cursor/cursor'
 
 const PageWrapper = styled.div`
+    cursor: none;
     @media (max-width: 768px) {
         display: none;
     }
@@ -20,13 +23,16 @@ const mapStateToProps = (state: any) => {
 }
 
 class Home extends React.Component<Props> {
+    componentDidMount() {}
     render() {
         let gods: IGodsState = this.props.gods
         return (
-            <PageWrapper>
-                <TopBrandBarDesktop />
-                <MainPaginator gods={gods} />
-            </PageWrapper>
+            <CursorProvider>
+                <PageWrapper>
+                    <TopBrandBarDesktop />
+                    <MainPaginator gods={gods} />
+                </PageWrapper>
+            </CursorProvider>
         )
     }
 }
