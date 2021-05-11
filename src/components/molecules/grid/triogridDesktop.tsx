@@ -216,7 +216,7 @@ const ImgCell = styled.img<IStyle>`
             : props.idHovered === ''
             ? 'scale(1)'
             : 'scale(0.95)'};
-    transition: all 800ms;
+    transition: all 750ms;
 
     animation-name: ${(props) =>
         props.index === 0
@@ -225,7 +225,7 @@ const ImgCell = styled.img<IStyle>`
             ? float1(props.idHovered, props.elemId)
             : float2(props.idHovered, props.elemId)};
     animation-duration: ${(props) =>
-        props.idHovered === props.elemId ? '60s' : '10s'};
+        props.idHovered === props.elemId ? '60s' : '9s'};
     animation-transition: all ease-in-out infinite;
     transition: all ease-in-out infinite;
     animation-iteration-count: infinite;
