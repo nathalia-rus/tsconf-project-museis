@@ -6,6 +6,7 @@ import purple_arrow_left from '../../../assets/icons/purple_arrow_left.svg'
 import './styles.css'
 import { device } from '../../templates/devices/devices'
 import { IGod, IGodObj, IImgObj } from 'stateInterfaces'
+import { Howl } from 'howler'
 
 const PageWrapper = styled.div`
     position: relative;
@@ -247,6 +248,36 @@ type Props = {
     index: number
 }
 
+let sound = new Howl({
+    src: ['/electric_glitch.wav'],
+    autoplay: true,
+    loop: false,
+    volume: 0.4,
+    onend: function () {
+        console.log('Finished!')
+    },
+})
+
+// let sound1 = new Howl({
+//     src: ['/cinematic_glitch_trailer.wav'],
+//     autoplay: true,
+//     loop: false,
+//     volume: 0.4,
+//     onend: function () {
+//         console.log('Finished!')
+//     },
+// })
+
+// let sound2 = new Howl({
+//     src: ['/scifi.wav'],
+//     autoplay: true,
+//     loop: false,
+//     volume: 0.4,
+//     onend: function () {
+//         console.log('Finished!')
+//     },
+// })
+
 class TrioGridDesktop extends React.Component<Props, IState> {
     state = {
         idHovered: '',
@@ -278,6 +309,7 @@ class TrioGridDesktop extends React.Component<Props, IState> {
 
         return (
             <PageWrapper>
+                {/* <button onClick={() => sound.play()}>click</button> */}
                 {this.state.gods_ids_to_map.length > 0 &&
                     this.state.gods_ids_to_map.map(
                         (godId: string, index: number) => {
@@ -313,6 +345,15 @@ class TrioGridDesktop extends React.Component<Props, IState> {
                                             <Title1
                                                 className="glitch"
                                                 data-glitch={god.name}
+                                                onMouseEnter={
+                                                    () =>
+                                                        // index === 0
+                                                        //     ?
+                                                        sound.play()
+                                                    // : index === 1
+                                                    // ? sound1.play()
+                                                    // : sound2.play()
+                                                }
                                             >
                                                 {god.name}
                                             </Title1>
