@@ -252,7 +252,7 @@ let sound = new Howl({
     src: ['/electric_glitch.wav'],
     autoplay: true,
     loop: false,
-    volume: 0.4,
+    volume: 0.2,
     onend: function () {
         console.log('Finished!')
     },

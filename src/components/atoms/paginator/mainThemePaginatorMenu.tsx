@@ -82,6 +82,9 @@ export interface IPaginationMenuProps {
 
 const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => (
     <MenuContainer id="paginator">
+        {/* <SoundRec>
+        
+      </SoundRec> */}
         <DotsCol>
             <div data-menuanchor="god_1">
                 <a href="#god_1">

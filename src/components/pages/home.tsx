@@ -31,7 +31,7 @@ class Home extends React.Component<Props> {
             src: ['/ambiance.wav'],
             autoplay: true,
             loop: true,
-            volume: 0.4,
+            volume: 0.2,
             onload: function () {
                 console.log('loaded!')
             },
@@ -43,6 +43,13 @@ class Home extends React.Component<Props> {
         let gods: IGodsState = this.props.gods
         return (
             <CursorProvider>
+                <button
+                    onClick={() => {
+                        ambiance.play()
+                    }}
+                >
+                    play
+                </button>
                 <Waypoint
                     onEnter={() => {
                         ambiance.play()
