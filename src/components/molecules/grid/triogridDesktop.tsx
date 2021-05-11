@@ -95,12 +95,13 @@ const Title1 = styled.div`
 const Title2 = styled.div`
     cursor: pointer;
     font-size: 78px;
+    transform: rotate(180deg) translate(50px, -50px);
 
     @media ${device.smallest_laptops} {
-        font-size: 64px;
+        font-size: 58px;
+        transform: rotate(180deg) translate(59px, -33px);
     }
 
-    transform: rotate(180deg) translate(50px, -50px);
     color: rgb(0 43 83 / 35%);
     z-index: 3;
 `
