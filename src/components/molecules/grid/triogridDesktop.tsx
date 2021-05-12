@@ -307,6 +307,14 @@ class TrioGridDesktop extends React.Component<Props, IState> {
 
         let { god_images } = this.props
 
+        const moveImg = (event: any) => {
+            var x = event.clientX
+            var y = event.clientY
+            var shark = document.getElementById('shark')
+            shark!.style.left = x + 'px'
+            shark!.style.top = y + 'px'
+        }
+
         return (
             <PageWrapper>
                 {/* <button onClick={() => sound.play()}>click</button> */}
@@ -323,6 +331,8 @@ class TrioGridDesktop extends React.Component<Props, IState> {
                                     onMouseLeave={() => this.setIdHovered('')}
                                 >
                                     <ImgCell
+                                        id={'shark'}
+                                        onMouseMove={(e: any) => moveImg(e)}
                                         src={god_images[god.image].url}
                                         elemId={god.id}
                                         idHovered={idHovered}

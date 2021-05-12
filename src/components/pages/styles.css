@@ -1,6 +1,6 @@
 .movable {
-    width: 12px;
-    height: 12px;
+    width: 60px;
+    height: 60px;
     position: absolute;
     z-index: 9999;
     transform: translate(-50%, -50%);
@@ -41,3 +41,12 @@
 .movable.cursor-left:after {
     content: '<';
 }
+
+/* #particles-js {
+    background: radial-gradient(
+        circle,
+        rgba(193, 196, 209, 1) 0%,
+        rgba(3, 3, 29, 1) 100%
+    );
+    height: 100vh;
+} */
