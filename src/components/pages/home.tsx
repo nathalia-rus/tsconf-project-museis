@@ -6,8 +6,6 @@ import TopBrandBarDesktop from '../atoms/menu/topBrandBarDesktop'
 import { IGodsState } from 'stateInterfaces'
 import './styles.css'
 import CursorProvider from '../organisms/cursor/cursor'
-import { Howl } from 'howler'
-import { Waypoint } from 'react-waypoint'
 
 const PageWrapper = styled.div`
     cursor: none;
@@ -27,23 +25,10 @@ const mapStateToProps = (state: any) => {
 class Home extends React.Component<Props> {
     componentDidMount() {}
     render() {
-        let ambiance = new Howl({
-            src: ['/ambiance.wav'],
-            autoplay: true,
-            loop: true,
-            volume: 0.2,
-            onload: function () {
-                console.log('loaded!')
-            },
-            onend: function () {
-                console.log('Finished!')
-            },
-        })
-
         let gods: IGodsState = this.props.gods
         return (
             <CursorProvider>
-                <button
+                {/* <button
                     onClick={() => {
                         ambiance.play()
                     }}
@@ -55,11 +40,11 @@ class Home extends React.Component<Props> {
                         ambiance.play()
                     }}
                 >
-                    <PageWrapper>
-                        <TopBrandBarDesktop />
-                        <MainPaginator gods={gods} />
-                    </PageWrapper>
-                </Waypoint>
+                </Waypoint> */}
+                <PageWrapper>
+                    <TopBrandBarDesktop />
+                    <MainPaginator gods={gods} />
+                </PageWrapper>
             </CursorProvider>
         )
     }

@@ -4,6 +4,7 @@ import * as StatefulIcons from '../statefulIcons'
 import polygon_up_white from '../../../assets/icons/polygon_up_white.svg'
 import sound_on from '../../../assets/icons/sound_on.svg'
 import { motion } from 'framer-motion'
+import { Howl } from 'howler'
 
 const MenuContainer = styled.div`
     position: absolute;
@@ -49,8 +50,8 @@ const Line = styled.div`
 `
 // const ShortLine = styled.div`
 //     background-color: #787878;
-//     height: 10%;
-//     width: 0px;
+//     height: 5%;
+//     width: 1px;
 // `
 
 const FirstRec = styled.div`
@@ -88,7 +89,7 @@ const SoundRec = styled.div`
     border: 1px solid #3b3b3b;
     height: 40px;
     width: 40px;
-
+    cursor: pointer;
     :hover {
         background-color: #005aff29;
     }
@@ -96,7 +97,6 @@ const SoundRec = styled.div`
 
 const SoundIcon = styled.img`
     height: 16px;
-    cursor: pointer;
 `
 
 const OnHoverRef = styled.div`
@@ -114,116 +114,135 @@ export interface IPaginationMenuProps {
     currentSectionIndex: number
 }
 
-const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => (
-    <MenuContainer id="paginator">
-        <div>
-            <SoundRec>
-                <motion.div whileTap={{ scale: 1.1 }}>
-                    <SoundIcon src={sound_on} alt="sound" />
-                </motion.div>
-            </SoundRec>
-        </div>
+const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
+    let ambiance = new Howl({
+        src: ['/ambiance.wav'],
+        autoplay: true,
+        loop: true,
+        volume: 0.2,
+        onload: function () {
+            console.log('loaded!')
+        },
+        onend: function () {
+            console.log('Finished!')
+        },
+    })
 
-        <div style={{ paddingTop: '30px' }} />
-        {/* <ShortLine />
+    return (
+        <MenuContainer id="paginator">
+            <div>
+                <SoundRec
+                    onClick={() => {
+                        ambiance.play()
+                    }}
+                >
+                    <motion.div whileTap={{ scale: 1.1 }}>
+                        <SoundIcon src={sound_on} alt="sound" />
+                    </motion.div>
+                </SoundRec>
+            </div>
+
+            <div style={{ paddingTop: '25px' }} />
+            {/* <ShortLine />
         <div style={{ paddingTop: '20px' }} /> */}
-        <DotsCol>
-            <div data-menuanchor="god_1">
-                <a href="#god_1">
-                    <StatefulIcons.MainThemePaginatorDotIcon
-                        height="26"
-                        width="26"
-                        isActive={
-                            props.currentSectionIndex === 1 ? true : false
-                        }
-                    />
-                </a>
-            </div>
-            <div data-menuanchor="god_2">
-                <a href="#god_2">
-                    <StatefulIcons.MainThemePaginatorDotIcon
-                        height="26"
-                        width="26"
-                        isActive={
-                            props.currentSectionIndex === 2 ? true : false
-                        }
-                    />
-                </a>
-            </div>
-
-            <div data-menuanchor="god_3">
-                <a href="#god_3">
-                    <StatefulIcons.MainThemePaginatorDotIcon
-                        height="26"
-                        width="26"
-                        isActive={
-                            props.currentSectionIndex === 3 ? true : false
-                        }
-                    />
-                </a>
-            </div>
-            <div data-menuanchor="god_4" onMouseDown={() => props.goDown()}>
-                <a href="#god_4">
-                    <StatefulIcons.MainThemePaginatorDotIcon
-                        height="26"
-                        width="26"
-                        isActive={
-                            props.currentSectionIndex === 4 ? true : false
-                        }
-                    />
-                </a>
-            </div>
-        </DotsCol>
-
-        <Line />
-
-        <PaginationTextStyled>gods edition</PaginationTextStyled>
-        <Line />
-
-        <div style={{ paddingTop: '20px' }} />
-
-        <FirstRec>
-            <OnHoverRef
-                data-menuanchor={`god_${props.currentSectionIndex - 1}`}
-                style={{
-                    opacity: props.up === true ? '1' : '0.3',
-                    pointerEvents: props.up === true ? 'auto' : 'none',
-                    cursor: props.up === true ? 'pointer' : 'disabled',
-                }}
-            >
-                <motion.div whileTap={{ scale: 1.2 }}>
-                    <a href={`#god_${props.currentSectionIndex - 1}`}>
-                        <img src={polygon_up_white} alt="arrow" />
-                    </a>
-                </motion.div>
-            </OnHoverRef>
-            <OnHoverRef
-                data-menuanchor={`god_${props.currentSectionIndex + 1}`}
-                style={{
-                    cursor: props.down === true ? 'pointer' : 'disabled',
-
-                    opacity: props.down === true ? '1' : '0.3',
-                    pointerEvents: 'auto',
-                }}
-            >
-                <motion.div whileTap={{ scale: 1.2 }}>
-                    <a href={`#god_${props.currentSectionIndex + 1}`}>
-                        <div style={{ paddingTop: '10px' }} />
-                        <img
-                            style={{ transform: 'rotate(180deg)' }}
-                            src={polygon_up_white}
-                            alt="arrow"
+            <DotsCol>
+                <div data-menuanchor="god_1">
+                    <a href="#god_1">
+                        <StatefulIcons.MainThemePaginatorDotIcon
+                            height="26"
+                            width="26"
+                            isActive={
+                                props.currentSectionIndex === 1 ? true : false
+                            }
                         />
                     </a>
-                </motion.div>
-            </OnHoverRef>
-        </FirstRec>
-        <SecondRec>
-            <span style={{ transform: 'rotate(90deg)' }}>
-                {props.paginationtext}
-            </span>
-        </SecondRec>
-    </MenuContainer>
-)
+                </div>
+                <div data-menuanchor="god_2">
+                    <a href="#god_2">
+                        <StatefulIcons.MainThemePaginatorDotIcon
+                            height="26"
+                            width="26"
+                            isActive={
+                                props.currentSectionIndex === 2 ? true : false
+                            }
+                        />
+                    </a>
+                </div>
+
+                <div data-menuanchor="god_3">
+                    <a href="#god_3">
+                        <StatefulIcons.MainThemePaginatorDotIcon
+                            height="26"
+                            width="26"
+                            isActive={
+                                props.currentSectionIndex === 3 ? true : false
+                            }
+                        />
+                    </a>
+                </div>
+                <div data-menuanchor="god_4" onMouseDown={() => props.goDown()}>
+                    <a href="#god_4">
+                        <StatefulIcons.MainThemePaginatorDotIcon
+                            height="26"
+                            width="26"
+                            isActive={
+                                props.currentSectionIndex === 4 ? true : false
+                            }
+                        />
+                    </a>
+                </div>
+            </DotsCol>
+
+            <Line />
+
+            <PaginationTextStyled>gods edition</PaginationTextStyled>
+            <Line />
+
+            <div style={{ paddingTop: '20px' }} />
+
+            <FirstRec>
+                <OnHoverRef
+                    data-menuanchor={`god_${props.currentSectionIndex - 1}`}
+                    style={{
+                        opacity: props.up === true ? '1' : '0.3',
+                        pointerEvents: props.up === true ? 'auto' : 'none',
+                        cursor: props.up === true ? 'pointer' : 'disabled',
+                    }}
+                >
+                    <motion.div whileTap={{ scale: 1.2 }}>
+                        <a href={`#god_${props.currentSectionIndex - 1}`}>
+                            <img src={polygon_up_white} alt="arrow" />
+                        </a>
+                    </motion.div>
+                </OnHoverRef>
+                <OnHoverRef
+                    data-menuanchor={`god_${props.currentSectionIndex + 1}`}
+                    style={{
+                        cursor: props.down === true ? 'pointer' : 'disabled',
+
+                        opacity: props.down === true ? '1' : '0.3',
+                        pointerEvents: 'auto',
+                    }}
+                >
+                    <motion.div whileTap={{ scale: 1.2 }}>
+                        <a href={`#god_${props.currentSectionIndex + 1}`}>
+                            <div style={{ paddingTop: '10px' }} />
+                            <img
+                                style={{ transform: 'rotate(180deg)' }}
+                                src={polygon_up_white}
+                                alt="arrow"
+                            />
+                        </a>
+                    </motion.div>
+                </OnHoverRef>
+            </FirstRec>
+            <SecondRec>
+                <span style={{ transform: 'rotate(90deg)' }}>
+                    {props.paginationtext}
+                </span>
+            </SecondRec>
+        </MenuContainer>
+    )
+}
 
 export default MainThemePaginatorMenu
