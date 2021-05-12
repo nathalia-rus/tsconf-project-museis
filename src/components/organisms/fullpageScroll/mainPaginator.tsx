@@ -6,7 +6,10 @@ import TrioGridDesktop from '../../molecules/grid/triogridDesktop'
 import './styles.css'
 import { device } from '../../templates/devices/devices'
 import { IGodObj, IGodsState, IImgObj } from 'stateInterfaces'
-
+import { Howl } from 'howler'
+import sound_on from '../../../assets/icons/sound_on.svg'
+import sound_off from '../../../assets/icons/sound_off.svg'
+import { motion } from 'framer-motion'
 type OwnProps = {
     gods: IGodsState
 }
@@ -39,18 +42,73 @@ const TransformYWrap = styled.div<StyledProps>`
         props.transformYN ? `translateY(${props.transformYN})` : 'auto'};
 `
 
+const SoundRec = styled.div`
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 24px;
+    top: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    background-color: #00e7ff14;
+    border: 1px solid #3b3b3b;
+    height: 80px;
+    width: 40px;
+    z-index: 100;
+    cursor: pointer;
+    :hover {
+        background-color: #005aff29;
+    }
+`
+
+const SoundIcon = styled.img`
+    height: 18px;
+`
+
+const MotionDivCol = styled(motion.div)`
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-family: 'Antonio-ExtraLight';
+    text-transform: uppercase;
+    font-size: 14px;
+`
+
 type LocalState = {
     currentSection: number
     totalSections: number
+    isSoundPlaying?: boolean
 }
 
 class MainPaginator extends React.Component<OwnProps, LocalState> {
     state = {
         currentSection: 1,
         totalSections: 4,
+        isSoundPlaying: false,
     }
 
+    setIsSoundPlaying = (arg?: boolean) => {
+        return this.setState({ ...this.state, isSoundPlaying: arg })
+    }
     componentWillUnmount() {}
+
+    ambiance = new Howl({
+        src: ['/ambiance.wav'],
+        autoplay: false,
+        loop: true,
+        volume: 0.2,
+        onload: function () {
+            console.log('loaded!')
+        },
+        onend: function () {
+            console.log('Finished!')
+        },
+    })
 
     render() {
         const changeSection = (section: number) => {
@@ -62,8 +120,9 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
         let sections_list_gen = () => {
             let number: number = Math.floor(gods_list.length / 3)
 
-            let section_list: string[] = Array.from({ length: number }, () =>
-                Math.floor(Math.random() * 40).toString()
+            let section_list: string[] = Array.from(
+                { length: number },
+                (el: any, index: number) => index.toString()
             )
 
             return section_list
@@ -74,8 +133,37 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
         let godsData: IGodObj = this.props.gods.gods
         let god_images: IImgObj = this.props.gods.images
 
+        let { isSoundPlaying } = this.state
+
         return (
             <div>
+                {console.log('section_list', section_list)}
+                <SoundRec
+                    onClick={() => {
+                        if (isSoundPlaying === true) {
+                            this.setIsSoundPlaying(false)
+                            this.ambiance.pause()
+                        } else {
+                            this.setIsSoundPlaying(true)
+                            this.ambiance.play()
+                        }
+                    }}
+                >
+                    <MotionDivCol whileTap={{ scale: 1.1 }}>
+                        {isSoundPlaying ? (
+                            <>
+                                <SoundIcon src={sound_on} alt="sound" />
+                                <div style={{ paddingTop: '8px' }}>on</div>
+                            </>
+                        ) : (
+                            <>
+                                <SoundIcon src={sound_off} alt="sound" />
+                                <div style={{ paddingTop: '8px' }}>off</div>
+                            </>
+                        )}
+                    </MotionDivCol>
+                </SoundRec>
+
                 <ReactFullpage
                     //fullpage options
                     licenseKey={'C49A94F7-3AA84744-B2808534-82E8BCD1'}
@@ -123,6 +211,7 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                     currentSectionIndex={
                                         this.state.currentSection
                                     }
+                                    section_list={section_list}
                                 />
 
                                 {section_list.map(

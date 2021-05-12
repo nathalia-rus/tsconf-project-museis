@@ -28,19 +28,6 @@ class Home extends React.Component<Props> {
         let gods: IGodsState = this.props.gods
         return (
             <CursorProvider>
-                {/* <button
-                    onClick={() => {
-                        ambiance.play()
-                    }}
-                >
-                    play
-                </button>
-                <Waypoint
-                    onEnter={() => {
-                        ambiance.play()
-                    }}
-                >
-                </Waypoint> */}
                 <PageWrapper>
                     <TopBrandBarDesktop />
                     <MainPaginator gods={gods} />

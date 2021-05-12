@@ -1,6 +1,6 @@
 .movable {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     position: absolute;
     z-index: 9999;
     transform: translate(-50%, -50%);

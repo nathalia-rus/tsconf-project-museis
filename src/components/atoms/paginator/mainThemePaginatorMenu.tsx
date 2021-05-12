@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import * as StatefulIcons from '../statefulIcons'
 import polygon_up_white from '../../../assets/icons/polygon_up_white.svg'
-import sound_on from '../../../assets/icons/sound_on.svg'
+
 import { motion } from 'framer-motion'
-import { Howl } from 'howler'
 
 const MenuContainer = styled.div`
     position: absolute;
-    top: 0px;
+    top: 90px;
     bottom: 0px;
     right: 20px;
-
     padding-top: 30px;
     padding-bottom: 30px;
     width: 50px;
@@ -26,7 +24,6 @@ const DotsCol = styled.div`
     justify-content: center;
     flex-direction: column;
     display: flex;
-    background-color: black;
     padding-bottom: 20px;
 `
 
@@ -59,7 +56,6 @@ const FirstRec = styled.div`
     justify-content: center;
     flex-direction: column;
     display: flex;
-    background-color: black;
     border: 1px solid #8f947f;
     height: 230px;
     width: 30px;
@@ -71,32 +67,12 @@ const SecondRec = styled.div`
     justify-content: center;
     flex-direction: column;
     display: flex;
-    background-color: black;
     border: 1px solid #8f947f;
     height: 200px;
     width: 30px;
     font-size: 16px;
 
     font-family: Average-Regular;
-`
-
-const SoundRec = styled.div`
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-    background-color: #00e7ff14;
-    border: 1px solid #3b3b3b;
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    :hover {
-        background-color: #005aff29;
-    }
-`
-
-const SoundIcon = styled.img`
-    height: 16px;
 `
 
 const OnHoverRef = styled.div`
@@ -112,55 +88,31 @@ export interface IPaginationMenuProps {
     down: boolean
     up: boolean
     currentSectionIndex: number
+    section_list: string[]
 }
 
 const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
-    const [playSounds, setPlaySounds] = useState(false)
-
-    let ambiance = new Howl({
-        src: ['/ambiance.wav'],
-        autoplay: true,
-        loop: true,
-        volume: 0.2,
-        onload: function () {
-            console.log('loaded!')
-        },
-        onend: function () {
-            console.log('Finished!')
-        },
-    })
-
     return (
         <MenuContainer id="paginator">
-            {console.log('playSounds', playSounds)}
-            <div>
-                <SoundRec
-                    onClick={() => {
-                        ambiance.play()
-                        setPlaySounds(true)
-                    }}
-                >
-                    <motion.div whileTap={{ scale: 1.1 }}>
-                        <SoundIcon src={sound_on} alt="sound" />
-                    </motion.div>
-                </SoundRec>
-            </div>
-
-            <div style={{ paddingTop: '25px' }} />
-            {/* <ShortLine />
-        <div style={{ paddingTop: '20px' }} /> */}
             <DotsCol>
-                <div data-menuanchor="god_1">
-                    <a href="#god_1">
-                        <StatefulIcons.MainThemePaginatorDotIcon
-                            height="26"
-                            width="26"
-                            isActive={
-                                props.currentSectionIndex === 1 ? true : false
-                            }
-                        />
-                    </a>
-                </div>
+                {props.section_list.map((id: string, index: number) => {
+                    return (
+                        <div data-menuanchor={id}>
+                            <a href={`#${id}`}>
+                                <StatefulIcons.MainThemePaginatorDotIcon
+                                    height="26"
+                                    width="26"
+                                    isActive={
+                                        props.currentSectionIndex - 1 === index
+                                            ? true
+                                            : false
+                                    }
+                                />
+                            </a>
+                        </div>
+                    )
+                })}
+                {/* 
                 <div data-menuanchor="god_2">
                     <a href="#god_2">
                         <StatefulIcons.MainThemePaginatorDotIcon
@@ -194,7 +146,7 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
                             }
                         />
                     </a>
-                </div>
+                </div> */}
             </DotsCol>
 
             <Line />
