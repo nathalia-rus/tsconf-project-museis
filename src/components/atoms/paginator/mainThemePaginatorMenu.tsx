@@ -2,6 +2,8 @@ import * as React from 'react'
 import styled from 'styled-components'
 import * as StatefulIcons from '../statefulIcons'
 import polygon_up_white from '../../../assets/icons/polygon_up_white.svg'
+import sound_on from '../../../assets/icons/sound_on.svg'
+import { motion } from 'framer-motion'
 
 const MenuContainer = styled.div`
     position: absolute;
@@ -45,6 +47,11 @@ const Line = styled.div`
     height: 100%;
     width: 1px;
 `
+// const ShortLine = styled.div`
+//     background-color: #787878;
+//     height: 10%;
+//     width: 0px;
+// `
 
 const FirstRec = styled.div`
     align-items: center;
@@ -71,6 +78,33 @@ const SecondRec = styled.div`
 
     font-family: Average-Regular;
 `
+
+const SoundRec = styled.div`
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    background-color: #00e7ff14;
+    border: 1px solid #3b3b3b;
+    height: 40px;
+    width: 40px;
+
+    :hover {
+        background-color: #005aff29;
+    }
+`
+
+const SoundIcon = styled.img`
+    height: 16px;
+    cursor: pointer;
+`
+
+const OnHoverRef = styled.div`
+    transition: all 200ms;
+    :hover {
+        transform: scale(1.2);
+    }
+`
 export interface IPaginationMenuProps {
     goUp: any
     goDown: any
@@ -82,9 +116,17 @@ export interface IPaginationMenuProps {
 
 const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => (
     <MenuContainer id="paginator">
-        {/* <SoundRec>
-        
-      </SoundRec> */}
+        <div>
+            <SoundRec>
+                <motion.div whileTap={{ scale: 1.1 }}>
+                    <SoundIcon src={sound_on} alt="sound" />
+                </motion.div>
+            </SoundRec>
+        </div>
+
+        <div style={{ paddingTop: '30px' }} />
+        {/* <ShortLine />
+        <div style={{ paddingTop: '20px' }} /> */}
         <DotsCol>
             <div data-menuanchor="god_1">
                 <a href="#god_1">
@@ -139,8 +181,9 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => (
         <Line />
 
         <div style={{ paddingTop: '20px' }} />
+
         <FirstRec>
-            <div
+            <OnHoverRef
                 data-menuanchor={`god_${props.currentSectionIndex - 1}`}
                 style={{
                     opacity: props.up === true ? '1' : '0.3',
@@ -148,11 +191,13 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => (
                     cursor: props.up === true ? 'pointer' : 'disabled',
                 }}
             >
-                <a href={`#god_${props.currentSectionIndex - 1}`}>
-                    <img src={polygon_up_white} alt="arrow" />
-                </a>
-            </div>
-            <div
+                <motion.div whileTap={{ scale: 1.2 }}>
+                    <a href={`#god_${props.currentSectionIndex - 1}`}>
+                        <img src={polygon_up_white} alt="arrow" />
+                    </a>
+                </motion.div>
+            </OnHoverRef>
+            <OnHoverRef
                 data-menuanchor={`god_${props.currentSectionIndex + 1}`}
                 style={{
                     cursor: props.down === true ? 'pointer' : 'disabled',
@@ -161,15 +206,17 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => (
                     pointerEvents: 'auto',
                 }}
             >
-                <a href={`#god_${props.currentSectionIndex + 1}`}>
-                    <div style={{ paddingTop: '10px' }} />
-                    <img
-                        style={{ transform: 'rotate(180deg)' }}
-                        src={polygon_up_white}
-                        alt="arrow"
-                    />
-                </a>
-            </div>
+                <motion.div whileTap={{ scale: 1.2 }}>
+                    <a href={`#god_${props.currentSectionIndex + 1}`}>
+                        <div style={{ paddingTop: '10px' }} />
+                        <img
+                            style={{ transform: 'rotate(180deg)' }}
+                            src={polygon_up_white}
+                            alt="arrow"
+                        />
+                    </a>
+                </motion.div>
+            </OnHoverRef>
         </FirstRec>
         <SecondRec>
             <span style={{ transform: 'rotate(90deg)' }}>
