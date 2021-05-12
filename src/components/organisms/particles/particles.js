@@ -56,7 +56,7 @@ class ParticlesCanvas extends Component {
                                 },
                             },
                             opacity: {
-                                value: 0.4,
+                                value: 0.3,
                                 random: true,
                                 anim: {
                                     enable: true,
@@ -79,7 +79,7 @@ class ParticlesCanvas extends Component {
                                 enable_auto: true,
                                 distance: 100,
                                 color: '#fff',
-                                opacity: 0.2,
+                                opacity: 0,
                                 width: 0,
                                 condensed_mode: {
                                     enable: false,
@@ -89,7 +89,7 @@ class ParticlesCanvas extends Component {
                             },
                             move: {
                                 enable: true,
-                                speed: 0.3,
+                                speed: 0.2,
                                 direction: 'none',
                                 random: false,
                                 straight: false,
