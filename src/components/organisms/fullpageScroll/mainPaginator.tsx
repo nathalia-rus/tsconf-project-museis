@@ -149,7 +149,9 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                         }
                     }}
                 >
-                    <MotionDivCol whileTap={{ scale: 1.1 }}>
+                    <MotionDivCol
+                        whileTap={{ scale: 1.2, transition: { duration: 0.3 } }}
+                    >
                         {isSoundPlaying ? (
                             <>
                                 <SoundIcon src={sound_on} alt="sound" />
