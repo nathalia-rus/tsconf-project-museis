@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import * as StatefulIcons from '../statefulIcons'
 import polygon_up_white from '../../../assets/icons/polygon_up_white.svg'
@@ -115,6 +115,8 @@ export interface IPaginationMenuProps {
 }
 
 const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
+    const [playSounds, setPlaySounds] = useState(false)
+
     let ambiance = new Howl({
         src: ['/ambiance.wav'],
         autoplay: true,
@@ -130,10 +132,12 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
 
     return (
         <MenuContainer id="paginator">
+            {console.log('playSounds', playSounds)}
             <div>
                 <SoundRec
                     onClick={() => {
                         ambiance.play()
+                        setPlaySounds(true)
                     }}
                 >
                     <motion.div whileTap={{ scale: 1.1 }}>
