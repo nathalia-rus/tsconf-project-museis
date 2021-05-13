@@ -71,7 +71,7 @@ const CursorProvider = ({children}) => {
                    
                 }}
             />
-
+{/* 
              <ins
                 className={cx('movable4', {
                     active: !!cursor,
@@ -94,7 +94,7 @@ const CursorProvider = ({children}) => {
                     top: `${y-50}px`,
                    
                 }}
-            />
+            /> */}
             {children}
         </CursorContext.Provider>
     )
