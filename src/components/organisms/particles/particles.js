@@ -34,10 +34,10 @@ class ParticlesCanvas extends Component {
                     params={{
                         particles: {
                             number: {
-                                value: 200,
+                                value: 100,
                                 density: {
                                     enable: true,
-                                    value_area: 900,
+                                    value_area: 1000,
                                 },
                             },
                             color: {
@@ -56,7 +56,7 @@ class ParticlesCanvas extends Component {
                                 },
                             },
                             opacity: {
-                                value: 0.3,
+                                value: 0.2,
                                 random: true,
                                 anim: {
                                     enable: true,
