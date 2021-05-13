@@ -68,7 +68,7 @@ const hue_animation = () => keyframes`
 const Img1 = styled.img`
     width: 100%;
     animation-name: ${hue_animation};
-    animation-duration: 1500ms;
+    animation-duration: 1000ms;
     animation-transition: all ease-in-out infinite;
     transition: all ease-in-out infinite;
     animation-iteration-count: infinite;
