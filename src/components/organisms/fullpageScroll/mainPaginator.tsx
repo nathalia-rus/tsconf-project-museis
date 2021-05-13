@@ -25,8 +25,8 @@ const Wrapper = styled.div`
     padding-right: 18vw;
 
     @media ${device.large_desktop} {
-        padding-right: 18vw;
-        padding-left: 18vw;
+        padding-right: 15vw;
+        padding-left: 15vw;
     }
 
     display: flex;

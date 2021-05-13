@@ -38,7 +38,9 @@ const CursorProvider = ({children}) => {
 // }
     return (
         <CursorContext.Provider value={{ onCursor }}>
-            <ins
+            <img
+            src={"/cursorcustom.png"}
+            alt="o"
                 className={cx('movable', {
                     active: !!cursor,
                     [`cursor-${cursor}`]: !!cursor,
@@ -48,6 +50,9 @@ const CursorProvider = ({children}) => {
                     top: `${y}px`,
                 }}
             />
+  
+
+          
 
                   <ins
                 className={cx('movable2', {
@@ -55,8 +60,8 @@ const CursorProvider = ({children}) => {
                     [`cursor-${cursor}`]: !!cursor,
                 })}
                 style={{
-                    left: `${x+30}px`,
-                    top: `${y+30}px`,
+                    left: `${x+20}px`,
+                    top: `${y+60}px`,
                    
                 }}
             />
@@ -66,8 +71,8 @@ const CursorProvider = ({children}) => {
                     [`cursor-${cursor}`]: !!cursor,
                 })}
                 style={{
-                    left: `${x+50}px`,
-                    top: `${y+50}px`,
+                    left: `${x+10}px`,
+                    top: `${y+80}px`,
                    
                 }}
             />

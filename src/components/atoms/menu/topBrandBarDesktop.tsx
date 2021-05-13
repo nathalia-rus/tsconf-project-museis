@@ -38,7 +38,7 @@ class TopBrandBarDesktop extends React.Component {
             <Container>
                 <Title>Gods</Title>
                 <div style={{ paddingLeft: '10px' }} />
-                <Artist>By Cinderus</Artist>
+                <Artist>By nrus</Artist>
             </Container>
         )
     }

@@ -6,7 +6,7 @@ import TopBrandBarDesktop from '../atoms/menu/topBrandBarDesktop'
 import { IGodsState } from 'stateInterfaces'
 import './styles.css'
 import CursorProvider from '../organisms/cursor/cursor'
-import ParticlesCanvas from '../organisms/particles/particles'
+// import ParticlesCanvas from '../organisms/particles/particles'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
 // import a_test_tilt_1 from '../../assets/images/a_test_tilt_1.png'
@@ -40,7 +40,7 @@ class Home extends React.Component<Props> {
         let gods: IGodsState = this.props.gods
         return (
             <>
-                <ParticlesCanvas />
+                {/* <ParticlesCanvas /> */}
                 <CursorProvider>
                     <PageWrapper>
                         <TopBrandBarDesktop />

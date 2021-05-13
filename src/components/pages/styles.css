@@ -1,23 +1,26 @@
 .movable {
-    width: 30px;
-    height: 50px;
+    position: relative;
+
+    height: 30px;
+    /* clip-path: polygon(0 100%, 49% 62%, 100% 100%, 48% 1%); */
     position: absolute;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
+    /* border: 1px solid #23d5ab31; */
 
-    background: linear-gradient(
+    /* background-image: url(/images/image.svg); */
+    /* background: linear-gradient(
         -45deg,
         #feffc832,
         #0000003d,
         #feffe02a,
         #23a5d51f,
         #23d5ab31
-    );
+    ); */
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
     /* background-color: rgba(0, 255, 255, 0.1); */
-    border: 1px solid rgb(199, 199, 199);
+    /* border: 1px solid rgb(199, 199, 199); */
 
     /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
         0 0 10px 10px #0ff; */
@@ -33,19 +36,19 @@
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
-        transform: rotate(0deg);
+        transform: rotate(-20deg);
     }
     25% {
         background-position: 100% 50%;
-        transform: rotate(-5deg);
+        transform: rotate(-40deg);
     }
     50% {
         background-position: 100% 50%;
-        transform: rotate(6deg);
+        transform: rotate(-40deg);
     }
     100% {
         background-position: 0% 50%;
-        transform: rotate(0deg);
+        transform: rotate(-20deg);
     }
 }
 
@@ -82,7 +85,7 @@
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     border: 1px solid rgb(199, 199, 199);
     background-size: 400% 400%;
-    animation: floatt 6s ease-in-out infinite;
+    animation: movable_anim 6s ease-in-out infinite;
     /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
         0 0 10px 10px #0ff; */
     /* box-shadow: 0 0 60px 30px #fff, 0 0 80px 40px #f0f, 0 0 100px 60px #0ff; */
@@ -126,7 +129,7 @@
     border-radius: 50%;
     background-color: rgba(0, 255, 255, 0.1);
     border: 1px solid rgb(199, 199, 199);
-    animation: floatt 7s ease-in-out infinite;
+    animation: movable_anim 7s ease-in-out infinite;
     /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
         0 0 10px 10px #0ff; */
     /* box-shadow: 0 0 60px 30px #fff, 0 0 80px 40px #f0f, 0 0 100px 60px #0ff; */
@@ -170,7 +173,7 @@
     border-radius: 50%;
     background-color: rgba(0, 255, 255, 0.1);
     border: 1px solid rgb(199, 199, 199);
-    animation: floatt2 7s ease-in-out infinite;
+    animation: movable_anim2 7s ease-in-out infinite;
     /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
         0 0 10px 10px #0ff; */
     /* box-shadow: 0 0 60px 30px #fff, 0 0 80px 40px #f0f, 0 0 100px 60px #0ff; */
@@ -214,7 +217,7 @@
     border-radius: 50%;
     background-color: rgba(0, 255, 255, 0.1);
     border: 1px solid rgb(199, 199, 199);
-    animation: floatt2 3s ease-in-out infinite;
+    animation: movable_anim2 3s ease-in-out infinite;
     /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
         0 0 10px 10px #0ff; */
     /* box-shadow: 0 0 60px 30px #fff, 0 0 80px 40px #f0f, 0 0 100px 60px #0ff; */
@@ -249,30 +252,30 @@
     content: '<';
 }
 
-@keyframes floatt {
+@keyframes movable_anim {
     0% {
         background-position: 0% 50%;
-        transform: translate(0px, 0px) scale(1);
+        transform: translate(0px, 0px) scale(0.4);
     }
     50% {
         background-position: 100% 50%;
-        transform: translate(80px, 20px) scale(1.5);
+        transform: translate(30px, 20px) scale(1);
     }
     100% {
         background-position: 0% 50%;
-        transform: translate(0px, 0px) scale(1);
+        transform: translate(0px, 0px) scale(0.4);
     }
 }
 
-@keyframes floatt2 {
+@keyframes movable_anim2 {
     0% {
-        transform: translate(0px, 0px) scale(1);
+        transform: translate(0px, 0px) scale(0.3);
     }
     50% {
-        transform: translate(-80px, -20px) scale(1.5);
+        transform: translate(-30px, -20px) scale(1);
     }
     100% {
-        transform: translate(0px, 0px) scale(1);
+        transform: translate(0px, 0px) scale(0.3);
     }
 }
 

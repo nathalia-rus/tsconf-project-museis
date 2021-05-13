@@ -1,97 +1,87 @@
 import { IGodObj, IImgObj, IQuoteObj } from 'stateInterfaces'
 import artemis from '../../assets/gods/artemis.png'
-import athena from '../../assets/gods/athena.png'
 import athena2 from '../../assets/gods/athena2.png'
 import hera from '../../assets/gods/hera.png'
 import dyonisus from '../../assets/gods/dyonisus.png'
 import apollo from '../../assets/gods/apollo.png'
-import ares from '../../assets/gods/ares.png'
+import ares from '../../assets/gods/ares.jpg'
 import zeus from '../../assets/gods/zeus.png'
-import athena3 from '../../assets/gods/athena3.png'
+import poseidon from '../../assets/gods/poseidon.jpg'
+import athena from '../../assets/gods/athena.jpg'
 
 export const gods_quotes: IQuoteObj = {
     'a-q-1': {
         god_id: 'artemis',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
     'ath-q-1': {
         god_id: 'athena',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
     'dem-q-1': {
         god_id: 'demeter',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
     'dio-q-1': {
         god_id: 'dyonisus',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
     'z-q-1': {
         god_id: 'zeus',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
     'h-q-1': {
         god_id: 'hera',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
     'apo-q-1': {
         god_id: 'apollo',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
     'heph-q-1': {
         god_id: 'hephaistos',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
     'pos-q-1': {
         god_id: 'poseidon',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
     'ares-q-1': {
         god_id: 'ares',
         author: 'homer',
-        text:
-            'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
+        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
 }
 
 export const gods_list: string[] = [
-    'athena',
+    'dyonisus',
     'hera',
     'artemis',
-    'dyonisus',
+    'poseidon',
     'apollo',
     'zeus',
-    'poseidon',
     'hephaistos',
     'ares',
+    'athena',
 ]
 
 export const god_images: IImgObj = {
@@ -101,15 +91,15 @@ export const god_images: IImgObj = {
     },
     athena_img_1: {
         id: 'athena_img_1',
-        url: athena2,
+        url: athena,
     },
     demeter_img_1: {
         id: 'demeter_img_1',
         url: athena,
     },
     athena_img_2: {
-        id: 'athena_img_1',
-        url: athena3,
+        id: 'athena_img_2',
+        url: athena2,
     },
     hera_img_1: {
         id: 'hera_img_1',
@@ -128,6 +118,7 @@ export const god_images: IImgObj = {
         url: ares,
     },
     zeus_img_1: { id: 'zeus_img_1', url: zeus },
+    poseidon_img_1: { id: 'poseidon_img_1', url: poseidon },
 }
 
 export const godsData: IGodObj = {
@@ -179,13 +170,13 @@ export const godsData: IGodObj = {
         id: 'hephaistos',
         name: 'hephaistos',
         main_quote_id: 'heph-q-1',
-        image: 'hera_img_1',
+        image: 'athena_img_2',
     },
     poseidon: {
         id: 'poseidon',
         name: 'poseidon',
         main_quote_id: 'pos-q-1',
-        image: 'demeter_img_1',
+        image: 'poseidon_img_1',
     },
     ares: {
         id: 'ares',

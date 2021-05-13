@@ -136,12 +136,12 @@ const Arrow = styled.img<IStyle>`
 `
 const float = (idHovered: any, elemId: any) => keyframes`
 	0% {
-    opacity:${elemId === idHovered ? 0.5 : 0.25}
-		box-shadow: 0 10px 15px 0px rgba(0,0,0,0.8);
+    opacity:${elemId === idHovered ? 1 : 0.5};
+		box-shadow: 0 10px 15px 0px rgba(0,0,0,0.0);
 		transform: translate(0px) rotate(0deg);
 	}
 	50% {
-    opacity:${elemId === idHovered ? 1 : 1}
+    opacity:${elemId === idHovered ? 1 : 0.6};
     	box-shadow: 0 10px 15px 0px rgba(0,0,0,0.8);
 	
     transform: ${
@@ -153,19 +153,19 @@ const float = (idHovered: any, elemId: any) => keyframes`
     };
 	}
 	100% {
-    opacity:${elemId === idHovered ? 0.5 : 0.25}
+    opacity:${elemId === idHovered ? 1 : 0.5};
 		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.0);
 		transform: translate(0px) rotate(0deg);
 	}
 `
 const float1 = (idHovered: any, elemId: any) => keyframes`
 	0% {
-     opacity:${elemId === idHovered ? 0.5 : 0.25}
+     opacity:${elemId === idHovered ? 1 : 0.5};
 		background: 0 5px 15px 0px rgba(0,0,0,0.8);
 		transform: translate(0px) rotate(0deg);
 	}
 	50% {
-    opacity:${elemId === idHovered ? 1 : 1}
+    opacity:${elemId === idHovered ? 1 : 0.6};
 		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
     		transform: ${
                 elemId === idHovered
@@ -176,7 +176,7 @@ const float1 = (idHovered: any, elemId: any) => keyframes`
             };
 	}
 	100% {
-   opacity:${elemId === idHovered ? 0.5 : 0.25}
+   opacity:${elemId === idHovered ? 1 : 0.5};
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.8);
 		transform: translate(0px) rotate(0deg);
 	}
@@ -184,13 +184,13 @@ const float1 = (idHovered: any, elemId: any) => keyframes`
 
 const float2 = (idHovered: any, elemId: any) => keyframes`
 	0% {
-   opacity:${elemId === idHovered ? 0.5 : 0.25}
+   opacity:${elemId === idHovered ? 0.6 : 0.5};
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translate(0px) rotate(0deg);
 
 	}
 	50% {
-    opacity:${elemId === idHovered ? 1 : 1}
+    opacity:${elemId === idHovered ? 1 : 0.6};
 		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
 		transform: ${
             elemId === idHovered
@@ -201,7 +201,7 @@ const float2 = (idHovered: any, elemId: any) => keyframes`
         };
 	}
 	100% {
-     opacity:${elemId === idHovered ? 0.5 : 0.25}
+     opacity:${elemId === idHovered ? 1 : 0.1};
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translate(0px) rotate(0deg);
 	}
@@ -262,7 +262,7 @@ let sound = new Howl({
 //     src: ['/cinematic_glitch_trailer.wav'],
 //     autoplay: true,
 //     loop: false,
-//     volume: 0.4,
+//     volume: 0.5,
 //     onend: function () {
 //         console.log('Finished!')
 //     },
@@ -272,7 +272,7 @@ let sound = new Howl({
 //     src: ['/scifi.wav'],
 //     autoplay: true,
 //     loop: false,
-//     volume: 0.4,
+//     volume: 0.5,
 //     onend: function () {
 //         console.log('Finished!')
 //     },
