@@ -5,7 +5,18 @@
     z-index: 9999;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.1);
+
+    background: linear-gradient(
+        -45deg,
+        #feffc832,
+        #0000003d,
+        #feffe02a,
+        #23a5d51f,
+        #23d5ab31
+    );
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    /* background-color: rgba(0, 255, 255, 0.1); */
     border: 1px solid rgb(199, 199, 199);
 
     /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
@@ -17,6 +28,18 @@
         10px 0 80px #0ff; */
     pointer-events: none;
     transition: background 0.5s;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .movable.active {
@@ -40,6 +63,122 @@
 
 .movable.cursor-left:after {
     content: '<';
+}
+
+.movable2 {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    border: 1px solid rgb(199, 199, 199);
+    background-size: 400% 400%;
+    animation: floatt 6s ease-in-out infinite;
+    /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
+        0 0 10px 10px #0ff; */
+    /* box-shadow: 0 0 60px 30px #fff, 0 0 80px 40px #f0f, 0 0 100px 60px #0ff; */
+    /* box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff, inset 20px 0 300px #f0f,
+        inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f,
+        10px 0 80px #0ff; */
+    pointer-events: none;
+    transition: background 0.5s;
+}
+
+.movable2.active {
+    background: white;
+}
+
+.movable2.active:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.movable2.cursor-pointer:after {
+    content: '!';
+}
+
+.movable2.cursor-right:after {
+    content: '>';
+}
+
+.movable2.cursor-left:after {
+    content: '<';
+}
+
+.movable3 {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgb(199, 199, 199);
+    animation: floatt2 2s ease-in-out infinite;
+    /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
+        0 0 10px 10px #0ff; */
+    /* box-shadow: 0 0 60px 30px #fff, 0 0 80px 40px #f0f, 0 0 100px 60px #0ff; */
+    /* box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff, inset 20px 0 300px #f0f,
+        inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f,
+        10px 0 80px #0ff; */
+    pointer-events: none;
+    transition: background 0.5s;
+}
+
+.movable3.active {
+    background: black;
+}
+
+.movable3.active:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.movable3.cursor-pointer:after {
+    content: '!';
+}
+
+.movable3.cursor-right:after {
+    content: '>';
+}
+
+.movable3.cursor-left:after {
+    content: '<';
+}
+
+@keyframes floatt {
+    0% {
+        background-position: 0% 50%;
+        transform: translate(0px, 0px) scale(1);
+    }
+    50% {
+        background-position: 100% 50%;
+        transform: translate(-80px, -20px) scale(1.5);
+    }
+    100% {
+        background-position: 0% 50%;
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+@keyframes floatt2 {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    50% {
+        transform: translate(-80px, -20px) scale(1.5);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
 }
 
 /* #particles-js {

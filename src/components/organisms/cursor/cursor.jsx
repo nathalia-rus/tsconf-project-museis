@@ -10,8 +10,10 @@ const CursorProvider = ({children}) => {
     const [cursor, setCursor] = useState(false)
 
     const onMouseMove = (event) => {
-        const { pageX: x, pageY: y } = event
-        setMousePosition({ x, y })
+
+      setTimeout(function(){ const { pageX: x, pageY: y } = event
+        setMousePosition({ x, y }) }, 0);
+       
     }
 
     useEffect(() => {
@@ -31,6 +33,9 @@ const CursorProvider = ({children}) => {
         return "";
     }
 
+//  function getRandomInt(max) {
+//   return Math.floor(Math.random() * max);
+// }
     return (
         <CursorContext.Provider value={{ onCursor }}>
             <ins
@@ -41,6 +46,29 @@ const CursorProvider = ({children}) => {
                 style={{
                     left: `${x}px`,
                     top: `${y}px`,
+                }}
+            />
+
+                  <ins
+                className={cx('movable2', {
+                    active: !!cursor,
+                    [`cursor-${cursor}`]: !!cursor,
+                })}
+                style={{
+                    left: `${x+30}px`,
+                    top: `${y+30}px`,
+                   
+                }}
+            />
+                              <ins
+                className={cx('movable3', {
+                    active: !!cursor,
+                    [`cursor-${cursor}`]: !!cursor,
+                })}
+                style={{
+                    left: `${x+50}px`,
+                    top: `${y+50}px`,
+                   
                 }}
             />
             {children}
