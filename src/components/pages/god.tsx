@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import MainPaginator from '../organisms/fullpageScroll/mainPaginator'
-import TopBrandBarDesktop from '../atoms/menu/topBrandBarDesktop'
 import { IGodsState } from 'stateInterfaces'
 import './styles.css'
 
+import GodLoader from '../organisms/godLoader'
 // import ParticlesCanvas from '../organisms/particles/particles'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
@@ -33,21 +32,20 @@ const mapStateToProps = (state: any) => {
 //     scale: 1.05,
 // }
 
-class Home extends React.Component<Props> {
+class God extends React.Component<Props> {
     componentDidMount() {}
     render() {
-        let gods: IGodsState = this.props.gods
+        // let gods: IGodsState = this.props.gods
         return (
             <>
                 {/* <ParticlesCanvas /> */}
 
                 <PageWrapper>
-                    <TopBrandBarDesktop />
-                    <MainPaginator gods={gods} />
+                    <GodLoader />
                 </PageWrapper>
             </>
         )
     }
 }
 
-export default connect(mapStateToProps, {})(Home)
+export default connect(mapStateToProps, {})(God)

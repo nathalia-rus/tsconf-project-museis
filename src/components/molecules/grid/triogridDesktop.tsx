@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { connect } from 'react-redux'
-
+import { RouteComponentProps, withRouter } from 'react-router-dom'
 import purple_arrow_left from '../../../assets/icons/purple_arrow_left.svg'
 import './styles.css'
 import { device } from '../../templates/devices/devices'
@@ -241,7 +241,7 @@ type IState = {
     gods_ids_to_map: string[]
 }
 
-type Props = {
+interface Props extends RouteComponentProps<any> {
     gods_list: string[]
     gods_data: IGodObj
     god_images: IImgObj
@@ -350,6 +350,9 @@ class TrioGridDesktop extends React.Component<Props, IState> {
                                     <AbsoluteText
                                         elemId={god.id}
                                         idHovered={idHovered}
+                                        onClick={() =>
+                                            this.props.history.push('/god')
+                                        }
                                     >
                                         <Col>
                                             <Title1
@@ -480,4 +483,4 @@ class TrioGridDesktop extends React.Component<Props, IState> {
     }
 }
 
-export default connect(mapStateToProps, {})(TrioGridDesktop)
+export default withRouter(connect(mapStateToProps, {})(TrioGridDesktop))

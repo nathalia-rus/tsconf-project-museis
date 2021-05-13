@@ -95,7 +95,9 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
     setIsSoundPlaying = (arg?: boolean) => {
         return this.setState({ ...this.state, isSoundPlaying: arg })
     }
-    componentWillUnmount() {}
+    componentWillUnmount() {
+        document.getElementById('paginator')!.style.display = 'none'
+    }
 
     ambiance = new Howl({
         src: ['/ambiance.wav'],

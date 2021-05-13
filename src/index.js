@@ -5,11 +5,14 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
 import store from './redux/store'
+import CursorProvider from './components/organisms/cursor/cursor'
 
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>
-            <App />
+            <CursorProvider>
+                <App />
+            </CursorProvider>
         </React.StrictMode>
     </Provider>,
     document.getElementById('root')
