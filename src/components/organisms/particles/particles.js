@@ -37,11 +37,11 @@ class ParticlesCanvas extends Component {
                                 value: 100,
                                 density: {
                                     enable: true,
-                                    value_area: 1000,
+                                    value_area: 2000,
                                 },
                             },
                             color: {
-                                value: 'rgb(239, 255, 183)',
+                                value: '#fff',
                             },
                             shape: {
                                 type: 'circle',
@@ -56,7 +56,7 @@ class ParticlesCanvas extends Component {
                                 },
                             },
                             opacity: {
-                                value: 0.2,
+                                value: 0.8,
                                 random: true,
                                 anim: {
                                     enable: true,
@@ -89,7 +89,7 @@ class ParticlesCanvas extends Component {
                             },
                             move: {
                                 enable: true,
-                                speed: 0.2,
+                                speed: 0.3,
                                 direction: 'none',
                                 random: false,
                                 straight: false,
