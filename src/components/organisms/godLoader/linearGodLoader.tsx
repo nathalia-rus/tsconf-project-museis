@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import athena from '../../../assets/gods/names/athena.png'
 
@@ -68,7 +69,7 @@ const hue_animation = () => keyframes`
 const Img1 = styled.img`
     width: 100%;
     animation-name: ${hue_animation};
-    animation-duration: 1000ms;
+    animation-duration: 800ms;
     animation-transition: all ease-in-out infinite;
     transition: all ease-in-out infinite;
     animation-iteration-count: infinite;
@@ -97,12 +98,34 @@ const Artist = styled.div`
     width: 80px;
     transform: translateY(-4px);
 `
-const Line = styled.div`
+
+// const line_progress_animation = () => keyframes`
+// 	0% {
+//     width: 0%;
+
+// 	}
+
+// 	100% {
+//           width: 100%;
+// 	}
+// `
+
+type IStyledProps = {
+    counter: number
+}
+const Line = styled.div<IStyledProps>`
     background-color: white;
-    width: 100%;
+    width: ${(props) => `${props.counter}%`};
+    transition: all ease-in-out 50ms;
     height: 1px;
     transform: translateY(-8px);
 `
+// animation-name: ${line_progress_animation};
+// animation-duration: 5000ms;
+// animation-transition: all ease-in-out;
+// transition: all ease-in-out;
+// animation-iteration-count: 1;
+
 const Pc = styled.div`
     font-size: 16px;
     width: 100px;
@@ -112,26 +135,43 @@ const Pc = styled.div`
 
 type Props = {}
 
-const LinearGodLoader = (props: Props) => (
-    <PageWrapper>
-        <ContentWrapper>
-            <TextContainer>
-                <Title>Gods</Title>
-                <div style={{ paddingLeft: '10px' }} />
-                <Artist>By nrus</Artist>
-            </TextContainer>
-            <div style={{ paddingTop: '0px' }} />
-            <Img1 src={athena} alt={athena} />
-            <div style={{ paddingTop: '10px' }} />
-            <Col>
-                <Row>
-                    <Line />
+const LinearGodLoader = (props: Props) => {
+    const [counter, setCounter] = useState(0)
 
-                    <Pc>96 %</Pc>
-                </Row>
-            </Col>
-        </ContentWrapper>
-    </PageWrapper>
-)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (counter < 100) {
+                setCounter((counter) => counter + 1)
+            } else return
+        }, 10)
+
+        return () => {
+            clearInterval(interval)
+        }
+    }, [counter])
+
+    return (
+        <PageWrapper>
+            {console.log(counter)}
+            <ContentWrapper>
+                <TextContainer>
+                    <Title>Gods</Title>
+                    <div style={{ paddingLeft: '10px' }} />
+                    <Artist>By nrus</Artist>
+                </TextContainer>
+                <div style={{ paddingTop: '0px' }} />
+                <Img1 src={athena} alt={athena} />
+                <div style={{ paddingTop: '10px' }} />
+                <Col>
+                    <Row>
+                        <Line counter={counter} />
+
+                        <Pc>{counter}%</Pc>
+                    </Row>
+                </Col>
+            </ContentWrapper>
+        </PageWrapper>
+    )
+}
 
 export default LinearGodLoader
