@@ -1,6 +1,6 @@
 .movable {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 50px;
     position: absolute;
     z-index: 9999;
     transform: translate(-50%, -50%);
@@ -33,12 +33,19 @@
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
+        transform: rotate(0deg);
+    }
+    25% {
+        background-position: 100% 50%;
+        transform: rotate(-5deg);
     }
     50% {
         background-position: 100% 50%;
+        transform: rotate(6deg);
     }
     100% {
         background-position: 0% 50%;
+        transform: rotate(0deg);
     }
 }
 
@@ -66,8 +73,8 @@
 }
 
 .movable2 {
-    width: 5px;
-    height: 5px;
+    width: 2px;
+    height: 2px;
     position: absolute;
     z-index: 9999;
     transform: translate(-50%, -50%);
@@ -110,16 +117,60 @@
     content: '<';
 }
 
-.movable3 {
-    width: 10px;
-    height: 10px;
+.movable4 {
+    width: 1px;
+    height: 1px;
     position: absolute;
     z-index: 9999;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background-color: rgba(0, 255, 255, 0.1);
     border: 1px solid rgb(199, 199, 199);
-    animation: floatt2 2s ease-in-out infinite;
+    animation: floatt 7s ease-in-out infinite;
+    /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
+        0 0 10px 10px #0ff; */
+    /* box-shadow: 0 0 60px 30px #fff, 0 0 80px 40px #f0f, 0 0 100px 60px #0ff; */
+    /* box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff, inset 20px 0 300px #f0f,
+        inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f,
+        10px 0 80px #0ff; */
+    pointer-events: none;
+    transition: background 0.5s;
+}
+
+.movable4.active {
+    background: black;
+}
+
+.movable4.active:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.movable4.cursor-pointer:after {
+    content: '!';
+}
+
+.movable4.cursor-right:after {
+    content: '>';
+}
+
+.movable4.cursor-left:after {
+    content: '<';
+}
+
+.movable3 {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgb(199, 199, 199);
+    animation: floatt2 7s ease-in-out infinite;
     /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
         0 0 10px 10px #0ff; */
     /* box-shadow: 0 0 60px 30px #fff, 0 0 80px 40px #f0f, 0 0 100px 60px #0ff; */
@@ -154,6 +205,50 @@
     content: '<';
 }
 
+.movable5 {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgb(199, 199, 199);
+    animation: floatt2 3s ease-in-out infinite;
+    /* box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 12px 8px #f0f,
+        0 0 10px 10px #0ff; */
+    /* box-shadow: 0 0 60px 30px #fff, 0 0 80px 40px #f0f, 0 0 100px 60px #0ff; */
+    /* box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff, inset 20px 0 300px #f0f,
+        inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f,
+        10px 0 80px #0ff; */
+    pointer-events: none;
+    transition: background 0.5s;
+}
+
+.movable5.active {
+    background: black;
+}
+
+.movable5.active:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.movable5.cursor-pointer:after {
+    content: '!';
+}
+
+.movable5.cursor-right:after {
+    content: '>';
+}
+
+.movable5.cursor-left:after {
+    content: '<';
+}
+
 @keyframes floatt {
     0% {
         background-position: 0% 50%;
@@ -161,7 +256,7 @@
     }
     50% {
         background-position: 100% 50%;
-        transform: translate(-80px, -20px) scale(1.5);
+        transform: translate(80px, 20px) scale(1.5);
     }
     100% {
         background-position: 0% 50%;

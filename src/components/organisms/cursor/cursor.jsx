@@ -12,7 +12,7 @@ const CursorProvider = ({children}) => {
     const onMouseMove = (event) => {
 
       setTimeout(function(){ const { pageX: x, pageY: y } = event
-        setMousePosition({ x, y }) }, 0);
+        setMousePosition({ x, y }) }, 60);
        
     }
 
@@ -60,7 +60,7 @@ const CursorProvider = ({children}) => {
                    
                 }}
             />
-                              <ins
+              <ins
                 className={cx('movable3', {
                     active: !!cursor,
                     [`cursor-${cursor}`]: !!cursor,
@@ -68,6 +68,30 @@ const CursorProvider = ({children}) => {
                 style={{
                     left: `${x+50}px`,
                     top: `${y+50}px`,
+                   
+                }}
+            />
+
+             <ins
+                className={cx('movable4', {
+                    active: !!cursor,
+                    [`cursor-${cursor}`]: !!cursor,
+                })}
+                style={{
+                    left: `${x-50}px`,
+                    top: `${y-50}px`,
+                   
+                }}
+            />
+
+                         <ins
+                className={cx('movable5', {
+                    active: !!cursor,
+                    [`cursor-${cursor}`]: !!cursor,
+                })}
+                style={{
+                    left: `${x-50}px`,
+                    top: `${y-50}px`,
                    
                 }}
             />
