@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { IGodsState } from 'stateInterfaces'
 import './styles.css'
 
-import GodLoader from '../organisms/godLoader'
+import LinearGodLoader from '../organisms/godLoader/linearGodLoader'
 // import ParticlesCanvas from '../organisms/particles/particles'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
@@ -13,9 +13,12 @@ import GodLoader from '../organisms/godLoader'
 // import a_test_tilt_2 from '../../assets/images/a_test_tilt_2.png'
 
 const PageWrapper = styled.div`
-    @media (max-width: 768px) {
-        display: none;
-    }
+    display: flex;
+    flex-direction: column;
+    align-itens: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 `
 
 type Props = {
@@ -41,7 +44,7 @@ class God extends React.Component<Props> {
                 {/* <ParticlesCanvas /> */}
 
                 <PageWrapper>
-                    <GodLoader />
+                    <LinearGodLoader />
                 </PageWrapper>
             </>
         )
