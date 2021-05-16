@@ -5,6 +5,7 @@ import { IGodsState } from 'stateInterfaces'
 import './styles.css'
 
 import LinearGodLoader from '../organisms/godLoader/linearGodLoader'
+import GodSingle from '../molecules/godSingle'
 // import ParticlesCanvas from '../organisms/particles/particles'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
@@ -35,16 +36,45 @@ const mapStateToProps = (state: any) => {
 //     scale: 1.05,
 // }
 
-class God extends React.Component<Props> {
-    componentDidMount() {}
+type IState = {
+  isLoading: boolean
+}
+
+class God extends React.Component<Props, IState> {
+
+  state = {
+
+    isLoading : true
+  }
+
+manageIsLoading = (a : boolean ) => {
+  return this.setState({ isLoading: a})
+}
+
+    componentDidMount() {
+
+      setTimeout( () => {
+
+        this.manageIsLoading(false)
+
+      }, 3000)
+
+     
+      
+    }
     render() {
         // let gods: IGodsState = this.props.gods
+
+        let { isLoading } = this.state;
         return (
             <>
                 {/* <ParticlesCanvas /> */}
 
                 <PageWrapper>
-                    <LinearGodLoader />
+{ isLoading && <LinearGodLoader />}
+
+{ ! isLoading && <GodSingle/>}
+                    
                 </PageWrapper>
             </>
         )
