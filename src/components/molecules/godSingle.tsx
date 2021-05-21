@@ -62,27 +62,34 @@ const float = () => keyframes`
 
 const float2 = () => keyframes`
 	0% {
-    opacity:$ 1;
+    opacity: 1;
 
 		transform: translate(0px) rotate(0deg);
 	}
 	25% {
-    opacity 0.8;
+    opacity 1;
 
 	
     transform: translate(3px, -5px) scale(0.99) rotate(0.3deg);
    
 	}
 
-	50% {
+    	40% {
     opacity 1;
+	}
 
+	50% {
+    opacity 0.5;
     transform: translate(5px, -3px) scale(0.98) rotate(0deg);
    
 	}
 
+  	60% {
+    opacity 1;
+	}
+
   	75% {
-    opacity 0.5;
+    opacity 1;
 
 	
     transform: translate(3px, 0px) scale(0.99) rotate(-0.3deg);
