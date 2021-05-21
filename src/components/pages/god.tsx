@@ -37,38 +37,54 @@ const mapStateToProps = (state: any) => {
 //     scale: 1.05,
 // }
 type State = {
-    isLoader: boolean
+    isLoaderShowing: boolean
+    isImageLoading: boolean
 }
 
 class God extends React.Component<Props, State> {
     state = {
-        isLoader: true,
+        isLoaderShowing: true,
+        isImageLoading: true,
     }
 
-    setIsLoader = (bool: boolean) => {
-        let f = () => this.setState({ isLoader: bool })
+    setisLoaderShowing = (bool: boolean) => {
+        let f = () => this.setState({ ...this.state, isLoaderShowing: bool })
         setTimeout(function () {
             f()
         }, 700)
+    }
+
+    setIsImgLoading = (bool: boolean) => {
+        this.setState({ ...this.state, isImageLoading: false })
     }
     componentDidMount() {}
     render() {
         // let gods: IGodsState = this.props.gods
 
-        let { isLoader } = this.state
+        let { isLoaderShowing, isImageLoading } = this.state
         return (
             <>
-                {!isLoader && (
+                {!isLoaderShowing && (
                     <Faded>
                         <ParticlesCanvas />
                     </Faded>
                 )}
 
-                {!isLoader && <GodSingle />}
-
                 <PageWrapper>
-                    {isLoader && (
-                        <LinearGodLoader setIsLoader={this.setIsLoader} />
+                    <Faded>
+                        <GodSingle
+                            isLoaderShowing={isLoaderShowing}
+                            setIsImgLoading={this.setIsImgLoading}
+                        />
+                    </Faded>
+
+                    {isLoaderShowing && (
+                        <Faded>
+                            <LinearGodLoader
+                                isImageLoading={isImageLoading}
+                                setisLoaderShowing={this.setisLoaderShowing}
+                            />
+                        </Faded>
                     )}
                 </PageWrapper>
             </>

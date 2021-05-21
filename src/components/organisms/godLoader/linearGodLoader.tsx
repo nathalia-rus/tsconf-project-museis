@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import athena from '../../../assets/gods/names/athena.png'
 
 import { device } from '../../templates/devices/devices'
+import Faded from '../../templates/display/faded'
 
 const PageWrapper = styled.div<IStyledProps>`
     display: flex;
@@ -134,7 +135,8 @@ const Pc = styled.div`
 // 16 - 48 deg
 
 type Props = {
-    setIsLoader: any
+    setisLoaderShowing: any
+    isImageLoading: boolean
 }
 
 const LinearGodLoader = (props: Props) => {
@@ -144,8 +146,8 @@ const LinearGodLoader = (props: Props) => {
         const interval = setInterval(() => {
             if (counter < 100) {
                 setCounter((counter) => counter + 1)
-            } else if (counter === 100) {
-                props.setIsLoader(false)
+            } else if (counter === 100 && props.isImageLoading !== true) {
+                props.setisLoaderShowing(false)
             } else return
         }, 30)
 
@@ -155,25 +157,27 @@ const LinearGodLoader = (props: Props) => {
     }, [counter, props])
 
     return (
-        <PageWrapper counter={counter}>
-            <ContentWrapper>
-                <TextContainer>
-                    <Title>Gods</Title>
-                    <div style={{ paddingLeft: '10px' }} />
-                    <Artist>By nrus</Artist>
-                </TextContainer>
-                <div style={{ paddingTop: '0px' }} />
-                <Img1 src={athena} alt={athena} />
-                <div style={{ paddingTop: '10px' }} />
-                <Col>
-                    <Row>
-                        <Line counter={counter} />
+        <Faded>
+            <PageWrapper counter={counter}>
+                <ContentWrapper>
+                    <TextContainer>
+                        <Title>Gods</Title>
+                        <div style={{ paddingLeft: '10px' }} />
+                        <Artist>By nrus</Artist>
+                    </TextContainer>
+                    <div style={{ paddingTop: '0px' }} />
+                    <Img1 src={athena} alt={athena} />
+                    <div style={{ paddingTop: '10px' }} />
+                    <Col>
+                        <Row>
+                            <Line counter={counter} />
 
-                        <Pc>{counter}%</Pc>
-                    </Row>
-                </Col>
-            </ContentWrapper>
-        </PageWrapper>
+                            <Pc>{counter}%</Pc>
+                        </Row>
+                    </Col>
+                </ContentWrapper>
+            </PageWrapper>
+        </Faded>
     )
 }
 
