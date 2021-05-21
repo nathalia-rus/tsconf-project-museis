@@ -7,6 +7,7 @@ import './styles.css'
 import { device } from '../../templates/devices/devices'
 import { IGod, IGodObj, IImgObj } from 'stateInterfaces'
 import { Howl } from 'howler'
+import Faded from '../../templates/display/faded'
 
 const PageWrapper = styled.div`
     position: relative;
@@ -316,75 +317,78 @@ class TrioGridDesktop extends React.Component<Props, IState> {
         }
 
         return (
-            <PageWrapper>
-                {/* <button onClick={() => sound.play()}>click</button> */}
-                {this.state.gods_ids_to_map.length > 0 &&
-                    this.state.gods_ids_to_map.map(
-                        (godId: string, index: number) => {
-                            let god: IGod = this.props.gods_data[godId]
+            <Faded>
+                <PageWrapper>
+                    {/* <button onClick={() => sound.play()}>click</button> */}
+                    {this.state.gods_ids_to_map.length > 0 &&
+                        this.state.gods_ids_to_map.map(
+                            (godId: string, index: number) => {
+                                let god: IGod = this.props.gods_data[godId]
 
-                            return (
-                                <RelDiv
-                                    onMouseOver={() =>
-                                        this.setIdHovered(god.id)
-                                    }
-                                    onMouseLeave={() => this.setIdHovered('')}
-                                >
-                                    <ImgCell
-                                        id={'shark'}
-                                        onMouseMove={(e: any) => moveImg(e)}
-                                        src={god_images[god.image].url}
-                                        elemId={god.id}
-                                        idHovered={idHovered}
-                                        index={index}
-                                    />
-                                    <AbsoluteGradientBottom
-                                        elemId={god.id}
-                                        idHovered={idHovered}
-                                    />
-                                    <AbsoluteGradientTop
-                                        elemId={god.id}
-                                        idHovered={idHovered}
-                                    />
-
-                                    <AbsoluteText
-                                        elemId={god.id}
-                                        idHovered={idHovered}
-                                        onClick={() =>
-                                            this.props.history.push('/god')
+                                return (
+                                    <RelDiv
+                                        onMouseOver={() =>
+                                            this.setIdHovered(god.id)
+                                        }
+                                        onMouseLeave={() =>
+                                            this.setIdHovered('')
                                         }
                                     >
-                                        <Col>
-                                            <Title1
-                                                className="glitch"
-                                                data-glitch={god.name}
-                                                onMouseEnter={
-                                                    () =>
-                                                        // index === 0
-                                                        //     ?
-                                                        sound.play()
-                                                    // : index === 1
-                                                    // ? sound1.play()
-                                                    // : sound2.play()
-                                                }
-                                            >
-                                                {god.name}
-                                            </Title1>
-                                            <Title2>{god.name}</Title2>
-                                        </Col>
-                                        <Arrow
+                                        <ImgCell
+                                            id={'shark'}
+                                            onMouseMove={(e: any) => moveImg(e)}
+                                            src={god_images[god.image].url}
                                             elemId={god.id}
                                             idHovered={idHovered}
-                                            src={purple_arrow_left}
-                                            alt="golden-arrow"
+                                            index={index}
                                         />
-                                    </AbsoluteText>
-                                </RelDiv>
-                            )
-                        }
-                    )}
+                                        <AbsoluteGradientBottom
+                                            elemId={god.id}
+                                            idHovered={idHovered}
+                                        />
+                                        <AbsoluteGradientTop
+                                            elemId={god.id}
+                                            idHovered={idHovered}
+                                        />
 
-                {/* <RelDiv
+                                        <AbsoluteText
+                                            elemId={god.id}
+                                            idHovered={idHovered}
+                                            onClick={() =>
+                                                this.props.history.push('/god')
+                                            }
+                                        >
+                                            <Col>
+                                                <Title1
+                                                    className="glitch"
+                                                    data-glitch={god.name}
+                                                    onMouseEnter={
+                                                        () =>
+                                                            // index === 0
+                                                            //     ?
+                                                            sound.play()
+                                                        // : index === 1
+                                                        // ? sound1.play()
+                                                        // : sound2.play()
+                                                    }
+                                                >
+                                                    {god.name}
+                                                </Title1>
+                                                <Title2>{god.name}</Title2>
+                                            </Col>
+                                            <Arrow
+                                                elemId={god.id}
+                                                idHovered={idHovered}
+                                                src={purple_arrow_left}
+                                                alt="golden-arrow"
+                                            />
+                                        </AbsoluteText>
+                                    </RelDiv>
+                                )
+                            }
+                        )}
+
+                    {/* <RelDiv
                     onMouseOver={() => this.setIdHovered('athena2')}
                     onMouseLeave={() => this.setIdHovered('')}
                 >
@@ -478,7 +482,8 @@ class TrioGridDesktop extends React.Component<Props, IState> {
                         />
                     </AbsoluteText>
                 </RelDiv> */}
-            </PageWrapper>
+                </PageWrapper>
+            </Faded>
         )
     }
 }

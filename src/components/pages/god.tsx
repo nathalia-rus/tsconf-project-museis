@@ -5,7 +5,8 @@ import { IGodsState } from 'stateInterfaces'
 import './styles.css'
 
 import LinearGodLoader from '../organisms/godLoader/linearGodLoader'
-// import ParticlesCanvas from '../organisms/particles/particles'
+import ParticlesCanvas from '../organisms/particles/particles'
+import Faded from '../templates/display/faded'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
 // import a_test_tilt_1 from '../../assets/images/a_test_tilt_1.png'
@@ -56,7 +57,11 @@ class God extends React.Component<Props, State> {
         let { isLoader } = this.state
         return (
             <>
-                {/* <ParticlesCanvas /> */}
+                {!isLoader && (
+                    <Faded>
+                        <ParticlesCanvas />
+                    </Faded>
+                )}
 
                 <PageWrapper>
                     {isLoader && (
