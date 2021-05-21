@@ -77,13 +77,23 @@ const ReturnText = styled.div`
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: white;
+    transform: translateY(50px);
+    width: 150px;
 `
 
 const StyledLink = styled(Link)`
     text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+
+const Arrow = styled.img`
     transition: 1000ms;
     :hover {
-        transform: scale(1.1);
+        transform: rotate(90deg);
     }
 `
 
@@ -164,9 +174,14 @@ class GodSingle extends React.Component<Props, State> {
                         <div style={{ paddingTop: '50px' }} />
 
                         <StyledLink to="/">
-                            <img src={return_arrow} alt="return" />
+                            <Arrow src={return_arrow} alt="return" />
                             <div style={{ paddingTop: '15px' }} />
-                            <ReturnText>the gods</ReturnText>
+                            <ReturnText
+                                className="glitch"
+                                data-glitch={'the gods'}
+                            >
+                                the gods
+                            </ReturnText>
                         </StyledLink>
                     </TextWrapper>
                 </PageWrapper>
