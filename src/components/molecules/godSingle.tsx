@@ -3,10 +3,10 @@ import styled, { keyframes } from 'styled-components'
 import { connect } from 'react-redux'
 // import ParticlesCanvas from '../organisms/particles/particles'
 // import athena from '../../assets/gods/athena.jpg'
-import return_arrow from '../../assets/icons/return_arrow.svg'
+import return_arrow from '../../assets/icons/golden_arrow_left.svg'
 import { device } from '../templates/devices/devices'
 import { Link } from 'react-router-dom'
-
+import '../atoms/effects/lights.css'
 // import ParticlesCanvas from '../organisms/particles/particles'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
@@ -156,7 +156,7 @@ const Author = styled.div`
 `
 const ReturnText = styled.div`
     font-family: antonio-extralight;
-    font-size: 15px;
+    font-size: 18px;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: white;
@@ -175,8 +175,9 @@ const StyledLink = styled(Link)`
 
 const Arrow = styled.img`
     transition: 1000ms;
+    transform: rotate(90deg) translateY(0px);
     :hover {
-        transform: rotate(90deg);
+        transform: rotate(90deg) translateX(50px);
     }
 `
 
@@ -239,7 +240,17 @@ class GodSingle extends React.Component<Props, State> {
                         alt="god"
                     />
                     <TextWrapper>
-                        <Title>artemis</Title>
+                        <Title>
+                            {/* <div id="L">a</div>rtemis */}
+                            artemis
+                            {/* <div>
+                                <span id="L">L</span>
+                                <span id="I">I</span>
+                                <span id="G">G</span>
+                                <span id="H">H</span>
+                                <span id="T">T</span>
+                            </div> */}
+                        </Title>
                         <div style={{ paddingTop: '20px' }} />
                         <Text>
                             The rose Dawn might have found them weeping still
@@ -260,10 +271,19 @@ class GodSingle extends React.Component<Props, State> {
                             <Arrow src={return_arrow} alt="return" />
                             <div style={{ paddingTop: '15px' }} />
                             <ReturnText
-                                className="glitch"
-                                data-glitch={'the gods'}
+                            // className="glitch"
+                            // data-glitch={'the gods'}
                             >
-                                the gods
+                                <div>
+                                    <span id="L">T</span>
+                                    <span id="I">H</span>
+                                    <span id="G">E</span>
+                                    <span> </span>
+                                    <span id="H">G</span>
+                                    <span id="T">O</span>
+                                    <span id="G">D</span>
+                                    <span id="H">S</span>
+                                </div>
                             </ReturnText>
                         </StyledLink>
                     </TextWrapper>
