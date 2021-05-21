@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { connect } from 'react-redux'
 // import ParticlesCanvas from '../organisms/particles/particles'
 // import athena from '../../assets/gods/athena.jpg'
@@ -24,12 +24,88 @@ const PageWrapper = styled.div<IStyled>`
     position: relative;
 `
 
+const float = () => keyframes`
+	0% {
+    opacity:$ 1;
+
+		transform: translate(0px) rotate(0deg);
+	}
+	25% {
+    opacity 0.6;
+
+	
+    transform: translate(-3px, 5px) scale(0.99) rotate(0.3deg);
+   
+	}
+
+	50% {
+    opacity 1;
+
+    transform: translate(-5px, 0px) scale(0.98) rotate(0deg);
+   
+	}
+
+  	75% {
+    opacity 0.6;
+
+	
+    transform: translate(-3px, -5px) scale(0.99) rotate(-0.3deg);
+   
+	}
+
+	100% {
+    opacity: 1;
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.0);
+		transform: translate(0px) rotate(0deg);
+	}
+`
+
+const float2 = () => keyframes`
+	0% {
+    opacity:$ 1;
+
+		transform: translate(0px) rotate(0deg);
+	}
+	25% {
+    opacity 0.8;
+
+	
+    transform: translate(3px, -5px) scale(0.99) rotate(0.3deg);
+   
+	}
+
+	50% {
+    opacity 1;
+
+    transform: translate(5px, -3px) scale(0.98) rotate(0deg);
+   
+	}
+
+  	75% {
+    opacity 0.5;
+
+	
+    transform: translate(3px, 0px) scale(0.99) rotate(-0.3deg);
+   
+	}
+
+	100% {
+    opacity: 1;
+		transform: translate(0px) rotate(0deg);
+	}
+`
 const GodImg = styled.img`
     padding-top: 10%;
     width: 80vw;
     height: auto;
     position: absolute;
     left: 0px;
+    transition: all 100ms;
+    animation-name: ${float};
+    animation-duration: 12000ms;
+    animation-transition: all ease-in-out infinite;
+    transition: all ease-in-out infinite;
+    animation-iteration-count: infinite;
 `
 
 const TextWrapper = styled.div`
@@ -39,6 +115,13 @@ const TextWrapper = styled.div`
     justify-content: center;
     position: absolute;
     right: 5vw;
+
+    transition: all 100ms;
+    animation-name: ${float2};
+    animation-duration: 8000ms;
+    animation-transition: all ease-in-out infinite;
+    transition: all ease-in-out infinite;
+    animation-iteration-count: infinite;
 
     @media ${device.large_desktop} {
         right: 10vw;
@@ -74,7 +157,7 @@ const Author = styled.div`
 const ReturnText = styled.div`
     font-family: antonio-extralight;
     font-size: 15px;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.35em;
     text-transform: uppercase;
     color: white;
     transform: translateY(50px);

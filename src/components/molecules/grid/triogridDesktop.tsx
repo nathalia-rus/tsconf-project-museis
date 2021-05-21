@@ -311,9 +311,9 @@ class TrioGridDesktop extends React.Component<Props, IState> {
         const moveImg = (event: any) => {
             var x = event.clientX
             var y = event.clientY
-            var shark = document.getElementById('shark')
-            shark!.style.left = x + 'px'
-            shark!.style.top = y + 'px'
+            var imageId = document.getElementById('imageId')
+            imageId!.style.left = x + 'px'
+            imageId!.style.top = y + 'px'
         }
 
         return (
@@ -335,7 +335,7 @@ class TrioGridDesktop extends React.Component<Props, IState> {
                                         }
                                     >
                                         <ImgCell
-                                            id={'shark'}
+                                            id={'imageId'}
                                             onMouseMove={(e: any) => moveImg(e)}
                                             src={god_images[god.image].url}
                                             elemId={god.id}
