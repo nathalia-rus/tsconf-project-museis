@@ -4,7 +4,7 @@ import athena from '../../../assets/gods/names/athena.png'
 
 import { device } from '../../templates/devices/devices'
 
-const PageWrapper = styled.div`
+const PageWrapper = styled.div<IStyledProps>`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,7 +111,7 @@ const Artist = styled.div`
 // `
 
 type IStyledProps = {
-    counter: number
+    counter?: number
 }
 const Line = styled.div<IStyledProps>`
     background-color: white;
@@ -133,7 +133,9 @@ const Pc = styled.div`
 
 // 16 - 48 deg
 
-type Props = {}
+type Props = {
+    setIsLoader: any
+}
 
 const LinearGodLoader = (props: Props) => {
     const [counter, setCounter] = useState(0)
@@ -142,17 +144,18 @@ const LinearGodLoader = (props: Props) => {
         const interval = setInterval(() => {
             if (counter < 100) {
                 setCounter((counter) => counter + 1)
+            } else if (counter === 100) {
+                props.setIsLoader(false)
             } else return
-        }, 10)
+        }, 30)
 
         return () => {
             clearInterval(interval)
         }
-    }, [counter])
+    }, [counter, props])
 
     return (
-        <PageWrapper>
-            {console.log(counter)}
+        <PageWrapper counter={counter}>
             <ContentWrapper>
                 <TextContainer>
                     <Title>Gods</Title>

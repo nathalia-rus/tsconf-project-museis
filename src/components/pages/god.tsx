@@ -34,17 +34,34 @@ const mapStateToProps = (state: any) => {
 //     perspective: 1000,
 //     scale: 1.05,
 // }
+type State = {
+    isLoader: boolean
+}
 
-class God extends React.Component<Props> {
+class God extends React.Component<Props, State> {
+    state = {
+        isLoader: true,
+    }
+
+    setIsLoader = (bool: boolean) => {
+        let f = () => this.setState({ isLoader: bool })
+        setTimeout(function () {
+            f()
+        }, 700)
+    }
     componentDidMount() {}
     render() {
         // let gods: IGodsState = this.props.gods
+
+        let { isLoader } = this.state
         return (
             <>
                 {/* <ParticlesCanvas /> */}
 
                 <PageWrapper>
-                    <LinearGodLoader />
+                    {isLoader && (
+                        <LinearGodLoader setIsLoader={this.setIsLoader} />
+                    )}
                 </PageWrapper>
             </>
         )
