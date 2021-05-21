@@ -63,6 +63,8 @@ class God extends React.Component<Props, State> {
                     </Faded>
                 )}
 
+                {!isLoader && <div>god</div>}
+
                 <PageWrapper>
                     {isLoader && (
                         <LinearGodLoader setIsLoader={this.setIsLoader} />
