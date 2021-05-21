@@ -173,12 +173,16 @@ const StyledLink = styled(Link)`
     justify-content: center;
 `
 
-const Arrow = styled.img`
-    transition: 1000ms;
-    transform: rotate(90deg) translateY(0px);
-    :hover {
-        transform: rotate(90deg) translateX(50px);
-    }
+type Istyled2 = {
+    idHovered: string
+}
+const Arrow = styled.img<Istyled2>`
+    transition: 2000ms;
+
+    transform: ${(props) =>
+        props.idHovered === 'arrow'
+            ? 'rotate(90deg) translateX(50px)'
+            : 'rotate(90deg) translateX(0px)'};
 `
 
 type Props = {
@@ -202,14 +206,20 @@ const mapStateToProps = (state: any) => {
 // }
 type State = {
     src: any
+    idHovered: string
 }
 
 class GodSingle extends React.Component<Props, State> {
     state = {
         src: '',
+        idHovered: '',
     }
     componentDidMount() {
         this.onLoad('/athena.jpg')
+    }
+
+    setIdHovered = (id: string) => {
+        this.setState({ ...this.state, idHovered: id })
     }
 
     onLoad = (url: string) => {
@@ -230,6 +240,7 @@ class GodSingle extends React.Component<Props, State> {
     }
 
     render() {
+        let { idHovered } = this.state
         return (
             <>
                 {/* <ParticlesCanvas /> */}
@@ -240,17 +251,7 @@ class GodSingle extends React.Component<Props, State> {
                         alt="god"
                     />
                     <TextWrapper>
-                        <Title>
-                            {/* <div id="L">a</div>rtemis */}
-                            artemis
-                            {/* <div>
-                                <span id="L">L</span>
-                                <span id="I">I</span>
-                                <span id="G">G</span>
-                                <span id="H">H</span>
-                                <span id="T">T</span>
-                            </div> */}
-                        </Title>
+                        <Title>artemis</Title>
                         <div style={{ paddingTop: '20px' }} />
                         <Text>
                             The rose Dawn might have found them weeping still
@@ -267,8 +268,16 @@ class GodSingle extends React.Component<Props, State> {
 
                         <div style={{ paddingTop: '50px' }} />
 
-                        <StyledLink to="/">
-                            <Arrow src={return_arrow} alt="return" />
+                        <StyledLink
+                            to="/"
+                            onMouseOver={() => this.setIdHovered('arrow')}
+                            onMouseLeave={() => this.setIdHovered('')}
+                        >
+                            <Arrow
+                                idHovered={idHovered}
+                                src={return_arrow}
+                                alt="return"
+                            />
                             <div style={{ paddingTop: '15px' }} />
                             <ReturnText
                             // className="glitch"
