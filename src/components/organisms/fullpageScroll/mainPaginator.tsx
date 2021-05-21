@@ -21,8 +21,8 @@ type StyledProps = {
 const Wrapper = styled.div`
     height: auto;
     width: 100vw;
-    padding-left: 18vw;
-    padding-right: 18vw;
+    padding-left: 12vw;
+    padding-right: 12vw;
 
     @media ${device.large_desktop} {
         padding-right: 15vw;

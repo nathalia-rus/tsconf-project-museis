@@ -5,6 +5,7 @@ import { IGodsState } from 'stateInterfaces'
 import './styles.css'
 
 import LinearGodLoader from '../organisms/godLoader/linearGodLoader'
+import GodSingle from '../molecules/godSingle'
 import ParticlesCanvas from '../organisms/particles/particles'
 import Faded from '../templates/display/faded'
 
@@ -63,7 +64,7 @@ class God extends React.Component<Props, State> {
                     </Faded>
                 )}
 
-                {!isLoader && <div>god</div>}
+                {!isLoader && <GodSingle />}
 
                 <PageWrapper>
                     {isLoader && (
