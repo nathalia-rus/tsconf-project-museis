@@ -38,7 +38,7 @@ const Wrapper = styled.div`
 
     @media ${device.mobile_and_ipad} {
         padding-right: 0px;
-        padding-left: opx;
+        padding-left: 0px;
     }
 `
 const TransformYWrap = styled.div<StyledProps>`
@@ -70,7 +70,7 @@ const SoundRec = styled.div`
     }
 
     @media ${device.mobile_and_ipad} {
-        top: 20px;
+        top: 10px;
         right: 10px;
         height: 60px;
         width: 30px;

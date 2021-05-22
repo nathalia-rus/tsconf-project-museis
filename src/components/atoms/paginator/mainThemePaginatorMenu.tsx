@@ -26,7 +26,7 @@ const MenuContainer = styled.div`
 
     @media ${device.mobile_and_ipad} {
         right: 0px;
-        top: 80px;
+        top: 60px;
     }
 `
 
