@@ -10,6 +10,9 @@ import { Howl } from 'howler'
 import sound_on from '../../../assets/icons/sound_on.svg'
 import sound_off from '../../../assets/icons/sound_off.svg'
 import { motion } from 'framer-motion'
+
+import GodPaginatorMobile from '../../molecules/godPaginatorMobile/godPaginatorMobile'
+
 type OwnProps = {
     gods: IGodsState
 }
@@ -42,17 +45,31 @@ const Wrapper = styled.div`
     }
 `
 const TransformYWrap = styled.div<StyledProps>`
-    position: relative;
-    height: 100%;
-    wifth: 100%;
-    transform: ${(props) =>
-        props.transformYN ? `translateY(${props.transformYN})` : 'auto'};
+    @media ${device.beyond_ipad_mobile} {
+        position: relative;
+        height: 100%;
+        wifth: 100%;
+        transform: ${(props) =>
+            props.transformYN ? `translateY(${props.transformYN})` : 'auto'};
+    }
+`
+
+const TransformYWrapMobile = styled.div<StyledProps>`
+    @media ${device.mobile_and_ipad} {
+        position: relative;
+        height: 100%;
+        wifth: 100%;
+        transform: ${(props) =>
+            props.transformYN ? `translateY(${props.transformYN})` : 'auto'};
+    }
 `
 
 const SoundRec = styled.div`
     position: absolute;
     background-color: #00e7ff14;
     border: 1px solid #3b3b3b;
+    z-index: 100;
+
     @media ${device.beyond_ipad_mobile} {
         right: 24px;
         top: 20px;
@@ -62,7 +79,7 @@ const SoundRec = styled.div`
         display: flex;
         height: 80px;
         width: 40px;
-        z-index: 100;
+
         cursor: pointer;
         :hover {
             background-color: #005aff29;
@@ -147,7 +164,7 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
         let gods_list: string[] = this.props.gods.gods_list
 
         let sections_list_gen = () => {
-            let number: number = Math.floor(gods_list.length / 3)
+            let number: number = Math.floor(gods_list.length / 3) + 2
 
             let section_list: string[] = Array.from(
                 { length: number },
@@ -250,16 +267,42 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                         return (
                                             <>
                                                 <Wrapper className="section fp-auto-height">
-                                                    <TransformYWrap
+                                                    {index < 3 && (
+                                                        <TransformYWrap
+                                                            transformYN={
+                                                                index === 0
+                                                                    ? '-8vh'
+                                                                    : index ===
+                                                                      1
+                                                                    ? '-12vh'
+                                                                    : '-20vh'
+                                                            }
+                                                        >
+                                                            <TrioGridDesktop
+                                                                gods_data={
+                                                                    godsData
+                                                                }
+                                                                gods_list={
+                                                                    gods_list
+                                                                }
+                                                                god_images={
+                                                                    god_images
+                                                                }
+                                                                index={index}
+                                                            />
+                                                        </TransformYWrap>
+                                                    )}
+
+                                                    <TransformYWrapMobile
                                                         transformYN={
                                                             index === 0
-                                                                ? '-8vh'
+                                                                ? '0px'
                                                                 : index === 1
-                                                                ? '-12vh'
-                                                                : '-20vh'
+                                                                ? '0px'
+                                                                : '0px'
                                                         }
                                                     >
-                                                        <TrioGridDesktop
+                                                        <GodPaginatorMobile
                                                             gods_data={godsData}
                                                             gods_list={
                                                                 gods_list
@@ -269,7 +312,7 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                                             }
                                                             index={index}
                                                         />
-                                                    </TransformYWrap>
+                                                    </TransformYWrapMobile>
                                                 </Wrapper>
                                             </>
                                         )

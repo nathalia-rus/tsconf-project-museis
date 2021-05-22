@@ -154,16 +154,19 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
                         <div data-menuanchor={id}>
                             <a href={`#${id}`}>
                                 <Desktop>
-                                    <StatefulIcons.MainThemePaginatorDotIcon
-                                        height="26"
-                                        width="26"
-                                        isActive={
-                                            props.currentSectionIndex - 1 ===
-                                            index
-                                                ? true
-                                                : false
-                                        }
-                                    />
+                                    {index < 3 && (
+                                        <StatefulIcons.MainThemePaginatorDotIcon
+                                            height="26"
+                                            width="26"
+                                            isActive={
+                                                props.currentSectionIndex -
+                                                    1 ===
+                                                index
+                                                    ? true
+                                                    : false
+                                            }
+                                        />
+                                    )}
                                 </Desktop>
                                 <MobileIpad>
                                     <StatefulIcons.MainThemePaginatorDotIcon
@@ -181,6 +184,7 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
                         </div>
                     )
                 })}
+
                 {/* 
                 <div data-menuanchor="god_2">
                     <a href="#god_2">
