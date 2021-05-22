@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { connect } from 'react-redux'
 
 import { IGod, IGodObj, IImgObj } from 'stateInterfaces'
@@ -36,6 +36,77 @@ const Wrapper = styled.div`
     flex-direction: column;
 `
 
+const float = () => keyframes`
+	0% {
+    opacity: 1;
+		transform: translate(0px) rotate(0deg) scale(1);;
+	}
+	50% {
+    opacity: 1;
+
+	
+    transform: translate(-10px, 10px) rotate(-1deg) scale(1.02);
+	}
+	100% {
+    opacity: 1;
+		transform: translate(0px) rotate(0deg) scale(1);;
+	}
+`
+const float1 = () => keyframes`
+	0% {
+     opacity: 1;
+
+		transform: translate(0px) rotate(0deg) scale(1.01);
+	}
+	50% {
+    opacity: 1;
+    		transform: translate(-10px, -10px) rotate(1deg) scale(1);
+            
+	}
+	100% {
+   opacity: 1;
+	
+		transform: translate(0px) rotate(0deg) scale(1.01);;
+	}
+`
+
+const float2 = () => keyframes`
+	0% {
+   opacity: 1;
+	
+		transform: translate(0px) rotate(0deg) scale(1);
+
+	}
+	50% {
+    opacity: 1;
+		
+		transform: translate(-10px, -8px) rotate(1deg) scale(0.95);
+	}
+	100% {
+     opacity: 1;
+		
+		transform: translate(0px) rotate(0deg) scale(1);;
+	}
+`
+
+type IStyle = {
+    elemId?: string
+    index?: number
+}
+
+const ImgCell = styled.img<IStyle>`
+    height: 40vh;
+    width: auto;
+
+    transition: all 750ms;
+
+    animation-name: ${(props) =>
+        props.index === 0 ? float() : props.index === 1 ? float2() : float1()};
+    animation-duration: ${(props) => (props.index === 0 ? '12s' : '13s')};
+    animation-transition: all ease-in-out infinite;
+    transition: all ease-in-out infinite;
+    animation-iteration-count: infinite;
+`
 interface Props extends RouteComponentProps<any> {
     gods_list: string[]
     gods_data: IGodObj
@@ -91,16 +162,12 @@ class GodPaginatorMobile extends React.Component<Props, IState> {
                             let god: IGod = this.props.gods_data[godId]
                             return (
                                 <Wrapper>
-                                    <img
+                                    <ImgCell
                                         id={'imageIdMobile'}
                                         src={god_images[god.image].url}
                                         alt="god"
-                                        style={{
-                                            height: '40vh',
-                                            width: 'auto',
-                                        }}
-                                        // elemId={god.id}
-                                        // index={index}
+                                        elemId={god.id}
+                                        index={index}
                                     />
                                 </Wrapper>
                             )
