@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import { IGod, IGodObj, IGodsState, IImgObj } from 'stateInterfaces'
+import {
+    IGod,
+    IGodObj,
+    IGodsState,
+    IImgObj,
+    IQuote,
+    IQuoteObj,
+} from 'stateInterfaces'
 import './styles.css'
 
 import LinearGodLoader from '../organisms/godLoader/linearGodLoader'
@@ -67,9 +74,11 @@ class God extends React.Component<Props, State> {
     render() {
         let gods_data: IGodObj = this.props.gods.gods
         let god_images: IImgObj = this.props.gods.images
+        let god_quotes: IQuoteObj = this.props.gods.quotes
 
         let god_id: string = this.props.match.params.id
         let god: IGod = gods_data[god_id]
+        let quote: IQuote = god_quotes[god.main_quote_id]
 
         let { isLoaderShowing, isImageLoading } = this.state
         return (
@@ -89,6 +98,7 @@ class God extends React.Component<Props, State> {
                                 setIsImgLoading={this.setIsImgLoading}
                                 god={god}
                                 god_images={god_images}
+                                quote={quote}
                             />
                         </DesktopDisplay>
 

@@ -7,7 +7,7 @@ import return_arrow from '../../assets/icons/golden_arrow_left.svg'
 import { device } from '../templates/devices/devices'
 import { Link } from 'react-router-dom'
 import '../atoms/effects/lights.css'
-import { IGod, IImgObj } from 'stateInterfaces'
+import { IGod, IImgObj, IQuote } from 'stateInterfaces'
 // import ParticlesCanvas from '../organisms/particles/particles'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
@@ -198,6 +198,7 @@ type Props = {
     god_images: IImgObj
     setIsImgLoading: any
     isLoaderShowing: boolean
+    quote: IQuote
 }
 
 type IStyled = {
@@ -255,7 +256,7 @@ class GodSingle extends React.Component<Props, State> {
     render() {
         let { idHovered } = this.state
 
-        let { god } = this.props
+        let { god, quote } = this.props
 
         return (
             <>
@@ -272,18 +273,13 @@ class GodSingle extends React.Component<Props, State> {
                     <TextWrapper>
                         <Title>{god.name}</Title>
                         <div style={{ paddingTop: '20px' }} />
-                        <Text>
-                            The rose Dawn might have found them weeping still
-                            had not grey-eyed Athena slowed the night when night
-                            was most profound, and held the Dawn under the Ocean
-                            of the East.
-                        </Text>
+                        <Text>{quote.text}</Text>
 
                         <div style={{ paddingTop: '30px' }} />
 
-                        <Source>ILLIAD BOOK VI</Source>
+                        <Source>{quote.source}</Source>
                         <div style={{ paddingTop: '10px' }} />
-                        <Author>homer</Author>
+                        <Author>{quote.author}</Author>
 
                         <div style={{ paddingTop: '50px' }} />
 
