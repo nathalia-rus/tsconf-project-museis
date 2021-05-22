@@ -227,9 +227,42 @@ class GodSingleMobile extends React.Component<Props, State> {
             }, 100)
         }
     }
+    generateLightedTitle = (godName: string) => {
+        let arr: string[] = godName.split('')
+
+        let classArray = [
+            'L',
+            'I',
+            'G',
+            'H',
+            'T',
+            'G',
+            'H',
+            'L',
+            'G',
+            'H',
+            'T',
+            'G',
+            'H',
+            'L',
+            'G',
+            'H',
+            'T',
+            'G',
+            'H',
+        ]
+
+        return (
+            <div>
+                {arr.map((str, index) => {
+                    return <span id={classArray[index]}>{str}</span>
+                })}
+            </div>
+        )
+    }
 
     render() {
-        let { quote } = this.props
+        let { quote, god } = this.props
         return (
             <>
                 {/* <ParticlesCanvas /> */}
@@ -246,19 +279,7 @@ class GodSingleMobile extends React.Component<Props, State> {
                     </TopNav>
 
                     <TextWrapper>
-                        <Title>
-                            <div>
-                                <span id="L">A</span>
-                                <span id="I">R</span>
-                                <span id="G">T</span>
-
-                                <span id="H">E</span>
-                                <span id="T">M</span>
-                                <span id="G">I</span>
-                                <span id="H">S</span>
-                            </div>
-                            {/* artemis */}
-                        </Title>
+                        <Title>{this.generateLightedTitle(god.name)}</Title>
                         <div style={{ paddingTop: '10px' }} />
                         <Text>{quote.text}</Text>
 
