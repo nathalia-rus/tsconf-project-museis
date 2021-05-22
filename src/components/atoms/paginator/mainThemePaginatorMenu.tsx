@@ -78,23 +78,43 @@ const FirstRec = styled.div`
     justify-content: center;
     flex-direction: column;
     display: flex;
-    border: 1px solid #8f947f;
-    height: 230px;
-    width: 30px;
+
     padding-top: 10px;
     padding-bottom: 10px;
+
+    @media ${device.beyond_ipad_mobile} {
+        border: 1px solid #8f947f;
+        height: 230px;
+        width: 30px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        height: 200px;
+        width: 25px;
+        border: 1px solid #50524b;
+    }
 `
 const SecondRec = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
     display: flex;
-    border: 1px solid #8f947f;
     height: 200px;
-    width: 30px;
-    font-size: 16px;
-
     font-family: Average-Regular;
+
+    @media ${device.beyond_ipad_mobile} {
+        border: 1px solid #8f947f;
+        width: 30px;
+        font-size: 16px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        height: 200px;
+        width: 25px;
+        border: 1px solid #50524b;
+        font-size: 13px;
+        color: white;
+    }
 `
 
 const Desktop = styled.div`
