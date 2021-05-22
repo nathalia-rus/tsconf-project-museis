@@ -117,8 +117,6 @@ const AbsoluteText = styled.div<IStyle>`
     opacity: 1;
     left: 20%;
     bottom: 20px;
-    transform: ${(props) =>
-        props.index === 0 ? 'translate(0px, 0px)' : 'translate(-10px, 5px)'};
 
     width: 50px;
     height: 50px;
@@ -239,28 +237,52 @@ class GodPaginatorMobile extends React.Component<Props, IState> {
                                     </div>
 
                                     <AbsoluteText
-                                        index={index}
+                                        index={
+                                            god.id === 'poseidon' ? 0 : index
+                                        }
                                         onClick={() =>
                                             //  sound.play();
                                             this.props.history.push('/god')
                                         }
+                                        style={{
+                                            transform:
+                                                god.id === 'poseidon'
+                                                    ? 'translateY(-20px)'
+                                                    : index !== 0
+                                                    ? 'translate(-10px, 5px)'
+                                                    : 'translate(0px, 0px)',
+                                        }}
                                     >
                                         <Col>
                                             <Title1
                                                 className="glitch"
                                                 data-glitch={god.name}
-                                                index={index}
+                                                index={
+                                                    god.id === 'poseidon'
+                                                        ? 0
+                                                        : index
+                                                }
                                             >
                                                 {god.name}
                                             </Title1>
-                                            <Title2 index={index}>
+                                            <Title2
+                                                index={
+                                                    god.id === 'poseidon'
+                                                        ? 0
+                                                        : index
+                                                }
+                                            >
                                                 {god.name}
                                             </Title2>
                                         </Col>
                                         <Arrow
                                             src={purple_arrow_left}
                                             alt="golden-arrow"
-                                            index={index}
+                                            index={
+                                                god.id === 'poseidon'
+                                                    ? 0
+                                                    : index
+                                            }
                                         />
                                     </AbsoluteText>
                                 </Wrapper>
