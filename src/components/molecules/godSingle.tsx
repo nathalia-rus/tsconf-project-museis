@@ -196,9 +196,9 @@ const Arrow = styled.img<Istyled2>`
 type Props = {
     god: IGod
     god_images: IImgObj
+    quote: IQuote
     setIsImgLoading: any
     isLoaderShowing: boolean
-    quote: IQuote
 }
 
 type IStyled = {

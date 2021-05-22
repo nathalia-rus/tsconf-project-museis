@@ -104,6 +104,9 @@ class God extends React.Component<Props, State> {
 
                         <IpadAndMobileDisplay>
                             <GodSingleMobile
+                                god={god}
+                                god_images={god_images}
+                                quote={quote}
                                 isLoaderShowing={isLoaderShowing}
                                 setIsImgLoading={this.setIsImgLoading}
                             />

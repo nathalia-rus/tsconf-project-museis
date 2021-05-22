@@ -7,6 +7,7 @@ import return_arrow from '../../assets/icons/golden_arrow_left.svg'
 
 import { Link } from 'react-router-dom'
 import '../atoms/effects/lights.css'
+import { IGod, IImgObj, IQuote } from 'stateInterfaces'
 // import ParticlesCanvas from '../organisms/particles/particles'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
@@ -174,7 +175,9 @@ const Arrow = styled.img`
 `
 
 type Props = {
-    god?: any
+    god: IGod
+    god_images: IImgObj
+    quote: IQuote
     setIsImgLoading: any
     isLoaderShowing: boolean
 }
@@ -201,7 +204,11 @@ class GodSingleMobile extends React.Component<Props, State> {
         src: '',
     }
     componentDidMount() {
-        this.onLoad('/athena.jpg')
+        let { god_images, god } = this.props
+
+        let url = god_images[god.image].url
+
+        this.onLoad(url)
     }
 
     onLoad = (url: string) => {
@@ -222,6 +229,7 @@ class GodSingleMobile extends React.Component<Props, State> {
     }
 
     render() {
+        let { quote } = this.props
         return (
             <>
                 {/* <ParticlesCanvas /> */}
@@ -252,18 +260,13 @@ class GodSingleMobile extends React.Component<Props, State> {
                             {/* artemis */}
                         </Title>
                         <div style={{ paddingTop: '10px' }} />
-                        <Text>
-                            The rose Dawn might have found them weeping still
-                            had not grey-eyed Athena slowed the night when night
-                            was most profound, and held the Dawn under the Ocean
-                            of the East.
-                        </Text>
+                        <Text>{quote.text}</Text>
 
                         <div style={{ paddingTop: '20px' }} />
 
-                        <Source>ILLIAD BOOK VI</Source>
+                        <Source>{quote.source}</Source>
                         <div style={{ paddingTop: '10px' }} />
-                        <Author>homer</Author>
+                        <Author>{quote.author}</Author>
 
                         <div style={{ paddingTop: '50px' }} />
                     </TextWrapper>
