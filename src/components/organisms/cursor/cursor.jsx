@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
+import styled from 'styled-components'
+import { device } from '../../templates/devices/devices'
 
 export const CursorContext = React.createContext('cursorContext')
+
+
+const Desktop = styled.div`
+    @media ${device.mobile_and_ipad} {
+        display: none;
+    }
+`
+
 
 const SUPPORTED_CURSORS = [false, 'pointer', 'right', 'left']
 
@@ -38,6 +48,7 @@ const CursorProvider = ({children}) => {
 // }
     return (
         <CursorContext.Provider value={{ onCursor }}>
+          <Desktop>
             <img
             src={"/cursorcustom.png"}
             alt="o"
@@ -49,7 +60,7 @@ const CursorProvider = ({children}) => {
                     left: `${x}px`,
                     top: `${y}px`,
                 }}
-            />
+            /></Desktop>
   
 
           
