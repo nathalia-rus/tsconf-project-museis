@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import { IGodsState } from 'stateInterfaces'
+import { IGod, IGodObj, IGodsState, IImgObj } from 'stateInterfaces'
 import './styles.css'
 
 import LinearGodLoader from '../organisms/godLoader/linearGodLoader'
@@ -11,6 +11,7 @@ import Faded from '../templates/display/faded'
 import DesktopDisplay from '../templates/devices/desktopDisplay'
 import IpadAndMobileDisplay from '../templates/devices/ipadAndMobileDisplay'
 import GodSingleMobile from '../molecules/godSingleMobile'
+import { RouteComponentProps, withRouter } from 'react-router-dom'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
 // import a_test_tilt_1 from '../../assets/images/a_test_tilt_1.png'
@@ -26,7 +27,7 @@ const PageWrapper = styled.div`
     height: 100vh;
 `
 
-type Props = {
+interface Props extends RouteComponentProps<any> {
     gods: IGodsState
 }
 
@@ -60,13 +61,20 @@ class God extends React.Component<Props, State> {
     setIsImgLoading = (bool: boolean) => {
         this.setState({ ...this.state, isImageLoading: false })
     }
-    componentDidMount() {}
+    componentDidMount() {
+        console.log(this.props.match.params.id)
+    }
     render() {
-        // let gods: IGodsState = this.props.gods
+        let gods_data: IGodObj = this.props.gods.gods
+        let god_images: IImgObj = this.props.gods.images
+
+        let god_id: string = this.props.match.params.id
+        let god: IGod = gods_data[god_id]
 
         let { isLoaderShowing, isImageLoading } = this.state
         return (
             <>
+                {/* {console.log('GOD DATA', god, god_images[god.image].url)} */}
                 {!isLoaderShowing && (
                     <Faded>
                         <ParticlesCanvas />
@@ -79,6 +87,8 @@ class God extends React.Component<Props, State> {
                             <GodSingle
                                 isLoaderShowing={isLoaderShowing}
                                 setIsImgLoading={this.setIsImgLoading}
+                                god={god}
+                                god_images={god_images}
                             />
                         </DesktopDisplay>
 
@@ -104,4 +114,4 @@ class God extends React.Component<Props, State> {
     }
 }
 
-export default connect(mapStateToProps, {})(God)
+export default withRouter(connect(mapStateToProps, {})(God))

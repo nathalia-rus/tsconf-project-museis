@@ -242,7 +242,9 @@ class GodPaginatorMobile extends React.Component<Props, IState> {
                                         }
                                         onClick={() =>
                                             //  sound.play();
-                                            this.props.history.push('/god')
+                                            this.props.history.push(
+                                                `/god/${god.id}`
+                                            )
                                         }
                                         style={{
                                             transform:

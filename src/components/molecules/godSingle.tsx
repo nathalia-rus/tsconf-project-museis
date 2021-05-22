@@ -7,6 +7,7 @@ import return_arrow from '../../assets/icons/golden_arrow_left.svg'
 import { device } from '../templates/devices/devices'
 import { Link } from 'react-router-dom'
 import '../atoms/effects/lights.css'
+import { IGod, IImgObj } from 'stateInterfaces'
 // import ParticlesCanvas from '../organisms/particles/particles'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
@@ -102,9 +103,9 @@ const float2 = () => keyframes`
 	}
 `
 const GodImg = styled.img`
-    padding-top: 10%;
     width: 80vw;
-    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
     position: absolute;
     left: 0px;
     transition: all 100ms;
@@ -193,7 +194,8 @@ const Arrow = styled.img<Istyled2>`
 `
 
 type Props = {
-    god?: any
+    god: IGod
+    god_images: IImgObj
     setIsImgLoading: any
     isLoaderShowing: boolean
 }
@@ -222,7 +224,11 @@ class GodSingle extends React.Component<Props, State> {
         idHovered: '',
     }
     componentDidMount() {
-        this.onLoad('/athena.jpg')
+        let { god_images, god } = this.props
+
+        let url = god_images[god.image].url
+
+        this.onLoad(url)
     }
 
     setIdHovered = (id: string) => {
@@ -248,6 +254,9 @@ class GodSingle extends React.Component<Props, State> {
 
     render() {
         let { idHovered } = this.state
+
+        let { god } = this.props
+
         return (
             <>
                 {/* <ParticlesCanvas /> */}
@@ -256,9 +265,12 @@ class GodSingle extends React.Component<Props, State> {
                     <GodImg
                         src={this.state.src ? this.state.src : 'sdf'}
                         alt="god"
+                        style={{
+                            paddingTop: god.id === 'athena' ? '10vh' : '20px',
+                        }}
                     />
                     <TextWrapper>
-                        <Title>artemis</Title>
+                        <Title>{god.name}</Title>
                         <div style={{ paddingTop: '20px' }} />
                         <Text>
                             The rose Dawn might have found them weeping still

@@ -355,7 +355,9 @@ class TrioGridDesktop extends React.Component<Props, IState> {
                                             elemId={god.id}
                                             idHovered={idHovered}
                                             onClick={() =>
-                                                this.props.history.push('/god')
+                                                this.props.history.push(
+                                                    `/god/${god.id}`
+                                                )
                                             }
                                         >
                                             <Col>
