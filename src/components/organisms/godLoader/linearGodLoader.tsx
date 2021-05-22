@@ -20,7 +20,13 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    width: 520px;
+    @media ${device.beyond_ipad_mobile} {
+        width: 520px;
+    }
+    @media ${device.mobile_and_ipad} {
+        width: 70vw;
+    }
+
     height: auto;
 `
 
@@ -31,6 +37,9 @@ const Col = styled.div`
     justify-content: center;
     height: auto;
     width: 105%;
+    @media ${device.mobile_and_ipad} {
+        width: 110%;
+    }
 `
 
 const Row = styled.div`
@@ -92,12 +101,20 @@ const TextContainer = styled.div`
 
 const Title = styled.div`
     font-size: 52px;
+    @media ${device.mobile_and_ipad} {
+        font-size: 34px;
+    }
 `
 
 const Artist = styled.div`
     font-size: 22px;
     width: 80px;
     transform: translateY(-4px);
+    @media ${device.mobile_and_ipad} {
+        font-family: Antonio-ExtraLight;
+        font-size: 13px;
+        transform: translate(-20px, -4px);
+    }
 `
 
 // const line_progress_animation = () => keyframes`
@@ -130,6 +147,10 @@ const Line = styled.div<IStyledProps>`
 const Pc = styled.div`
     font-size: 16px;
     width: 100px;
+    font-family: Antonio-ExtraLight;
+    @media ${device.mobile_and_ipad} {
+        font-size: 12px;
+    }
 `
 
 // 16 - 48 deg
