@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 // import ParticlesCanvas from '../organisms/particles/particles'
 // import athena from '../../assets/gods/athena.jpg'
 import return_arrow from '../../assets/icons/golden_arrow_left.svg'
-import { device } from '../templates/devices/devices'
+
 import { Link } from 'react-router-dom'
 import '../atoms/effects/lights.css'
 // import ParticlesCanvas from '../organisms/particles/particles'
@@ -28,20 +28,20 @@ const float = () => keyframes`
 	0% {
     opacity:$ 1;
 
-		transform: translate(0px) rotate(0deg);
+		transform: translate(0px) scale(1.6) rotate(0deg);
 	}
 	25% {
     opacity 0.6;
 
 	
-    transform: translate(-3px, 5px) scale(0.99) rotate(0.3deg);
+    transform: translate(-3px, 5px) scale(1.6) rotate(0.3deg);
    
 	}
 
 	50% {
     opacity 1;
 
-    transform: translate(-5px, 0px) scale(0.98) rotate(0deg);
+    transform: translate(-5px, 0px) scale(1.5) rotate(0deg);
    
 	}
 
@@ -49,14 +49,13 @@ const float = () => keyframes`
     opacity 0.6;
 
 	
-    transform: translate(-3px, -5px) scale(0.99) rotate(-0.3deg);
+    transform: translate(-3px, -5px) scale(1.6) rotate(-0.3deg);
    
 	}
 
 	100% {
     opacity: 1;
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.0);
-		transform: translate(0px) rotate(0deg);
+		transform: translate(0px) scale(1.6) rotate(0deg);
 	}
 `
 
@@ -74,19 +73,14 @@ const float2 = () => keyframes`
    
 	}
 
-    	40% {
-    opacity 1;
-	}
 
 	50% {
-    opacity 0.8;
+    opacity 0.5;
     transform: translate(5px, -3px) scale(0.98) rotate(0deg);
    
 	}
 
-  	60% {
-    opacity 1;
-	}
+
 
   	75% {
     opacity 1;
@@ -102,7 +96,7 @@ const float2 = () => keyframes`
 	}
 `
 const GodImg = styled.img`
-    padding-top: 10%;
+    margin-top: -20px;
     width: 100vw;
     transition: all 100ms;
     animation-name: ${float};
@@ -110,11 +104,10 @@ const GodImg = styled.img`
     animation-transition: all ease-in-out infinite;
     transition: all ease-in-out infinite;
     animation-iteration-count: infinite;
-    transform: scale(1.6) !important;
 `
 
 const TextWrapper = styled.div`
-    padding-top: 80px;
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -125,7 +118,7 @@ const TextWrapper = styled.div`
     animation-transition: all ease-in-out infinite;
     transition: all ease-in-out infinite;
     animation-iteration-count: infinite;
-
+    z-index: 5;
     max-width: 300px;
     padding-left: 5vw;
 `
@@ -155,11 +148,11 @@ const Author = styled.div`
 `
 const ReturnText = styled.div`
     font-family: antonio-extralight;
-    font-size: 18px;
-    letter-spacing: 0.35em;
+    font-size: 16px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: white;
-    width: 150px;
+    color: #848484;
+    width: 110px;
 `
 
 const TopNav = styled(Link)`
@@ -171,14 +164,12 @@ const TopNav = styled(Link)`
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+    z-index: 6;
 `
 
-type Istyled2 = {
-    idHovered: string
-}
-const Arrow = styled.img<Istyled2>`
+const Arrow = styled.img`
     height: 20px;
-    transform: rotate(180deg) translateY(-5px);
+    transform: rotate(180deg) translateY(0px);
     opacity: 1;
 `
 
@@ -203,20 +194,14 @@ const mapStateToProps = (state: any) => {
 // }
 type State = {
     src: any
-    idHovered: string
 }
 
 class GodSingleMobile extends React.Component<Props, State> {
     state = {
         src: '',
-        idHovered: '',
     }
     componentDidMount() {
         this.onLoad('/athena.jpg')
-    }
-
-    setIdHovered = (id: string) => {
-        this.setState({ ...this.state, idHovered: id })
     }
 
     onLoad = (url: string) => {
@@ -237,42 +222,35 @@ class GodSingleMobile extends React.Component<Props, State> {
     }
 
     render() {
-        let { idHovered } = this.state
         return (
             <>
                 {/* <ParticlesCanvas /> */}
 
                 <PageWrapper isLoaderShowing={this.props.isLoaderShowing}>
-                    <TopNav
-                        to="/"
-                        onMouseOver={() => this.setIdHovered('arrow')}
-                        onMouseLeave={() => this.setIdHovered('')}
-                    >
-                        <Arrow
-                            idHovered={idHovered}
-                            src={return_arrow}
-                            alt="return"
-                        />
-
+                    <TopNav to="/">
+                        <Arrow src={return_arrow} alt="return" />
                         <ReturnText
                         // className="glitch"
                         // data-glitch={'the gods'}
                         >
-                            <div>
-                                <span id="L">T</span>
-                                <span id="I">H</span>
-                                <span id="G">E</span>
-                                <span> </span>
-                                <span id="H">G</span>
-                                <span id="T">O</span>
-                                <span id="G">D</span>
-                                <span id="H">S</span>
-                            </div>
+                            the gods
                         </ReturnText>
                     </TopNav>
 
                     <TextWrapper>
-                        <Title>artemis</Title>
+                        <Title>
+                            <div>
+                                <span id="L">A</span>
+                                <span id="I">R</span>
+                                <span id="G">T</span>
+
+                                <span id="H">E</span>
+                                <span id="T">M</span>
+                                <span id="G">I</span>
+                                <span id="H">S</span>
+                            </div>
+                            {/* artemis */}
+                        </Title>
                         <div style={{ paddingTop: '10px' }} />
                         <Text>
                             The rose Dawn might have found them weeping still

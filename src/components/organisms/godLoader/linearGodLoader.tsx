@@ -170,7 +170,7 @@ const LinearGodLoader = (props: Props) => {
             } else if (counter === 100 && props.isImageLoading !== true) {
                 props.setisLoaderShowing(false)
             } else return
-        }, 30)
+        }, 5)
 
         return () => {
             clearInterval(interval)
