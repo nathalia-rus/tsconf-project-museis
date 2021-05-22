@@ -8,6 +8,9 @@ import LinearGodLoader from '../organisms/godLoader/linearGodLoader'
 import GodSingle from '../molecules/godSingle'
 import ParticlesCanvas from '../organisms/particles/particles'
 import Faded from '../templates/display/faded'
+import DesktopDisplay from '../templates/devices/desktopDisplay'
+import IpadAndMobileDisplay from '../templates/devices/ipadAndMobileDisplay'
+import GodSingleMobile from '../molecules/godSingleMobile'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
 // import a_test_tilt_1 from '../../assets/images/a_test_tilt_1.png'
@@ -72,10 +75,19 @@ class God extends React.Component<Props, State> {
 
                 <PageWrapper>
                     <Faded>
-                        <GodSingle
-                            isLoaderShowing={isLoaderShowing}
-                            setIsImgLoading={this.setIsImgLoading}
-                        />
+                        <DesktopDisplay>
+                            <GodSingle
+                                isLoaderShowing={isLoaderShowing}
+                                setIsImgLoading={this.setIsImgLoading}
+                            />
+                        </DesktopDisplay>
+
+                        <IpadAndMobileDisplay>
+                            <GodSingleMobile
+                                isLoaderShowing={isLoaderShowing}
+                                setIsImgLoading={this.setIsImgLoading}
+                            />
+                        </IpadAndMobileDisplay>
                     </Faded>
 
                     {isLoaderShowing && (
