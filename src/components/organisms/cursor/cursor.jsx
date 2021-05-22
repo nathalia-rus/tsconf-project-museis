@@ -22,7 +22,7 @@ const CursorProvider = ({children}) => {
     const onMouseMove = (event) => {
 
       setTimeout(function(){ const { pageX: x, pageY: y } = event
-        setMousePosition({ x, y }) }, 60);
+        setMousePosition({ x, y }) }, 0);
        
     }
 
