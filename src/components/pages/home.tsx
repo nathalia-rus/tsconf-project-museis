@@ -13,11 +13,7 @@ import './styles.css'
 // import ImgTilt from '../organisms/cursor/imgTilt'
 // import a_test_tilt_2 from '../../assets/images/a_test_tilt_2.png'
 
-const PageWrapper = styled.div`
-    @media (max-width: 768px) {
-        display: none;
-    }
-`
+const PageWrapper = styled.div``
 
 type Props = {
     gods: IGodsState

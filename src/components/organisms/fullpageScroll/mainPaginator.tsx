@@ -21,18 +21,25 @@ type StyledProps = {
 const Wrapper = styled.div`
     height: auto;
     width: 100vw;
-    padding-left: 12vw;
-    padding-right: 12vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media ${device.beyond_ipad_mobile} {
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
 
     @media ${device.large_desktop} {
         padding-right: 15vw;
         padding-left: 15vw;
     }
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    @media ${device.mobile_and_ipad} {
+        padding-right: 0px;
+        padding-left: opx;
+    }
 `
 const TransformYWrap = styled.div<StyledProps>`
     position: relative;
@@ -44,30 +51,51 @@ const TransformYWrap = styled.div<StyledProps>`
 
 const SoundRec = styled.div`
     position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 24px;
-    top: 20px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
     background-color: #00e7ff14;
     border: 1px solid #3b3b3b;
-    height: 80px;
-    width: 40px;
-    z-index: 100;
-    cursor: pointer;
-    :hover {
-        background-color: #005aff29;
+    @media ${device.beyond_ipad_mobile} {
+        right: 24px;
+        top: 20px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        height: 80px;
+        width: 40px;
+        z-index: 100;
+        cursor: pointer;
+        :hover {
+            background-color: #005aff29;
+        }
+    }
+
+    @media ${device.mobile_and_ipad} {
+        top: 20px;
+        right: 10px;
+        height: 60px;
+        width: 30px;
     }
 `
 
 const SoundIcon = styled.img`
-    height: 18px;
+    @media ${device.beyond_ipad_mobile} {
+        height: 18px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        width: 15px;
+    }
 `
 
 const MotionDivCol = styled(motion.div)`
+    @media ${device.beyond_ipad_mobile} {
+        font-size: 14px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        font-size: 10px;
+    }
+
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -76,7 +104,6 @@ const MotionDivCol = styled(motion.div)`
     height: 100%;
     font-family: 'Antonio-ExtraLight';
     text-transform: uppercase;
-    font-size: 14px;
 `
 
 type LocalState = {

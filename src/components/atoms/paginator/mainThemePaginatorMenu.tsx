@@ -4,12 +4,13 @@ import * as StatefulIcons from '../statefulIcons'
 import polygon_up_white from '../../../assets/icons/polygon_up_white.svg'
 
 import { motion } from 'framer-motion'
+import { device } from '../../templates/devices/devices'
 
 const MenuContainer = styled.div`
     position: absolute;
-    top: 90px;
+
     bottom: 0px;
-    right: 20px;
+
     padding-top: 30px;
     padding-bottom: 30px;
     width: 50px;
@@ -17,6 +18,16 @@ const MenuContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    @media ${device.beyond_ipad_mobile} {
+        right: 20px;
+        top: 90px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        right: 0px;
+        top: 80px;
+    }
 `
 
 const DotsCol = styled.div`
@@ -30,14 +41,25 @@ const DotsCol = styled.div`
 const PaginationTextStyled = styled.div`
     color: #8a8a8a;
     font-family: Antonio-Regular;
-    width: 200px;
-    font-size: 14px;
+
     text-align: center;
     transform: rotate(90deg);
-    letter-spacing: 9px;
+
     background-color: black;
     padding-left: 10px;
     padding-right: 10px;
+
+    @media ${device.beyond_ipad_mobile} {
+        font-size: 14px;
+        letter-spacing: 9px;
+        width: 200px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        font-size: 10px;
+        letter-spacing: 7px;
+        width: 140px;
+    }
 `
 
 const Line = styled.div`
@@ -75,6 +97,18 @@ const SecondRec = styled.div`
     font-family: Average-Regular;
 `
 
+const Desktop = styled.div`
+    @media ${device.mobile_and_ipad} {
+        display: none;
+    }
+`
+
+const MobileIpad = styled.div`
+    @media ${device.beyond_ipad_mobile} {
+        display: none;
+    }
+`
+
 const OnHoverRef = styled.div`
     transition: all 200ms;
     :hover {
@@ -99,15 +133,30 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
                     return (
                         <div data-menuanchor={id}>
                             <a href={`#${id}`}>
-                                <StatefulIcons.MainThemePaginatorDotIcon
-                                    height="26"
-                                    width="26"
-                                    isActive={
-                                        props.currentSectionIndex - 1 === index
-                                            ? true
-                                            : false
-                                    }
-                                />
+                                <Desktop>
+                                    <StatefulIcons.MainThemePaginatorDotIcon
+                                        height="26"
+                                        width="26"
+                                        isActive={
+                                            props.currentSectionIndex - 1 ===
+                                            index
+                                                ? true
+                                                : false
+                                        }
+                                    />
+                                </Desktop>
+                                <MobileIpad>
+                                    <StatefulIcons.MainThemePaginatorDotIcon
+                                        height="20"
+                                        width="20"
+                                        isActive={
+                                            props.currentSectionIndex - 1 ===
+                                            index
+                                                ? true
+                                                : false
+                                        }
+                                    />
+                                </MobileIpad>
                             </a>
                         </div>
                     )
