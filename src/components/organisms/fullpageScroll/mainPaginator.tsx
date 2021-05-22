@@ -238,7 +238,10 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                         return (
                             <ReactFullpage.Wrapper>
                                 <MainThemePaginatorMenu
-                                    paginationtext={`${this.state.currentSection} / ${this.state.totalSections}`}
+                                    paginationtextDesktop={`${
+                                        this.state.currentSection
+                                    } / ${this.state.totalSections - 1}`}
+                                    paginationtextMobile={`${this.state.currentSection} / ${this.state.totalSections}`}
                                     down={
                                         this.state.currentSection ===
                                         this.state.totalSections

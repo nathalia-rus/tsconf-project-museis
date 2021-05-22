@@ -138,7 +138,8 @@ const OnHoverRef = styled.div`
 export interface IPaginationMenuProps {
     goUp: any
     goDown: any
-    paginationtext?: any
+    paginationtextDesktop?: any
+    paginationtextMobile?: any
     down: boolean
     up: boolean
     currentSectionIndex: number
@@ -231,7 +232,7 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
 
             <FirstRec>
                 <OnHoverRef
-                    data-menuanchor={`god_${props.currentSectionIndex - 1}`}
+                    data-menuanchor={`god_${props.currentSectionIndex - 2}`}
                     style={{
                         opacity: props.up === true ? '1' : '0.3',
                         pointerEvents: props.up === true ? 'auto' : 'none',
@@ -239,13 +240,13 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
                     }}
                 >
                     <motion.div whileTap={{ scale: 1.2 }}>
-                        <a href={`#god_${props.currentSectionIndex - 1}`}>
+                        <a href={`#${props.currentSectionIndex - 2}`}>
                             <img src={polygon_up_white} alt="arrow" />
                         </a>
                     </motion.div>
                 </OnHoverRef>
                 <OnHoverRef
-                    data-menuanchor={`god_${props.currentSectionIndex + 1}`}
+                    data-menuanchor={`${props.currentSectionIndex + 1}`}
                     style={{
                         cursor: props.down === true ? 'pointer' : 'disabled',
 
@@ -254,7 +255,7 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
                     }}
                 >
                     <motion.div whileTap={{ scale: 1.2 }}>
-                        <a href={`#god_${props.currentSectionIndex + 1}`}>
+                        <a href={`#${props.currentSectionIndex}`}>
                             <div style={{ paddingTop: '10px' }} />
                             <img
                                 style={{ transform: 'rotate(180deg)' }}
@@ -267,7 +268,8 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
             </FirstRec>
             <SecondRec>
                 <span style={{ transform: 'rotate(90deg)' }}>
-                    {props.paginationtext}
+                    <Desktop>{props.paginationtextDesktop}</Desktop>
+                    <MobileIpad>{props.paginationtextMobile}</MobileIpad>
                 </span>
             </SecondRec>
         </MenuContainer>
