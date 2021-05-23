@@ -8,6 +8,7 @@ import ares from '../../assets/gods/ares.jpg'
 import zeus from '../../assets/gods/zeus.png'
 import poseidon from '../../assets/gods/poseidon.jpg'
 import athena from '../../assets/gods/athena.jpg'
+import hephaistos from '../../assets/gods/hephaistos.jpg'
 
 export const gods_quotes: IQuoteObj = {
     'a-q-1': {
@@ -81,13 +82,18 @@ export const gods_list: string[] = [
     'zeus',
     'hephaistos',
     'ares',
-    'athena',
+    'athena_wisdom',
+    'athena_warfare',
 ]
 
 export const god_images: IImgObj = {
     artemis_img_1: {
         id: 'artemis_img_1',
         url: artemis,
+    },
+    hephaistos_img_1: {
+        id: 'hephaistos_img_1',
+        url: hephaistos,
     },
     athena_img_1: {
         id: 'athena_img_1',
@@ -170,7 +176,20 @@ export const godsData: IGodObj = {
         id: 'hephaistos',
         name: 'hephaistos',
         main_quote_id: 'heph-q-1',
+        // image: 'athena_img_2',
+        image: 'hephaistos_img_1',
+    },
+    athena_wisdom: {
+        id: 'athena_wisdom',
+        name: 'athena I',
+        main_quote_id: 'ath-q-1',
         image: 'athena_img_2',
+    },
+    athena_warfare: {
+        id: 'athena_warfare',
+        name: 'athena II',
+        main_quote_id: 'ath-q-1',
+        image: 'athena_img_1',
     },
     poseidon: {
         id: 'poseidon',

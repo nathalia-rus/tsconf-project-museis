@@ -300,6 +300,9 @@ class TrioGridDesktop extends React.Component<Props, IState> {
         } else if (index === 2) {
             let gods_ids_to_map = gods_list.slice(6, 9)
             this.setState({ gods_ids_to_map })
+        } else if (index === 3) {
+            let gods_ids_to_map = gods_list.slice(9, 11)
+            this.setState({ gods_ids_to_map })
         }
     }
 

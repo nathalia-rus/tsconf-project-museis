@@ -25,38 +25,69 @@ const PageWrapper = styled.div<IStyled>`
     position: relative;
 `
 
-const float = () => keyframes`
+const float = (
+    scaleBig?: boolean,
+    lessHigh?: boolean,
+    waySmaller?: boolean,
+    moreOpacity?: boolean
+) => keyframes`
 	0% {
     opacity:$ 1;
 
-		transform: translate(0px) scale(1.6) rotate(0deg);
+		transform: ${
+            scaleBig
+                ? 'translate(0px) scale(1.6) rotate(0deg)'
+                : `translate(0px,${
+                      waySmaller ? '-150px' : lessHigh ? '-20px' : '-80px'
+                  }) scale(${waySmaller ? 0.7 : 1}) rotate(0deg)`
+        }; 
+
 	}
 	25% {
-    opacity 0.6;
-
-	
-    transform: translate(-3px, 5px) scale(1.6) rotate(0.3deg);
-   
+    opacity ${moreOpacity ? 1 : 0.8};
+    transform: ${
+        scaleBig
+            ? 'translate(-3px, 5px) scale(1.6) rotate(0.3deg)'
+            : `translate(-3px, ${
+                  waySmaller ? '-145px' : lessHigh ? '-30px' : '-90px'
+              }) scale(${waySmaller ? 0.7 : 1}) rotate(0.3deg)`
+    }; 
+    
 	}
 
 	50% {
     opacity 1;
-
-    transform: translate(-5px, 0px) scale(1.5) rotate(0deg);
+    transform: ${
+        scaleBig
+            ? 'translate(-5px, 0px) scale(1.5) rotate(0deg)'
+            : `translate(-5px, ${
+                  waySmaller ? '-145px' : lessHigh ? '-30px' : '-90px'
+              }) scale(${waySmaller ? 0.75 : 1.05}) rotate(0deg)`
+    }; 
    
 	}
 
   	75% {
-    opacity 0.6;
-
+    opacity ${moreOpacity ? 0.8 : 0.6};
+    transform: ${
+        scaleBig
+            ? 'translate(-3px, -5px) scale(1.6) rotate(-0.3deg)'
+            : `translate(-3px, ${
+                  waySmaller ? '-150px' : lessHigh ? '-30px' : '-90px'
+              }) scale(${waySmaller ? 0.7 : 1}) rotate(-0.3deg)`
+    }; 
 	
-    transform: translate(-3px, -5px) scale(1.6) rotate(-0.3deg);
-   
 	}
 
 	100% {
     opacity: 1;
-		transform: translate(0px) scale(1.6) rotate(0deg);
+        transform: ${
+            scaleBig
+                ? 'translate(0px) scale(1.6) rotate(0deg)'
+                : `translate(0px, ${
+                      waySmaller ? '-150px' : lessHigh ? '-20px' : '-80px'
+                  }) scale(${waySmaller ? 0.7 : 1}) rotate(0deg)`
+        }; 
 	}
 `
 
@@ -96,11 +127,25 @@ const float2 = () => keyframes`
 		transform: translate(0px) rotate(0deg);
 	}
 `
-const GodImg = styled.img`
+
+type IStyledImgProps = {
+    scaleBig?: boolean
+    lessHigh?: boolean
+    waySmaller?: boolean
+    moreOpacity?: boolean
+}
+
+const GodImg = styled.img<IStyledImgProps>`
     margin-top: -20px;
     width: 100vw;
     transition: all 100ms;
-    animation-name: ${float};
+    animation-name: ${(props) =>
+        float(
+            props.scaleBig,
+            props.lessHigh,
+            props.waySmaller,
+            props.moreOpacity
+        )};
     animation-duration: 12000ms;
     animation-transition: all ease-in-out infinite;
     transition: all ease-in-out infinite;
@@ -294,6 +339,41 @@ class GodSingleMobile extends React.Component<Props, State> {
                     <GodImg
                         src={this.state.src ? this.state.src : 'sdf'}
                         alt="god"
+                        scaleBig={
+                            god.id === 'hera'
+                                ? false
+                                : // less high
+                                god.id === 'dyonisus'
+                                ? false
+                                : god.id === 'athena_wisdom'
+                                ? false
+                                : god.id === 'artemis'
+                                ? false
+                                : // smaller
+                                god.id === 'apollo'
+                                ? false
+                                : god.id === 'zeus'
+                                ? false
+                                : god.id === 'hephaistos'
+                                ? false
+                                : god.id === 'poseidon'
+                                ? false
+                                : // less high
+                                god.id === 'ares'
+                                ? false
+                                : true
+                        }
+                        lessHigh={
+                            god.id === 'ares'
+                                ? true
+                                : god.id === 'dyonisus'
+                                ? true
+                                : god.id === 'poseidon'
+                                ? true
+                                : false
+                        }
+                        waySmaller={god.id === 'apollo' ? true : false}
+                        moreOpacity={god.id === 'apollo' ? true : false}
                     />
                 </PageWrapper>
             </>

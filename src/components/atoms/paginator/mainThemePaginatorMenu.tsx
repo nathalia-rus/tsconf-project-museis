@@ -155,7 +155,7 @@ const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
                         <div data-menuanchor={id}>
                             <a href={`#${id}`}>
                                 <Desktop>
-                                    {index < 3 && (
+                                    {index < 4 && (
                                         <StatefulIcons.MainThemePaginatorDotIcon
                                             height="26"
                                             width="26"

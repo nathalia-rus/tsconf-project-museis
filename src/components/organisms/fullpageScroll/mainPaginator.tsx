@@ -270,7 +270,7 @@ class MainPaginator extends React.Component<OwnProps, LocalState> {
                                         return (
                                             <>
                                                 <Wrapper className="section fp-auto-height">
-                                                    {index < 3 && (
+                                                    {index < 4 && (
                                                         <TransformYWrap
                                                             transformYN={
                                                                 index === 0
