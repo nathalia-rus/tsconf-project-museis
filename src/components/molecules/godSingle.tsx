@@ -32,7 +32,7 @@ const float = () => keyframes`
 		transform: translate(0px) rotate(0deg);
 	}
 	25% {
-    opacity 0.6;
+    opacity 0.8;
 
 	
     transform: translate(-3px, 5px) scale(0.99) rotate(0.3deg);
