@@ -5,6 +5,7 @@ import MainPaginator from '../organisms/fullpageScroll/mainPaginator'
 import TopBrandBarDesktop from '../atoms/menu/topBrandBarDesktop'
 import { IGodsState } from 'stateInterfaces'
 import './styles.css'
+import TopBrandBarMobile from '../atoms/menu/topBrandBarMobile'
 
 // import ParticlesCanvas from '../organisms/particles/particles'
 
@@ -39,6 +40,7 @@ class Home extends React.Component<Props> {
 
                 <PageWrapper>
                     <TopBrandBarDesktop />
+                    <TopBrandBarMobile />
                     <MainPaginator gods={gods} />
                 </PageWrapper>
 
