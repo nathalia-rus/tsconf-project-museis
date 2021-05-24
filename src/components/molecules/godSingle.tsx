@@ -16,13 +16,16 @@ import { IGod, IImgObj, IQuote } from 'stateInterfaces'
 // import a_test_tilt_2 from '../../assets/images/a_test_tilt_2.png'
 
 const PageWrapper = styled.div<IStyled>`
-    display: ${(props) => (props.isLoaderShowing ? 'none' : 'flex')};
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    position: relative;
+    display: none;
+    @media ${device.beyond_ipad_mobile} {
+        display: ${(props) => (props.isLoaderShowing ? 'none' : 'flex')};
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
 `
 
 const float = () => keyframes`

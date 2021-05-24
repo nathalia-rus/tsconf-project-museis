@@ -3,26 +3,22 @@ import styled from 'styled-components'
 import { device } from '../../templates/devices/devices'
 
 const Container = styled.div`
-    @media (min-width: 768px) {
-        display: none;
+    display: none;
+    @media ${device.mobile_and_ipad} {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-start;
+        color: white;
+        z-index: 3;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+
+        text-transform: uppercase;
+
+        font-family: Antonio-ExtraLight;
     }
-
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-start;
-    color: white;
-    z-index: 3;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-
-    @media ${device.desktop} {
-    }
-
-    text-transform: uppercase;
-
-    font-family: Antonio-ExtraLight;
 `
 
 const Title = styled.div`

@@ -43,10 +43,6 @@ class Home extends React.Component<Props> {
                     <TopBrandBarMobile />
                     <MainPaginator gods={gods} />
                 </PageWrapper>
-
-                <div style={{ backgroundColor: 'red', height: '400px' }}>
-                    hello hello hell
-                </div>
             </>
         )
     }

@@ -93,27 +93,42 @@ class God extends React.Component<Props, State> {
                 <PageWrapper>
                     <Faded>
                         <DesktopDisplay>
-                            <GodSingle
-                                isLoaderShowing={isLoaderShowing}
-                                setIsImgLoading={this.setIsImgLoading}
-                                god={god}
-                                god_images={god_images}
-                                quote={quote}
-                            />
+                            <div
+                                style={{
+                                    visibility: isImageLoading
+                                        ? 'hidden'
+                                        : 'visible',
+                                }}
+                            >
+                                <GodSingle
+                                    isLoaderShowing={false}
+                                    setIsImgLoading={this.setIsImgLoading}
+                                    god={god}
+                                    god_images={god_images}
+                                    quote={quote}
+                                />
+                            </div>
                         </DesktopDisplay>
 
                         <IpadAndMobileDisplay>
-                            <GodSingleMobile
-                                god={god}
-                                god_images={god_images}
-                                quote={quote}
-                                isLoaderShowing={isLoaderShowing}
-                                setIsImgLoading={this.setIsImgLoading}
-                            />
+                            <div
+                                style={{
+                                    visibility: isImageLoading
+                                        ? 'hidden'
+                                        : 'visible',
+                                }}
+                            >
+                                <GodSingleMobile
+                                    god={god}
+                                    god_images={god_images}
+                                    quote={quote}
+                                    isLoaderShowing={false}
+                                    setIsImgLoading={this.setIsImgLoading}
+                                />
+                            </div>
                         </IpadAndMobileDisplay>
                     </Faded>
-
-                    {isLoaderShowing && (
+                    {isImageLoading === true && (
                         <Faded>
                             <LinearGodLoader
                                 isImageLoading={isImageLoading}

@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { IGod, IGodObj, IImgObj } from 'stateInterfaces'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
 import purple_arrow_left from '../../../assets/icons/purple_arrow_left.svg'
+import { device } from '../../templates/devices/devices'
 // import ParticlesCanvas from '../organisms/particles/particles'
 
 // import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
@@ -13,19 +14,19 @@ import purple_arrow_left from '../../../assets/icons/purple_arrow_left.svg'
 // import a_test_tilt_2 from '../../assets/images/a_test_tilt_2.png'
 
 const PageWrapper = styled.div`
-    @media (min-width: 768px) {
-        display: none;
+    display: none;
+    @media ${device.mobile_and_ipad} {
+        display: flex;
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 90vh;
+
+        padding-top: 5vh;
+
+        z-index: 5;
     }
-    display: flex;
-    display: grid;
-    position: relative;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 90vh;
-
-    padding-top: 5vh;
-
-    z-index: 5;
 `
 
 const Wrapper = styled.div`
