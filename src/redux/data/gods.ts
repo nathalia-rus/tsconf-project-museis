@@ -31,9 +31,9 @@ export const gods_quotes: IQuoteObj = {
     },
     'dio-q-1': {
         god_id: 'dyonisus',
-        author: 'homer',
-        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
-        source: 'Illiad book VI',
+        author: 'Nietzsche',
+        text: 'He is the mad ecstasy which hovers over every conception and birth and whose wildness is always ready to move on to destruction and death. He is life which, when it overflows, grows mad and in its profoundest passion is intimately associated with death. This unfathomable world of Dionysus is called mad with good reason.',
+        source: 'Dionysus, Tragedy, and the Affirmation of Life',
     },
     'z-q-1': {
         god_id: 'zeus',
