@@ -156,7 +156,7 @@ const Text = styled.div`
 const Source = styled.div`
     font-family: average-regular;
     font-size: 12px;
-    letter-spacing: 0.76em;
+    letter-spacing: 0.5em;
     text-transform: uppercase;
 `
 const Author = styled.div`

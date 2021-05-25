@@ -43,9 +43,9 @@ export const gods_quotes: IQuoteObj = {
     },
     'h-q-1': {
         god_id: 'hera',
-        author: 'homer',
-        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
-        source: 'Illiad book VI',
+        author: 'Nikita Gill',
+        text: 'And Hera, grant me your fury, so I can remind my enemies I am not the weakness they perceive, I am the oncoming storm, I am war',
+        source: "A Woman's Prayer to the Goddesses",
     },
     'apo-q-1': {
         god_id: 'apollo',
@@ -61,9 +61,9 @@ export const gods_quotes: IQuoteObj = {
     },
     'pos-q-1': {
         god_id: 'poseidon',
-        author: 'homer',
-        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
-        source: 'Illiad book VI',
+        author: 'Stephen Cran',
+        text: 'Tell her this And more, — That the king of the seas Weeps too, old, helpless man. The bustling fates Heap his hands with corpses Until he stands like a child With surplus of toys',
+        source: 'Complete Poems of Stephen Crane',
     },
     'ares-q-1': {
         god_id: 'ares',
