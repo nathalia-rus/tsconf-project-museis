@@ -13,9 +13,9 @@ import hephaistos from '../../assets/gods/hephaistos.jpg'
 export const gods_quotes: IQuoteObj = {
     'a-q-1': {
         god_id: 'artemis',
-        author: 'homer',
-        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
-        source: 'Illiad book VI',
+        author: 'Kathryn Budig',
+        text: "My motto in life is 'aim true'. It came from my love of Artemis, the goddess of the hunt. She inspired me to sport a gold arrow around my neck because it reminded me of her strength and that I can always hit my mark when I set intention, follow what makes my heart beat, and aim true. The arrow was a reminder that I can cut through any obstacles, that I have power, beauty, and the ability to choose love over fear every moment of my life.",
+        source: 'Make My Aim True: A Greek Goddess Shows Me the Way',
     },
     'ath-q-1': {
         god_id: 'athena',
@@ -37,9 +37,9 @@ export const gods_quotes: IQuoteObj = {
     },
     'z-q-1': {
         god_id: 'zeus',
-        author: 'homer',
-        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
-        source: 'Illiad book VI',
+        author: 'Aeschylus',
+        text: 'For know that no one is free, except Zeus.',
+        source: 'The Persians',
     },
     'h-q-1': {
         god_id: 'hera',
