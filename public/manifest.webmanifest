@@ -1,0 +1,25 @@
+{
+    "name": "GODS - NRUS IO - timeless collections // nostalgic technologist",
+    "short_name": "GODS NRUS IO",
+    "description": "GODS NRUS IO - timeless collections // nostalgic technologist - nathalia rus",
+    "scope": ".",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "display": "standalone",
+    "orientation": "portrait",
+    "dir": "auto",
+    "lang": "en-gb"
+}
