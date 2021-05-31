@@ -1,19 +1,12 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { connect } from 'react-redux'
-// import ParticlesCanvas from '../organisms/particles/particles'
-// import athena from '../../assets/gods/athena.jpg'
+
 import return_arrow from '../../assets/icons/golden_arrow_left.svg'
 
 import { Link } from 'react-router-dom'
 import '../atoms/effects/lights.css'
 import { IGod, IImgObj, IQuote } from 'stateInterfaces'
-// import ParticlesCanvas from '../organisms/particles/particles'
-
-// import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
-// import a_test_tilt_1 from '../../assets/images/a_test_tilt_1.png'
-// import ImgTilt from '../organisms/cursor/imgTilt'
-// import a_test_tilt_2 from '../../assets/images/a_test_tilt_2.png'
 
 const PageWrapper = styled.div<IStyled>`
     display: ${(props) => (props.isLoaderShowing ? 'none' : 'flex')};
@@ -310,8 +303,6 @@ class GodSingleMobile extends React.Component<Props, State> {
         let { quote, god } = this.props
         return (
             <>
-                {/* <ParticlesCanvas /> */}
-
                 <PageWrapper isLoaderShowing={this.props.isLoaderShowing}>
                     <TopNav to="/">
                         <Arrow src={return_arrow} alt="return" />

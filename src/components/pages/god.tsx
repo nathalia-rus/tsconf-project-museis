@@ -13,7 +13,7 @@ import './styles.css'
 
 import LinearGodLoader from '../organisms/godLoader/linearGodLoader'
 import GodSingle from '../molecules/godSingle'
-import ParticlesCanvas from '../organisms/particles/particles'
+
 import Faded from '../templates/display/faded'
 import DesktopDisplay from '../templates/devices/desktopDisplay'
 import IpadAndMobileDisplay from '../templates/devices/ipadAndMobileDisplay'
@@ -80,15 +80,10 @@ class God extends React.Component<Props, State> {
         let god: IGod = gods_data[god_id]
         let quote: IQuote = god_quotes[god.main_quote_id]
 
-        let { isLoaderShowing, isImageLoading } = this.state
+        let { isImageLoading } = this.state
         return (
             <>
                 {/* {console.log('GOD DATA', god, god_images[god.image].url)} */}
-                {!isLoaderShowing && (
-                    <Faded>
-                        <ParticlesCanvas />
-                    </Faded>
-                )}
 
                 <PageWrapper>
                     <Faded>
