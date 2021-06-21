@@ -12,6 +12,11 @@ const Container = styled.div`
     position: absolute;
     top: 35px;
     left: 35px;
+    transition: all 100ms ease-in-out;
+    :hover {
+        color: #00f4ff52;
+        transition: all 500ms ease-in-out;
+    }
 
     @media ${device.desktop} {
     }
@@ -35,11 +40,13 @@ const Artist = styled.div`
 class TopBrandBarDesktop extends React.Component {
     render() {
         return (
-            <Container>
-                <Title>Gods</Title>
-                <div style={{ paddingLeft: '10px' }} />
-                <Artist>By nrus</Artist>
-            </Container>
+            <a href="https://nrus.io" target="_blank" rel="noreferrer">
+                <Container>
+                    <Title>Gods</Title>
+                    <div style={{ paddingLeft: '10px' }} />
+                    <Artist>By nrus</Artist>
+                </Container>
+            </a>
         )
     }
 }
