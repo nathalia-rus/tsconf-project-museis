@@ -36,9 +36,9 @@ const About = styled.a`
 
 const Bottom = styled.div`
     bottom: 30px;
-    left: 50px;
-    /* left: 50%;
-    transform: translateX(-50%); */
+    /* left: 50px; */
+    left: 50%;
+    transform: translateX(-50%);
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -49,10 +49,8 @@ const Bottom = styled.div`
 
 const NavItem2 = styled.img`
     height: 10px;
-    opacity: 0.2;
-    :hover {
-        opacity: 1;
-    }
+    opacity: 1;
+
     transform: translateY(-2px);
 `
 
@@ -70,15 +68,15 @@ class NavbarToMainDesktop extends React.Component {
                             href="https://nrus.io"
                             rel="noreferrer"
                             className="glitch"
-                            data-glitch="COLLECTIONS"
+                            data-glitch="ALL COLLECTIONS"
                         >
-                            COLLECTIONS
+                            ALL COLLECTIONS
                         </About>
                     </div>
-                    <div style={{ paddingLeft: '120px' }}>
+                    <div style={{ paddingLeft: '138px' }}>
                         <NavItem2 src={navitem} />
                     </div>
-                    <div style={{ paddingLeft: '35px', paddingBottom: '20px' }}>
+                    {/* <div style={{ paddingLeft: '35px', paddingBottom: '20px' }}>
                         <About
                             href="https://nrus.io#2"
                             className="glitch"
@@ -91,7 +89,7 @@ class NavbarToMainDesktop extends React.Component {
                     </div>
                     <div style={{ paddingLeft: '120px' }}>
                         <NavItem2 src={navitem} />
-                    </div>
+                    </div> */}
                 </Row>
             </Bottom>
         )

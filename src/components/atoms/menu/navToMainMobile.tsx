@@ -9,13 +9,12 @@ const Row = styled.a`
     align-items: flex-end;
     justify-content: flex-start;
 
-    @media ${device.desktop} {
+    @media ${device.beyond_ipad_mobile} {
+        display: none;
     }
 
     text-transform: uppercase;
-    @media (min-width: 768px) {
-        display: none;
-    }
+
     font-family: Antonio-ExtraLight;
 `
 
