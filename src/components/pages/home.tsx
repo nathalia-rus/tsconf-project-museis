@@ -7,6 +7,7 @@ import { IGodsState } from 'stateInterfaces'
 import './styles.css'
 import TopBrandBarMobile from '../atoms/menu/topBrandBarMobile'
 import NavbarToMainDesktop from '../atoms/menu/navBarToMainDesktop'
+import NavbarToMainMobile from '../atoms/menu/navToMainMobile'
 
 // import ParticlesCanvas from '../organisms/particles/particles'
 
@@ -43,7 +44,10 @@ class Home extends React.Component<Props> {
                     <TopBrandBarDesktop />
 
                     <NavbarToMainDesktop />
+
+                    <NavbarToMainMobile />
                     <TopBrandBarMobile />
+
                     <MainPaginator gods={gods} />
                 </PageWrapper>
             </>
