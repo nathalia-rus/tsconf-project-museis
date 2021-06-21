@@ -26,8 +26,9 @@ const About = styled.a`
     font-family: Antonio-Light;
     text-decoration: none;
     /* font-family: Average; */
-    color: #ffffff67;
+    opacity: 0.2;
     :hover {
+        opacity: 1;
         color: white;
         transition: 100ms all ease-in;
     }
@@ -48,6 +49,10 @@ const Bottom = styled.div`
 
 const NavItem2 = styled.img`
     height: 10px;
+    opacity: 0.2;
+    :hover {
+        opacity: 1;
+    }
     transform: translateY(-2px);
 `
 
@@ -56,7 +61,7 @@ class NavbarToMainDesktop extends React.Component {
         return (
             <Bottom>
                 <Row>
-                    <div style={{ marginLeft: '0px' }}>
+                    <div style={{ paddingLeft: '0px' }}>
                         <NavItem2 src={navitem} />
                     </div>
                     <div style={{ paddingLeft: '20px', paddingBottom: '20px' }}>
@@ -64,27 +69,27 @@ class NavbarToMainDesktop extends React.Component {
                             target="_blank"
                             href="https://nrus.io"
                             rel="noreferrer"
-                            className="glitch-2"
-                            data-glitch-2="WORKS"
+                            className="glitch"
+                            data-glitch="COLLECTIONS"
                         >
-                            WORKS
+                            COLLECTIONS
                         </About>
                     </div>
-                    <div style={{ marginLeft: '70px' }}>
+                    <div style={{ paddingLeft: '120px' }}>
                         <NavItem2 src={navitem} />
                     </div>
-                    <div style={{ paddingLeft: '25px', paddingBottom: '20px' }}>
+                    <div style={{ paddingLeft: '35px', paddingBottom: '20px' }}>
                         <About
                             href="https://nrus.io#2"
-                            className="glitch-2"
+                            className="glitch"
                             rel="noreferrer"
                             target="_blank"
-                            data-glitch-2="ABOUT"
+                            data-glitch="ABOUT NRUS"
                         >
-                            ABOUT
+                            ABOUT NRUS
                         </About>
                     </div>
-                    <div style={{ marginLeft: '70px' }}>
+                    <div style={{ paddingLeft: '120px' }}>
                         <NavItem2 src={navitem} />
                     </div>
                 </Row>
@@ -97,18 +102,18 @@ export default NavbarToMainDesktop
 
 // <Row>
 //     {/* <NavItem src={navitem} /> */}
-//     <div style={{ marginLeft: '12px' }}>
-//         <About className="glitch-2" data-glitch-2="ALL WORKS">
+//     <div style={{ paddingLeft: '12px' }}>
+//         <About className="glitch" data-glitch="ALL WORKS">
 //             ALL WORKS
 //         </About>
 //     </div>
 // </Row>
-// <div style={{ marginLeft: '30px' }} />
+// <div style={{ paddingLeft: '30px' }} />
 
 // <Row>
 //     {/* <NavItem src={navitem} /> */}
-//     <div style={{ marginLeft: '12px' }}>
-//         <About className="glitch-2" data-glitch-2="ABOUT">
+//     <div style={{ paddingLeft: '12px' }}>
+//         <About className="glitch" data-glitch="ABOUT">
 //             ABOUT
 //         </About>
 //     </div>
