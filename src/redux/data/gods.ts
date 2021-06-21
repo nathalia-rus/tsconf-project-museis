@@ -23,6 +23,12 @@ export const gods_quotes: IQuoteObj = {
         text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
         source: 'Illiad book VI',
     },
+    'ath-q-2': {
+        god_id: 'athena',
+        author: 'Aeschylus',
+        text: 'You wish to be called righteous rather than act right. [...] I say, wrong must not win by technicalities.',
+        source: 'The Oresteia',
+    },
     'dem-q-1': {
         god_id: 'demeter',
         author: 'homer',
@@ -49,15 +55,15 @@ export const gods_quotes: IQuoteObj = {
     },
     'apo-q-1': {
         god_id: 'apollo',
-        author: 'homer',
-        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
-        source: 'Illiad book VI',
+        author: 'Jose Marti',
+        text: 'Every human being has within him an ideal man, just as every piece of marble contains in a rough state a statue as beautiful as the one that Praxiteles the Greek made of the god Apollo.',
+        source: 'Selected Writings',
     },
     'heph-q-1': {
         god_id: 'hephaistos',
-        author: 'homer',
-        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
-        source: 'Illiad book VI',
+        author: 'Rick Riordan',
+        text: 'It isn’t easy being a brilliant inventor, always alone. Always misunderstood. Easy to turn bitter, make horrible mistakes. People are more difficult to work with than machines. And when you break a person, he can’t be fixed.',
+        source: 'The lost hero',
     },
     'pos-q-1': {
         god_id: 'poseidon',
@@ -67,9 +73,9 @@ export const gods_quotes: IQuoteObj = {
     },
     'ares-q-1': {
         god_id: 'ares',
-        author: 'homer',
-        text: 'The rose Dawn might have found them weeping still had not grey-eyed Athena slowed the night when night was most profound, and held the Dawn under the Ocean of the East.',
-        source: 'Illiad book VI',
+        author: 'C.S Lewis',
+        text: 'With deep wonder he thought to himself, "My eyes have seen Mars and Venus. I have seen Ares and Aphrodite.',
+        source: 'Perelandra',
     },
 }
 
@@ -182,7 +188,7 @@ export const godsData: IGodObj = {
     athena_wisdom: {
         id: 'athena_wisdom',
         name: 'athena I',
-        main_quote_id: 'ath-q-1',
+        main_quote_id: 'ath-q-2',
         image: 'athena_img_2',
     },
     athena_warfare: {
