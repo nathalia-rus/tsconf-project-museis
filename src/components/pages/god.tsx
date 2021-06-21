@@ -28,7 +28,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom'
 const PageWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-itens: center;
+    align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;

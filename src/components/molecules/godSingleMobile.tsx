@@ -13,6 +13,7 @@ const PageWrapper = styled.div<IStyled>`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    text-align: left;
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -140,7 +141,6 @@ const GodImg = styled.img<IStyledImgProps>`
             props.moreOpacity
         )};
     animation-duration: 12000ms;
-    animation-transition: all ease-in-out infinite;
     transition: all ease-in-out infinite;
     animation-iteration-count: infinite;
 `
@@ -154,7 +154,6 @@ const TextWrapper = styled.div`
     transition: all 100ms;
     animation-name: ${float2};
     animation-duration: 8000ms;
-    animation-transition: all ease-in-out infinite;
     transition: all ease-in-out infinite;
     animation-iteration-count: infinite;
     z-index: 5;
@@ -192,6 +191,7 @@ const ReturnText = styled.div`
     text-transform: uppercase;
     color: #848484;
     width: 110px;
+    padding-left: 16px;
 `
 
 const TopNav = styled(Link)`
