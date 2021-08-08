@@ -1,54 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import MainPaginator from '../organisms/fullpageScroll/mainPaginator'
-import TopBrandBarDesktop from '../atoms/menu/topBrandBarDesktop'
-import { IGodsState } from 'stateInterfaces'
-import './styles.css'
-import TopBrandBarMobile from '../atoms/menu/topBrandBarMobile'
-import NavbarToMainDesktop from '../atoms/menu/navBarToMainDesktop'
-import NavbarToMainMobile from '../atoms/menu/navToMainMobile'
-
-// import ParticlesCanvas from '../organisms/particles/particles'
-
-// import SmoothMouseMovement from '../organisms/cursor/smoothMouseMovement'
-// import a_test_tilt_1 from '../../assets/images/a_test_tilt_1.png'
-// import ImgTilt from '../organisms/cursor/imgTilt'
-// import a_test_tilt_2 from '../../assets/images/a_test_tilt_2.png'
+import { IDiscoverWeeklyState } from 'stateInterfaces'
 
 const PageWrapper = styled.div``
 
 type Props = {
-    gods: IGodsState
+    discoverWeekly: IDiscoverWeeklyState
 }
 
 const mapStateToProps = (state: any) => {
-    return { gods: state.gods }
+    return { discoverWeekly: state.discoverWeekly }
 }
-
-// const options = {
-//     max: 20,
-//     perspective: 1000,
-//     scale: 1.05,
-// }
 
 class Home extends React.Component<Props> {
     componentDidMount() {}
     render() {
-        let gods: IGodsState = this.props.gods
+        let discoverWeekly: IDiscoverWeeklyState = this.props.discoverWeekly
         return (
             <>
-                {/* <ParticlesCanvas /> */}
-
                 <PageWrapper>
-                    <TopBrandBarDesktop />
-
-                    <NavbarToMainDesktop />
-
-                    <NavbarToMainMobile />
-                    <TopBrandBarMobile />
-
-                    <MainPaginator gods={gods} />
+                    {console.log(discoverWeekly)}
+                    hello
                 </PageWrapper>
             </>
         )
