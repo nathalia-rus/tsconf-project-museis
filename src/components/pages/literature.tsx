@@ -1,11 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+
 import { connect } from 'react-redux'
 import { CategoriesReducerType } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
+import MainPageWrapper from '../templates/pageWrappers/mainPageWrapper'
 import { EnumCategory } from '../types/enums'
-
-const PageWrapper = styled.div``
 
 type Props = {
     categoriesData: any
@@ -27,10 +26,8 @@ class Literature extends React.Component<Props> {
                 : null
         return (
             <>
-                <PageWrapper>
-                    {console.log(literatureData)}
-                    literature
-                </PageWrapper>
+                {console.log(literatureData)}
+                <MainPageWrapper>literature</MainPageWrapper>
             </>
         )
     }

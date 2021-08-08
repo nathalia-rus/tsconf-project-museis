@@ -19,12 +19,10 @@ class Home extends React.Component<Props> {
         let { ...props } = this.props
 
         return (
-            <>
-                <PageWrapper>
-                    {console.log(props.categoriesData)}
-                    hello
-                </PageWrapper>
-            </>
+            <PageWrapper>
+                {console.log(props.categoriesData)}
+                hello
+            </PageWrapper>
         )
     }
 }

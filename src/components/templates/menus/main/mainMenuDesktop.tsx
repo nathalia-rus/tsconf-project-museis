@@ -22,7 +22,7 @@ const MenuContainer = styled.div`
         padding-right: 40px;
         padding-top: 0px;
 
-        position: absolute;
+        position: fixed;
         width: 130px;
         height: 100vh;
         left: 0px;

@@ -1,0 +1,71 @@
+import * as React from 'react'
+import styled from 'styled-components'
+import { connect } from 'react-redux'
+import { RootState } from 'typesafe-actions'
+import { device } from '../devices/devices'
+
+function mapStateToProps(state: RootState) {
+    return {}
+}
+
+interface Props {
+    children?: React.ReactNode
+}
+
+interface Istyle {
+    isCollapsed: boolean
+}
+
+const PageWrapper = styled.div`
+    background-color: red;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+
+    @media ${device.mobile_and_ipad} {
+        padding-top: 50px;
+        justify-content: flex-start;
+        width: 90vw;
+    }
+
+    @media ${device.beyond_ipad_mobile} {
+        width: 60vw;
+        justify-content: center;
+        padding-top: 76px;
+        transition: all 100ms;
+        max-width: 1400px;
+        padding-bottom: 200px;
+    }
+
+    @media ${device.smallest_laptops} {
+        width: 70vw;
+    }
+`
+
+const MenuAdjust = styled.div<Istyle>`
+    display: flex;
+    background-color: blue;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @media ${device.mobile_and_ipad} {
+        width: 100vw;
+    }
+
+    @media ${device.beyond_ipad_mobile} {
+        padding-left: 160px;
+
+        @media ${device.smallest_laptops} {
+            padding-left: 130px;
+        }
+    }
+`
+
+const MainPageWrapper: React.SFC<Props> = (props) => (
+    <MenuAdjust isCollapsed={false}>
+        <PageWrapper>{props.children}</PageWrapper>
+    </MenuAdjust>
+)
+
+export default connect(mapStateToProps, {})(MainPageWrapper)
