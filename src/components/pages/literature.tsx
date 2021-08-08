@@ -25,10 +25,10 @@ class Literature extends React.Component<Props> {
                 ? this.props.categoriesData[EnumCategory.Literature]
                 : null
         return (
-            <>
+            <MainPageWrapper>
                 {console.log(literatureData)}
-                <MainPageWrapper>literature</MainPageWrapper>
-            </>
+                literature
+            </MainPageWrapper>
         )
     }
 }

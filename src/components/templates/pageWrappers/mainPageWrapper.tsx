@@ -17,7 +17,7 @@ interface Istyle {
 }
 
 const PageWrapper = styled.div`
-    background-color: red;
+    background-color: #00000037;
     display: flex;
     align-items: start;
     flex-direction: column;
@@ -44,7 +44,7 @@ const PageWrapper = styled.div`
 
 const MenuAdjust = styled.div<Istyle>`
     display: flex;
-    background-color: blue;
+    background-color: #0000ff26;
     align-items: center;
     justify-content: center;
     flex-direction: column;

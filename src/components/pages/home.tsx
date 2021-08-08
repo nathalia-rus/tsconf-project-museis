@@ -1,9 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+
 import { connect } from 'react-redux'
 import { CategoriesReducerType } from 'reducer-types'
-
-const PageWrapper = styled.div``
+import MainPageWrapper from '../templates/pageWrappers/mainPageWrapper'
 
 type Props = {
     categoriesData: CategoriesReducerType
@@ -19,10 +18,10 @@ class Home extends React.Component<Props> {
         let { ...props } = this.props
 
         return (
-            <PageWrapper>
-                {console.log(props.categoriesData)}
+            <MainPageWrapper>
+                {console.log(props)}
                 hello
-            </PageWrapper>
+            </MainPageWrapper>
         )
     }
 }
