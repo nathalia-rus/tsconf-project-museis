@@ -18,7 +18,7 @@ export const menuItemsObj: MenuItemObj = {
         path: 'paintings',
     },
     classicalmusic: {
-        name: 'classicalmusic',
+        name: 'classical music',
         path: 'classical-music',
     },
     sculptures: {

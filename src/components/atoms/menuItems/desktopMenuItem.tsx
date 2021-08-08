@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { MenuItem } from 'types'
 import { device } from '../../templates/devices/devices'
@@ -32,11 +33,13 @@ interface Props {
 
 const DesktopMenuItem: React.FunctionComponent<Props> = (props) => {
     return (
-        <Button btn={EnumBtn.Naked}>
-            <MenuItemStyle isActive={props.isActive}>
-                {props.menuItem.name}
-            </MenuItemStyle>
-        </Button>
+        <Link to={props.menuItem.path}>
+            <Button btn={EnumBtn.Naked}>
+                <MenuItemStyle isActive={props.isActive}>
+                    {props.menuItem.name}
+                </MenuItemStyle>
+            </Button>
+        </Link>
     )
 }
 export default DesktopMenuItem

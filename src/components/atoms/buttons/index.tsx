@@ -10,7 +10,7 @@ class Button extends React.Component<Props, {}> {
     renderIcon(props: Props) {
         switch (props.btn) {
             case EnumBtn.Primary:
-                return <PrimaryBtn {...props}> Primary </PrimaryBtn>
+                return <PrimaryBtn {...props} />
 
             case EnumBtn.Naked:
                 return <NakedBtn {...props} />

@@ -1,9 +1,11 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { MenuItem } from 'types'
+import Button from '../../../atoms/buttons'
 import Icon from '../../../atoms/icons'
 import DesktopMenuItem from '../../../atoms/menuItems/desktopMenuItem'
-import { EnumIcon } from '../../../types/enums'
+import { EnumBtn, EnumIcon } from '../../../types/enums'
 import { device } from '../../devices/devices'
 import { menuItemsIDsListDesktop, menuItemsObj } from './mainMenuData'
 
@@ -26,6 +28,7 @@ const MenuContainer = styled.div`
         top: 0px;
         bottom: 0px;
         background: rgba(186, 186, 124, 0.07);
+        border-right: 1px solid #baba7c;
     }
 
     @media ${device.smallest_laptops} {
@@ -33,6 +36,14 @@ const MenuContainer = styled.div`
         padding-right: 20px;
         width: 100px;
     }
+`
+
+const Bottom = styled.div`
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+    right: 10%;
+    width: 80%;
 `
 
 class MainMenuDesktop extends React.Component<{}, {}> {
@@ -53,6 +64,14 @@ class MainMenuDesktop extends React.Component<{}, {}> {
                         )
                     }
                 )}
+
+                <Bottom>
+                    <Link to={'questionnaire'}>
+                        <Button width="100%" btn={EnumBtn.Primary}>
+                            questionnaire
+                        </Button>
+                    </Link>
+                </Bottom>
             </MenuContainer>
         )
     }
