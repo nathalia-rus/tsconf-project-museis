@@ -31,7 +31,7 @@ interface Props {
     isActive: boolean
 }
 
-const DesktopMenuItem: React.FunctionComponent<Props> = (props) => {
+const DesktopMainMenuItem: React.FunctionComponent<Props> = (props) => {
     return (
         <Link to={props.menuItem.path}>
             <Button btn={EnumBtn.Naked}>
@@ -42,4 +42,4 @@ const DesktopMenuItem: React.FunctionComponent<Props> = (props) => {
         </Link>
     )
 }
-export default DesktopMenuItem
+export default DesktopMainMenuItem

@@ -5,7 +5,7 @@ export enum EnumCategory {
     Sculptures = 'SCULPTURES',
 }
 
-export enum EnumNavigation {
+export enum EnumNavigationItem {
     Home = 'HOME',
     Literature = 'LITERATURE',
     Paintings = 'PAINTINGS',
@@ -18,10 +18,6 @@ export enum EnumNavigation {
 export enum EnumIcon {
     Logo = 'LOGO',
     DoubleArrows = 'DOUBLEARROWS',
-    Literature = 'LITERATURE',
-    Paintings = 'PAINTINGS',
-    ClassicalMusic = 'CLASSICALMUSIC',
-    Sculptures = 'SCULPTURES',
     SomethingElse = 'SOMETHINGELSE',
 }
 

@@ -1,10 +1,10 @@
 declare module 'types' {
-    import { EnumNavigation } from './enums'
+    import { EnumNavigationItem } from './enums'
 
     export type MenuItem = {
         name: string
         path: string
-        id: EnumNavigation
+        id: EnumNavigationItem
     }
 
     export type BtnProps = {

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { MenuItem } from 'types'
 import Button from '../../../atoms/buttons'
 import Icon from '../../../atoms/icons'
-import DesktopMenuItem from '../../../atoms/menuItems/desktopMenuItem'
+import DesktopMainMenuItem from '../../../atoms/menuItems/desktopMainMenuItem'
 import { EnumBtn, EnumIcon } from '../../../types/enums'
 import { device } from '../../devices/devices'
 import { menuItemsIDsListDesktop, menuItemsObj } from './mainMenuData'
@@ -61,7 +61,7 @@ class MainMenuDesktop extends React.Component<{}, {}> {
                     (menuItemID: string, index: any) => {
                         let menuItem: MenuItem = menuItemsObj[menuItemID]
                         return (
-                            <DesktopMenuItem
+                            <DesktopMainMenuItem
                                 isActive={false}
                                 menuItem={menuItem}
                             />

@@ -6,6 +6,7 @@ import { History } from 'history'
 
 import { ConnectedRouter } from 'connected-react-router'
 import MainMenuDesktop from './components/templates/menus/main/mainMenuDesktop'
+import MainMenuMobile from './components/templates/menus/main/mainMenuMobile'
 
 interface AppProps {
     history: History
@@ -19,6 +20,7 @@ class App extends React.Component<AppProps> {
             <div className="App">
                 <ConnectedRouter history={history}>
                     <MainMenuDesktop />
+                    <MainMenuMobile />
                     <Switch>
                         <Route path="/" exact component={Home} />
                     </Switch>
