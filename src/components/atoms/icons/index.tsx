@@ -3,6 +3,12 @@ import museis_logo from '../../../assets/logos/museis_logo.svg'
 
 export enum IconsEnum {
     'logo',
+    'home',
+    'double-arrows',
+    'literature',
+    'paintings',
+    'classical-music',
+    'sculptures',
     'something-else',
 }
 
