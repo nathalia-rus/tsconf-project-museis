@@ -4,15 +4,11 @@ import styled from 'styled-components'
 import { MenuItem } from 'types'
 
 import MobileMainMenuItem from '../../../atoms/menuItems/mobileMainMenuItem'
+import IpadAndMobileDisplay from '../../devices/ipadAndMobileDisplay'
 
-import { device } from '../../devices/devices'
 import { menuItemsIDsListMobile, menuItemsObj } from './mainMenuData'
 
 const MenuContainer = styled.div`
-    @media ${device.beyond_ipad_mobile} {
-        display: none;
-    }
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -44,24 +40,29 @@ const MenuBody = styled.div`
 class MainMenuMobile extends React.Component<{}, {}> {
     render() {
         return (
-            <MenuContainer>
-                <MenuBody>
-                    {menuItemsIDsListMobile.map(
-                        (menuItemID: string, index: any) => {
-                            let menuItem: MenuItem = menuItemsObj[menuItemID]
+            <IpadAndMobileDisplay>
+                <MenuContainer>
+                    <MenuBody>
+                        {menuItemsIDsListMobile.map(
+                            (menuItemID: string, index: any) => {
+                                let menuItem: MenuItem =
+                                    menuItemsObj[menuItemID]
 
-                            return (
-                                <MobileMainMenuItem
-                                    menuItem={menuItem}
-                                    isActive={
-                                        menuItem.name === 'home' ? true : false
-                                    }
-                                />
-                            )
-                        }
-                    )}
-                </MenuBody>
-            </MenuContainer>
+                                return (
+                                    <MobileMainMenuItem
+                                        menuItem={menuItem}
+                                        isActive={
+                                            menuItem.name === 'home'
+                                                ? true
+                                                : false
+                                        }
+                                    />
+                                )
+                            }
+                        )}
+                    </MenuBody>
+                </MenuContainer>
+            </IpadAndMobileDisplay>
         )
     }
 }

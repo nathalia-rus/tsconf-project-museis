@@ -1,26 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import { IDiscoverWeeklyState } from 'stateInterfaces'
+import { CategoriesReducerType } from 'reducer-types'
 
 const PageWrapper = styled.div``
 
 type Props = {
-    discoverWeekly: IDiscoverWeeklyState
+    categoriesData: CategoriesReducerType
 }
 
 const mapStateToProps = (state: any) => {
-    return { discoverWeekly: state.discoverWeekly }
+    return { categories: state.categories }
 }
 
 class Home extends React.Component<Props> {
     componentDidMount() {}
     render() {
-        let discoverWeekly: IDiscoverWeeklyState = this.props.discoverWeekly
+        let { ...props } = this.props
+
         return (
             <>
                 <PageWrapper>
-                    {console.log(discoverWeekly)}
+                    {console.log(props.categoriesData)}
                     hello
                 </PageWrapper>
             </>

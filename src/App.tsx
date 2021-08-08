@@ -1,12 +1,14 @@
 import React from 'react'
 import './App.css'
-import { Route, BrowserRouter as Switch } from 'react-router-dom'
+
 import Home from './components/pages/home'
 import { History } from 'history'
 
 import { ConnectedRouter } from 'connected-react-router'
 import MainMenuDesktop from './components/templates/menus/main/mainMenuDesktop'
 import MainMenuMobile from './components/templates/menus/main/mainMenuMobile'
+import Literature from './components/pages/literature'
+import { Route, Switch } from 'react-router-dom'
 
 interface AppProps {
     history: History
@@ -23,6 +25,11 @@ class App extends React.Component<AppProps> {
                     <MainMenuMobile />
                     <Switch>
                         <Route path="/" exact component={Home} />
+                        <Route
+                            path="/literature"
+                            exact
+                            component={Literature}
+                        />
                     </Switch>
                 </ConnectedRouter>
             </div>

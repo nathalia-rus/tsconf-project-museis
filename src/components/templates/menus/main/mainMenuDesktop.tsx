@@ -6,6 +6,7 @@ import Button from '../../../atoms/buttons'
 import Icon from '../../../atoms/icons'
 import DesktopMainMenuItem from '../../../atoms/menuItems/desktopMainMenuItem'
 import { EnumBtn, EnumIcon } from '../../../types/enums'
+import DesktopDisplay from '../../devices/desktopDisplay'
 import { device } from '../../devices/devices'
 import { menuItemsIDsListDesktop, menuItemsObj } from './mainMenuData'
 
@@ -53,30 +54,32 @@ const Padding = styled.div`
 class MainMenuDesktop extends React.Component<{}, {}> {
     render() {
         return (
-            <MenuContainer>
-                <Icon icon={EnumIcon.Logo} height="5vw" width="5vw" />
-                <Padding />
+            <DesktopDisplay>
+                <MenuContainer>
+                    <Icon icon={EnumIcon.Logo} height="5vw" width="5vw" />
+                    <Padding />
 
-                {menuItemsIDsListDesktop.map(
-                    (menuItemID: string, index: any) => {
-                        let menuItem: MenuItem = menuItemsObj[menuItemID]
-                        return (
-                            <DesktopMainMenuItem
-                                isActive={false}
-                                menuItem={menuItem}
-                            />
-                        )
-                    }
-                )}
+                    {menuItemsIDsListDesktop.map(
+                        (menuItemID: string, index: any) => {
+                            let menuItem: MenuItem = menuItemsObj[menuItemID]
+                            return (
+                                <DesktopMainMenuItem
+                                    isActive={false}
+                                    menuItem={menuItem}
+                                />
+                            )
+                        }
+                    )}
 
-                <BottomBtn>
-                    <Link to={'questionnaire'}>
-                        <Button width="100%" btn={EnumBtn.Primary}>
-                            questionnaire
-                        </Button>
-                    </Link>
-                </BottomBtn>
-            </MenuContainer>
+                    <BottomBtn>
+                        <Link to={'questionnaire'}>
+                            <Button width="100%" btn={EnumBtn.Primary}>
+                                questionnaire
+                            </Button>
+                        </Link>
+                    </BottomBtn>
+                </MenuContainer>
+            </DesktopDisplay>
         )
     }
 }
