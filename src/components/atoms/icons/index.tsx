@@ -1,25 +1,11 @@
 import * as React from 'react'
+
 import museis_logo from '../../../assets/logos/museis_logo.svg'
-
-export enum IconsEnum {
-    'logo',
-    'home',
-    'double-arrows',
-    'literature',
-    'paintings',
-    'classical-music',
-    'sculptures',
-    'something-else',
-}
-
-export enum IconDirectionEnum {
-    'up',
-    'down',
-}
+import { EnumIcon, EnumOrientation } from '../../types/enums'
 
 export type IconProps = {
-    icon: IconsEnum
-    orientation?: IconDirectionEnum
+    icon: EnumIcon
+    orientation?: EnumOrientation
     active?: boolean
     color?: string
     height?: string
@@ -27,21 +13,18 @@ export type IconProps = {
 }
 
 class Icon extends React.Component<IconProps, {}> {
-    renderIcon(
-        icon: IconsEnum,
-        orientation?: IconDirectionEnum,
-        active?: boolean
-    ) {
-        switch (icon) {
-            case IconsEnum.logo:
+    renderIcon(props: IconProps) {
+        switch (props.icon) {
+            case EnumIcon.Logo:
                 return (
                     <img
                         style={{
-                            width: this.props.width ? this.props.width : '19px',
+                            width: props.width ? props.width : '20px',
+                            height: props.height ? props.height : '20px',
                             cursor: 'pointer',
                         }}
                         src={museis_logo}
-                        alt="museis_logo"
+                        alt="museis logo"
                     />
                 )
 
@@ -50,10 +33,7 @@ class Icon extends React.Component<IconProps, {}> {
         }
     }
     render() {
-        return this.renderIcon(
-            this.props.icon,
-            this.props.orientation && this.props.orientation
-        )
+        return this.renderIcon(this.props)
     }
 }
 

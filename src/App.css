@@ -19,47 +19,26 @@ body {
 }
 
 @font-face {
-    font-family: 'Average-Regular';
-    src: local('Average-Regular'),
-        url(./fonts/Average-Regular.woff) format('opentype');
+    font-family: 'Roboto-Light';
+    src: local('Roboto-Light'),
+        url(./fonts/Roboto-Light.woff) format('opentype');
 }
 
 @font-face {
-    font-family: 'Antonio-ExtraLight';
-    src: local('Antonio-ExtraLight'),
-        url(./fonts/Antonio-ExtraLight.woff) format('opentype');
+    font-family: 'Roboto-Bold';
+    src: local('Roboto-Bold'), url(./fonts/Roboto-Bold.woff) format('opentype');
 }
 
 @font-face {
-    font-family: 'Antonio-Light';
-    src: local('Antonio-Light'),
-        url(./fonts/Antonio-Light.woff) format('opentype');
+    font-family: 'Roboto-Medium';
+    src: local('Roboto-Medium'),
+        url(./fonts/Roboto-Medium.woff) format('opentype');
 }
 
 @font-face {
-    font-family: 'Antonio-Medium';
-    src: local('Antonio-Medium'),
-        url(./fonts/Antonio-Medium.woff) format('opentype');
+    font-family: 'Roboto-Thin';
+    src: local('Roboto-Thin'), url(./fonts/Roboto-Thin.woff) format('opentype');
 }
-
-@font-face {
-    font-family: 'Antonio-Regular';
-    src: local('Antonio-Regular'),
-        url(./fonts/Antonio-Regular.woff) format('opentype');
-}
-
-@font-face {
-    font-family: 'Antonio-SemiBold';
-    src: local('Antonio-SemiBold'),
-        url(./fonts/Antonio-SemiBold.woff) format('opentype');
-}
-
-@font-face {
-    font-family: 'Antonio-Thin';
-    src: local('Antonio-Thin'),
-        url(./fonts/Antonio-Thin.woff) format('opentype');
-}
-
 .App-header {
     background-color: #282c34;
     min-height: 100vh;

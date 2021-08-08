@@ -1,17 +1,28 @@
 import React from 'react'
 import './App.css'
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Route, BrowserRouter as Switch } from 'react-router-dom'
 import Home from './components/pages/home'
+import { History } from 'history'
 
-class App extends React.Component {
+import { ConnectedRouter } from 'connected-react-router'
+import MainMenuDesktop from './components/templates/menus/main/mainMenuDesktop'
+
+interface AppProps {
+    history: History
+}
+
+class App extends React.Component<AppProps> {
     render() {
+        const { history } = this.props
+
         return (
             <div className="App">
-                <Router>
+                <ConnectedRouter history={history}>
+                    <MainMenuDesktop />
                     <Switch>
                         <Route path="/" exact component={Home} />
                     </Switch>
-                </Router>
+                </ConnectedRouter>
             </div>
         )
     }
