@@ -26,8 +26,8 @@ const MenuBody = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
 
     position: fixed;
     width: 50vw;
