@@ -1,0 +1,20 @@
+@media screen and (min-width: 768px) {
+    .section .fp-auto-height {
+        height: 90vh !important;
+    }
+
+    .fp-tableCell {
+        height: 90vh !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .fp-auto-height.fp-section,
+    .fp-auto-height .fp-slide,
+    .fp-auto-height .fp-tableCell,
+    .fp-responsive .fp-auto-height-responsive.fp-section,
+    .fp-responsive .fp-auto-height-responsive .fp-slide,
+    .fp-responsive .fp-auto-height-responsive .fp-tableCell {
+        height: 100vh !important;
+    }
+}

@@ -1,0 +1,279 @@
+import React from 'react'
+import styled from 'styled-components'
+import * as StatefulIcons from '../statefulIcons'
+import polygon_up_white from '../../../assets/icons/polygon_up_white.svg'
+
+import { motion } from 'framer-motion'
+import { device } from '../../templates/devices/devices'
+
+const MenuContainer = styled.div`
+    position: absolute;
+
+    bottom: 0px;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @media ${device.beyond_ipad_mobile} {
+        right: 20px;
+        top: 90px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        right: 0px;
+        top: 60px;
+    }
+`
+
+const DotsCol = styled.div`
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    padding-bottom: 20px;
+`
+
+const PaginationTextStyled = styled.div`
+    color: #8a8a8a;
+    font-family: Antonio-Regular;
+
+    text-align: center;
+    transform: rotate(90deg);
+
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media ${device.beyond_ipad_mobile} {
+        font-size: 14px;
+        letter-spacing: 9px;
+        width: 200px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        font-size: 10px;
+        letter-spacing: 7px;
+        width: 140px;
+    }
+`
+
+const Line = styled.div`
+    background-color: #787878;
+    height: 100%;
+    width: 1px;
+`
+// const ShortLine = styled.div`
+//     background-color: #787878;
+//     height: 5%;
+//     width: 1px;
+// `
+
+const FirstRec = styled.div`
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    @media ${device.beyond_ipad_mobile} {
+        border: 1px solid #8f947f;
+        height: 230px;
+        width: 30px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        height: 200px;
+        width: 25px;
+        border: 1px solid #50524b;
+    }
+`
+const SecondRec = styled.div`
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    height: 200px;
+    font-family: Average-Regular;
+
+    @media ${device.beyond_ipad_mobile} {
+        border: 1px solid #8f947f;
+        width: 30px;
+        font-size: 16px;
+    }
+
+    @media ${device.mobile_and_ipad} {
+        height: 200px;
+        width: 25px;
+        border: 1px solid #50524b;
+        font-size: 13px;
+        color: white;
+    }
+`
+
+const Desktop = styled.div`
+    @media ${device.mobile_and_ipad} {
+        display: none;
+    }
+`
+
+const MobileIpad = styled.div`
+    @media ${device.beyond_ipad_mobile} {
+        display: none;
+    }
+`
+
+const OnHoverRef = styled.div`
+    transition: all 200ms;
+    :hover {
+        transform: scale(1.2);
+    }
+`
+export interface IPaginationMenuProps {
+    goUp: any
+    goDown: any
+    paginationtextDesktop?: any
+    paginationtextMobile?: any
+    down: boolean
+    up: boolean
+    currentSectionIndex: number
+    section_list: string[]
+}
+
+const MainThemePaginatorMenu: React.SFC<IPaginationMenuProps> = (props) => {
+    return (
+        <MenuContainer id="paginator">
+            <DotsCol>
+                {props.section_list.map((id: string, index: number) => {
+                    return (
+                        <div data-menuanchor={id}>
+                            <a href={`#${id}`}>
+                                <Desktop>
+                                    {index < 4 && (
+                                        <StatefulIcons.MainThemePaginatorDotIcon
+                                            height="26"
+                                            width="26"
+                                            isActive={
+                                                props.currentSectionIndex -
+                                                    1 ===
+                                                index
+                                                    ? true
+                                                    : false
+                                            }
+                                        />
+                                    )}
+                                </Desktop>
+                                <MobileIpad>
+                                    <StatefulIcons.MainThemePaginatorDotIcon
+                                        height="20"
+                                        width="20"
+                                        isActive={
+                                            props.currentSectionIndex - 1 ===
+                                            index
+                                                ? true
+                                                : false
+                                        }
+                                    />
+                                </MobileIpad>
+                            </a>
+                        </div>
+                    )
+                })}
+
+                {/* 
+                <div data-menuanchor="god_2">
+                    <a href="#god_2">
+                        <StatefulIcons.MainThemePaginatorDotIcon
+                            height="26"
+                            width="26"
+                            isActive={
+                                props.currentSectionIndex === 2 ? true : false
+                            }
+                        />
+                    </a>
+                </div>
+
+                <div data-menuanchor="god_3">
+                    <a href="#god_3">
+                        <StatefulIcons.MainThemePaginatorDotIcon
+                            height="26"
+                            width="26"
+                            isActive={
+                                props.currentSectionIndex === 3 ? true : false
+                            }
+                        />
+                    </a>
+                </div>
+                <div data-menuanchor="god_4" onMouseDown={() => props.goDown()}>
+                    <a href="#god_4">
+                        <StatefulIcons.MainThemePaginatorDotIcon
+                            height="26"
+                            width="26"
+                            isActive={
+                                props.currentSectionIndex === 4 ? true : false
+                            }
+                        />
+                    </a>
+                </div> */}
+            </DotsCol>
+
+            <Line />
+
+            <PaginationTextStyled>gods edition</PaginationTextStyled>
+            <Line />
+
+            <div style={{ paddingTop: '20px' }} />
+
+            <FirstRec>
+                <OnHoverRef
+                    data-menuanchor={`god_${props.currentSectionIndex - 2}`}
+                    style={{
+                        opacity: props.up === true ? '1' : '0.3',
+                        pointerEvents: props.up === true ? 'auto' : 'none',
+                        cursor: props.up === true ? 'pointer' : 'disabled',
+                    }}
+                >
+                    <motion.div whileTap={{ scale: 1.2 }}>
+                        <a href={`#${props.currentSectionIndex - 2}`}>
+                            <img src={polygon_up_white} alt="arrow" />
+                        </a>
+                    </motion.div>
+                </OnHoverRef>
+                <OnHoverRef
+                    data-menuanchor={`${props.currentSectionIndex + 1}`}
+                    style={{
+                        cursor: props.down === true ? 'pointer' : 'disabled',
+
+                        opacity: props.down === true ? '1' : '0.3',
+                        pointerEvents: 'auto',
+                    }}
+                >
+                    <motion.div whileTap={{ scale: 1.2 }}>
+                        <a href={`#${props.currentSectionIndex}`}>
+                            <div style={{ paddingTop: '10px' }} />
+                            <img
+                                style={{ transform: 'rotate(180deg)' }}
+                                src={polygon_up_white}
+                                alt="arrow"
+                            />
+                        </a>
+                    </motion.div>
+                </OnHoverRef>
+            </FirstRec>
+            <SecondRec>
+                <span style={{ transform: 'rotate(90deg)' }}>
+                    <Desktop>{props.paginationtextDesktop}</Desktop>
+                    <MobileIpad>{props.paginationtextMobile}</MobileIpad>
+                </span>
+            </SecondRec>
+        </MenuContainer>
+    )
+}
+
+export default MainThemePaginatorMenu

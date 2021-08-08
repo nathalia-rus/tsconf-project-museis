@@ -1,12 +1,13 @@
 import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
-import discoverWeeklyReducer from '../reducers/discoverWeekly'
+import godsReducer from '../reducers/gods'
 
 import { History } from 'history'
 
 const rootReducer = (history: History) =>
     combineReducers({
-        discoverWeekly: discoverWeeklyReducer,
+        gods: godsReducer,
+
         router: connectRouter(history),
     })
 
