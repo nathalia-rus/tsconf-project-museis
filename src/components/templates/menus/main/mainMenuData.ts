@@ -1,53 +1,58 @@
 import { MenuItem } from 'types'
+import { EnumNavigation } from '../../../types/enums'
 
 type MenuItemObj = {
     [key: string]: MenuItem
 }
 
 export const menuItemsObj: MenuItemObj = {
-    home: {
+    [EnumNavigation.Home]: {
         name: 'home',
         path: 'home',
+        id: EnumNavigation.Home,
     },
-    literature: {
+    [EnumNavigation.Literature]: {
         name: 'literature',
         path: 'literature',
+        id: EnumNavigation.Literature,
     },
-    paintings: {
+    [EnumNavigation.Paintings]: {
         name: 'paintings',
         path: 'paintings',
+        id: EnumNavigation.Paintings,
     },
-    classicalmusic: {
+    [EnumNavigation.ClassicalMusic]: {
         name: 'classical music',
         path: 'classical-music',
+        id: EnumNavigation.ClassicalMusic,
     },
-    sculptures: {
+    [EnumNavigation.Sculptures]: {
         name: 'sculptures',
         path: 'sculptures',
+        id: EnumNavigation.Sculptures,
     },
-    questions: {
-        name: 'questions',
-        path: 'questions',
+    [EnumNavigation.Questionnaire]: {
+        name: 'Questionnaire',
+        path: 'questionnaire',
+        id: EnumNavigation.Questionnaire,
+    },
+    [EnumNavigation.Categories]: {
+        name: 'Categories',
+        path: '',
+        id: EnumNavigation.Categories,
     },
 }
 
-export const categoriesListMobile: string[] = [
-    'literature',
-    'paintings',
-    'classicalmusic',
-    'sculptures',
-]
-
 export const menuItemsIDsListDesktop: string[] = [
-    'home',
-    'literature',
-    'paintings',
-    'classicalmusic',
-    'sculptures',
+    EnumNavigation.Home,
+    EnumNavigation.Literature,
+    EnumNavigation.Paintings,
+    EnumNavigation.ClassicalMusic,
+    EnumNavigation.Sculptures,
 ]
 
 export const menuItemsIDsListMobile: string[] = [
-    'home',
-    'categories',
-    'questions',
+    EnumNavigation.Home,
+    EnumNavigation.Categories,
+    EnumNavigation.Questionnaire,
 ]

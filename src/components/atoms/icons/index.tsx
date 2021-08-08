@@ -1,10 +1,15 @@
 import * as React from 'react'
 
 import museis_logo from '../../../assets/logos/museis_logo.svg'
-import { EnumIcon, EnumOrientation } from '../../types/enums'
+import {
+    EnumCategory,
+    EnumIcon,
+    EnumNavigation,
+    EnumOrientation,
+} from '../../types/enums'
 
 export type IconProps = {
-    icon: EnumIcon
+    icon: EnumIcon | EnumCategory | EnumNavigation
     orientation?: EnumOrientation
     active?: boolean
     color?: string

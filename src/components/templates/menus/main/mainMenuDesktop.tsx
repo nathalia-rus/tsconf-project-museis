@@ -38,7 +38,7 @@ const MenuContainer = styled.div`
     }
 `
 
-const Bottom = styled.div`
+const BottomBtn = styled.div`
     position: absolute;
     bottom: 40px;
     left: 10%;
@@ -46,12 +46,16 @@ const Bottom = styled.div`
     width: 80%;
 `
 
+const Padding = styled.div`
+    padding-top: 20px;
+`
+
 class MainMenuDesktop extends React.Component<{}, {}> {
     render() {
         return (
             <MenuContainer>
                 <Icon icon={EnumIcon.Logo} height="5vw" width="5vw" />
-                <div style={{ paddingTop: '20px' }} />
+                <Padding />
 
                 {menuItemsIDsListDesktop.map(
                     (menuItemID: string, index: any) => {
@@ -65,13 +69,13 @@ class MainMenuDesktop extends React.Component<{}, {}> {
                     }
                 )}
 
-                <Bottom>
+                <BottomBtn>
                     <Link to={'questionnaire'}>
                         <Button width="100%" btn={EnumBtn.Primary}>
                             questionnaire
                         </Button>
                     </Link>
-                </Bottom>
+                </BottomBtn>
             </MenuContainer>
         )
     }

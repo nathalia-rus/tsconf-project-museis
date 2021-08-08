@@ -1,19 +1,35 @@
-export const enum EnumIcon {
-    'Logo',
-    'Home',
-    'DoubleArrows',
-    'Literature',
-    'Paintings',
-    'ClassicalMusic',
-    'Sculptures',
-    'SomethingElse',
+export enum EnumCategory {
+    Literature = 'LITERATURE',
+    Paintings = 'PAINTINGS',
+    ClassicalMusic = 'CLASSICALMUSIC',
+    Sculptures = 'SCULPTURES',
 }
 
-export const enum EnumOrientation {
-    'Up',
-    'Down',
+export enum EnumNavigation {
+    Home = 'HOME',
+    Literature = 'LITERATURE',
+    Paintings = 'PAINTINGS',
+    ClassicalMusic = 'CLASSICALMUSIC',
+    Sculptures = 'SCULPTURES',
+    Questionnaire = 'QUESTIONNAIRE',
+    Categories = 'CATEGORIES',
 }
-export const enum EnumBtn {
-    'Primary',
-    'Naked',
+
+export enum EnumIcon {
+    Logo = 'LOGO',
+    DoubleArrows = 'DOUBLEARROWS',
+    Literature = 'LITERATURE',
+    Paintings = 'PAINTINGS',
+    ClassicalMusic = 'CLASSICALMUSIC',
+    Sculptures = 'SCULPTURES',
+    SomethingElse = 'SOMETHINGELSE',
+}
+
+export enum EnumOrientation {
+    Up = 'UP',
+    Down = 'DOWM',
+}
+export enum EnumBtn {
+    Primary = 'PRIMARY',
+    Naked = 'NAKED',
 }
