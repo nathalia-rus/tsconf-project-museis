@@ -15,7 +15,7 @@ type Props = {
     category: EnumCategory
 }
 
-class CategoryCardsList extends React.Component<Props, {}> {
+class CategoryCardsListMaker extends React.Component<Props, {}> {
     generateCardBody = (item: CategoryItem, category: EnumCategory) => {
         switch (category) {
             case EnumCategory.Literature:
@@ -66,4 +66,4 @@ class CategoryCardsList extends React.Component<Props, {}> {
     }
 }
 
-export default CategoryCardsList
+export default CategoryCardsListMaker

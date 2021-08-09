@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { RootState } from 'typesafe-actions'
-import { device } from '../devices/devices'
+import { device } from '../../devices/devices'
 
 function mapStateToProps(state: RootState) {
     return {}
@@ -62,10 +62,10 @@ const MenuAdjust = styled.div<Istyle>`
     }
 `
 
-const MainPageWrapper: React.SFC<Props> = (props) => (
+const MainContainer: React.SFC<Props> = (props) => (
     <MenuAdjust isCollapsed={false}>
         <PageWrapper>{props.children}</PageWrapper>
     </MenuAdjust>
 )
 
-export default connect(mapStateToProps, {})(MainPageWrapper)
+export default connect(mapStateToProps, {})(MainContainer)

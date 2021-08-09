@@ -3,10 +3,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { CategoriesReducerType, CategoryItemData } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
-import CategoryCardsList from '../organisms/cardsList/categoryCardsList'
+import CategoryCardsListMaker from '../organisms/cardsListMaker/categoryCardsListMaker'
 
-import GreyWrapper from '../templates/pageWrappers/greyWrapper'
-import MainPageWrapper from '../templates/pageWrappers/mainPageWrapper'
+import GreyContainer from '../templates/containers/pageContainers/greyContainer'
+import MainContainer from '../templates/containers/pageContainers/mainContainer'
 import { EnumCategory } from '../types/enums'
 
 type Props = {
@@ -29,17 +29,17 @@ class Literature extends React.Component<Props> {
                 ? this.props.categories.data[EnumCategory.Literature]
                 : null
         return (
-            <MainPageWrapper>
-                <GreyWrapper>
+            <MainContainer>
+                <GreyContainer>
                     {category_literature !== null && (
-                        <CategoryCardsList
+                        <CategoryCardsListMaker
                             data={category_literature.data}
                             listID={category_literature.listID}
                             category={EnumCategory.Literature}
                         />
                     )}
-                </GreyWrapper>
-            </MainPageWrapper>
+                </GreyContainer>
+            </MainContainer>
         )
     }
 }

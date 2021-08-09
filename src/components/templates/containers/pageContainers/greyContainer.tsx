@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { RootState } from 'typesafe-actions'
-import { device } from '../devices/devices'
+import { device } from '../../devices/devices'
 
 function mapStateToProps(state: RootState) {
     return {}

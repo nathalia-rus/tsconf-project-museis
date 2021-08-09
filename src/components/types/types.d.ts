@@ -5,4 +5,11 @@ declare module 'types' {
         path: string
         id: EnumNavigationItem
     }
+
+    export type FormItem = {
+        id: any
+        value: string
+    }
+
+    // type FormElementType = 'radio' | 'checkbox' | 'rating'
 }

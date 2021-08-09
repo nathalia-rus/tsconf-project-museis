@@ -15,6 +15,13 @@ export enum EnumNavigationItem {
     Categories = 'CATEGORIES',
 }
 
+// type FormElementType = 'radio' | 'checkbox' | 'rating'
+export enum EnumFormType {
+    checkbox = 'CHECKBOX',
+    radio = 'RADIO',
+    rating = 'RATING',
+}
+
 export enum EnumIcon {
     Logo = 'LOGO',
     DoubleArrows = 'DOUBLEARROWS',

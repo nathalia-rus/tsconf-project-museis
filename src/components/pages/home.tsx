@@ -6,10 +6,10 @@ import { RootState } from 'typesafe-actions'
 import MobileSectionNavCTA from '../atoms/sectionCTA/mobileSectionNavCTA'
 import HomeHeader from '../atoms/typography/homeHeader'
 
-import CategoryCardsList from '../organisms/cardsList/categoryCardsList'
+import CategoryCardsListMaker from '../organisms/cardsListMaker/categoryCardsListMaker'
 
-import GreyWrapper from '../templates/pageWrappers/greyWrapper'
-import MainPageWrapper from '../templates/pageWrappers/mainPageWrapper'
+import GreyContainer from '../templates/containers/pageContainers/greyContainer'
+import MainContainer from '../templates/containers/pageContainers/mainContainer'
 import { EnumCategory } from '../types/enums'
 
 type Props = {
@@ -33,9 +33,9 @@ class Home extends React.Component<Props> {
         ]
 
         return (
-            <MainPageWrapper>
+            <MainContainer>
                 <HomeHeader />
-                <GreyWrapper>
+                <GreyContainer>
                     {enumsList.map((id: EnumCategory, index: number) => {
                         let category: CategoryItemData | null =
                             this.props.categories !== null &&
@@ -47,7 +47,7 @@ class Home extends React.Component<Props> {
                         if (category) {
                             return (
                                 <>
-                                    <CategoryCardsList
+                                    <CategoryCardsListMaker
                                         data={category.data}
                                         listID={category.listID.slice(0, 2)}
                                         category={id}
@@ -59,8 +59,8 @@ class Home extends React.Component<Props> {
                             )
                         } else return <div key={index} />
                     })}
-                </GreyWrapper>
-            </MainPageWrapper>
+                </GreyContainer>
+            </MainContainer>
         )
     }
 }
