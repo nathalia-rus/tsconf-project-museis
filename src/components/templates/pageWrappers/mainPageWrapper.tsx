@@ -17,7 +17,6 @@ interface Istyle {
 }
 
 const PageWrapper = styled.div`
-    background-color: #00000037;
     display: flex;
     align-items: start;
     flex-direction: column;
@@ -25,7 +24,7 @@ const PageWrapper = styled.div`
     @media ${device.mobile_and_ipad} {
         padding-top: 50px;
         justify-content: flex-start;
-        width: 90vw;
+        width: 100%;
     }
 
     @media ${device.beyond_ipad_mobile} {
@@ -44,13 +43,12 @@ const PageWrapper = styled.div`
 
 const MenuAdjust = styled.div<Istyle>`
     display: flex;
-    background-color: #0000ff26;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
     @media ${device.mobile_and_ipad} {
-        width: 100vw;
+        width: 100%;
     }
 
     @media ${device.beyond_ipad_mobile} {

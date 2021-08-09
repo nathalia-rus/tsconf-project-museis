@@ -3,6 +3,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { CategoriesReducerType } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
+
+import CardsGenerator from '../organisms/cardsGenerator'
+
+import GreyWrapper from '../templates/pageWrappers/greyWrapper'
 import MainPageWrapper from '../templates/pageWrappers/mainPageWrapper'
 import { EnumCategory } from '../types/enums'
 
@@ -28,6 +32,11 @@ class Literature extends React.Component<Props> {
             <MainPageWrapper>
                 {console.log(literatureData)}
                 literature
+                <GreyWrapper>
+                    <CardsGenerator />
+                    <CardsGenerator />
+                    <CardsGenerator />
+                </GreyWrapper>
             </MainPageWrapper>
         )
     }
