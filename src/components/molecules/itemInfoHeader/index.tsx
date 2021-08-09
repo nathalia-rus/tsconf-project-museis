@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import ItemAuthor from '../../atoms/typography/itemAuthor'
-import ItemSmallLocationDate from '../../atoms/typography/itemSmallLocationDate'
-import ItemTitle from '../../atoms/typography/itemTitle'
+import Author from '../../atoms/typography/author'
+import LocationAndDate from '../../atoms/typography/locationAndDate'
+import Title from '../../atoms/typography/title'
 
 const Row = styled.div`
     display: flex;
@@ -25,12 +25,12 @@ class ItemInfoHeader extends React.Component<Props, {}> {
     render() {
         return (
             <>
-                <ItemTitle>The Art of War</ItemTitle>
+                <Title>The Art of War</Title>
                 <div style={{ paddingBottom: '10px' }} />
                 <Row>
-                    <ItemAuthor>Sun Tzu</ItemAuthor>
+                    <Author>Sun Tzu</Author>
                     <RowLine />
-                    <ItemSmallLocationDate date={'1877'} location="Japan" />
+                    <LocationAndDate date={'1877'} location="Japan" />
                 </Row>
                 <div style={{ paddingBottom: '15px' }} />
             </>

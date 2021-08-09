@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import Tag from '../../atoms/tags/tag'
+import Tag from '../../atoms/tags'
 
 const Row = styled.div`
     display: flex;

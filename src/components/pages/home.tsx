@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { CategoriesReducerType, CategoryItemData } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
 import MobileSectionNavCTA from '../atoms/sectionCTA/mobileSectionNavCTA'
+import HomeHeader from '../atoms/typography/homeHeader'
 
 import CategoryCardsList from '../organisms/cardsList/categoryCardsList'
 
@@ -33,6 +34,7 @@ class Home extends React.Component<Props> {
 
         return (
             <MainPageWrapper>
+                <HomeHeader />
                 <GreyWrapper>
                     {enumsList.map((id: EnumCategory, index: number) => {
                         let category: CategoryItemData | null =

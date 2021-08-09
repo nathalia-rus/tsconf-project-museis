@@ -7,18 +7,17 @@ interface StyleProps {
 }
 
 const Text = styled.div<StyleProps>`
-    font-family: 'Roboto-Light';
-    font-size: 15px;
-    color: black;
-    text-align: left;
     text-transform: capitalize;
+    font-family: 'Roboto-Light';
+    font-size: 13px;
+    color: #636363;
 
     @media ${device.large_desktop} {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     @media ${device.mobile_and_ipad} {
-        font-size: 19px;
+        font-size: 16px;
     }
 `
 
@@ -27,7 +26,7 @@ type Props = {
     style?: 'default' | 'larger'
 }
 
-class ItemTitle extends React.Component<Props, {}> {
+class Author extends React.Component<Props, {}> {
     render() {
         const { children } = this.props
 
@@ -35,4 +34,4 @@ class ItemTitle extends React.Component<Props, {}> {
     }
 }
 
-export default ItemTitle
+export default Author
