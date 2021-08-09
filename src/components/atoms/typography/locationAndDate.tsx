@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { device } from '../../templates/devices/devices'
 
-const Text = styled.div`
+const Default = styled.div`
     font-family: 'Roboto-Medium';
     font-style: italic;
     font-size: 13px;
@@ -19,7 +19,7 @@ const Text = styled.div`
     }
 `
 
-const TextLarge = styled.div`
+const Large = styled.div`
     font-family: 'Roboto-Medium';
     text-align: right;
     color: rgba(186, 186, 124, 0.35);
@@ -34,25 +34,26 @@ const TextLarge = styled.div`
 type Props = {
     location: string
     date: string
-    isLarge?: boolean
+    style?: 'default' | 'large'
 }
 
 class LocationAndDate extends React.Component<Props, {}> {
     render() {
-        const { location, date, isLarge } = this.props
+        const { location, date, style } = this.props
 
-        if (isLarge === true) {
-            return (
-                <TextLarge>
-                    {location} {date}
-                </TextLarge>
-            )
-        } else {
-            return (
-                <Text>
-                    {date}, {location}
-                </Text>
-            )
+        switch (style) {
+            case 'large':
+                return (
+                    <Large>
+                        {location} {date}
+                    </Large>
+                )
+            default:
+                return (
+                    <Default>
+                        {date}, {location}
+                    </Default>
+                )
         }
     }
 }
