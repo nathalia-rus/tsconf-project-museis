@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { BtnProps } from 'types'
+import { BtnProps } from '.'
+
 import { device } from '../../templates/devices/devices'
 
 const PrimaryBtnStyle = styled.button<StyledProps>`
@@ -14,7 +15,8 @@ const PrimaryBtnStyle = styled.button<StyledProps>`
     padding-bottom: 5px;
     border-radius: 5px;
     width: ${(props) => (props.width ? props.width : 'auto')};
-    height: ${(props) => (props.height ? props.height : '40px')};
+    min-width: 130px;
+    height: ${(props) => (props.height ? props.height : '45px')};
     text-transform: capitalize;
     font-family: 'Roboto-Light';
     transition: all 0.1s;
@@ -41,9 +43,7 @@ type StyledProps = {
     height?: string
 }
 
-type Props = BtnProps
-
-const PrimaryBtn: React.FunctionComponent<Props> = (props) => {
+const PrimaryBtn: React.FunctionComponent<BtnProps> = (props) => {
     return <PrimaryBtnStyle {...props}>{props.children}</PrimaryBtnStyle>
 }
 export default PrimaryBtn

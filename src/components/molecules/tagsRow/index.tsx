@@ -9,7 +9,9 @@ const Row = styled.div`
     align-items: center;
     justify-content: flex-start;
 `
-
+const Padding = styled.div`
+    padding-bottom: 15px;
+`
 type Props = {}
 
 let arr = ['philosophy', 'something-else']
@@ -17,11 +19,14 @@ let arr = ['philosophy', 'something-else']
 class TagsRow extends React.Component<Props, {}> {
     render() {
         return (
-            <Row>
-                {arr.map((item: string, index: number) => {
-                    return <Tag key={index}>{item}</Tag>
-                })}
-            </Row>
+            <>
+                <Padding />
+                <Row>
+                    {arr.map((item: string, index: number) => {
+                        return <Tag key={index}>{item}</Tag>
+                    })}
+                </Row>
+            </>
         )
     }
 }

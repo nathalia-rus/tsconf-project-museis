@@ -3,8 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { CategoriesReducerType, CategoryItemData } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
-
-import CategoryCardsGenerator from '../organisms/cardsGenerator/categoryCardGenerator'
+import CategoryCardsList from '../organisms/cardsList/categoryCardsList'
 
 import GreyWrapper from '../templates/pageWrappers/greyWrapper'
 import MainPageWrapper from '../templates/pageWrappers/mainPageWrapper'
@@ -33,7 +32,7 @@ class Literature extends React.Component<Props> {
             <MainPageWrapper>
                 <GreyWrapper>
                     {category_literature !== null && (
-                        <CategoryCardsGenerator
+                        <CategoryCardsList
                             data={category_literature.data}
                             listID={category_literature.listID}
                             category={EnumCategory.Literature}

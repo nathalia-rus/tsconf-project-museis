@@ -4,7 +4,7 @@ declare module 'reducer-types' {
     // }
     import { EnumCategory } from '../../components/types/enums'
 
-    export type LiteratureItem = {
+    export type CategoryItem = {
         id: string
         title: string
         country: string
@@ -13,18 +13,9 @@ declare module 'reducer-types' {
         about: string
         quote: string
         tags: string[]
+        img_url?: string
+        embed_url?: string
     }
-
-    export type PaintingItem = {
-        id: string
-        title: string
-        country: string
-        author: string
-        year: number
-        tags: string[]
-    }
-
-    export type CategoryItem = LiteratureItem | PaintingItem
 
     export type CategoryItemData = {
         data: { [key: string]: CategoryItem }

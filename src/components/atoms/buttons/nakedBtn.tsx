@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { BtnProps } from 'types'
+import { BtnProps } from '.'
 
 const NakedBtnStyle = styled.button`
     background-color: transparent;
@@ -13,9 +13,7 @@ const NakedBtnStyle = styled.button`
     }
 `
 
-type Props = BtnProps
-
-const NakedBtn: React.FunctionComponent<Props> = (props) => {
+const NakedBtn: React.FunctionComponent<BtnProps> = (props) => {
     return <NakedBtnStyle>{props.children}</NakedBtnStyle>
 }
 export default NakedBtn

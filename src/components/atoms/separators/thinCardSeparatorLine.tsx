@@ -7,10 +7,6 @@ const Line = styled.div`
     background-color: #eeeeee;
 `
 
-const Padding = styled.div`
-    padding-bottom: 15px;
-`
-
 type Props = {}
 
 class ThinCardSeparatorLine extends React.Component<Props, {}> {
@@ -18,7 +14,6 @@ class ThinCardSeparatorLine extends React.Component<Props, {}> {
         return (
             <>
                 <Line />
-                <Padding />
             </>
         )
     }
