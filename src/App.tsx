@@ -5,10 +5,11 @@ import Home from './components/pages/home'
 import { History } from 'history'
 
 import { ConnectedRouter } from 'connected-react-router'
-import MainMenuDesktop from './components/templates/menus/main/mainMenuDesktop'
-import MainMenuMobile from './components/templates/menus/main/mainMenuMobile'
+
 import Literature from './components/pages/literature'
 import { Route, Switch } from 'react-router-dom'
+import MainMenuDesktop from './components/templates/menus/mainMenuDesktop'
+import MainMenuMobile from './components/templates/menus/mainMenuMobile'
 
 interface AppProps {
     history: History

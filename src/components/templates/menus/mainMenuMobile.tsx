@@ -3,8 +3,8 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { MenuItem } from 'types'
 
-import MobileMainMenuItem from '../../../atoms/menuItems/mobileMainMenuItem'
-import IpadAndMobileDisplay from '../../devices/ipadAndMobileDisplay'
+import MobileMainMenuItem from '../../atoms/menuItems/mobileMainMenuItem'
+import IpadAndMobileDisplay from '../devices/ipadAndMobileDisplay'
 
 import { menuItemsIDsListMobile, menuItemsObj } from './mainMenuData'
 

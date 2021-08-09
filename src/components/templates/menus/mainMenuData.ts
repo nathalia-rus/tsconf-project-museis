@@ -1,5 +1,5 @@
 import { MenuItem } from 'types'
-import { EnumNavigationItem } from '../../../types/enums'
+import { EnumNavigationItem } from '../../types/enums'
 
 type MenuItemObj = {
     [key: string]: MenuItem
