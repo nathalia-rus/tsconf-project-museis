@@ -15,22 +15,28 @@ declare module 'reducer-types' {
         tags: string[]
     }
 
-    export type LiteratureItemObj = {
-        [key: string]: LiteratureItem
+    export type PaintingItem = {
+        id: string
+        title: string
+        country: string
+        author: string
+        year: number
+        tags: string[]
     }
 
-    export type LiteratureItemData = {
-        data: LiteratureItemObj
+    export type CategoryItem = LiteratureItem | PaintingItem
+
+    export type CategoryItemData = {
+        data: { [key: string]: CategoryItem }
         listID: string[]
     }
 
-    export type CategoriesData = {
-        [EnumCategory.Literature]: LiteratureItemData
-        [EnumCategory.Paintings]: LiteratureItemData
+    export interface CategoriesData {
+        [key in EnumCategory]: CategoryItemData
     }
 
     export interface CategoriesReducerType {
-        data: CategoriesData | null
+        data: { [key in EnumCategory]: CategoryItemData }
         isLoading: boolean
         error: any
     }

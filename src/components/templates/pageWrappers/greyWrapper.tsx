@@ -20,7 +20,7 @@ const PageWrapper = styled.div`
     flex-direction: column;
     background-color: #fafafa;
     padding-top: 20px;
-
+    z-index: 0;
     @media ${device.beyond_ipad_mobile} {
         justify-content: space-between;
         flex-direction: row;

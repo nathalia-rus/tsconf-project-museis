@@ -20,11 +20,13 @@ const PageWrapper = styled.div`
     display: flex;
     align-items: start;
     flex-direction: column;
+    z-index: 0;
 
     @media ${device.mobile_and_ipad} {
         padding-top: 50px;
         justify-content: flex-start;
         width: 100%;
+        padding-bottom: 100px;
     }
 
     @media ${device.beyond_ipad_mobile} {

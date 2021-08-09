@@ -1,41 +1,44 @@
 import React from 'react'
 
 import { connect } from 'react-redux'
-import { CategoriesReducerType } from 'reducer-types'
+import { CategoriesReducerType, CategoryItemData } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
 
-import CardsGenerator from '../organisms/cardsGenerator'
+import CategoryCardsGenerator from '../organisms/cardsGenerator/categoryCardGenerator'
 
 import GreyWrapper from '../templates/pageWrappers/greyWrapper'
 import MainPageWrapper from '../templates/pageWrappers/mainPageWrapper'
 import { EnumCategory } from '../types/enums'
 
 type Props = {
-    categoriesData: any
+    categories: CategoriesReducerType | null
 }
 
 const mapStateToProps = (state: RootState) => {
     return {
-        categoriesData: state.categories.data,
+        categories: state.categories,
     }
 }
 
 class Literature extends React.Component<Props> {
     componentDidMount() {}
     render() {
-        let literatureData: CategoriesReducerType =
-            this.props.categoriesData !== null &&
-            this.props.categoriesData[EnumCategory.Literature]
-                ? this.props.categoriesData[EnumCategory.Literature]
+        let category_literature: CategoryItemData | null =
+            this.props.categories !== null &&
+            this.props.categories.data &&
+            this.props.categories.data[EnumCategory.Literature]
+                ? this.props.categories.data[EnumCategory.Literature]
                 : null
         return (
             <MainPageWrapper>
-                {console.log(literatureData)}
-                literature
                 <GreyWrapper>
-                    <CardsGenerator />
-                    <CardsGenerator />
-                    <CardsGenerator />
+                    {category_literature !== null && (
+                        <CategoryCardsGenerator
+                            data={category_literature.data}
+                            listID={category_literature.listID}
+                            category={EnumCategory.Literature}
+                        />
+                    )}
                 </GreyWrapper>
             </MainPageWrapper>
         )

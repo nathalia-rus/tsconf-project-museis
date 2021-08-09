@@ -18,13 +18,13 @@ const MenuContainer = styled.div`
 `
 
 const MenuBody = styled.div`
+    z-index: 10;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding-left: 40px;
     padding-right: 40px;
-
     position: fixed;
     width: 50vw;
     height: 55px;
