@@ -26,6 +26,7 @@ export enum EnumIcon {
     Logo = 'LOGO',
     DoubleArrows = 'DOUBLEARROWS',
     SomethingElse = 'SOMETHINGELSE',
+    Close = 'CLOSE',
 }
 
 export enum EnumOrientation {
@@ -35,4 +36,5 @@ export enum EnumOrientation {
 export enum EnumBtn {
     Primary = 'PRIMARY',
     Naked = 'NAKED',
+    Close = 'CLOSE',
 }

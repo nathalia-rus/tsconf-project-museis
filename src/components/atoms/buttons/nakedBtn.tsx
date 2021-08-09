@@ -11,9 +11,12 @@ const NakedBtnStyle = styled.button`
     :focus {
         outline: 0;
     }
+    text-transform: capitalize;
+    font-family: 'Roboto-Light';
+    color: ${(props) => (props.disabled === true ? '#C6C6C6' : '#6F6F6F')};
 `
 
 const NakedBtn: React.FunctionComponent<BtnProps> = (props) => {
-    return <NakedBtnStyle>{props.children}</NakedBtnStyle>
+    return <NakedBtnStyle {...props}>{props.children}</NakedBtnStyle>
 }
 export default NakedBtn

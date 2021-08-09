@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { EnumBtn } from '../../types/enums'
+import CloseBtn from './closeBtn'
 import NakedBtn from './nakedBtn'
 import PrimaryBtn from './primaryBtn'
 
@@ -20,6 +21,9 @@ class Button extends React.Component<BtnProps, {}> {
 
             case EnumBtn.Naked:
                 return <NakedBtn {...props} />
+
+            case EnumBtn.Close:
+                return <CloseBtn {...props} />
 
             default:
                 console.log('please chose an icon')

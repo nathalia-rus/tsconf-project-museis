@@ -23,16 +23,21 @@ class Questionnaire extends React.Component<Props> {
 
     render() {
         let params = new URLSearchParams(this.props.location.search)
-        let question_id = params.get('id')
+        let query_index = params.get('n')
+        let n = query_index && parseInt(query_index)
 
         let questionnaire = this.props.questionnaire
-        let item: Question | null = question_id
-            ? questionnaire.questionsData[question_id]
+        let item: Question | null = n
+            ? questionnaire.questionsData[
+                  questionnaire.questionsOrderedListID[n]
+              ]
             : null
 
         return (
             <MainContainer>
-                {item && <FormMakerMobile question={item} />}
+                {item && n && (
+                    <FormMakerMobile current_index={n} question={item} />
+                )}
             </MainContainer>
         )
     }

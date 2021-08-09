@@ -2,10 +2,10 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import museis_logo from '../../../assets/logos/museis_logo.svg'
-
 import categories from '../../../assets/nav/categories.svg'
 import home from '../../../assets/nav/home.svg'
 import questionnaire from '../../../assets/nav/questionnaire.svg'
+import close from '../../../assets/icons/close.svg'
 
 import {
     EnumCategory,
@@ -58,8 +58,11 @@ class Icon extends React.Component<IconProps, {}> {
                     />
                 )
 
+            case EnumIcon.Close:
+                return <IconStyled {...props} src={close} alt="close" />
+
             default:
-                return <div> hello</div>
+                return <div>hello</div>
         }
     }
     render() {

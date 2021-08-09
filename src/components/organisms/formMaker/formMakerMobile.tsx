@@ -1,10 +1,13 @@
 import * as React from 'react'
 import { Question } from 'reducer-types'
 import * as FormElements from '../../molecules/formElementGroups'
-import { EnumFormType } from '../../types/enums'
+import { EnumBtn, EnumFormType } from '../../types/enums'
 import CenteredBodyMobile from '../../templates/containers/bodyContainers/centeredBodyMobile'
+import Button from '../../atoms/buttons'
+import FormNavigator from '../../molecules/formElementGroups/formNavigator'
 type Props = {
     question: Question
+    current_index: number
 }
 
 class FormMakerMobile extends React.Component<Props, {}> {
@@ -24,6 +27,10 @@ class FormMakerMobile extends React.Component<Props, {}> {
     render() {
         const { ...props } = this.props
 
+        // const goNext = () => {
+        //     return (props.current_index += 1)
+        // }
+
         return (
             <div>
                 <CenteredBodyMobile>
@@ -33,8 +40,11 @@ class FormMakerMobile extends React.Component<Props, {}> {
                     {this.renderFormBody(props.question)}
                 </CenteredBodyMobile>
 
-                <div>button here hi </div>
-                <div>button here hi </div>
+                <FormNavigator
+                    goNext={() => undefined}
+                    goPrevious={() => undefined}
+                    close={() => undefined}
+                />
             </div>
         )
     }
