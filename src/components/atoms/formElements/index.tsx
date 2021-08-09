@@ -30,8 +30,6 @@ class FormElement extends React.Component<IListItemProps, {}> {
                         value={props.value}
                         name={props.value}
                         onChange={props.onChange}
-                        onclick={props.onclick && props.onclick}
-                        removeIcon={props.removeIcon && props.removeIcon}
                     />
                 )
             case EnumFormType.checkbox:
@@ -40,7 +38,6 @@ class FormElement extends React.Component<IListItemProps, {}> {
                         checked={props.checked}
                         name={props.name}
                         onChange={props.onChange}
-                        onclick={props.onclick && props.onclick}
                     />
                 )
             default:

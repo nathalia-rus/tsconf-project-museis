@@ -10,7 +10,6 @@ interface IListItemProps {
     onChange: any
     name: any
     checked?: any
-    onclick?: any
 }
 
 const Text = styled.div`
