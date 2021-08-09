@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { device } from '../../templates/devices/devices'
+import double_arrows from '../../../assets/icons/double_arrows.svg'
 
 const CardUI = styled.div`
     background-color: white;
@@ -23,6 +24,12 @@ const Padding = styled.div`
     padding: 25px;
 `
 
+const Arrow = styled.img`
+    position: absolute;
+    right: 30px;
+    top: 30px;
+`
+
 type Props = {
     children?: React.ReactNode
 }
@@ -33,6 +40,7 @@ class CardWrapper extends React.Component<Props, {}> {
 
         return (
             <CardUI>
+                <Arrow src={double_arrows} alt="arrow" />
                 <Padding>{children}</Padding>
             </CardUI>
         )

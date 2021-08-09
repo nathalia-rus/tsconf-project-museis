@@ -30,7 +30,8 @@ class CategoryCardsGenerator extends React.Component<Props, {}> {
             return (
                 <CardWrapper>
                     <ItemInfoHeader />
-                    {this.generateCardBody(item, props.category)} <TagsRow />
+                    {this.generateCardBody(item, props.category)}
+                    <TagsRow />
                 </CardWrapper>
             )
         })
