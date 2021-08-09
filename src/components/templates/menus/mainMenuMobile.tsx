@@ -26,7 +26,7 @@ const MenuBody = styled.div`
     padding-left: 40px;
     padding-right: 40px;
     position: fixed;
-    width: 50vw;
+    width: 70vw;
     height: 55px;
 
     bottom: 30px;

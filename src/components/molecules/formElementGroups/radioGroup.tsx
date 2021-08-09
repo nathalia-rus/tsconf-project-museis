@@ -13,8 +13,6 @@ import FormContainerMobile from '../../templates/containers/formContainers/formC
 
 type OtherProps = {
     items: FormItem[]
-    goNext: any
-    goPrevious: any
 }
 
 type FormValues = {
@@ -22,8 +20,6 @@ type FormValues = {
 }
 
 interface MyFormProps {
-    goNext: any
-    goPrevious: any
     items: FormItem[]
 }
 
@@ -37,8 +33,8 @@ const CheckboxGroup = (props: OtherProps & FormikProps<FormValues>) => {
                         <FormElement
                             onChange={handleChange}
                             key={index}
-                            theme={EnumFormType.checkbox}
-                            value={item}
+                            theme={EnumFormType.radio}
+                            value={item.value}
                             name={item.value}
                             checked={values[`${item.value}`]}
                         >
@@ -65,8 +61,6 @@ const FormikSelectItemsList = withFormik<MyFormProps, FormValues>({
         let selectedValues = finalValues.filter((val) => val.checked === true)
 
         console.log(selectedValues)
-
-        props.goNext()
 
         setSubmitting(false)
     },

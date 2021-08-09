@@ -8,7 +8,7 @@ import HomeHeader from '../atoms/typography/homeHeader'
 
 import CategoryCardsListMaker from '../organisms/cardsListMaker/categoryCardsListMaker'
 
-import GreyContainer from '../templates/containers/pageContainers/greyContainer'
+import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
 import MainContainer from '../templates/containers/pageContainers/mainContainer'
 import { EnumCategory } from '../types/enums'
 

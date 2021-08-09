@@ -1,5 +1,5 @@
 import { StateType } from 'typesafe-actions'
-import { CategoriesReducerType } from 'reducer-types'
+import { CategoriesReducerType, QuestionnaireReducerType } from 'reducer-types'
 
 declare module 'typesafe-actions' {
     // store I export in store/index
@@ -7,5 +7,6 @@ declare module 'typesafe-actions' {
     // root reducer I export in root-reducer which combines all my reducers.
     export type RootState = {
         categories: CategoriesReducerType
+        questionnaire: QuestionnaireReducerType
     }
 }

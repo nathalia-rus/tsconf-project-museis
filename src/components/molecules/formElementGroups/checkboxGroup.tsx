@@ -12,8 +12,6 @@ import FormContainerMobile from '../../templates/containers/formContainers/formC
 
 type OtherProps = {
     items: FormItem[]
-    goNext: any
-    goPrevious: any
 }
 
 type FormValues = {
@@ -21,8 +19,6 @@ type FormValues = {
 }
 
 interface MyFormProps {
-    goNext: any
-    goPrevious: any
     items: FormItem[]
 }
 
@@ -89,8 +85,6 @@ const FormikSelectItemsList = withFormik<MyFormProps, FormValues>({
         let selectedValues = finalValues.filter((val) => val.checked === true)
 
         console.log(selectedValues)
-
-        props.goNext()
 
         setSubmitting(false)
     },

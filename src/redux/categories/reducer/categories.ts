@@ -1,5 +1,5 @@
 import { CategoriesReducerType } from 'reducer-types'
-import { EnumCategory } from '../../components/types/enums'
+import { EnumCategory } from '../../../components/types/enums'
 import {
     classicalMusicMockData,
     classicalMusicMockIDS,

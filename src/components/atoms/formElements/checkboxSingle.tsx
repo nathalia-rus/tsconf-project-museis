@@ -14,14 +14,20 @@ interface IListItemProps {
 }
 
 const Text = styled.div`
-    @media ${device.mobile} {
+    @media ${device.mobile_and_ipad} {
         font-family: 'Roboto-Light';
         font-size: 16px;
         line-height: 18px;
         display: flex;
-        align-self: flex-start;
-        padding-left: 35px;
+        transform: translateY(3px);
+        padding-left: 10px;
     }
+`
+const Wrap = styled.div`
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #00000016;
+    width: 78vw;
 `
 
 class CheckboxSingle extends React.Component<IListItemProps, {}> {
@@ -29,11 +35,11 @@ class CheckboxSingle extends React.Component<IListItemProps, {}> {
         const { checked, name, onChange } = this.props
 
         return (
-            <React.Fragment>
+            <Wrap>
                 <Checkbox checked={checked} name={name} onChange={onChange}>
                     <Text>{name}</Text>
                 </Checkbox>
-            </React.Fragment>
+            </Wrap>
         )
     }
 }

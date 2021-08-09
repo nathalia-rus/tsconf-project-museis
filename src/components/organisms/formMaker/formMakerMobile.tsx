@@ -1,67 +1,42 @@
 import * as React from 'react'
-import { CategoryItem } from 'reducer-types'
-
-import FullWidthImageMobile from '../../atoms/images/fullWidthImageMobile'
-import EmbedPlayerMobile from '../../atoms/players/embedPlayerMobile'
-import ThinCardSeparatorLine from '../../atoms/separators/thinCardSeparatorLine'
-import ItemInfoHeader from '../../molecules/itemInfoHeader'
-
-import { EnumCategory } from '../../types/enums'
-
+import { Question } from 'reducer-types'
+import * as FormElements from '../../molecules/formElementGroups'
+import { EnumFormType } from '../../types/enums'
+import CenteredBodyMobile from '../../templates/containers/bodyContainers/centeredBodyMobile'
 type Props = {
-    data: any
-    listID: string[]
-    category: EnumCategory
+    question: Question
 }
 
 class FormMakerMobile extends React.Component<Props, {}> {
-    generateFormBody = (item: CategoryItem, category: EnumCategory) => {
-        switch (category) {
-            case EnumCategory.Literature:
-                return <ThinCardSeparatorLine />
+    renderFormBody = (item: Question) => {
+        switch (item.formType) {
+            case EnumFormType.radio:
+                return <FormElements.RadioGroup items={item.options} />
 
-            case EnumCategory.Paintings:
-                return (
-                    <FullWidthImageMobile
-                        height="180px"
-                        img_url={item.img_url}
-                    />
-                )
-
-            case EnumCategory.Sculptures:
-                return (
-                    <FullWidthImageMobile
-                        height="180px"
-                        img_url={item.img_url}
-                    />
-                )
-
-            case EnumCategory.ClassicalMusic:
-                return (
-                    <EmbedPlayerMobile
-                        title={item.title}
-                        embed_url={item.embed_url}
-                    />
-                )
+            case EnumFormType.checkbox:
+                return <FormElements.CheckboxGroup items={item.options} />
 
             default:
-                return <div />
+                return undefined
         }
     }
 
     render() {
         const { ...props } = this.props
-        return props.listID.map((id: string, index: number) => {
-            let item: CategoryItem = props.data[id]
 
-            return (
-                <div>
-                    <ItemInfoHeader />
-                    {this.generateFormBody(item, props.category)}
-                    <div>button here hi </div>
-                </div>
-            )
-        })
+        return (
+            <div>
+                <CenteredBodyMobile>
+                    <div>
+                        {props.question.title} {props.question.formType}
+                    </div>
+                    {this.renderFormBody(props.question)}
+                </CenteredBodyMobile>
+
+                <div>button here hi </div>
+                <div>button here hi </div>
+            </div>
+        )
     }
 }
 

@@ -2,7 +2,7 @@ declare module 'reducer-types' {
     // export type CategoryEnumObj = {
     //     [key in EnumCategory]: any
     // }
-    import { EnumCategory } from '../../components/types/enums'
+    import { EnumCategory } from '../../../components/types/enums'
 
     export type CategoryItem = {
         id: string

@@ -46,8 +46,9 @@ const Container = styled.div<IStyleProps>`
     }
     @media ${device.mobile} {
         background-color: white;
-        width: 86vw;
+        width: 100%;
         justify-content: flex-start;
+        height: 50px;
     }
 
     @media ${device.ipad} {
@@ -68,7 +69,7 @@ const Container = styled.div<IStyleProps>`
 `
 
 const RadioStyled = styled(Radio)`
-    font-family: Times !important;
+    font-family: 'Roboto-Light' !important;
     line-height: 1.4 !important;
     align-self: flex-start !important;
     display: flex;
@@ -77,16 +78,10 @@ const RadioStyled = styled(Radio)`
     justify-content: flex-start;
     color: black !important;
 
-    @media ${device.mobile} {
-        font-size: 18px !important;
+    @media ${device.mobile_and_ipad} {
+        font-size: 16px !important;
         padding-left: 10px !important;
-        width: 100vw;
-    }
-
-    @media ${device.ipad} {
-        font-size: 17px !important;
-        padding-left: 15px;
-        width: 80vw;
+        width: 78vw;
     }
 
     @media ${device.desktop} {
@@ -134,8 +129,12 @@ class RadioSingle extends React.Component<IListItemProps, {}> {
                                 name={value}
                                 onChange={onChange}
                             >
-                                <span style={{ paddingLeft: '35px' }}>
-                                    {' '}
+                                <span
+                                    style={{
+                                        paddingLeft: '35px',
+                                        transform: 'translateY(3px)',
+                                    }}
+                                >
                                     {name}
                                 </span>
                             </RadioStyled>
@@ -151,8 +150,11 @@ class RadioSingle extends React.Component<IListItemProps, {}> {
                                 name={value}
                                 onChange={onChange}
                             >
-                                <span style={{ paddingLeft: '10px' }}>
-                                    {' '}
+                                <span
+                                    style={{
+                                        paddingLeft: '10px',
+                                    }}
+                                >
                                     {name}
                                 </span>
                             </RadioStyled>
