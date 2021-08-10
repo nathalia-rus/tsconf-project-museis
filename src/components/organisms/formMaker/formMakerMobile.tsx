@@ -53,7 +53,12 @@ class FormMakerMobile extends React.Component<Props, {}> {
                         total={props.last_index}
                         current={props.current_index}
                     />
-                    <Title typographyStyle={[EnumTypographyStyle.Narrow]}>
+                    <Title
+                        typographyStyle={[
+                            EnumTypographyStyle.Narrow,
+                            EnumTypographyStyle.Center,
+                        ]}
+                    >
                         {props.question.title}
                     </Title>
                     {this.renderFormBody(props.question)}

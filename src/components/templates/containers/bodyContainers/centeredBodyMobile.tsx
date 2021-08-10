@@ -24,7 +24,7 @@ const Wrap = styled.div`
     justify-content: center;
     width: 100vw;
     flex-direction: column;
-    padding-bottom: 50px;
+    padding-bottom: 65px;
 `
 const CenteredBodyMobile: React.SFC<Props> = (props) => (
     <Wrap>
