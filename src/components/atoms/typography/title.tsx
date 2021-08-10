@@ -22,7 +22,7 @@ const Text = styled.div<StyleProps>`
               props.typographyStyle.includes(EnumTypographyStyle.Center) ===
                   true
             ? 'center'
-            : 'auto'};
+            : 'left'};
     text-transform: capitalize;
 
     @media ${device.large_desktop} {
