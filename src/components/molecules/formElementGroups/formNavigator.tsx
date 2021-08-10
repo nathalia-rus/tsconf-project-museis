@@ -26,14 +26,16 @@ type Props = {
 const FormNavigator: React.FunctionComponent<Props> = (props) => {
     return (
         <FormNavigatorStyle>
-            <Button width="80%" btn={EnumBtn.Primary}>
+            <Button onClick={props.goNext} width="80%" btn={EnumBtn.Primary}>
                 next
             </Button>
             <div style={{ paddingTop: '25px' }} />
-            <Button btn={EnumBtn.Naked}>previous</Button>
+            <Button onClick={props.goPrevious} btn={EnumBtn.Naked}>
+                previous
+            </Button>
 
             <Absolute>
-                <Button btn={EnumBtn.Close} />
+                <Button onClick={props.close} btn={EnumBtn.Close} />
             </Absolute>
         </FormNavigatorStyle>
     )

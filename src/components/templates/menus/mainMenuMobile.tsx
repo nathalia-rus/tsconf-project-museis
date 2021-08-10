@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { RouteComponentProps, withRouter } from 'react-router-dom'
 
 import styled from 'styled-components'
 import { MenuItem } from 'types'
@@ -37,34 +38,40 @@ const MenuBody = styled.div`
     border-radius: 50px;
 `
 
-class MainMenuMobile extends React.Component<{}, {}> {
+interface Props extends RouteComponentProps<any> {}
+
+class MainMenuMobile extends React.PureComponent<Props, {}> {
     render() {
         return (
             <IpadAndMobileDisplay>
-                <MenuContainer>
-                    <MenuBody>
-                        {menuItemsIDsListMobile.map(
-                            (menuItemID: string, index: any) => {
-                                let menuItem: MenuItem =
-                                    menuItemsObj[menuItemID]
+                {!this.props.history.location.pathname.match(
+                    /questionnaire/g
+                ) && (
+                    <MenuContainer>
+                        <MenuBody>
+                            {menuItemsIDsListMobile.map(
+                                (menuItemID: string, index: any) => {
+                                    let menuItem: MenuItem =
+                                        menuItemsObj[menuItemID]
 
-                                return (
-                                    <MobileMainMenuItem
-                                        menuItem={menuItem}
-                                        isActive={
-                                            menuItem.name === 'home'
-                                                ? true
-                                                : false
-                                        }
-                                    />
-                                )
-                            }
-                        )}
-                    </MenuBody>
-                </MenuContainer>
+                                    return (
+                                        <MobileMainMenuItem
+                                            menuItem={menuItem}
+                                            isActive={
+                                                menuItem.name === 'home'
+                                                    ? true
+                                                    : false
+                                            }
+                                        />
+                                    )
+                                }
+                            )}
+                        </MenuBody>
+                    </MenuContainer>
+                )}
             </IpadAndMobileDisplay>
         )
     }
 }
 
-export default MainMenuMobile
+export default withRouter(MainMenuMobile)

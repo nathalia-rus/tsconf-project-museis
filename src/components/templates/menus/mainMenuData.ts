@@ -33,7 +33,7 @@ export const menuItemsObj: MenuItemObj = {
     },
     [EnumNavigationItem.Questionnaire]: {
         name: 'Questionnaire',
-        path: 'questionnaire',
+        path: 'questionnaire?n=1',
         id: EnumNavigationItem.Questionnaire,
     },
     [EnumNavigationItem.Categories]: {

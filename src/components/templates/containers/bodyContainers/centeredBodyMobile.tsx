@@ -13,8 +13,8 @@ interface Props {
 
 const SubWrap = styled.div`
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     width: 80vw;
     flex-direction: column;
 `

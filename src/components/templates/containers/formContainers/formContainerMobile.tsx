@@ -19,6 +19,7 @@ const FormContainer = styled.form`
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        padding-top: 50px;
     }
 `
 

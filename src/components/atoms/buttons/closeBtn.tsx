@@ -31,7 +31,7 @@ const Padding = styled.div`
 
 const CloseBtn: React.FunctionComponent<BtnProps> = (props) => {
     return (
-        <Btn {...props}>
+        <Btn {...props} onClick={props.onClick && props.onClick}>
             <Icon height="14px" icon={EnumIcon.Close} />
             <Padding />
             <Text>close</Text>

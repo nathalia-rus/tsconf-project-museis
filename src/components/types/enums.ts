@@ -22,6 +22,15 @@ export enum EnumFormType {
     rating = 'RATING',
 }
 
+export enum EnumTypographyStyle {
+    Default = 'DEFAULT',
+    Narrow = 'NARROW',
+    Large = 'LARGE',
+    Center = 'center',
+    Left = 'left',
+    Right = 'right',
+}
+
 export enum EnumIcon {
     Logo = 'LOGO',
     DoubleArrows = 'DOUBLEARROWS',

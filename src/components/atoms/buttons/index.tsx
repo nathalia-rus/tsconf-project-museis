@@ -11,6 +11,7 @@ export type BtnProps = {
     active?: boolean
     height?: string
     width?: string
+    onClick?: any
 }
 
 class Button extends React.Component<BtnProps, {}> {

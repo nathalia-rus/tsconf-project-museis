@@ -16,15 +16,17 @@ interface AppProps {
     history: History
 }
 
-class App extends React.Component<AppProps> {
+class App extends React.PureComponent<AppProps> {
     render() {
         const { history } = this.props
 
         return (
             <div className="App">
                 <ConnectedRouter history={history}>
-                    <MainMenuDesktop />
                     <MainMenuMobile />
+
+                    <MainMenuDesktop />
+
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route
