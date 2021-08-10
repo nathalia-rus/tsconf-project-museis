@@ -23,8 +23,8 @@ const Text = styled.div`
     }
 `
 const Wrap = styled.div`
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 13px;
+    padding-top: 13px;
     border-bottom: 1px solid #00000016;
     width: 78vw;
 `
