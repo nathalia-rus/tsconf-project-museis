@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Question } from 'reducer-types'
-import * as FormElements from '../../molecules/formElementGroups'
+import * as FormElements from '../../molecules/formBodyType'
 import { EnumFormType, EnumTypographyStyle } from '../../types/enums'
 import CenteredBodyMobile from '../../templates/containers/bodyContainers/centeredBodyMobile'
 
-import FormNavigator from '../../molecules/formElementGroups/formNavigator'
+import FormNavigator from '../../molecules/navigators/formNavigator'
 import QuestionNumber from '../../atoms/typography/questionNumber'
 import Title from '../../atoms/typography/title'
 import { RouteComponentProps, withRouter } from 'react-router-dom'

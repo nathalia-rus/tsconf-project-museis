@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 
 import { FormItem } from 'types'
 
-import FormElement from '../../atoms/formElements'
+import FormElement from '../../atoms/formItems'
 import { EnumFormType } from '../../types/enums'
 import FormContainerMobile from '../../templates/containers/formContainers/formContainerMobile'
 

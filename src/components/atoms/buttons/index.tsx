@@ -8,10 +8,10 @@ import PrimaryBtn from './primaryBtn'
 export type BtnProps = {
     children?: React.ReactNode
     btn: EnumBtn
+    onClick?: any
     active?: boolean
     height?: string
     width?: string
-    onClick?: any
 }
 
 class Button extends React.Component<BtnProps, {}> {

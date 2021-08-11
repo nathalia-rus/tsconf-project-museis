@@ -46,16 +46,15 @@ class Home extends React.Component<Props> {
 
                         if (category) {
                             return (
-                                <>
+                                <React.Fragment key={index}>
                                     <CategoryCardsListMaker
                                         data={category.data}
                                         listID={category.listID.slice(0, 2)}
                                         category={id}
-                                        key={index}
                                     />
 
                                     <MobileSectionNavCTA path={''} />
-                                </>
+                                </React.Fragment>
                             )
                         } else return <div key={index} />
                     })}

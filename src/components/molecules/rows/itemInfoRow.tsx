@@ -19,23 +19,27 @@ const RowLine = styled.div`
     margin-right: 10px;
 `
 
+const Padding = styled.div`
+    padding-bottom: 13px;
+`
+
 type Props = {}
 
-class ItemInfoHeader extends React.Component<Props, {}> {
+class ItemInfoRow extends React.Component<Props, {}> {
     render() {
         return (
             <>
                 <Title>The Art of War</Title>
-                <div style={{ paddingBottom: '10px' }} />
+                <Padding />
                 <Row>
                     <Author>Sun Tzu</Author>
                     <RowLine />
                     <LocationAndDate date={'1877'} location="Japan" />
                 </Row>
-                <div style={{ paddingBottom: '15px' }} />
+                <Padding />
             </>
         )
     }
 }
 
-export default ItemInfoHeader
+export default ItemInfoRow
