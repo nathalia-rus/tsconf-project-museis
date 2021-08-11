@@ -74,7 +74,11 @@ class MainMenuDesktop extends React.Component<{}, {}> {
 
                     <BottomBtn>
                         <Link to={'questionnaire'}>
-                            <Button width="100%" btn={OBtn.Primary}>
+                            <Button
+                                onClick={() => 'func'}
+                                width="100%"
+                                btn={OBtn.Primary}
+                            >
                                 questionnaire
                             </Button>
                         </Link>

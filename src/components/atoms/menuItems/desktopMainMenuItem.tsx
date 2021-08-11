@@ -35,7 +35,7 @@ interface Props {
 const DesktopMainMenuItem: React.FunctionComponent<Props> = (props) => {
     return (
         <Link to={props.menuItem.path}>
-            <Button btn={OBtn.Naked}>
+            <Button onClick={() => 'func'} btn={OBtn.Naked}>
                 <MenuItemStyle isActive={props.isActive}>
                     {props.menuItem.name}
                 </MenuItemStyle>

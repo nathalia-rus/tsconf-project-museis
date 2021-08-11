@@ -7,9 +7,9 @@ import NakedBtn from './nakedBtn'
 import PrimaryBtn from './primaryBtn'
 
 export type BtnProps = {
-    children?: React.ReactNode
     btn: Btn
-    onClick?: any
+    onClick: any
+    children?: React.ReactNode
     active?: boolean
     height?: string
     width?: string

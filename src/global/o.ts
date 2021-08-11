@@ -1,3 +1,10 @@
+// GLOBAL STYLES TYPES
+export const OColourPalette = {
+    primary: 'var(--color-primary)',
+} as const
+
+export type ColourPalette = typeof OColourPalette[keyof typeof OColourPalette]
+
 // CATEGORIES
 export const OCategory = {
     Literature: 'LITERATURE',
@@ -50,7 +57,7 @@ export const OTypographyStyle = {
 export type TypographyStyle =
     typeof OTypographyStyle[keyof typeof OTypographyStyle]
 
-// TYPOGRAPHY TYPES
+// MY ICON TYPES
 export const OMyIcon = {
     Logo: 'LOGO',
     DoubleArrows: 'DOUBLEARROWS',
@@ -68,7 +75,7 @@ export const OOrientation = {
 
 export type Orientation = typeof OOrientation[keyof typeof OOrientation]
 
-// ORIENTATION TYPES
+// BUTTON TYPES
 export const OBtn = {
     Primary: 'PRIMARY',
     Naked: 'NAKED',
@@ -76,12 +83,3 @@ export const OBtn = {
 } as const
 
 export type Btn = typeof OBtn[keyof typeof OBtn]
-
-// ORIENTATION TYPES
-export const OColourPalette = {
-    primary: 'var(--color-primary)',
-} as const
-
-export type ColourPalette = typeof OColourPalette[keyof typeof OColourPalette]
-
-// declare module 'o' {}
