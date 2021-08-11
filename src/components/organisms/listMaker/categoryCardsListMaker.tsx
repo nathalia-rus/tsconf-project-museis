@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { CategoryItem } from 'reducer-types'
-import CardWrapper from '../../atoms/cardWrapper/cardWrapper'
+
 import FullWidthImageMobile from '../../atoms/images/fullWidthImageMobile'
 import EmbedPlayerMobile from '../../atoms/trackPlayer/embedPlayerMobile'
 import ThinCardSeparatorLine from '../../atoms/separators/thinCardSeparatorLine'
 import ItemInfoRow from '../../molecules/rows/itemInfoRow'
 import TagsRow from '../../molecules/rows/tagsRow'
 import { Category, OCategory } from '../../../global/o'
+import Card from '../../templates/containers/card/'
 
 type Props = {
     data: any
@@ -55,11 +56,11 @@ class CategoryCardsListMaker extends React.Component<Props, {}> {
             let item: CategoryItem = props.data[id]
 
             return (
-                <CardWrapper key={index}>
+                <Card key={index}>
                     <ItemInfoRow />
                     {this.generateCardBody(item, props.category)}
                     <TagsRow />
-                </CardWrapper>
+                </Card>
             )
         })
     }

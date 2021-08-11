@@ -1,7 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { device } from '../../templates/devices/devices'
-import double_arrows from '../../../assets/icons/double_arrows.svg'
+
+import double_arrows from '../../../../assets/icons/double_arrows.svg'
+import { device } from '../../devices/devices'
 
 const CardUI = styled.div`
     background-color: white;
@@ -34,7 +35,7 @@ type Props = {
     children?: React.ReactNode
 }
 
-class CardWrapper extends React.Component<Props, {}> {
+class Card extends React.Component<Props, {}> {
     render() {
         const { children } = this.props
 
@@ -47,4 +48,4 @@ class CardWrapper extends React.Component<Props, {}> {
     }
 }
 
-export default CardWrapper
+export default Card

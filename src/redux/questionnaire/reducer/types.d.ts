@@ -1,15 +1,5 @@
 declare module 'reducer-types' {
-    import { FormType, RatingType } from '../../../global/o'
-
-    export type Question = {
-        title: string
-        answer: string[]
-        formType: FormType
-        ratingType?: RatingType
-        answer: [string]
-        options: FormItem[]
-        img_url?: string
-    }
+    import { Question } from 'types'
 
     export type QuestionsData = {
         [key: string]: Question

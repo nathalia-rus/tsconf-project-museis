@@ -1,16 +1,6 @@
 declare module 'reducer-types' {
-    export type CategoryItem = {
-        id: string
-        title: string
-        country: string
-        author: string
-        year: number
-        about: string
-        quote: string
-        tags: string[]
-        img_url?: string
-        embed_url?: string
-    }
+    import { OCategory } from '../../../global/o'
+    import { CategoryItem } from 'types'
 
     export type CategoryItemData = {
         data: { [key: string]: CategoryItem }
