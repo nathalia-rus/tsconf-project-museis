@@ -1,5 +1,6 @@
 import { CategoriesReducerType } from 'reducer-types'
-import { OCategory } from 'types'
+import { OCategory } from '../../../global/o'
+
 import {
     classicalMusicMockData,
     classicalMusicMockIDS,

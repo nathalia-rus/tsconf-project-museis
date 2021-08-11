@@ -1,4 +1,5 @@
-import { MenuItem, ONavigationItem } from 'types'
+import { MenuItem } from 'types'
+import { ONavigationItem } from '../../../global/o'
 
 type MenuItemObj = {
     [key: string]: MenuItem

@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { CategoriesReducerType, CategoryItemData } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
+import { Category, OCategory } from '../../global/o'
 import MobileSectionNavCTA from '../atoms/sectionCTA/mobileSectionNavCTA'
 import HomeHeader from '../atoms/typography/homeHeader'
 
@@ -10,7 +11,6 @@ import CategoryCardsListMaker from '../organisms/listMaker/categoryCardsListMake
 
 import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
 import MainContainer from '../templates/containers/pageContainers/mainContainer'
-import { OCategory } from 'types'
 
 type Props = {
     categories: CategoriesReducerType | null
@@ -25,7 +25,7 @@ const mapStateToProps = (state: RootState) => {
 class Home extends React.Component<Props> {
     componentDidMount() {}
     render() {
-        let oList: OCategory[] = [
+        let oList: Category[] = [
             OCategory.Literature,
             OCategory.Paintings,
             OCategory.ClassicalMusic,
@@ -36,7 +36,7 @@ class Home extends React.Component<Props> {
             <MainContainer>
                 <HomeHeader />
                 <GreyContainer>
-                    {oList.map((id: OCategory, index: number) => {
+                    {oList.map((id: Category, index: number) => {
                         let category: CategoryItemData | null =
                             this.props.categories !== null &&
                             this.props.categories.data &&

@@ -11,11 +11,7 @@ type Props = {}
 
 class ThinCardSeparatorLine extends React.Component<Props, {}> {
     render() {
-        return (
-            <>
-                <Line />
-            </>
-        )
+        return <Line />
     }
 }
 

@@ -1,5 +1,6 @@
-import { OBtn } from 'o'
 import * as React from 'react'
+
+import { Btn, OBtn } from '../../../global/o'
 
 import CloseBtn from './closeBtn'
 import NakedBtn from './nakedBtn'
@@ -7,7 +8,7 @@ import PrimaryBtn from './primaryBtn'
 
 export type BtnProps = {
     children?: React.ReactNode
-    btn: OBtn
+    btn: Btn
     onClick?: any
     active?: boolean
     height?: string
@@ -17,12 +18,14 @@ export type BtnProps = {
 class Button extends React.Component<BtnProps, {}> {
     renderIcon(props: BtnProps) {
         switch (props.btn) {
-            case 'PRIMARY':
+            // could either use the Object for suggestion:
+            case OBtn.Primary:
                 return <PrimaryBtn {...props} />
 
-            case 'NAKED':
+            case OBtn.Naked:
                 return <NakedBtn {...props} />
 
+            // or could also just use the suggestion from the type when typing the strings:
             case 'CLOSE':
                 return <CloseBtn {...props} />
 

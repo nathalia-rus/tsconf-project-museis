@@ -2,10 +2,11 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { MenuItem } from 'types'
+import { OBtn, OMyIcon } from '../../../global/o'
 import Button from '../../atoms/buttons'
 import Icon from '../../atoms/icons'
 import DesktopMainMenuItem from '../../atoms/menuItems/desktopMainMenuItem'
-import { OBtn, OIcon } from 'types'
+
 import DesktopDisplay from '../devices/desktopDisplay'
 import { device } from '../devices/devices'
 import { menuItemsIDsListDesktop, menuItemsObj } from './mainMenuData'
@@ -56,7 +57,7 @@ class MainMenuDesktop extends React.Component<{}, {}> {
         return (
             <DesktopDisplay>
                 <MenuContainer>
-                    <Icon icon={OIcon.Logo} height="5vw" width="5vw" />
+                    <Icon icon={OMyIcon.Logo} height="5vw" width="5vw" />
                     <Padding />
 
                     {menuItemsIDsListDesktop.map(

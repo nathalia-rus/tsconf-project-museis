@@ -1,13 +1,14 @@
 import * as React from 'react'
 import { Question } from 'reducer-types'
 import * as FormElements from '../../molecules/formBodyType'
-import { OFormType, OTypographyStyle } from 'types'
+
 import CenteredBodyMobile from '../../templates/containers/bodyContainers/centeredBodyMobile'
 
 import FormNavigator from '../../molecules/navigators/formNavigator'
 import QuestionNumber from '../../atoms/typography/questionNumber'
 import Title from '../../atoms/typography/title'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
+import { OFormType, OTypographyStyle } from '../../../global/o'
 
 interface Props extends RouteComponentProps<any> {
     question: Question

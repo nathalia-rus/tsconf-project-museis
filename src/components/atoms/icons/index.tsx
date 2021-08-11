@@ -6,11 +6,16 @@ import categories from '../../../assets/nav/categories.svg'
 import home from '../../../assets/nav/home.svg'
 import questionnaire from '../../../assets/nav/questionnaire.svg'
 import close from '../../../assets/icons/close.svg'
-import { OCategory, OIcon, ONavigationItem, OOrientation } from 'o'
+import {
+    NavigationItem,
+    Category,
+    MyIcon,
+    Orientation,
+} from '../../../global/o'
 
 export type IconProps = {
-    icon: OIcon | OCategory | ONavigationItem
-    orientation?: OOrientation
+    icon: MyIcon | Category | NavigationItem
+    orientation?: Orientation
     active?: boolean
     color?: string
     height?: string
@@ -43,7 +48,7 @@ class Icon extends React.Component<IconProps, {}> {
                     <IconStyled {...props} src={categories} alt="categories" />
                 )
 
-            case ONavigationItem.Questionnaire:
+            case 'QUESTIONNAIRE':
                 return (
                     <IconStyled
                         {...props}
@@ -52,7 +57,7 @@ class Icon extends React.Component<IconProps, {}> {
                     />
                 )
 
-            case OIcon.Close:
+            case 'CLOSE':
                 return <IconStyled {...props} src={close} alt="close" />
 
             default:

@@ -6,17 +6,16 @@ import EmbedPlayerMobile from '../../atoms/trackPlayer/embedPlayerMobile'
 import ThinCardSeparatorLine from '../../atoms/separators/thinCardSeparatorLine'
 import ItemInfoRow from '../../molecules/rows/itemInfoRow'
 import TagsRow from '../../molecules/rows/tagsRow'
-
-import { OCategory } from 'types'
+import { Category, OCategory } from '../../../global/o'
 
 type Props = {
     data: any
     listID: string[]
-    category: OCategory
+    category: Category
 }
 
 class CategoryCardsListMaker extends React.Component<Props, {}> {
-    generateCardBody = (item: CategoryItem, category: OCategory) => {
+    generateCardBody = (item: CategoryItem, category: Category) => {
         switch (category) {
             case OCategory.Literature:
                 return <ThinCardSeparatorLine />

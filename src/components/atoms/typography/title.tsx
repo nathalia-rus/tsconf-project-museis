@@ -1,10 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { OTypographyStyle, TypographyStyle } from '../../../global/o'
 import { device } from '../../templates/devices/devices'
-import { OTypographyStyle } from 'types'
 
 interface StyleProps {
-    typographyStyle?: OTypographyStyle[]
+    typographyStyle?: TypographyStyle[]
 }
 
 const Text = styled.div<StyleProps>`
@@ -41,7 +41,8 @@ const Text = styled.div<StyleProps>`
 
 type Props = {
     children?: React.ReactNode
-    typographyStyle?: OTypographyStyle[]
+    typographyStyle?: TypographyStyle[]
+    // cf above:L if consuded at firstm nw, it will tell you
 }
 
 class Title extends React.Component<Props, {}> {

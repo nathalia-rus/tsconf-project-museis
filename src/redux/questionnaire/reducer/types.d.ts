@@ -1,12 +1,11 @@
 declare module 'reducer-types' {
-    import { OFormType, ORatingType } from 'types'
-    import { FormItem } from 'types'
+    import { FormType, RatingType } from '../../../global/o'
 
     export type Question = {
         title: string
         answer: string[]
-        formType: OFormType
-        ratingType?: ORatingType
+        formType: FormType
+        ratingType?: RatingType
         answer: [string]
         options: FormItem[]
         img_url?: string

@@ -12,12 +12,11 @@ import {
     HeartOutlined,
 } from '@ant-design/icons'
 import { FormItem } from 'types'
-import './antd.css'
-import { OColourPalette, ORatingType } from 'types'
+import { OColourPalette, RatingType, ORatingType } from '../../../global/o'
 
 type MyFormProps = {
     items: FormItem[]
-    ratingTheme?: ORatingType
+    ratingTheme?: RatingType
 }
 
 type FormValues = {

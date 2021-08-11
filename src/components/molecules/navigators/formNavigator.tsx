@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { OBtn } from '../../../global/o'
 import Button from '../../atoms/buttons'
-import { OBtn } from 'types'
 
 const FormNavigatorStyle = styled.div`
     width: 100%;

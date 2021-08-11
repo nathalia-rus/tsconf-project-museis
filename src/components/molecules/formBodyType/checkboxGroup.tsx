@@ -7,8 +7,9 @@ import { connect } from 'react-redux'
 import { FormItem } from 'types'
 
 import FormElement from '../../atoms/formItems'
-import { OFormType } from 'types'
+
 import FormContainerMobile from '../../templates/containers/formContainers/formContainerMobile'
+import { OFormType } from '../../../global/o'
 
 type OtherProps = {
     items: FormItem[]
@@ -21,30 +22,6 @@ type FormValues = {
 interface MyFormProps {
     items: FormItem[]
 }
-
-// const ButtonPositionned = styled.div`
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     @media ${device.mobile} {
-//         margin-top: 5vh;
-//         align-self: center;
-//         margin-bottom: 50px;
-//     }
-// `
-
-// const ButtonSubcontainer = styled.div`
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     justify-content: space-evenly;
-//     width: 100vw;
-// `
-
-// const Divider = styled.div`
-//     margin-top: 20px;
-// `
 
 const CheckboxGroup = (props: OtherProps & FormikProps<FormValues>) => {
     const { values, handleChange, items, handleSubmit } = props

@@ -25,15 +25,15 @@ const PrimaryBtnStyle = styled.button<StyledProps>`
 
     @media ${device.desktop} {
         font-size: 14px;
+
+        :hover {
+            background-color: #baba7c;
+            color: white;
+        }
     }
 
     @media ${device.smallest_laptops} {
         font-size: 12px;
-    }
-
-    :hover {
-        background-color: #baba7c;
-        color: white;
     }
 `
 

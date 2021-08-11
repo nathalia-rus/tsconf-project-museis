@@ -1,8 +1,10 @@
 declare module 'types' {
+    import { NavigationItem } from './o'
+
     export type MenuItem = {
         name: string
         path: string
-        id: ONavigationItem
+        id: NavigationItem
     }
 
     export type FormItem = {

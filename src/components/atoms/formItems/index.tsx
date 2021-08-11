@@ -5,10 +5,10 @@ import './antd.css'
 
 import CheckboxSingle from './checkboxSingle'
 import RadioSingle from './radioSingle'
-import { OFormType } from 'types'
+import { FormType, OFormType } from '../../../global/o'
 
 interface IListItemProps {
-    theme: OFormType
+    theme: FormType
     children?: React.ReactNode
     onChange: any
     value: any

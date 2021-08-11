@@ -8,8 +8,9 @@ import { connect } from 'react-redux'
 import { FormItem } from 'types'
 
 import FormElement from '../../atoms/formItems'
-import { OFormType } from 'types'
+
 import FormContainerMobile from '../../templates/containers/formContainers/formContainerMobile'
+import { OFormType } from '../../../global/o'
 
 type OtherProps = {
     items: FormItem[]

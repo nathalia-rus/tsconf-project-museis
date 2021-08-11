@@ -1,5 +1,5 @@
 import { QuestionsData } from 'reducer-types'
-import { OFormType } from 'types'
+import { OFormType } from '../../../global/o'
 
 export const questionsMockOrderedListID: string[] = [
     'q001',

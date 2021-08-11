@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { OBtn } from 'types'
+import { OBtn } from '../../../global/o'
+
 import Button from '../buttons'
 
 const SectionEndPadding = styled.div`

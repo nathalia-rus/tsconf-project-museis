@@ -2,8 +2,9 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { MenuItem } from 'types'
+import { OBtn } from '../../../global/o'
 import { device } from '../../templates/devices/devices'
-import { OBtn } from 'types'
+
 import Button from '../buttons'
 
 interface Style {
