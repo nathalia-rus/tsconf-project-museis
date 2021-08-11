@@ -1,58 +1,57 @@
-import { MenuItem } from 'types'
-import { EnumNavigationItem } from '../../types/enums'
+import { MenuItem, ONavigationItem } from 'types'
 
 type MenuItemObj = {
     [key: string]: MenuItem
 }
 
 export const menuItemsObj: MenuItemObj = {
-    [EnumNavigationItem.Home]: {
+    [ONavigationItem.Home]: {
         name: 'home',
         path: '/',
-        id: EnumNavigationItem.Home,
+        id: ONavigationItem.Home,
     },
-    [EnumNavigationItem.Literature]: {
+    [ONavigationItem.Literature]: {
         name: 'literature',
         path: 'literature',
-        id: EnumNavigationItem.Literature,
+        id: ONavigationItem.Literature,
     },
-    [EnumNavigationItem.Paintings]: {
+    [ONavigationItem.Paintings]: {
         name: 'paintings',
         path: 'paintings',
-        id: EnumNavigationItem.Paintings,
+        id: ONavigationItem.Paintings,
     },
-    [EnumNavigationItem.ClassicalMusic]: {
+    [ONavigationItem.ClassicalMusic]: {
         name: 'classical music',
         path: 'classical-music',
-        id: EnumNavigationItem.ClassicalMusic,
+        id: ONavigationItem.ClassicalMusic,
     },
-    [EnumNavigationItem.Sculptures]: {
+    [ONavigationItem.Sculptures]: {
         name: 'sculptures',
         path: 'sculptures',
-        id: EnumNavigationItem.Sculptures,
+        id: ONavigationItem.Sculptures,
     },
-    [EnumNavigationItem.Questionnaire]: {
+    [ONavigationItem.Questionnaire]: {
         name: 'Questionnaire',
         path: 'questionnaire?n=1',
-        id: EnumNavigationItem.Questionnaire,
+        id: ONavigationItem.Questionnaire,
     },
-    [EnumNavigationItem.Categories]: {
+    [ONavigationItem.Categories]: {
         name: 'Categories',
         path: '',
-        id: EnumNavigationItem.Categories,
+        id: ONavigationItem.Categories,
     },
 }
 
 export const menuItemsIDsListDesktop: string[] = [
-    EnumNavigationItem.Home,
-    EnumNavigationItem.Literature,
-    EnumNavigationItem.Paintings,
-    EnumNavigationItem.ClassicalMusic,
-    EnumNavigationItem.Sculptures,
+    ONavigationItem.Home,
+    ONavigationItem.Literature,
+    ONavigationItem.Paintings,
+    ONavigationItem.ClassicalMusic,
+    ONavigationItem.Sculptures,
 ]
 
 export const menuItemsIDsListMobile: string[] = [
-    EnumNavigationItem.Home,
-    EnumNavigationItem.Categories,
-    EnumNavigationItem.Questionnaire,
+    ONavigationItem.Home,
+    ONavigationItem.Categories,
+    ONavigationItem.Questionnaire,
 ]

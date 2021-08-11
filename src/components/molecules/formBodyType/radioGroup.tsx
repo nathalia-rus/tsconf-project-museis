@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { FormItem } from 'types'
 
 import FormElement from '../../atoms/formItems'
-import { EnumFormType } from '../../types/enums'
+import { OFormType } from 'types'
 import FormContainerMobile from '../../templates/containers/formContainers/formContainerMobile'
 
 type OtherProps = {
@@ -33,7 +33,7 @@ const CheckboxGroup = (props: OtherProps & FormikProps<FormValues>) => {
                         <FormElement
                             onChange={handleChange}
                             key={index}
-                            theme={EnumFormType.radio}
+                            theme={OFormType.radio}
                             value={item.value}
                             name={item.value}
                             checked={values[`${item.value}`]}

@@ -1,13 +1,13 @@
+import { OBtn } from 'o'
 import * as React from 'react'
 
-import { EnumBtn } from '../../types/enums'
 import CloseBtn from './closeBtn'
 import NakedBtn from './nakedBtn'
 import PrimaryBtn from './primaryBtn'
 
 export type BtnProps = {
     children?: React.ReactNode
-    btn: EnumBtn
+    btn: OBtn
     onClick?: any
     active?: boolean
     height?: string
@@ -17,13 +17,13 @@ export type BtnProps = {
 class Button extends React.Component<BtnProps, {}> {
     renderIcon(props: BtnProps) {
         switch (props.btn) {
-            case EnumBtn.Primary:
+            case 'PRIMARY':
                 return <PrimaryBtn {...props} />
 
-            case EnumBtn.Naked:
+            case 'NAKED':
                 return <NakedBtn {...props} />
 
-            case EnumBtn.Close:
+            case 'CLOSE':
                 return <CloseBtn {...props} />
 
             default:

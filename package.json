@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@ant-design/icons": "^4.6.2",
         "@fullpage/react-fullpage": "^0.1.19",
         "@reduxjs/toolkit": "^1.6.1",
         "@testing-library/jest-dom": "^5.14.1",

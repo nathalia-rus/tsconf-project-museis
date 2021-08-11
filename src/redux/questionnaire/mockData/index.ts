@@ -1,12 +1,17 @@
 import { QuestionsData } from 'reducer-types'
-import { EnumFormType } from '../../../components/types/enums'
+import { OFormType } from 'types'
 
-export const questionsMockOrderedListID: string[] = ['q001', 'q002', 'q003']
+export const questionsMockOrderedListID: string[] = [
+    'q001',
+    'q002',
+    'q003',
+    'q004',
+]
 
 export const questionsMockData: QuestionsData = {
     q001: {
         title: 'this is the title of the first question, q001',
-        formType: EnumFormType.checkbox,
+        formType: OFormType.checkbox,
         options: [
             { id: 'red', value: 'red' },
             { id: 'blue', value: 'blue' },
@@ -18,7 +23,7 @@ export const questionsMockData: QuestionsData = {
 
     q002: {
         title: 'this is the title of a second question',
-        formType: EnumFormType.radio,
+        formType: OFormType.radio,
         options: [
             { id: 'red', value: 'red' },
             { id: 'blue', value: 'blue' },
@@ -30,8 +35,20 @@ export const questionsMockData: QuestionsData = {
 
     q003: {
         title: 'this is the title of a third question',
-        formType: EnumFormType.rating,
+        formType: OFormType.rating,
         answer: ['red'],
         options: [],
+    },
+
+    q004: {
+        title: 'this is the title of the first question, q001',
+        formType: OFormType.rating,
+        options: [
+            { id: 'red', value: 'red' },
+            { id: 'blue', value: 'blue' },
+            { id: 'pink', value: 'pink' },
+            { id: 'black', value: 'black' },
+        ],
+        answer: ['red'],
     },
 }

@@ -3,11 +3,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { CategoriesReducerType, CategoryItemData } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
-import CategoryCardsListMaker from '../organisms/cardsListMaker/categoryCardsListMaker'
+import CategoryCardsListMaker from '../organisms/listMaker/categoryCardsListMaker'
 
 import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
 import MainContainer from '../templates/containers/pageContainers/mainContainer'
-import { EnumCategory } from '../types/enums'
+import { OCategory } from 'types'
 
 type Props = {
     categories: CategoriesReducerType | null
@@ -25,8 +25,8 @@ class Sculptures extends React.Component<Props> {
         let category_literature: CategoryItemData | null =
             this.props.categories !== null &&
             this.props.categories.data &&
-            this.props.categories.data[EnumCategory.Literature]
-                ? this.props.categories.data[EnumCategory.Literature]
+            this.props.categories.data[OCategory.Literature]
+                ? this.props.categories.data[OCategory.Literature]
                 : null
         return (
             <MainContainer>
@@ -35,7 +35,7 @@ class Sculptures extends React.Component<Props> {
                         <CategoryCardsListMaker
                             data={category_literature.data}
                             listID={category_literature.listID}
-                            category={EnumCategory.Literature}
+                            category={OCategory.Literature}
                         />
                     )}
                 </GreyContainer>

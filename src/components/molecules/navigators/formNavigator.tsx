@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Button from '../../atoms/buttons'
-import { EnumBtn } from '../../types/enums'
+import { OBtn } from 'types'
 
 const FormNavigatorStyle = styled.div`
     width: 100%;
@@ -26,16 +26,16 @@ type Props = {
 const FormNavigator: React.FunctionComponent<Props> = (props) => {
     return (
         <FormNavigatorStyle>
-            <Button onClick={props.goNext} width="80%" btn={EnumBtn.Primary}>
+            <Button onClick={props.goNext} width="80%" btn={OBtn.Primary}>
                 next
             </Button>
             <div style={{ paddingTop: '25px' }} />
-            <Button onClick={props.goPrevious} btn={EnumBtn.Naked}>
+            <Button onClick={props.goPrevious} btn={OBtn.Naked}>
                 previous
             </Button>
 
             <Absolute>
-                <Button onClick={props.close} btn={EnumBtn.Close} />
+                <Button onClick={props.close} btn={OBtn.Close} />
             </Absolute>
         </FormNavigatorStyle>
     )

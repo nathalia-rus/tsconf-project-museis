@@ -1,10 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { device } from '../../templates/devices/devices'
-import { EnumTypographyStyle } from '../../types/enums'
+import { OTypographyStyle } from 'types'
 
 interface StyleProps {
-    typographyStyle?: EnumTypographyStyle[]
+    typographyStyle?: OTypographyStyle[]
 }
 
 const Text = styled.div<StyleProps>`
@@ -13,14 +13,13 @@ const Text = styled.div<StyleProps>`
     color: black;
     text-align: ${(props) =>
         props.typographyStyle &&
-        props.typographyStyle.includes(EnumTypographyStyle.Left) === true
+        props.typographyStyle.includes(OTypographyStyle.Left) === true
             ? 'left'
             : props.typographyStyle &&
-              props.typographyStyle.includes(EnumTypographyStyle.Left) === true
+              props.typographyStyle.includes(OTypographyStyle.Left) === true
             ? 'right'
             : props.typographyStyle &&
-              props.typographyStyle.includes(EnumTypographyStyle.Center) ===
-                  true
+              props.typographyStyle.includes(OTypographyStyle.Center) === true
             ? 'center'
             : 'left'};
     text-transform: capitalize;
@@ -35,14 +34,14 @@ const Text = styled.div<StyleProps>`
 
     width: ${(props) =>
         props.typographyStyle &&
-        props.typographyStyle.includes(EnumTypographyStyle.Narrow) === true
+        props.typographyStyle.includes(OTypographyStyle.Narrow) === true
             ? '70vw'
             : 'auto'};
 `
 
 type Props = {
     children?: React.ReactNode
-    typographyStyle?: EnumTypographyStyle[]
+    typographyStyle?: OTypographyStyle[]
 }
 
 class Title extends React.Component<Props, {}> {

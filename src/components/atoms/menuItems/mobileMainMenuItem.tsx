@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { MenuItem } from 'types'
-import { EnumNavigationItem } from '../../types/enums'
+import { ONavigationItem } from 'types'
 
 import Icon from '../icons'
 
@@ -28,13 +28,13 @@ interface Props {
 }
 
 const MobileMainMenuItem: React.FunctionComponent<Props> = (props) => {
-    let enumNav: EnumNavigationItem = props.menuItem.id
+    let oNav: ONavigationItem = props.menuItem.id
     let dimension =
-        props.menuItem.id === EnumNavigationItem.Categories ? '22px' : '20px'
+        props.menuItem.id === ONavigationItem.Categories ? '22px' : '20px'
     return (
         <MenuItemStyle isActive={props.isActive}>
             <Link to={props.menuItem.path}>
-                <Icon height={dimension} width={dimension} icon={enumNav} />
+                <Icon height={dimension} width={dimension} icon={oNav} />
             </Link>
         </MenuItemStyle>
     )

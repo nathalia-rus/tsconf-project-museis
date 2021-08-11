@@ -5,7 +5,7 @@ import { MenuItem } from 'types'
 import Button from '../../atoms/buttons'
 import Icon from '../../atoms/icons'
 import DesktopMainMenuItem from '../../atoms/menuItems/desktopMainMenuItem'
-import { EnumBtn, EnumIcon } from '../../types/enums'
+import { OBtn, OIcon } from 'types'
 import DesktopDisplay from '../devices/desktopDisplay'
 import { device } from '../devices/devices'
 import { menuItemsIDsListDesktop, menuItemsObj } from './mainMenuData'
@@ -56,7 +56,7 @@ class MainMenuDesktop extends React.Component<{}, {}> {
         return (
             <DesktopDisplay>
                 <MenuContainer>
-                    <Icon icon={EnumIcon.Logo} height="5vw" width="5vw" />
+                    <Icon icon={OIcon.Logo} height="5vw" width="5vw" />
                     <Padding />
 
                     {menuItemsIDsListDesktop.map(
@@ -73,7 +73,7 @@ class MainMenuDesktop extends React.Component<{}, {}> {
 
                     <BottomBtn>
                         <Link to={'questionnaire'}>
-                            <Button width="100%" btn={EnumBtn.Primary}>
+                            <Button width="100%" btn={OBtn.Primary}>
                                 questionnaire
                             </Button>
                         </Link>

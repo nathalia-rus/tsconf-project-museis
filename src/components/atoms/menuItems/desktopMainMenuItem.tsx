@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { MenuItem } from 'types'
 import { device } from '../../templates/devices/devices'
-import { EnumBtn } from '../../types/enums'
+import { OBtn } from 'types'
 import Button from '../buttons'
 
 interface Style {
@@ -34,7 +34,7 @@ interface Props {
 const DesktopMainMenuItem: React.FunctionComponent<Props> = (props) => {
     return (
         <Link to={props.menuItem.path}>
-            <Button btn={EnumBtn.Naked}>
+            <Button btn={OBtn.Naked}>
                 <MenuItemStyle isActive={props.isActive}>
                     {props.menuItem.name}
                 </MenuItemStyle>

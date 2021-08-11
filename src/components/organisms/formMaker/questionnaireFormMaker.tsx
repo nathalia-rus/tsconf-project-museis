@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Question } from 'reducer-types'
 import * as FormElements from '../../molecules/formBodyType'
-import { EnumFormType, EnumTypographyStyle } from '../../types/enums'
+import { OFormType, OTypographyStyle } from 'types'
 import CenteredBodyMobile from '../../templates/containers/bodyContainers/centeredBodyMobile'
 
 import FormNavigator from '../../molecules/navigators/formNavigator'
@@ -15,14 +15,22 @@ interface Props extends RouteComponentProps<any> {
     last_index: number
 }
 
-class FormMakerMobile extends React.Component<Props, {}> {
+class QuestionnaireFormMaker extends React.Component<Props, {}> {
     renderFormBody = (item: Question) => {
         switch (item.formType) {
-            case EnumFormType.radio:
+            case OFormType.radio:
                 return <FormElements.RadioGroup items={item.options} />
 
-            case EnumFormType.checkbox:
+            case OFormType.checkbox:
                 return <FormElements.CheckboxGroup items={item.options} />
+
+            case OFormType.rating:
+                return (
+                    <FormElements.RatingGroup
+                        ratingTheme={item.ratingType}
+                        items={item.options}
+                    />
+                )
 
             default:
                 return undefined
@@ -55,8 +63,8 @@ class FormMakerMobile extends React.Component<Props, {}> {
                     />
                     <Title
                         typographyStyle={[
-                            EnumTypographyStyle.Narrow,
-                            EnumTypographyStyle.Center,
+                            OTypographyStyle.Narrow,
+                            OTypographyStyle.Center,
                         ]}
                     >
                         {props.question.title}
@@ -74,4 +82,4 @@ class FormMakerMobile extends React.Component<Props, {}> {
     }
 }
 
-export default withRouter(FormMakerMobile)
+export default withRouter(QuestionnaireFormMaker)

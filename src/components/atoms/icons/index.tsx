@@ -6,17 +6,11 @@ import categories from '../../../assets/nav/categories.svg'
 import home from '../../../assets/nav/home.svg'
 import questionnaire from '../../../assets/nav/questionnaire.svg'
 import close from '../../../assets/icons/close.svg'
-
-import {
-    EnumCategory,
-    EnumIcon,
-    EnumNavigationItem,
-    EnumOrientation,
-} from '../../types/enums'
+import { OCategory, OIcon, ONavigationItem, OOrientation } from 'o'
 
 export type IconProps = {
-    icon: EnumIcon | EnumCategory | EnumNavigationItem
-    orientation?: EnumOrientation
+    icon: OIcon | OCategory | ONavigationItem
+    orientation?: OOrientation
     active?: boolean
     color?: string
     height?: string
@@ -32,7 +26,7 @@ const IconStyled = styled.img<IconProps>`
 class Icon extends React.Component<IconProps, {}> {
     renderIcon(props: IconProps) {
         switch (props.icon) {
-            case EnumIcon.Logo:
+            case 'LOGO':
                 return (
                     <IconStyled
                         {...props}
@@ -41,15 +35,15 @@ class Icon extends React.Component<IconProps, {}> {
                     />
                 )
 
-            case EnumNavigationItem.Home:
+            case 'HOME':
                 return <IconStyled {...props} src={home} alt="home" />
 
-            case EnumNavigationItem.Categories:
+            case 'CATEGORIES':
                 return (
                     <IconStyled {...props} src={categories} alt="categories" />
                 )
 
-            case EnumNavigationItem.Questionnaire:
+            case ONavigationItem.Questionnaire:
                 return (
                     <IconStyled
                         {...props}
@@ -58,7 +52,7 @@ class Icon extends React.Component<IconProps, {}> {
                     />
                 )
 
-            case EnumIcon.Close:
+            case OIcon.Close:
                 return <IconStyled {...props} src={close} alt="close" />
 
             default:

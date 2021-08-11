@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { BtnProps } from '.'
-import { EnumIcon } from '../../types/enums'
+
 import Icon from '../icons'
 
 const Btn = styled.button`
@@ -32,7 +32,7 @@ const Padding = styled.div`
 const CloseBtn: React.FunctionComponent<BtnProps> = (props) => {
     return (
         <Btn {...props} onClick={props.onClick && props.onClick}>
-            <Icon height="14px" icon={EnumIcon.Close} />
+            <Icon height="14px" icon={'CLOSE'} />
             <Padding />
             <Text>close</Text>
         </Btn>

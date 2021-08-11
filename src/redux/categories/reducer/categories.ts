@@ -1,5 +1,5 @@
 import { CategoriesReducerType } from 'reducer-types'
-import { EnumCategory } from '../../../components/types/enums'
+import { OCategory } from 'types'
 import {
     classicalMusicMockData,
     classicalMusicMockIDS,
@@ -19,22 +19,22 @@ import {
 
 const initialState: CategoriesReducerType = {
     data: {
-        [EnumCategory.Literature]: {
+        [OCategory.Literature]: {
             data: literatureMockData,
             listID: literatureMockIDS,
         },
 
-        [EnumCategory.Paintings]: {
+        [OCategory.Paintings]: {
             data: paintingsMockData,
             listID: paintingsMockIDS,
         },
 
-        [EnumCategory.ClassicalMusic]: {
+        [OCategory.ClassicalMusic]: {
             data: classicalMusicMockData,
             listID: classicalMusicMockIDS,
         },
 
-        [EnumCategory.Sculptures]: {
+        [OCategory.Sculptures]: {
             data: sculpturesMockData,
             listID: sculpturesMockIDS,
         },

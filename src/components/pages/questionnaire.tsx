@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
 import { Question, QuestionnaireReducerType } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
-import FormMakerMobile from '../organisms/formMaker/formMakerMobile'
+import QuestionnaireFormMaker from '../organisms/formMaker/questionnaireFormMaker'
 
 import MainContainer from '../templates/containers/pageContainers/mainContainer'
 
@@ -36,7 +36,7 @@ class Questionnaire extends React.Component<Props> {
         return (
             <MainContainer>
                 {item && n && (
-                    <FormMakerMobile
+                    <QuestionnaireFormMaker
                         last_index={questionnaire.questionsOrderedListID.length}
                         current_index={n}
                         question={item}

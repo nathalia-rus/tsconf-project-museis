@@ -7,21 +7,21 @@ import ThinCardSeparatorLine from '../../atoms/separators/thinCardSeparatorLine'
 import ItemInfoRow from '../../molecules/rows/itemInfoRow'
 import TagsRow from '../../molecules/rows/tagsRow'
 
-import { EnumCategory } from '../../types/enums'
+import { OCategory } from 'types'
 
 type Props = {
     data: any
     listID: string[]
-    category: EnumCategory
+    category: OCategory
 }
 
 class CategoryCardsListMaker extends React.Component<Props, {}> {
-    generateCardBody = (item: CategoryItem, category: EnumCategory) => {
+    generateCardBody = (item: CategoryItem, category: OCategory) => {
         switch (category) {
-            case EnumCategory.Literature:
+            case OCategory.Literature:
                 return <ThinCardSeparatorLine />
 
-            case EnumCategory.Paintings:
+            case OCategory.Paintings:
                 return (
                     <FullWidthImageMobile
                         height="180px"
@@ -29,7 +29,7 @@ class CategoryCardsListMaker extends React.Component<Props, {}> {
                     />
                 )
 
-            case EnumCategory.Sculptures:
+            case OCategory.Sculptures:
                 return (
                     <FullWidthImageMobile
                         height="180px"
@@ -37,7 +37,7 @@ class CategoryCardsListMaker extends React.Component<Props, {}> {
                     />
                 )
 
-            case EnumCategory.ClassicalMusic:
+            case OCategory.ClassicalMusic:
                 return (
                     <EmbedPlayerMobile
                         title={item.title}

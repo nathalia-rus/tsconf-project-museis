@@ -1,11 +1,12 @@
 declare module 'reducer-types' {
-    import { EnumFormType } from '../../../components/types/enums'
+    import { OFormType, ORatingType } from 'types'
     import { FormItem } from 'types'
 
     export type Question = {
         title: string
         answer: string[]
-        formType: EnumFormType
+        formType: OFormType
+        ratingType?: ORatingType
         answer: [string]
         options: FormItem[]
         img_url?: string

@@ -6,11 +6,11 @@ import { RootState } from 'typesafe-actions'
 import MobileSectionNavCTA from '../atoms/sectionCTA/mobileSectionNavCTA'
 import HomeHeader from '../atoms/typography/homeHeader'
 
-import CategoryCardsListMaker from '../organisms/cardsListMaker/categoryCardsListMaker'
+import CategoryCardsListMaker from '../organisms/listMaker/categoryCardsListMaker'
 
 import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
 import MainContainer from '../templates/containers/pageContainers/mainContainer'
-import { EnumCategory } from '../types/enums'
+import { OCategory } from 'types'
 
 type Props = {
     categories: CategoriesReducerType | null
@@ -25,18 +25,18 @@ const mapStateToProps = (state: RootState) => {
 class Home extends React.Component<Props> {
     componentDidMount() {}
     render() {
-        let enumsList: EnumCategory[] = [
-            EnumCategory.Literature,
-            EnumCategory.Paintings,
-            EnumCategory.ClassicalMusic,
-            EnumCategory.Sculptures,
+        let oList: OCategory[] = [
+            OCategory.Literature,
+            OCategory.Paintings,
+            OCategory.ClassicalMusic,
+            OCategory.Sculptures,
         ]
 
         return (
             <MainContainer>
                 <HomeHeader />
                 <GreyContainer>
-                    {enumsList.map((id: EnumCategory, index: number) => {
+                    {oList.map((id: OCategory, index: number) => {
                         let category: CategoryItemData | null =
                             this.props.categories !== null &&
                             this.props.categories.data &&

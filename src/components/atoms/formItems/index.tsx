@@ -5,10 +5,10 @@ import './antd.css'
 
 import CheckboxSingle from './checkboxSingle'
 import RadioSingle from './radioSingle'
-import { EnumFormType } from '../../types/enums'
+import { OFormType } from 'types'
 
 interface IListItemProps {
-    theme: EnumFormType
+    theme: OFormType
     children?: React.ReactNode
     onChange: any
     value: any
@@ -24,7 +24,7 @@ interface IListItemProps {
 class FormItems extends React.Component<IListItemProps, {}> {
     renderListItem(props: any) {
         switch (props.theme) {
-            case EnumFormType.radio:
+            case OFormType.radio:
                 return (
                     <RadioSingle
                         value={props.value}
@@ -32,7 +32,7 @@ class FormItems extends React.Component<IListItemProps, {}> {
                         onChange={props.onChange}
                     />
                 )
-            case EnumFormType.checkbox:
+            case OFormType.checkbox:
                 return (
                     <CheckboxSingle
                         checked={props.checked}

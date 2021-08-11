@@ -6,9 +6,11 @@ import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
 
 import store, { history } from './redux/store'
+import { GlobalStyles } from './global/globalStyles'
 
 ReactDOM.render(
     <Provider store={store}>
+        <GlobalStyles />
         <React.StrictMode>
             <App history={history} />
         </React.StrictMode>
