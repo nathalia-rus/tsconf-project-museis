@@ -19,8 +19,12 @@ const RowLine = styled.div`
     margin-right: 10px;
 `
 
+const SmallPadding = styled.div`
+    padding-bottom: 5px;
+`
+
 const Padding = styled.div`
-    padding-bottom: 13px;
+    padding-bottom: 20px;
 `
 
 type Props = {}
@@ -30,7 +34,7 @@ class ItemInfoRow extends React.Component<Props, {}> {
         return (
             <>
                 <Title>The Art of War</Title>
-                <Padding />
+                <SmallPadding />
                 <Row>
                     <Author>Sun Tzu</Author>
                     <RowLine />

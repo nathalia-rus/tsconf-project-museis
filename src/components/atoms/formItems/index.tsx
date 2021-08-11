@@ -19,9 +19,9 @@ interface IListItemProps {
     removeIcon?: boolean
 }
 
-// rename it FormItem
+// rename it FormItems
 
-class FormItem extends React.Component<IListItemProps, {}> {
+class FormItems extends React.Component<IListItemProps, {}> {
     renderListItem(props: any) {
         switch (props.theme) {
             case EnumFormType.radio:
@@ -49,4 +49,4 @@ class FormItem extends React.Component<IListItemProps, {}> {
     }
 }
 
-export default FormItem
+export default FormItems

@@ -5,10 +5,9 @@ import * as Yup from 'yup'
 
 import { connect } from 'react-redux'
 
-import { FormItem } from 'types'
-
 import FormContainerMobile from '../../templates/containers/formContainers/formContainerMobile'
 import { FrownOutlined, MehOutlined, SmileOutlined } from '@ant-design/icons'
+import { FormItem } from 'types'
 
 type OtherProps = {
     items: FormItem[]
@@ -22,7 +21,7 @@ interface MyFormProps {
     items: FormItem[]
 }
 
-const ratingIcons: { [key: number]: React.ReactNode } = {
+const RatingGroupIcons: { [key: number]: React.ReactNode } = {
     1: <FrownOutlined />,
     2: <FrownOutlined />,
     3: <MehOutlined />,
@@ -30,7 +29,7 @@ const ratingIcons: { [key: number]: React.ReactNode } = {
     5: <SmileOutlined />,
 }
 
-const Rating = (props: OtherProps & FormikProps<FormValues>) => {
+const RatingGroup = (props: OtherProps & FormikProps<FormValues>) => {
     const { handleSubmit, handleChange } = props
     return (
         <FormContainerMobile handleSubmit={handleSubmit}>
@@ -43,7 +42,7 @@ const Rating = (props: OtherProps & FormikProps<FormValues>) => {
                 <br />
                 <Rate
                     defaultValue={3}
-                    character={(index: number) => ratingIcons[index + 1]}
+                    character={(index: number) => RatingGroupIcons[index + 1]}
                     onChange={handleChange}
                 />
             </>
@@ -69,6 +68,6 @@ const FormikSelectItemsList = withFormik<MyFormProps, FormValues>({
 
         setSubmitting(false)
     },
-})(Rating)
+})(RatingGroup)
 
 export default connect(null, null)(FormikSelectItemsList)
