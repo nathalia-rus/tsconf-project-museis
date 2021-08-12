@@ -12,14 +12,13 @@ const Text = styled.div<StyleProps>`
     font-size: 15px;
     color: black;
     text-align: ${(props) =>
-        props.typographyStyle &&
-        props.typographyStyle.includes(OTypographyStyle.Left) === true
+        props.typographyStyle?.includes(OTypographyStyle.Left) 
             ? 'left'
-            : props.typographyStyle &&
-              props.typographyStyle.includes(OTypographyStyle.Left) === true
+            : 
+              props.typographyStyle?.includes(OTypographyStyle.Left) 
             ? 'right'
-            : props.typographyStyle &&
-              props.typographyStyle.includes(OTypographyStyle.Center) === true
+            : 
+              props.typographyStyle?.includes(OTypographyStyle.Center) 
             ? 'center'
             : 'left'};
     text-transform: capitalize;
@@ -33,17 +32,17 @@ const Text = styled.div<StyleProps>`
     }
 
     width: ${(props) =>
-        props.typographyStyle &&
-        props.typographyStyle.includes(OTypographyStyle.Narrow) === true
+        props.typographyStyle?.includes(OTypographyStyle.Narrow)
             ? '70vw'
             : 'auto'};
 `
 
 type Props = {
-    children?: React.ReactNode
+    children: React.ReactNode
     typographyStyle?: TypographyStyle[]
-    // cf above:L if consuded at firstm nw, it will tell you
 }
+
+// comment: either using props type like above, either using O like in here, 
 
 class Title extends React.Component<Props, {}> {
     render() {

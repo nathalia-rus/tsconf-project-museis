@@ -53,7 +53,7 @@ class Home extends React.Component<Props> {
                                         category={id}
                                     />
 
-                                    <MobileSectionNavCTA path={`/${id}`} />
+                                    <MobileSectionNavCTA path={`/${id.toLowerCase()}`} />
                                 </React.Fragment>
                             )
                         } else return <div key={index} />

@@ -1,3 +1,3 @@
-import MainThemePaginatorDotIcon from './mainThemePaginatorDotIcon'
+import PaginatorIcon from './paginatorIcon'
 
-export { MainThemePaginatorDotIcon }
+export { PaginatorIcon }

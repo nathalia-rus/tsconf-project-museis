@@ -6,7 +6,7 @@ type Props = {
     width: string
 }
 
-const MainThemePaginatorDotIcon = (props: Props) => (
+const PaginatorIcon = (props: Props) => (
     <motion.div whileTap={{ scale: 1.3 }}>
         <svg
             width={props.width}
@@ -81,4 +81,4 @@ const MainThemePaginatorDotIcon = (props: Props) => (
     </motion.div>
 )
 
-export default MainThemePaginatorDotIcon
+export default PaginatorIcon

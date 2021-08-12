@@ -37,6 +37,8 @@ type Props = {
     style?: 'default' | 'large'
 }
 
+// comment: either using O in Title, either using props type like above
+
 class LocationAndDate extends React.Component<Props, {}> {
     render() {
         const { location, date, style } = this.props

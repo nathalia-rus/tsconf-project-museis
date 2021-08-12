@@ -1,6 +1,8 @@
 // GLOBAL STYLES TYPES
 export const OColourPalette = {
     primary: 'var(--color-primary)',
+     light: 'var(--color-light)',
+
 } as const
 
 export type ColourPalette = typeof OColourPalette[keyof typeof OColourPalette]
@@ -31,6 +33,9 @@ export const OFormType = {
     checkbox: 'CHECKBOX',
     radio: 'RADIO',
     rating: 'RATING',
+    // rating_heart: 'RATING_HEART',
+    //  rating_sentiment: 'RATING_SENTIMENT',
+    //  rating_grade: 'RATING_GRADE',
 } as const
 
 export type FormType = typeof OFormType[keyof typeof OFormType]
@@ -83,3 +88,12 @@ export const OBtn = {
 } as const
 
 export type Btn = typeof OBtn[keyof typeof OBtn]
+
+
+// VIEWS 
+export const OView = {
+    grid: 'GRID',
+    list: 'LIST',
+} as const
+
+export type View = typeof OView[keyof typeof OView]
