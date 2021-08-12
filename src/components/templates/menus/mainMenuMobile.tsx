@@ -3,6 +3,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom'
 
 import styled from 'styled-components'
 import { MenuItem } from 'types'
+import { ONavigationItem } from '../../../global/o'
 
 import MobileMainMenuItem from '../../atoms/menuItems/mobileMainMenuItem'
 import IpadAndMobileDisplay from '../devices/ipadAndMobileDisplay'
@@ -41,10 +42,12 @@ const MenuBody = styled.div`
 interface Props extends RouteComponentProps<any> {}
 
 class MainMenuMobile extends React.PureComponent<Props, {}> {
-    render() {
+
+  render() {
+      let pathname: string = this.props.history.location.pathname;
         return (
             <IpadAndMobileDisplay>
-                {!this.props.history.location.pathname.match(
+                {!pathname.match(
                     /questionnaire/g
                 ) && (
                     <MenuContainer>
@@ -58,8 +61,10 @@ class MainMenuMobile extends React.PureComponent<Props, {}> {
                                         <MobileMainMenuItem
                                             menuItem={menuItem}
                                             isActive={
-                                              this.props.history.location.pathname.match(/questionnaire/g)
-                                                    ? true
+                                              menuItem.id === ONavigationItem.Questionnaire? false :
+                                            pathname === "/" && menuItem.path === "/"
+                                                    ? true :
+                                            pathname !== "/" && menuItem.path !== "/" ? true
                                                     : false
                                             }
                                         />
