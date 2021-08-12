@@ -2,7 +2,8 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import { Question, QuestionnaireReducerType } from 'reducer-types'
+import {  QuestionnaireReducerType } from 'reducer-types'
+import { Question } from 'types'
 import { RootState } from 'typesafe-actions'
 import QuestionnaireFormMaker from '../organisms/formMaker/questionnaireFormMaker'
 

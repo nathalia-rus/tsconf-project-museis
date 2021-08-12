@@ -58,7 +58,7 @@ class MainMenuMobile extends React.PureComponent<Props, {}> {
                                         <MobileMainMenuItem
                                             menuItem={menuItem}
                                             isActive={
-                                                menuItem.name === 'home'
+                                              this.props.history.location.pathname.match(/questionnaire/g)
                                                     ? true
                                                     : false
                                             }

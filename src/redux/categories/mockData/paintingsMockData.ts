@@ -1,4 +1,4 @@
-import { CategoryItem } from 'reducer-types'
+import { CategoryItem } from 'types'
 import painting_example from '../../../assets/mockAssets/paintings/painting_example.png'
 
 const exAbout: string =

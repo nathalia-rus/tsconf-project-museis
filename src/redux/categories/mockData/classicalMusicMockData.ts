@@ -1,4 +1,4 @@
-import { CategoryItem } from 'reducer-types'
+import { CategoryItem } from 'types'
 
 let embed_url_ex: string =
     'https://open.spotify.com/embed/track/0aJDvIeUkceMRueD84rRDR'

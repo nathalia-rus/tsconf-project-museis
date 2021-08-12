@@ -1,4 +1,4 @@
-import { CategoryItem } from 'reducer-types'
+import { CategoryItem } from 'types'
 import sculpture_example from '../../../assets/mockAssets/sculptures/sculpture_example.jpg'
 import sculpture_example2 from '../../../assets/mockAssets/sculptures/sculpture_example2.jpg'
 

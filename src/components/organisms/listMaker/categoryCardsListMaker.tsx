@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { CategoryItem } from 'reducer-types'
+import { CategoryItem } from 'types'
 
 import FullWidthImageMobile from '../../atoms/images/fullWidthImageMobile'
 import EmbedPlayerMobile from '../../atoms/trackPlayer/embedPlayerMobile'
