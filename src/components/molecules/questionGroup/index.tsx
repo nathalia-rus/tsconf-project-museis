@@ -21,7 +21,7 @@ img_url?: string
 
 const QuestionGroup: React.FunctionComponent<Props> = (props) => {
     return (
-<>
+                  <>
                   <QuestionNumber
                         total={props.last_index}
                         current={props.current_index}
@@ -35,9 +35,9 @@ const QuestionGroup: React.FunctionComponent<Props> = (props) => {
                         {props.title}
 
                     </Title>
- { props.img_url && <PaddingImg><FullWidthImageMobile hasNoBorderRadius={true} img_url={props.img_url} /></PaddingImg>
+ {props.img_url && <PaddingImg><FullWidthImageMobile hasNoBorderRadius={true} img_url={props.img_url} /></PaddingImg>
    }
-</>
+        </>
     )
 }
 export default QuestionGroup
