@@ -51,9 +51,9 @@ export type RatingType = typeof ORatingType[keyof typeof ORatingType]
 
 // TYPOGRAPHY TYPES
 export const OTypographyStyle = {
-    Default: 'DEFAULT',
-    Narrow: 'NARROW',
-    Large: 'LARGE',
+    Default: 'default',
+    Narrow: 'narrow',
+    Large: 'large',
     Center: 'center',
     Left: 'left',
     Right: 'right',
@@ -66,8 +66,8 @@ export type TypographyStyle =
 export const OMyIcon = {
     Logo: 'LOGO',
     DoubleArrows: 'DOUBLEARROWS',
-    SomethingElse: 'SOMETHINGELSE',
     Close: 'CLOSE',
+    SomethingElse: 'SOMETHINGELSE',
 } as const
 
 export type MyIcon = typeof OMyIcon[keyof typeof OMyIcon]

@@ -21,18 +21,20 @@ type Props = {
     goNext: any
     goPrevious: any
     close: any
+    isFirst: boolean 
+    isLast: boolean
 }
 
 const FormNavigator: React.FunctionComponent<Props> = (props) => {
     return (
         <FormNavigatorStyle>
             <Button onClick={props.goNext} width="80%" btn={OBtn.Primary}>
-                next
+                 { props.isLast ? "submit":  "next"}
             </Button>
             <div style={{ paddingTop: '25px' }} />
-            <Button onClick={props.goPrevious} btn={OBtn.Naked}>
-                previous
-            </Button>
+            { !props.isFirst && <Button onClick={props.goPrevious} btn={OBtn.Naked}>
+                 previous
+            </Button> }
 
             <Absolute>
                 <Button onClick={props.close} btn={OBtn.Close} />

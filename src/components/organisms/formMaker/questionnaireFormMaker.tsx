@@ -3,12 +3,12 @@ import * as FormElements from '../../molecules/formElements'
 
 import CenteredBodyMobile from '../../templates/containers/bodyContainers/centeredBodyMobile'
 
-import QuestionNumber from '../../atoms/typography/questionNumber'
-import Title from '../../atoms/typography/title'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import { OFormType, OTypographyStyle } from '../../../global/o'
+import { OFormType } from '../../../global/o'
 import FormNavigator from '../../molecules/formElements/formNavigator'
 import { Question } from 'types'
+import QuestionGroup from '../../molecules/questionGroup'
+
 
 interface Props extends RouteComponentProps<any> {
     question: Question
@@ -38,7 +38,14 @@ class QuestionnaireFormMaker extends React.Component<Props, {}> {
         }
     }
 
+       isLast = this.props.current_index === this.props.last_index ? true : false
+   isFirst = this.props.current_index === 1 ? true : false
+      
+
     navigate = (val: string) => {
+
+       let  isLast = this.props.current_index === this.props.last_index ? true : false
+
         let n = this.props.current_index
 
         if (val === 'close') {
@@ -47,36 +54,39 @@ class QuestionnaireFormMaker extends React.Component<Props, {}> {
         if (val === 'previous') {
             this.props.history.push(`/questionnaire?n=${n - 1}`)
         }
-        if (val === 'next') {
+        if (val === 'next' && !this.isLast) {
             this.props.history.push(`/questionnaire?n=${n + 1}`)
+        }
+
+               if (val === 'next' && isLast) {
+            this.props.history.push(`/`)
         }
     }
 
     render() {
         const { ...props } = this.props
 
+       let  
+       
+       isLast = this.props.current_index === this.props.last_index ? true : false
+  let  isFirst = this.props.current_index === 1 ? true : false
+
         return (
             <>
                 <CenteredBodyMobile>
-                    <QuestionNumber
-                        total={props.last_index}
-                        current={props.current_index}
-                    />
-                    <Title
-                        typographyStyle={[
-                            OTypographyStyle.Narrow,
-                            OTypographyStyle.Center,
-                        ]}
-                    >
-                        {props.question.title}
-                    </Title>
+  
+                    {/* QUESTION */}
+                   <QuestionGroup current_index={props.current_index} last_index={props.last_index} title={props.question.title} img_url={props.question.img_url} />
+                    {/* FORM */}
                     {this.renderFormBody(props.question)}
                 </CenteredBodyMobile>
-
+                    {/* NAVIGATOR */}
                 <FormNavigator
                     goNext={() => this.navigate('next')}
                     goPrevious={() => this.navigate('previous')}
                     close={() => this.navigate('close')}
+                    isLast={isLast}
+                    isFirst={isFirst}
                 />
             </>
         )

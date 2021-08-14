@@ -9,6 +9,7 @@ import Skeleton from '../skeleton/skeleton'
 type IImgProps = {
     isthingloading?: boolean
     height?: string
+    hasNoBorderRadius?: boolean
 }
 const ImageStyleWrapper = styled.div<IImgProps>`
     width: 100%;
@@ -33,7 +34,9 @@ const ImageStyle = styled.img<IImgProps>`
     transition: opacity 400ms;
 
     z-index: 1;
-    border-radius: 5px;
+ 
+
+      border-radius: ${(props) => (props.hasNoBorderRadius ? "0px" : '5px')};
 `
 
 const Wrapper = styled.div`
@@ -53,6 +56,7 @@ export interface IImageProps {
     img_url?: string
     placeholder?: string
     height?: string
+    hasNoBorderRadius?: boolean
 }
 
 type State = {
@@ -95,7 +99,7 @@ class FullWidthImageMobile extends React.Component<IImageProps, State> {
     }
 
     render() {
-        const { height } = this.props
+        const { height ,hasNoBorderRadius} = this.props
         const { isLoading } = this.state
 
         return (
@@ -107,14 +111,15 @@ class FullWidthImageMobile extends React.Component<IImageProps, State> {
                         src={this.state.src || painting_placeholder}
                         isthingloading={isLoading}
                         onLoad={() => {
-                            setTimeout(() => {
-                                this.setState({
-                                    ...this.state,
-
-                                    isLoading: false,
-                                })
-                            }, 100)
+                          setTimeout(() => {
+                            this.setState({
+                              ...this.state,
+                              
+                              isLoading: false,
+                            })
+                          }, 100)
                         }}
+                        hasNoBorderRadius= {hasNoBorderRadius && hasNoBorderRadius} 
                     />
                 </ImageStyleWrapper>
             </Wrapper>

@@ -70,6 +70,8 @@ class EditFormMaker extends React.Component<Props, {}> {
                     goNext={() => this.navigate('next')}
                     goPrevious={() => this.navigate('previous')}
                     close={() => this.navigate('close')}
+                    isFirst={true}
+                    isLast={true}
                 />
             </>
         )
