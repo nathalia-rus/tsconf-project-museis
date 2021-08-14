@@ -27,14 +27,19 @@ const SmallPadding = styled.div`
 const Padding = styled.div`
     padding-bottom: 20px;
 `
-
+const Col = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+`
 type Props = { item: CategoryItem }
 
 class ItemInfoRow extends React.Component<Props, {}> {
     render() {
         let item = this.props.item
         return (
-            <>
+            <Col>
                 <Title>{item.title}</Title>
                 <SmallPadding />
                 <Row>
@@ -46,7 +51,7 @@ class ItemInfoRow extends React.Component<Props, {}> {
                     />
                 </Row>
                 <Padding />
-            </>
+            </Col>
         )
     }
 }

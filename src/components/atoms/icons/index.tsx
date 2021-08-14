@@ -8,7 +8,7 @@ import questionnaire from '../../../assets/nav/questionnaire.svg'
 import close from '../../../assets/icons/close.svg'
 
 import favourites from '../../../assets/nav/favourites.svg'
-
+import favourite from '../../../assets/icons/favourite.svg'
 import {
     NavigationItem,
     Category,
@@ -47,7 +47,12 @@ class Icon extends React.Component<IconProps, {}> {
                 return <IconStyled {...props} src={home} alt="home" />
 
             case 'favourites':
-                return <IconStyled {...props} src={favourites} alt="home" />
+                return (
+                    <IconStyled {...props} src={favourites} alt="favourites" />
+                )
+
+            case 'favourite':
+                return <IconStyled {...props} src={favourite} alt="favourite" />
 
             case 'categories':
                 return <IconStyled {...props} src={category} alt="categories" />

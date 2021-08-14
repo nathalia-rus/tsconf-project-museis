@@ -67,6 +67,7 @@ export const OMyIcon = {
     Logo: 'logo',
     DoubleArrows: 'double_arrows',
     Close: 'close',
+    Favourite: 'favourite',
     SomethingElse: 'something_else',
 } as const
 
@@ -85,6 +86,7 @@ export const OBtn = {
     Primary: 'PRIMARY',
     Naked: 'NAKED',
     Close: 'CLOSE',
+    SetFavourite: 'SET_FAVOURITE',
 } as const
 
 export type Btn = typeof OBtn[keyof typeof OBtn]

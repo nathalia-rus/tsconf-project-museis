@@ -1,9 +1,14 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-const PlayerElem = styled.iframe`
-    height: 77px;
-    width: 78vw;
+type IStyledProps = {
+    size?: 'default' | 'big'
+}
+
+const PlayerElem = styled.iframe<IStyledProps>`
+    height: 100px;
+    width: ${(props) => (props.size === 'big' ? '90vw' : '78vw')};
+    height: ${(props) => (props.size === 'big' ? '100px' : '77px')};
     display: flex !important;
     flex-direction: row !important;
     align-self: center !important;
@@ -14,8 +19,9 @@ const PlayerElem = styled.iframe`
 `
 
 type Props = {
-    embed_url?: string
     title: string
+    embed_url?: string
+    size?: 'default' | 'big'
 }
 
 class EmbedPlayerMobile extends React.Component<Props, {}> {
@@ -28,6 +34,7 @@ class EmbedPlayerMobile extends React.Component<Props, {}> {
                 frameBorder={0}
                 allowTransparency={true}
                 allow="encrypted-media"
+                size={props.size}
             ></PlayerElem>
         )
     }

@@ -50,6 +50,7 @@ class Item extends React.Component<Props> {
                     {item && (
                         <>
                             <ItemOverviewGroup item={item} />
+
                             <ItemBodyMaker
                                 item={item}
                                 sectionsListID={props.sectionsListID}

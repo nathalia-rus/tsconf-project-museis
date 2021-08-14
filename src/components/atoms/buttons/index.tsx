@@ -5,6 +5,7 @@ import { Btn, OBtn } from '../../../global/o'
 import CloseBtn from './closeBtn'
 import NakedBtn from './nakedBtn'
 import PrimaryBtn from './primaryBtn'
+import FavBtn from './favBtn'
 
 export type BtnProps = {
     btn: Btn
@@ -24,6 +25,9 @@ class Button extends React.Component<BtnProps, {}> {
 
             case OBtn.Naked:
                 return <NakedBtn {...props} />
+
+            case OBtn.SetFavourite:
+                return <FavBtn {...props} />
 
             // or could also just use the suggestion from the type when typing the strings:
             case 'CLOSE':

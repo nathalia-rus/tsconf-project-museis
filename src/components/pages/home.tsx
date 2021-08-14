@@ -42,9 +42,9 @@ class Home extends React.Component<Props> {
         let categories = this.props.categories
 
         let oList: Category[] = [
-            OCategory.Literature,
             OCategory.Paintings,
             OCategory.ClassicalMusic,
+            OCategory.Literature,
             OCategory.Sculptures,
         ]
 
