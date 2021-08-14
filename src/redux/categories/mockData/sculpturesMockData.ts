@@ -25,8 +25,8 @@ export const sculpturesMockData: { [key: string]: CategoryItem } = {
         author: 'Sun Tzu',
         year: 1677,
         img_url: sculpture_example,
-        about: exAbout,
-        quote: exQuote,
+        about: [exAbout],
+        quote: [exQuote],
         tags: ['t001', 't002', 't003'],
     },
     s002: {
@@ -36,9 +36,9 @@ export const sculpturesMockData: { [key: string]: CategoryItem } = {
         author: 'Plato',
         year: 1877,
         tags: ['t002', 't005', 't003'],
-        about: exAbout,
         img_url: sculpture_example2,
-        quote: exQuote,
+        about: [exAbout],
+        quote: [exQuote],
     },
     s003: {
         id: 's003',
@@ -48,7 +48,7 @@ export const sculpturesMockData: { [key: string]: CategoryItem } = {
         year: 1877,
         img_url: sculpture_example,
         tags: ['t001', 't002', 't003'],
-        about: exAbout,
-        quote: exQuote,
+        about: [exAbout],
+        quote: [exQuote],
     },
 }

@@ -7,9 +7,9 @@ declare module 'types' {
         id: NavigationItem
     }
 
-        export type ValidationOptions = { 
+    export type ValidationOptions = {
         isRequired?: boolean
-        maxChar?: number 
+        maxChar?: number
         minChar?: number
     }
 
@@ -17,8 +17,8 @@ declare module 'types' {
 
     export type FormItem = {
         id: any
-        value: string 
-        hasValidation? : ValidationOptions
+        value: string
+        hasValidation?: ValidationOptions
     }
 
     export type Question = {
@@ -37,8 +37,8 @@ declare module 'types' {
         country: string
         author: string
         year: number
-        about: string
-        quote: string
+        about: string[]
+        quote: string[]
         tags: string[]
         img_url?: string
         embed_url?: string

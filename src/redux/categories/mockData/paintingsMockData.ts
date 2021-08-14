@@ -24,8 +24,8 @@ export const paintingsMockData: { [key: string]: CategoryItem } = {
         author: 'Sun Tzu',
         year: 1677,
         img_url: painting_example,
-        about: exAbout,
-        quote: exQuote,
+        about: [exAbout],
+        quote: [exQuote],
         tags: ['t001', 't002', 't003'],
     },
     p002: {
@@ -35,9 +35,9 @@ export const paintingsMockData: { [key: string]: CategoryItem } = {
         author: 'Plato',
         year: 1877,
         tags: ['t002', 't005', 't003'],
-        about: exAbout,
+        about: [exAbout],
+        quote: [exQuote],
         img_url: painting_example,
-        quote: exQuote,
     },
     p003: {
         id: 'p003',
@@ -47,7 +47,7 @@ export const paintingsMockData: { [key: string]: CategoryItem } = {
         year: 1877,
         img_url: painting_example,
         tags: ['t001', 't002', 't003'],
-        about: exAbout,
-        quote: exQuote,
+        about: [exAbout],
+        quote: [exQuote],
     },
 }

@@ -22,8 +22,8 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
         country: 'Japan',
         author: 'Sun Tzu',
         year: 1677,
-        about: exAbout,
-        quote: exQuote,
+        about: [exAbout],
+        quote: [exQuote],
         tags: ['t001', 't002', 't003'],
     },
     l002: {
@@ -33,8 +33,8 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
         author: 'Plato',
         year: 1877,
         tags: ['t002', 't005', 't003'],
-        about: exAbout,
-        quote: exQuote,
+        about: [exAbout],
+        quote: [exQuote],
     },
     l003: {
         id: 'l003',
@@ -43,7 +43,7 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
         author: 'Sun Tzu',
         year: 1877,
         tags: ['t001', 't002', 't003'],
-        about: exAbout,
-        quote: exQuote,
+        about: [exAbout],
+        quote: [exQuote],
     },
 }
