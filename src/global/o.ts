@@ -1,8 +1,7 @@
 // GLOBAL STYLES TYPES
 export const OColourPalette = {
     primary: 'var(--color-primary)',
-     light: 'var(--color-light)',
-
+    light: 'var(--color-light)',
 } as const
 
 export type ColourPalette = typeof OColourPalette[keyof typeof OColourPalette]
@@ -89,8 +88,7 @@ export const OBtn = {
 
 export type Btn = typeof OBtn[keyof typeof OBtn]
 
-
-// VIEWS 
+// VIEWS
 export const OView = {
     grid: 'GRID',
     list: 'LIST',

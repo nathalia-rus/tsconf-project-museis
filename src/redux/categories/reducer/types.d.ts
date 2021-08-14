@@ -11,8 +11,12 @@ declare module 'reducer-types' {
         [key in OCategory]: CategoryItemData
     }
 
+    export type CategoryDetails = {
+        [key in OCategory]: { name: string }
+    }
     export interface CategoriesReducerType {
         data: { [key in OCategory]: CategoryItemData }
+        categoriesDetail: CategoryDetails
         isLoading: boolean
         error: any
     }

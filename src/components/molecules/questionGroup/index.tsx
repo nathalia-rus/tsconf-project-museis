@@ -10,6 +10,15 @@ const PaddingImg = styled.div`
     width: 100vw;
 `
 
+const Wrapper = styled.div`
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+`
+
 type Props = {
     title: string
     current_index: number
@@ -19,7 +28,7 @@ type Props = {
 
 const QuestionGroup: React.FunctionComponent<Props> = (props) => {
     return (
-        <>
+        <Wrapper>
             <QuestionNumber
                 total={props.last_index}
                 current={props.current_index}
@@ -40,7 +49,7 @@ const QuestionGroup: React.FunctionComponent<Props> = (props) => {
                     />
                 </PaddingImg>
             )}
-        </>
+        </Wrapper>
     )
 }
 export default QuestionGroup

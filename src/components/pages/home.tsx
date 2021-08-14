@@ -6,6 +6,7 @@ import { RootState } from 'typesafe-actions'
 import { Category, OCategory } from '../../global/o'
 import MobileSectionNavCTA from '../atoms/sectionCTA/mobileSectionNavCTA'
 import HomeHeader from '../atoms/typography/homeHeader'
+import SectionHeader from '../atoms/typography/sectionHeader'
 
 import CategoryCardsListMaker from '../organisms/listMaker/categoryCardsListMaker'
 
@@ -13,7 +14,7 @@ import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
 import MainContainer from '../templates/containers/pageContainers/mainContainer'
 
 type Props = {
-    categories: CategoriesReducerType | null
+    categories: CategoriesReducerType
 }
 
 const mapStateToProps = (state: RootState) => {
@@ -25,6 +26,8 @@ const mapStateToProps = (state: RootState) => {
 class Home extends React.Component<Props> {
     componentDidMount() {}
     render() {
+        let categories = this.props.categories
+
         let oList: Category[] = [
             OCategory.Literature,
             OCategory.Paintings,
@@ -35,30 +38,37 @@ class Home extends React.Component<Props> {
         return (
             <MainContainer>
                 <HomeHeader />
-                <GreyContainer>
-                    {oList.map((id: Category, index: number) => {
+                {categories &&
+                    oList.map((id: Category, index: number) => {
                         let category: CategoryItemData | null =
-                            this.props.categories !== null &&
-                            this.props.categories.data &&
-                            this.props.categories.data[id]
-                                ? this.props.categories.data[id]
+                            categories !== null &&
+                            categories.data &&
+                            categories.data[id]
+                                ? categories.data[id]
                                 : null
 
                         if (category) {
                             return (
                                 <React.Fragment key={index}>
-                                    <CategoryCardsListMaker
-                                        data={category.data}
-                                        listID={category.listID.slice(0, 2)}
-                                        category={id}
+                                    <SectionHeader
+                                        title={
+                                            categories.categoriesDetail[id].name
+                                        }
                                     />
-
-                                    <MobileSectionNavCTA path={`/${id.toLowerCase()}`} />
+                                    <GreyContainer>
+                                        <CategoryCardsListMaker
+                                            data={category.data}
+                                            listID={category.listID.slice(0, 2)}
+                                            category={id}
+                                        />
+                                        <MobileSectionNavCTA
+                                            path={`/${id.toLowerCase()}`}
+                                        />
+                                    </GreyContainer>
                                 </React.Fragment>
                             )
                         } else return <div key={index} />
                     })}
-                </GreyContainer>
             </MainContainer>
         )
     }

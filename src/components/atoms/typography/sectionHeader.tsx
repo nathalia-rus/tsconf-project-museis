@@ -1,33 +1,49 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import sectionHeader from '../../../assets/mockAssets/toDeleteEventually/sectionHeader.svg'
-import { device } from '../../templates/devices/devices'
 
-const Padding = styled.div`
-    padding-left: 30px;
+const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
     padding-bottom: 30px;
-
-    @media ${device.large_desktop} {
-    }
+    padding-top: 30px;
+    padding-left: 6%;
+    padding-right: 6%;
 `
 
-const Img = styled.img`
-    width: 60vw;
+const SectionTitle = styled.div`
+    font-family: 'Roboto-Medium';
+    font-size: 14px;
+    text-transform: uppercase;
+    width: auto;
+    text-align: left;
+`
 
-    @media ${device.large_desktop} {
-    }
+const Line = styled.div`
+    height: 1px;
+    background-color: black;
+    width: 100%;
+`
+
+const Padding = styled.div`
+    padding-left: 15px;
 `
 
 type Props = {
-    children?: React.ReactNode
+    title: string
 }
 
 class SectionHeader extends React.Component<Props, {}> {
     render() {
         return (
-            <Padding>
-                <Img alt="section header" src={sectionHeader} />
-            </Padding>
+            <Row>
+                <SectionTitle>{this.props.title}</SectionTitle>
+                <Padding />
+                <Line />
+            </Row>
         )
     }
 }

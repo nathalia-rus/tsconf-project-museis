@@ -5,7 +5,8 @@ import { device } from '../../templates/devices/devices'
 
 const Padding = styled.div`
     padding-left: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
+    padding-top: 30px;
 
     @media ${device.large_desktop} {
     }

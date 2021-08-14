@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { CategoriesReducerType, CategoryItemData } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
 import { OCategory } from '../../global/o'
+import SectionHeader from '../atoms/typography/sectionHeader'
 import CategoryCardsListMaker from '../organisms/listMaker/categoryCardsListMaker'
 
 import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
@@ -22,21 +23,32 @@ const mapStateToProps = (state: RootState) => {
 class Literature extends React.Component<Props> {
     componentDidMount() {}
     render() {
+        let categories = this.props.categories
         let category_literature: CategoryItemData | null =
-            this.props.categories !== null &&
-            this.props.categories.data &&
-            this.props.categories.data[OCategory.Literature]
-                ? this.props.categories.data[OCategory.Literature]
+            categories &&
+            categories.data &&
+            categories.data[OCategory.Literature]
+                ? categories.data[OCategory.Literature]
                 : null
         return (
             <MainContainer>
                 <GreyContainer>
-                    {category_literature !== null && (
-                        <CategoryCardsListMaker
-                            data={category_literature.data}
-                            listID={category_literature.listID}
-                            category={OCategory.Literature}
-                        />
+                    {categories && category_literature && (
+                        <>
+                            <SectionHeader
+                                title={
+                                    categories.categoriesDetail[
+                                        OCategory.Literature
+                                    ].name
+                                }
+                            />
+
+                            <CategoryCardsListMaker
+                                data={category_literature.data}
+                                listID={category_literature.listID}
+                                category={OCategory.Literature}
+                            />
+                        </>
                     )}
                 </GreyContainer>
             </MainContainer>

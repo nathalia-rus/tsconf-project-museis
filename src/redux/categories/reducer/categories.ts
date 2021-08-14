@@ -40,6 +40,23 @@ const initialState: CategoriesReducerType = {
             listID: sculpturesMockIDS,
         },
     },
+    categoriesDetail: {
+        [OCategory.Literature]: {
+            name: 'Literature',
+        },
+
+        [OCategory.Paintings]: {
+            name: 'Paintings',
+        },
+
+        [OCategory.ClassicalMusic]: {
+            name: 'Classical',
+        },
+
+        [OCategory.Sculptures]: {
+            name: 'Sculptures',
+        },
+    },
     isLoading: false,
     error: null,
 }

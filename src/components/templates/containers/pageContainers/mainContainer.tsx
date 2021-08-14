@@ -23,7 +23,6 @@ const PageWrapper = styled.div`
     z-index: 0;
 
     @media ${device.mobile_and_ipad} {
-        padding-top: 50px;
         justify-content: flex-start;
         width: 100%;
         padding-bottom: 100px;

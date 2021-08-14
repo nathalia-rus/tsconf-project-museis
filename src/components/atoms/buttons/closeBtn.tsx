@@ -5,7 +5,9 @@ import { BtnProps } from '.'
 import Icon from '../icons'
 
 const Btn = styled.button`
-    background-color: transparent;
+    background-color: white;
+    width: 100px;
+    height: 36px;
     border: none;
     padding: 0px;
     cursor: pointer;
@@ -23,6 +25,10 @@ const Btn = styled.button`
     align-items: center;
     justify-content: center;
     font-size: 16px;
+    position: fixed;
+    right: 10px;
+    z-index: 5;
+    border-radius: 5px;
 `
 const Text = styled.div``
 const Padding = styled.div`
