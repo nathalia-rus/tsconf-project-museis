@@ -1,9 +1,11 @@
 import React from 'react'
 
 import { connect } from 'react-redux'
+import { RouteComponentProps, withRouter } from 'react-router-dom'
 import { CategoriesReducerType, CategoryItemData } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
 import { Category, OCategory } from '../../global/o'
+import Loader from '../atoms/loader/loader'
 import MobileSectionNavCTA from '../atoms/sectionCTA/mobileSectionNavCTA'
 import HomeHeader from '../atoms/typography/homeHeader'
 import SectionHeader from '../atoms/typography/sectionHeader'
@@ -14,7 +16,7 @@ import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
 import MobileDefaultPadding from '../templates/containers/bodyContainers/mobileDefaultPadding'
 import MainContainer from '../templates/containers/pageContainers/mainContainer'
 
-type Props = {
+interface Props extends RouteComponentProps<any> {
     categories: CategoriesReducerType
 }
 
@@ -25,7 +27,17 @@ const mapStateToProps = (state: RootState) => {
 }
 
 class Home extends React.Component<Props> {
-    componentDidMount() {}
+    componentDidMount() {
+        let params = new URLSearchParams(this.props.location.search)
+        let fl = params.get('fl')
+
+        if (fl) {
+            setTimeout(() => {
+                this.props.history.push('/')
+            }, 1000)
+        }
+    }
+
     render() {
         let categories = this.props.categories
 
@@ -35,6 +47,9 @@ class Home extends React.Component<Props> {
             OCategory.ClassicalMusic,
             OCategory.Sculptures,
         ]
+
+        let params = new URLSearchParams(this.props.location.search)
+        let fl = params.get('fl')
 
         return (
             <MainContainer>
@@ -73,9 +88,11 @@ class Home extends React.Component<Props> {
                             )
                         } else return <div key={index} />
                     })}
+
+                {fl && <Loader />}
             </MainContainer>
         )
     }
 }
 
-export default connect(mapStateToProps, {})(Home)
+export default withRouter(connect(mapStateToProps, {})(Home))

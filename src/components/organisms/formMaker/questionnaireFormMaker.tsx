@@ -46,7 +46,7 @@ class QuestionnaireFormMaker extends React.Component<Props, {}> {
                 ? `/questionnaire?n=${n - 1}`
                 : val === 'next' && !isLast
                 ? `/questionnaire?n=${n + 1}`
-                : `/`
+                : `/?fl=true`
 
         this.props.history.push(url)
     }

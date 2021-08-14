@@ -4,6 +4,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom'
 import styled from 'styled-components'
 import { MenuItem } from 'types'
 import { NavigationItem, ONavigationItem } from '../../../global/o'
+import Loader from '../../atoms/loader/loader'
 
 import MobileMainMenuItem from '../../atoms/menuItems/mobileMainMenuItem'
 import IpadAndMobileDisplay from '../devices/ipadAndMobileDisplay'
@@ -70,9 +71,12 @@ class MainMenuMobile extends React.PureComponent<Props, {}> {
     render() {
         let pathname: string = this.props.history.location.pathname
 
+        let params = new URLSearchParams(this.props.location.search)
+        let fl = params.get('fl')
+
         return (
             <IpadAndMobileDisplay>
-                {pathsWithMenu.indexOf(pathname) > -1 && (
+                {pathsWithMenu.indexOf(pathname) > -1 && !fl && (
                     <MenuContainer>
                         <MenuBody>
                             {menuItemsIDsListMobile.map(
