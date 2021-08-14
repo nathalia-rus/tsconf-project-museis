@@ -9,7 +9,6 @@ import FormNavigator from '../../molecules/formElements/formNavigator'
 import { Question } from 'types'
 import QuestionGroup from '../../molecules/questionGroup'
 
-
 interface Props extends RouteComponentProps<any> {
     question: Question
     current_index: number
@@ -38,49 +37,41 @@ class QuestionnaireFormMaker extends React.Component<Props, {}> {
         }
     }
 
-       isLast = this.props.current_index === this.props.last_index ? true : false
-   isFirst = this.props.current_index === 1 ? true : false
-      
-
     navigate = (val: string) => {
-
-       let  isLast = this.props.current_index === this.props.last_index ? true : false
-
+        let isLast =
+            this.props.current_index === this.props.last_index ? true : false
         let n = this.props.current_index
+        let url: string =
+            val === 'previous'
+                ? `/questionnaire?n=${n - 1}`
+                : val === 'next' && !isLast
+                ? `/questionnaire?n=${n + 1}`
+                : `/`
 
-        if (val === 'close') {
-            this.props.history.push(`/`)
-        }
-        if (val === 'previous') {
-            this.props.history.push(`/questionnaire?n=${n - 1}`)
-        }
-        if (val === 'next' && !this.isLast) {
-            this.props.history.push(`/questionnaire?n=${n + 1}`)
-        }
-
-               if (val === 'next' && isLast) {
-            this.props.history.push(`/`)
-        }
+        this.props.history.push(url)
     }
 
     render() {
         const { ...props } = this.props
 
-       let  
-       
-       isLast = this.props.current_index === this.props.last_index ? true : false
-  let  isFirst = this.props.current_index === 1 ? true : false
+        let isLast =
+            this.props.current_index === this.props.last_index ? true : false
+        let isFirst = this.props.current_index === 1 ? true : false
 
         return (
             <>
                 <CenteredBodyMobile>
-  
                     {/* QUESTION */}
-                   <QuestionGroup current_index={props.current_index} last_index={props.last_index} title={props.question.title} img_url={props.question.img_url} />
+                    <QuestionGroup
+                        current_index={props.current_index}
+                        last_index={props.last_index}
+                        title={props.question.title}
+                        img_url={props.question.img_url}
+                    />
                     {/* FORM */}
                     {this.renderFormBody(props.question)}
                 </CenteredBodyMobile>
-                    {/* NAVIGATOR */}
+                {/* NAVIGATOR */}
                 <FormNavigator
                     goNext={() => this.navigate('next')}
                     goPrevious={() => this.navigate('previous')}

@@ -11,6 +11,7 @@ import { Route, Switch } from 'react-router-dom'
 import MainMenuDesktop from './components/templates/menus/mainMenuDesktop'
 import MainMenuMobile from './components/templates/menus/mainMenuMobile'
 import Questionnaire from './components/pages/questionnaire'
+import ScrollToTop from './components/templates/transitions/scrollToTop'
 
 interface AppProps {
     history: History
@@ -26,20 +27,21 @@ class App extends React.PureComponent<AppProps> {
                     <MainMenuMobile />
 
                     <MainMenuDesktop />
-
-                    <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route
-                            path="/questionnaire"
-                            exact
-                            component={Questionnaire}
-                        />
-                        <Route
-                            path="/literature"
-                            exact
-                            component={Literature}
-                        />
-                    </Switch>
+                    <ScrollToTop>
+                        <Switch>
+                            <Route path="/" exact component={Home} />
+                            <Route
+                                path="/questionnaire"
+                                exact
+                                component={Questionnaire}
+                            />
+                            <Route
+                                path="/literature"
+                                exact
+                                component={Literature}
+                            />
+                        </Switch>
+                    </ScrollToTop>
                 </ConnectedRouter>
             </div>
         )
