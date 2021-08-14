@@ -78,8 +78,10 @@ const Loader = (props: Props) => {
         const interval = setInterval(() => {
             if (counter < 100) {
                 setCounter((counter) => counter + 1)
-            } else clearInterval(interval)
-        }, 220)
+            } else return
+        }, 5)
+
+        return () => clearInterval(interval)
     }, [counter, props])
 
     return (
