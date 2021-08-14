@@ -8,6 +8,7 @@ import SectionHeader from '../../atoms/typography/sectionHeader'
 import CategoryCardsListMaker from '../../organisms/listMaker/categoryCardsListMaker'
 
 import GreyContainer from '../../templates/containers/bodyContainers/greyContainer'
+import MobileDefaultPadding from '../../templates/containers/bodyContainers/mobileDefaultPadding'
 import MainContainer from '../../templates/containers/pageContainers/mainContainer'
 
 type Props = {
@@ -35,13 +36,15 @@ class Literature extends React.Component<Props> {
                 <GreyContainer>
                     {categories && category_literature && (
                         <>
-                            <SectionHeader
-                                title={
-                                    categories.categoriesDetail[
-                                        OCategory.Literature
-                                    ].name
-                                }
-                            />
+                            <MobileDefaultPadding>
+                                <SectionHeader
+                                    title={
+                                        categories.categoriesDetail[
+                                            OCategory.Literature
+                                        ].name
+                                    }
+                                />
+                            </MobileDefaultPadding>
 
                             <CategoryCardsListMaker
                                 data={category_literature.data}

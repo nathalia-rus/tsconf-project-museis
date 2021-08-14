@@ -29,9 +29,9 @@ export const classicalMusicMockIDS: string[] = [
 export const classicalMusicMockData: { [key: string]: CategoryItem } = {
     cl001: {
         id: 'cl001',
-        title: 'Sculptures The Art of War',
-        country: 'Japan',
-        author: 'Sun Tzu',
+        title: 'Track Title',
+        country: 'Hungary',
+        author: 'Artist Name',
         year: 1677,
         embed_url: embed_url_ex,
         body: {
@@ -57,9 +57,9 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
     },
     cl003: {
         id: 'cl003',
-        title: 'The Art of War',
-        country: 'Japan',
-        author: 'Sun Tzu',
+        title: 'Track Title',
+        country: 'Hungary',
+        author: 'Artist Name',
         year: 1877,
         embed_url: embed_url_ex,
         tags: ['t001', 't002', 't003'],

@@ -22,9 +22,9 @@ export const paintingsMockIDS: string[] = [
 export const paintingsMockData: { [key: string]: CategoryItem } = {
     p001: {
         id: 'p001',
-        title: 'Painting The Art of War',
+        title: 'Painting Item Title',
         country: 'Japan',
-        author: 'Sun Tzu',
+        author: 'Artist Name',
         year: 1677,
         img_url: painting_example,
         body: {
@@ -50,9 +50,9 @@ export const paintingsMockData: { [key: string]: CategoryItem } = {
     },
     p003: {
         id: 'p003',
-        title: 'The Art of War',
+        title: 'Item Title',
         country: 'Japan',
-        author: 'Sun Tzu',
+        author: 'Artist Name',
         year: 1877,
         img_url: painting_example,
         tags: ['t001', 't002', 't003'],

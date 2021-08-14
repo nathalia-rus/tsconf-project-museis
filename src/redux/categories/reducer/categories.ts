@@ -57,6 +57,7 @@ const initialState: CategoriesReducerType = {
             name: 'Sculptures',
         },
     },
+    bodySectionsListID: ['about', 'quote', 'author'],
     isLoading: false,
     error: null,
 }

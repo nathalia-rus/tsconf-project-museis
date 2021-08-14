@@ -8,10 +8,10 @@ export type ColourPalette = typeof OColourPalette[keyof typeof OColourPalette]
 
 // CATEGORIES
 export const OCategory = {
-    Literature: 'LITERATURE',
-    Paintings: 'PAINTINGS',
-    ClassicalMusic: 'CLASSICALMUSIC',
-    Sculptures: 'SCULPTURES',
+    Literature: 'literature',
+    Paintings: 'paintings',
+    ClassicalMusic: 'classicalmusic',
+    Sculptures: 'sculptures',
 } as const
 
 export type Category = typeof OCategory[keyof typeof OCategory]
@@ -19,9 +19,9 @@ export type Category = typeof OCategory[keyof typeof OCategory]
 // NAVIGATION
 export const ONavigationItem = {
     ...OCategory,
-    Home: 'HOME',
-    Questionnaire: 'QUESTIONNAIRE',
-    Categories: 'CATEGORIES',
+    Home: 'home',
+    Questionnaire: 'questionnaire',
+    Categories: 'categories',
 } as const
 
 export type NavigationItem =
@@ -63,10 +63,10 @@ export type TypographyStyle =
 
 // MY ICON TYPES
 export const OMyIcon = {
-    Logo: 'LOGO',
-    DoubleArrows: 'DOUBLEARROWS',
-    Close: 'CLOSE',
-    SomethingElse: 'SOMETHINGELSE',
+    Logo: 'logo',
+    DoubleArrows: 'double_arrows',
+    Close: 'close',
+    SomethingElse: 'something_else',
 } as const
 
 export type MyIcon = typeof OMyIcon[keyof typeof OMyIcon]

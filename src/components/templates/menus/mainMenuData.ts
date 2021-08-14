@@ -1,5 +1,5 @@
 import { MenuItem } from 'types'
-import { ONavigationItem } from '../../../global/o'
+import { NavigationItem, ONavigationItem } from '../../../global/o'
 
 type MenuItemObj = {
     [key: string]: MenuItem
@@ -43,7 +43,7 @@ export const menuItemsObj: MenuItemObj = {
     },
 }
 
-export const menuItemsIDsListDesktop: string[] = [
+export const menuItemsIDsListDesktop: NavigationItem[] = [
     ONavigationItem.Home,
     ONavigationItem.Literature,
     ONavigationItem.Paintings,
@@ -51,7 +51,7 @@ export const menuItemsIDsListDesktop: string[] = [
     ONavigationItem.Sculptures,
 ]
 
-export const menuItemsIDsListMobile: string[] = [
+export const menuItemsIDsListMobile: NavigationItem[] = [
     ONavigationItem.Home,
     ONavigationItem.Categories,
     ONavigationItem.Questionnaire,

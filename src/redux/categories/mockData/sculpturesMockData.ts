@@ -25,7 +25,7 @@ export const sculpturesMockData: { [key: string]: CategoryItem } = {
         id: 's001',
         title: 'Metamorphosis',
         country: 'Ancient Greece',
-        author: 'Sun Tzu',
+        author: 'Artist Name',
         year: 1677,
         img_url: sculpture_example,
         body: {
@@ -51,9 +51,9 @@ export const sculpturesMockData: { [key: string]: CategoryItem } = {
     },
     s003: {
         id: 's003',
-        title: 'The Art of War',
+        title: 'Item Title',
         country: 'Japan',
-        author: 'Sun Tzu',
+        author: 'Artist Name',
         year: 1877,
         img_url: sculpture_example,
         tags: ['t001', 't002', 't003'],

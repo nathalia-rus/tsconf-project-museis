@@ -31,7 +31,7 @@ const IconStyled = styled.img<IconProps>`
 class Icon extends React.Component<IconProps, {}> {
     renderIcon(props: IconProps) {
         switch (props.icon) {
-            case 'LOGO':
+            case 'logo':
                 return (
                     <IconStyled
                         {...props}
@@ -40,15 +40,15 @@ class Icon extends React.Component<IconProps, {}> {
                     />
                 )
 
-            case 'HOME':
+            case 'home':
                 return <IconStyled {...props} src={home} alt="home" />
 
-            case 'CATEGORIES':
+            case 'categories':
                 return (
                     <IconStyled {...props} src={categories} alt="categories" />
                 )
 
-            case 'QUESTIONNAIRE':
+            case 'questionnaire':
                 return (
                     <IconStyled
                         {...props}
@@ -57,7 +57,7 @@ class Icon extends React.Component<IconProps, {}> {
                     />
                 )
 
-            case 'CLOSE':
+            case 'close':
                 return <IconStyled {...props} src={close} alt="close" />
 
             default:

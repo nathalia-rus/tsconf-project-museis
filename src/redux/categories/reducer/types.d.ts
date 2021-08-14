@@ -1,5 +1,5 @@
 declare module 'reducer-types' {
-    import { OCategory } from '../../../global/o'
+    import { Category } from '../../../global/o'
     import { CategoryItem } from 'types'
 
     export type CategoryItemData = {
@@ -8,15 +8,19 @@ declare module 'reducer-types' {
     }
 
     export interface CategoriesData {
-        [key in OCategory]: CategoryItemData
+        [key in Category]: CategoryItemData
     }
 
     export type CategoryDetails = {
-        [key in OCategory]: { name: string }
+        [key in Category]: { name: string }
     }
+
+    export type BodySectionID = 'about' | 'quote' | 'author'
+
     export interface CategoriesReducerType {
-        data: { [key in OCategory]: CategoryItemData }
+        data: { [key in Category]: CategoryItemData }
         categoriesDetail: CategoryDetails
+        bodySectionsListID: BodySectionID[]
         isLoading: boolean
         error: any
     }

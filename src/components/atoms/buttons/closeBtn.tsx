@@ -27,6 +27,7 @@ const Btn = styled.button`
     font-size: 16px;
     position: fixed;
     right: 10px;
+    top: 10px;
     z-index: 5;
     border-radius: 5px;
 `
@@ -38,7 +39,7 @@ const Padding = styled.div`
 const CloseBtn: React.FunctionComponent<BtnProps> = (props) => {
     return (
         <Btn {...props} onClick={props.onClick && props.onClick}>
-            <Icon height="14px" icon={'CLOSE'} />
+            <Icon height="14px" icon={'close'} />
             <Padding />
             <Text>close</Text>
         </Btn>

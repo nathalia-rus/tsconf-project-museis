@@ -33,10 +33,10 @@ class ItemInfoRow extends React.Component<Props, {}> {
     render() {
         return (
             <>
-                <Title>The Art of War</Title>
+                <Title>Item Title</Title>
                 <SmallPadding />
                 <Row>
-                    <Author>Sun Tzu</Author>
+                    <Author>Artist Name</Author>
                     <RowLine />
                     <LocationAndDate date={'1877'} location="Japan" />
                 </Row>

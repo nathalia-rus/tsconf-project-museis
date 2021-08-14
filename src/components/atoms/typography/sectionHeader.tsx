@@ -10,8 +10,6 @@ const Row = styled.div`
 
     padding-bottom: 30px;
     padding-top: 30px;
-    padding-left: 6%;
-    padding-right: 6%;
 `
 
 const SectionTitle = styled.div`

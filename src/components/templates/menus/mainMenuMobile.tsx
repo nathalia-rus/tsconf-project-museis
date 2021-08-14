@@ -3,7 +3,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom'
 
 import styled from 'styled-components'
 import { MenuItem } from 'types'
-import { ONavigationItem } from '../../../global/o'
+import { NavigationItem, ONavigationItem } from '../../../global/o'
 
 import MobileMainMenuItem from '../../atoms/menuItems/mobileMainMenuItem'
 import IpadAndMobileDisplay from '../devices/ipadAndMobileDisplay'
@@ -17,6 +17,7 @@ const MenuContainer = styled.div`
     justify-content: center;
     width: 100vw;
     height: auto;
+    z-index: 30;
 `
 
 const MenuBody = styled.div`
@@ -42,18 +43,17 @@ const MenuBody = styled.div`
 interface Props extends RouteComponentProps<any> {}
 
 class MainMenuMobile extends React.PureComponent<Props, {}> {
+    render() {
+        let pathname: string = this.props.history.location.pathname
 
-  render() {
-      let pathname: string = this.props.history.location.pathname;
+        let pathsWithMenu: string[] = [`/`, `/${ONavigationItem.Literature}`]
         return (
             <IpadAndMobileDisplay>
-                {!pathname.match(
-                    /questionnaire/g
-                ) && (
+                {pathsWithMenu.indexOf(pathname) > -1 && (
                     <MenuContainer>
                         <MenuBody>
                             {menuItemsIDsListMobile.map(
-                                (menuItemID: string, index: any) => {
+                                (menuItemID: NavigationItem, index: any) => {
                                     let menuItem: MenuItem =
                                         menuItemsObj[menuItemID]
 
@@ -61,10 +61,8 @@ class MainMenuMobile extends React.PureComponent<Props, {}> {
                                         <MobileMainMenuItem
                                             menuItem={menuItem}
                                             isActive={
-                                              menuItem.id === ONavigationItem.Questionnaire? false :
-                                            pathname === "/" && menuItem.path === "/"
-                                                    ? true :
-                                            pathname !== "/" && menuItem.path !== "/" ? true
+                                                pathname === menuItem.path
+                                                    ? true
                                                     : false
                                             }
                                         />

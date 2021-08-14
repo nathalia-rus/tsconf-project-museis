@@ -21,9 +21,9 @@ export const literatureMockIDS: string[] = [
 export const literatureMockData: { [key: string]: CategoryItem } = {
     l001: {
         id: 'l001',
-        title: 'The Art of War',
+        title: 'Book Title',
         country: 'Japan',
-        author: 'Sun Tzu',
+        author: 'Author Name',
         year: 1677,
         body: {
             about: [exAbout],
@@ -47,9 +47,9 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
     },
     l003: {
         id: 'l003',
-        title: 'The Art of War',
+        title: 'Book Title',
         country: 'Japan',
-        author: 'Sun Tzu',
+        author: 'Author Name',
         year: 1877,
         tags: ['t001', 't002', 't003'],
         body: {

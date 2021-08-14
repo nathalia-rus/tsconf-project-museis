@@ -11,6 +11,7 @@ import SectionHeader from '../atoms/typography/sectionHeader'
 import CategoryCardsListMaker from '../organisms/listMaker/categoryCardsListMaker'
 
 import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
+import MobileDefaultPadding from '../templates/containers/bodyContainers/mobileDefaultPadding'
 import MainContainer from '../templates/containers/pageContainers/mainContainer'
 
 type Props = {
@@ -49,12 +50,15 @@ class Home extends React.Component<Props> {
 
                         if (category) {
                             return (
-                                <React.Fragment key={index}>
-                                    <SectionHeader
-                                        title={
-                                            categories.categoriesDetail[id].name
-                                        }
-                                    />
+                                <div key={index}>
+                                    <MobileDefaultPadding>
+                                        <SectionHeader
+                                            title={
+                                                categories.categoriesDetail[id]
+                                                    .name
+                                            }
+                                        />
+                                    </MobileDefaultPadding>
                                     <GreyContainer>
                                         <CategoryCardsListMaker
                                             data={category.data}
@@ -65,7 +69,7 @@ class Home extends React.Component<Props> {
                                             path={`/${id.toLowerCase()}`}
                                         />
                                     </GreyContainer>
-                                </React.Fragment>
+                                </div>
                             )
                         } else return <div key={index} />
                     })}
