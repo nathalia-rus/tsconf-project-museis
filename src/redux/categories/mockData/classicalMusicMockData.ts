@@ -39,7 +39,18 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
             quote: exQuote,
             author: [exAuthor],
         },
-        tags: ['t001', 't002', 't003'],
+        tags: [
+            't001',
+            't006',
+            't003',
+            't002',
+            't003',
+            't001',
+            't002',
+            't003',
+            't002',
+            't003',
+        ],
     },
     cl002: {
         id: 'cl002',
@@ -47,7 +58,7 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
         country: 'Ancient Greece',
         author: 'Plato',
         year: 1877,
-        tags: ['t002', 't005', 't003'],
+        tags: ['t002', 't003', 't002', 't003'],
         body: {
             about: exAbout,
             quote: exQuote,
@@ -62,7 +73,7 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
         author: 'Artist Name',
         year: 1877,
         embed_url: embed_url_ex,
-        tags: ['t001', 't002', 't003'],
+        tags: ['t002', 't003', 't002', 't003'],
         body: {
             about: exAbout,
             quote: exQuote,

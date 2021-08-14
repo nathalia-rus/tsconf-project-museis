@@ -54,13 +54,14 @@ class CategoryCardsListMaker extends React.Component<Props, {}> {
         const { ...props } = this.props
         return props.listID.map((id: string, index: number) => {
             let item: CategoryItem = props.data[id]
+            let category: Category = props.category
 
             if (item) {
                 return (
-                    <Card key={index}>
-                        <ItemInfoRow />
-                        {this.generateCardBody(item, props.category)}
-                        <TagsRow />
+                    <Card path={`/${category}/${item.id}`} key={index}>
+                        <ItemInfoRow item={item} />
+                        {this.generateCardBody(item, category)}
+                        <TagsRow ids={item.tags} max={2} />
                     </Card>
                 )
             } else return undefined

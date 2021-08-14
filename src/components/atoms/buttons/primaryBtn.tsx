@@ -15,7 +15,7 @@ const PrimaryBtnStyle = styled.button<StyledProps>`
     padding-bottom: 5px;
     border-radius: 5px;
     width: ${(props) => (props.width ? props.width : 'auto')};
-    min-width: 130px;
+    min-width: ${(props) => (props.width ? props.width : '130px')};
     height: ${(props) => (props.height ? props.height : '45px')};
     text-transform: capitalize;
     font-family: 'Roboto-Light';

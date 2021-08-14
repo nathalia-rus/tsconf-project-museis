@@ -55,7 +55,7 @@ class Item extends React.Component<Props> {
                                 sectionsListID={props.sectionsListID}
                             />
                             <Padding />
-                            <TagsRow />
+                            <TagsRow ids={item.tags} />
                         </>
                     )}
                     <Button

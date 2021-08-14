@@ -47,4 +47,9 @@ declare module 'types' {
         img_url?: string
         embed_url?: string
     }
+
+    export type Tag = {
+        id: string
+        name: string
+    }
 }

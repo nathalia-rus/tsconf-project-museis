@@ -23,7 +23,7 @@ const ItemOverviewGroup: React.FunctionComponent<Props> = (props) => {
     let item = props.item
     return (
         <Wrapper>
-            <ItemInfoRow />
+            <ItemInfoRow item={item} />
             {item.img_url && (
                 <AssetPadding>
                     <FullWidthImageMobile img_url={item.img_url} />

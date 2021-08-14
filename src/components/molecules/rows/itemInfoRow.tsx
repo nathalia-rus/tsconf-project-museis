@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { CategoryItem } from 'types'
 import Author from '../../atoms/typography/author'
 import LocationAndDate from '../../atoms/typography/locationAndDate'
 import Title from '../../atoms/typography/title'
@@ -27,18 +28,22 @@ const Padding = styled.div`
     padding-bottom: 20px;
 `
 
-type Props = {}
+type Props = { item: CategoryItem }
 
 class ItemInfoRow extends React.Component<Props, {}> {
     render() {
+        let item = this.props.item
         return (
             <>
-                <Title>Item Title</Title>
+                <Title>{item.title}</Title>
                 <SmallPadding />
                 <Row>
-                    <Author>Artist Name</Author>
+                    <Author>{item.author}</Author>
                     <RowLine />
-                    <LocationAndDate date={'1877'} location="Japan" />
+                    <LocationAndDate
+                        date={item.year.toString()}
+                        location={item.country}
+                    />
                 </Row>
                 <Padding />
             </>

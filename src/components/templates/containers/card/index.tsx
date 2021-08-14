@@ -1,10 +1,11 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import double_arrows from '../../../../assets/icons/double_arrows.svg'
 import { device } from '../../devices/devices'
 
-const CardUI = styled.div`
+const CardLinkUI = styled(Link)`
     background-color: white;
 
     @media ${device.mobile_and_ipad} {
@@ -33,17 +34,18 @@ const Arrow = styled.img`
 
 type Props = {
     children?: React.ReactNode
+    path: string
 }
 
 class Card extends React.Component<Props, {}> {
     render() {
-        const { children } = this.props
+        const { children, path } = this.props
 
         return (
-            <CardUI>
+            <CardLinkUI to={`${path}`}>
                 <Arrow src={double_arrows} alt="arrow" />
                 <Padding>{children}</Padding>
-            </CardUI>
+            </CardLinkUI>
         )
     }
 }
