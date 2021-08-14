@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { device } from '../../templates/devices/devices'
 import Faded from '../../templates/transitions/faded'
 
-const Wrapper = styled.div<IStyledProps>`
+const Wrapper = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
@@ -15,8 +15,10 @@ const Wrapper = styled.div<IStyledProps>`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: ${(props) => (props.counter >= 100 ? 'none' : 'flex')};
+    display: flex;
+    z-index: 15;
 `
+/* display: ${(props) => (props.counter >= 100 ? 'none' : 'flex')}; */
 
 const Wrap = styled.div`
     display: flex;
@@ -76,16 +78,12 @@ const Loader = (props: Props) => {
         const interval = setInterval(() => {
             if (counter < 100) {
                 setCounter((counter) => counter + 1)
-            } else return
-        }, 5)
-
-        return () => {
-            clearInterval(interval)
-        }
+            } else clearInterval(interval)
+        }, 220)
     }, [counter, props])
 
     return (
-        <Wrapper counter={counter}>
+        <Wrapper>
             <Faded>
                 <Wrap>
                     <Col>

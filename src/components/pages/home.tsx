@@ -33,8 +33,9 @@ class Home extends React.Component<Props> {
 
         if (fl) {
             setTimeout(() => {
-                this.props.history.push('/')
-            }, 1000)
+                return this.props.history.push('/')
+            }, 1500)
+            return
         }
     }
 

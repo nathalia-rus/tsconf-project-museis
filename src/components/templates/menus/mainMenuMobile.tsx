@@ -4,7 +4,6 @@ import { RouteComponentProps, withRouter } from 'react-router-dom'
 import styled from 'styled-components'
 import { MenuItem } from 'types'
 import { NavigationItem, ONavigationItem } from '../../../global/o'
-import Loader from '../../atoms/loader/loader'
 
 import MobileMainMenuItem from '../../atoms/menuItems/mobileMainMenuItem'
 import IpadAndMobileDisplay from '../devices/ipadAndMobileDisplay'
