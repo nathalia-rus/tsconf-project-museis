@@ -14,6 +14,9 @@ const exQuote: string[] = [
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
 ]
 
+const exAuthor: string =
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+
 export const classicalMusicMockIDS: string[] = [
     'cl001',
     'cl002',
@@ -31,8 +34,11 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
         author: 'Sun Tzu',
         year: 1677,
         embed_url: embed_url_ex,
-        about: exAbout,
-        quote: exQuote,
+        body: {
+            about: exAbout,
+            quote: exQuote,
+            author: [exAuthor],
+        },
         tags: ['t001', 't002', 't003'],
     },
     cl002: {
@@ -42,9 +48,12 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
         author: 'Plato',
         year: 1877,
         tags: ['t002', 't005', 't003'],
-        about: exAbout,
+        body: {
+            about: exAbout,
+            quote: exQuote,
+            author: [exAuthor],
+        },
         embed_url: embed_ex_2,
-        quote: exQuote,
     },
     cl003: {
         id: 'cl003',
@@ -54,7 +63,10 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
         year: 1877,
         embed_url: embed_url_ex,
         tags: ['t001', 't002', 't003'],
-        about: exAbout,
-        quote: exQuote,
+        body: {
+            about: exAbout,
+            quote: exQuote,
+            author: [exAuthor],
+        },
     },
 }

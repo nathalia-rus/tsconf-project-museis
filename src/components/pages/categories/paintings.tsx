@@ -3,11 +3,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { CategoriesReducerType, CategoryItemData } from 'reducer-types'
 import { RootState } from 'typesafe-actions'
-import { OCategory } from '../../global/o'
-import CategoryCardsListMaker from '../organisms/listMaker/categoryCardsListMaker'
+import { OCategory } from '../../../global/o'
+import CategoryCardsListMaker from '../../organisms/listMaker/categoryCardsListMaker'
 
-import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
-import MainContainer from '../templates/containers/pageContainers/mainContainer'
+import GreyContainer from '../../templates/containers/bodyContainers/greyContainer'
+import MainContainer from '../../templates/containers/pageContainers/mainContainer'
 
 type Props = {
     categories: CategoriesReducerType | null
@@ -19,7 +19,7 @@ const mapStateToProps = (state: RootState) => {
     }
 }
 
-class Sculptures extends React.Component<Props> {
+class Paintings extends React.Component<Props> {
     componentDidMount() {}
     render() {
         let category_literature: CategoryItemData | null =
@@ -44,4 +44,4 @@ class Sculptures extends React.Component<Props> {
     }
 }
 
-export default connect(mapStateToProps, {})(Sculptures)
+export default connect(mapStateToProps, {})(Paintings)

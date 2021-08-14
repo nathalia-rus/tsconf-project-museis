@@ -6,6 +6,9 @@ const exAbout: string =
 const exQuote: string =
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
 
+const exAuthor: string =
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+
 export const literatureMockIDS: string[] = [
     'l001',
     'l002',
@@ -22,8 +25,11 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
         country: 'Japan',
         author: 'Sun Tzu',
         year: 1677,
-        about: [exAbout],
-        quote: [exQuote],
+        body: {
+            about: [exAbout],
+            quote: [exQuote],
+            author: [exAuthor],
+        },
         tags: ['t001', 't002', 't003'],
     },
     l002: {
@@ -33,8 +39,11 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
         author: 'Plato',
         year: 1877,
         tags: ['t002', 't005', 't003'],
-        about: [exAbout],
-        quote: [exQuote],
+        body: {
+            about: [exAbout],
+            quote: [exQuote],
+            author: [exAuthor],
+        },
     },
     l003: {
         id: 'l003',
@@ -43,7 +52,10 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
         author: 'Sun Tzu',
         year: 1877,
         tags: ['t001', 't002', 't003'],
-        about: [exAbout],
-        quote: [exQuote],
+        body: {
+            about: [exAbout],
+            quote: [exQuote],
+            author: [exAuthor],
+        },
     },
 }

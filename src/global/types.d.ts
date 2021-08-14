@@ -29,7 +29,12 @@ declare module 'types' {
         ratingType?: RatingType
         img_url?: string
     }
-    // I quite like to hqve flqtened types, cf ratingType, img_url etc 1 level deep optional
+
+    export type CategoryItemBody = {
+        about: string[]
+        quote: string[]
+        author: string[]
+    }
 
     export type CategoryItem = {
         id: string
@@ -37,8 +42,7 @@ declare module 'types' {
         country: string
         author: string
         year: number
-        about: string[]
-        quote: string[]
+        body: CategoryItemBody
         tags: string[]
         img_url?: string
         embed_url?: string

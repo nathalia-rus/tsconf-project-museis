@@ -31,6 +31,7 @@ const PageWrapper = styled.div`
     @media ${device.beyond_ipad_mobile} {
         width: 60vw;
         justify-content: center;
+        align-items: center;
         padding-top: 76px;
         transition: all 100ms;
         max-width: 1400px;
