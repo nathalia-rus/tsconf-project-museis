@@ -29,7 +29,7 @@ const MenuBody = styled.div`
     padding-left: 40px;
     padding-right: 40px;
     position: fixed;
-    width: 70vw;
+    width: 80vw;
     height: 55px;
 
     bottom: 30px;
@@ -42,11 +42,34 @@ const MenuBody = styled.div`
 
 interface Props extends RouteComponentProps<any> {}
 
+let pathsWithMenu: string[] = [
+    `/`,
+    `/${ONavigationItem.Literature}`,
+    `/${ONavigationItem.Paintings}`,
+    `/${ONavigationItem.ClassicalMusic}`,
+    `/${ONavigationItem.Sculptures}`,
+]
+
 class MainMenuMobile extends React.PureComponent<Props, {}> {
+    checkIfActive = (
+        menuItem: MenuItem,
+        menuItemID: NavigationItem
+    ): boolean => {
+        let pathname: string = this.props.history.location.pathname
+        if (pathname === menuItem.path) {
+            return true
+        } else if (
+            menuItemID === 'categories' &&
+            pathname !== '/' &&
+            pathsWithMenu.indexOf(pathname) > -1
+        ) {
+            return true
+        } else return false
+    }
+
     render() {
         let pathname: string = this.props.history.location.pathname
 
-        let pathsWithMenu: string[] = [`/`, `/${ONavigationItem.Literature}`]
         return (
             <IpadAndMobileDisplay>
                 {pathsWithMenu.indexOf(pathname) > -1 && (
@@ -60,11 +83,10 @@ class MainMenuMobile extends React.PureComponent<Props, {}> {
                                     return (
                                         <MobileMainMenuItem
                                             menuItem={menuItem}
-                                            isActive={
-                                                pathname === menuItem.path
-                                                    ? true
-                                                    : false
-                                            }
+                                            isActive={this.checkIfActive(
+                                                menuItem,
+                                                menuItemID
+                                            )}
                                         />
                                     )
                                 }

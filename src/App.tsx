@@ -6,7 +6,7 @@ import { History } from 'history'
 
 import { ConnectedRouter } from 'connected-react-router'
 
-import Literature from './components/pages/categories/literature'
+import CategoryPage from './components/pages/category'
 import Item from './components/pages/item'
 import { Route, Switch } from 'react-router-dom'
 import MainMenuDesktop from './components/templates/menus/mainMenuDesktop'
@@ -37,9 +37,9 @@ class App extends React.PureComponent<AppProps> {
                                 component={Questionnaire}
                             />
                             <Route
-                                path="/literature"
+                                path="/:categoryid"
                                 exact
-                                component={Literature}
+                                component={CategoryPage}
                             />
 
                             <Route

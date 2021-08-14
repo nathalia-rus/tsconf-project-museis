@@ -7,7 +7,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom'
 import { OFormType } from '../../../global/o'
 import FormNavigator from '../../molecules/formElements/formNavigator'
 import { Question } from 'types'
-import QuestionGroup from '../../molecules/questionGroup'
+import QuestionGroup from '../../molecules/informationGroups/questionGroup'
 
 interface Props extends RouteComponentProps<any> {
     question: Question

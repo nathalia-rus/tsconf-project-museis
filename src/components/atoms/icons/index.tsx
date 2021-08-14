@@ -2,10 +2,13 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import museis_logo from '../../../assets/logos/museis_logo.svg'
-import categories from '../../../assets/nav/categories.svg'
+import category from '../../../assets/nav/category.svg'
 import home from '../../../assets/nav/home.svg'
 import questionnaire from '../../../assets/nav/questionnaire.svg'
 import close from '../../../assets/icons/close.svg'
+
+import favourites from '../../../assets/nav/favourites.svg'
+
 import {
     NavigationItem,
     Category,
@@ -43,10 +46,11 @@ class Icon extends React.Component<IconProps, {}> {
             case 'home':
                 return <IconStyled {...props} src={home} alt="home" />
 
+            case 'favourites':
+                return <IconStyled {...props} src={favourites} alt="home" />
+
             case 'categories':
-                return (
-                    <IconStyled {...props} src={categories} alt="categories" />
-                )
+                return <IconStyled {...props} src={category} alt="categories" />
 
             case 'questionnaire':
                 return (

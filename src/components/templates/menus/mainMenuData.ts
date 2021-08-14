@@ -41,6 +41,11 @@ export const menuItemsObj: MenuItemObj = {
         path: '',
         id: ONavigationItem.Categories,
     },
+    [ONavigationItem.Favourites]: {
+        name: 'favourites',
+        path: '/favourites',
+        id: ONavigationItem.Favourites,
+    },
 }
 
 export const menuItemsIDsListDesktop: NavigationItem[] = [
@@ -54,5 +59,6 @@ export const menuItemsIDsListDesktop: NavigationItem[] = [
 export const menuItemsIDsListMobile: NavigationItem[] = [
     ONavigationItem.Home,
     ONavigationItem.Categories,
+    ONavigationItem.Favourites,
     ONavigationItem.Questionnaire,
 ]

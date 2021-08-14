@@ -22,6 +22,7 @@ export const ONavigationItem = {
     Home: 'home',
     Questionnaire: 'questionnaire',
     Categories: 'categories',
+    Favourites: 'favourites',
 } as const
 
 export type NavigationItem =
