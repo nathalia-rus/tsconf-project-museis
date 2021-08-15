@@ -18,7 +18,7 @@ interface Props extends RouteComponentProps<any> {
 class QuestionnaireFormMaker extends React.Component<Props, {}> {
     renderFormBody = (item: Question) => {
         switch (item.formType) {
-            case 'CHECKBOX':
+            case OFormType.radio:
                 return <FormElements.RadioGroup items={item.options} />
 
             case OFormType.checkbox:
