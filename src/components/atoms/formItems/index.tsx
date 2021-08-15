@@ -21,7 +21,7 @@ interface IListItemProps {
 // rename it FormItems
 
 class FormItems extends React.Component<IListItemProps, {}> {
-    renderListItem(props: any) {
+    renderListItem(props: IListItemProps) {
         switch (props.formType) {
             case OFormType.radio:
                 return (

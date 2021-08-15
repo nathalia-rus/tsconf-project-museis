@@ -18,8 +18,10 @@ const variants = {
         transition: { duration: duration },
     },
 }
-
-const Faded = (props: any) => (
+type Props = {
+    children?: React.ReactNode
+}
+const Faded = (props: Props) => (
     <AnimatePresence>
         <motion.div
             variants={variants}
