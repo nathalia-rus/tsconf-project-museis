@@ -24,7 +24,6 @@ const PageWrapper = styled.div`
 
     @media ${device.mobile_and_ipad} {
         justify-content: flex-start;
-        width: 100%;
         padding-bottom: 100px;
     }
 
