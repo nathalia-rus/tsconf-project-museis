@@ -17,10 +17,10 @@ type Props = {
 const MobileSectionNavCTA: React.FunctionComponent<Props> = (props) => {
     return (
         <SectionEndPadding>
-          <Link to={props.path} >
-            <Button onClick={() => 'func'} btn={OBtn.Primary}>
-                discover more
-            </Button>
+            <Link to={props.path}>
+                <Button onClick={() => 'func'} btn={OBtn.Primary}>
+                    discover more
+                </Button>
             </Link>
         </SectionEndPadding>
     )
