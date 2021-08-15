@@ -25,7 +25,7 @@ export const paintingsMockData: { [key: string]: CategoryItem } = {
         title: 'Painting Item Title',
         country: 'Japan',
         author: 'Artist Name',
-        year: 1677,
+        year: '1677',
         img_url: painting_example,
         body: {
             about: [exAbout],
@@ -39,7 +39,7 @@ export const paintingsMockData: { [key: string]: CategoryItem } = {
         title: 'The Republic - Vol IVVV',
         country: 'Ancient Greece',
         author: 'Plato',
-        year: 1877,
+        year: '1677',
         tags: ['t002', 't005', 't003'],
         body: {
             about: [exAbout],
@@ -53,7 +53,7 @@ export const paintingsMockData: { [key: string]: CategoryItem } = {
         title: 'Item Title',
         country: 'Japan',
         author: 'Artist Name',
-        year: 1877,
+        year: '1677',
         img_url: painting_example,
         tags: ['t001', 't002', 't003'],
         body: {

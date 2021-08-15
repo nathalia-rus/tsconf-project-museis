@@ -45,10 +45,7 @@ class ItemInfoRow extends React.Component<Props, {}> {
                 <Row>
                     <Author>{item.author}</Author>
                     <RowLine />
-                    <LocationAndDate
-                        date={item.year.toString()}
-                        location={item.country}
-                    />
+                    <LocationAndDate date={item.year} location={item.country} />
                 </Row>
                 <Padding />
             </Col>

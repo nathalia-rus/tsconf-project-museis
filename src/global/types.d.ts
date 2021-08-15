@@ -41,7 +41,7 @@ declare module 'types' {
         title: string
         country: string
         author: string
-        year: number
+        year: string
         body: CategoryItemBody
         tags: string[]
         img_url?: string

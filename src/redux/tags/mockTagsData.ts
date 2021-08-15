@@ -26,4 +26,12 @@ export const mockTagsData: { [key: string]: Tag } = {
         id: 't006',
         name: 'impressionism',
     },
+    t007: {
+        id: 't007',
+        name: 'greco-roman',
+    },
+    t008: {
+        id: 't008',
+        name: 'allegory',
+    },
 }

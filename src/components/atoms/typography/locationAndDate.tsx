@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { device } from '../../templates/devices/devices'
 
 const Default = styled.div`
-    font-family: 'Roboto-Medium';
+    font-family: 'Roboto-Light';
     font-style: italic;
     font-size: 13px;
-    color: #aeaeae;
+    color: #666666;
     text-align: left;
     text-transform: capitalize;
     @media ${device.large_desktop} {

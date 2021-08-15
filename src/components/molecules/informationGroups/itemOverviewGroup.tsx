@@ -5,7 +5,7 @@ import Button from '../../atoms/buttons'
 
 import FullWidthImageMobile from '../../atoms/images/fullWidthImageMobile'
 import EmbedPlayerMobile from '../../atoms/trackPlayer/embedPlayerMobile'
-import ItemInfoRow from '../rows/itemInfoRow'
+import ItemInfoRow from '../informationGroups/itemInfoRow'
 
 const AssetPadding = styled.div`
     padding-top: 20px;

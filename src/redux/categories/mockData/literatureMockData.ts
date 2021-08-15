@@ -24,7 +24,7 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
         title: 'Book Title',
         country: 'Japan',
         author: 'Author Name',
-        year: 1677,
+        year: '1677',
         body: {
             about: [exAbout],
             quote: [exQuote],
@@ -37,7 +37,7 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
         title: 'The Republic - Vol IVVV',
         country: 'Ancient Greece',
         author: 'Plato',
-        year: 1877,
+        year: '1677',
         tags: ['t002', 't005', 't003'],
         body: {
             about: [exAbout],
@@ -50,7 +50,7 @@ export const literatureMockData: { [key: string]: CategoryItem } = {
         title: 'Book Title',
         country: 'Japan',
         author: 'Author Name',
-        year: 1877,
+        year: '1677',
         tags: ['t001', 't002', 't003'],
         body: {
             about: [exAbout],

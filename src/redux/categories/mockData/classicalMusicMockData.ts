@@ -32,7 +32,7 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
         title: 'Track Title',
         country: 'Hungary',
         author: 'Artist Name',
-        year: 1677,
+        year: '1677',
         embed_url: embed_url_ex,
         body: {
             about: exAbout,
@@ -57,7 +57,7 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
         title: 'The Republic - Vol IVVV',
         country: 'Ancient Greece',
         author: 'Plato',
-        year: 1877,
+        year: '1677',
         tags: ['t002', 't003', 't002', 't003'],
         body: {
             about: exAbout,
@@ -71,7 +71,7 @@ export const classicalMusicMockData: { [key: string]: CategoryItem } = {
         title: 'Track Title',
         country: 'Hungary',
         author: 'Artist Name',
-        year: 1877,
+        year: '1677',
         embed_url: embed_url_ex,
         tags: ['t002', 't003', 't002', 't003'],
         body: {

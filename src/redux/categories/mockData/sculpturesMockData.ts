@@ -26,7 +26,7 @@ export const sculpturesMockData: { [key: string]: CategoryItem } = {
         title: 'Metamorphosis',
         country: 'Ancient Greece',
         author: 'Artist Name',
-        year: 1677,
+        year: '1677',
         img_url: sculpture_example,
         body: {
             about: [exAbout],
@@ -38,10 +38,10 @@ export const sculpturesMockData: { [key: string]: CategoryItem } = {
     s002: {
         id: 's002',
         title: 'Roman Sculpture',
-        country: 'Ancient Romw',
-        author: 'Plato',
-        year: 1877,
-        tags: ['t002', 't005', 't003'],
+        country: 'Ancient Rome',
+        author: 'Unknown',
+        year: '13 BCE',
+        tags: ['t008', 't007', 't003'],
         img_url: sculpture_example2,
         body: {
             about: [exAbout],
@@ -54,7 +54,7 @@ export const sculpturesMockData: { [key: string]: CategoryItem } = {
         title: 'Item Title',
         country: 'Japan',
         author: 'Artist Name',
-        year: 1877,
+        year: '1677',
         img_url: sculpture_example,
         tags: ['t001', 't002', 't003'],
         body: {
