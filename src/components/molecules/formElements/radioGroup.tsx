@@ -34,7 +34,7 @@ const CheckboxGroup = (props: OtherProps & FormikProps<FormValues>) => {
                         <FormElement
                             onChange={handleChange}
                             key={index}
-                            theme={OFormType.radio}
+                            formType={OFormType.radio}
                             value={item.value}
                             name={item.value}
                             checked={values[`${item.value}`]}

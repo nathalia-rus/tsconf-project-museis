@@ -11,7 +11,7 @@ import FormElement from '../../atoms/formItems'
 import FormContainerMobile from '../../templates/containers/formContainers/formContainerMobile'
 import { OFormType } from '../../../global/o'
 
-type OtherProps = {
+type Props = {
     items: FormItem[]
 }
 
@@ -23,7 +23,7 @@ interface MyFormProps {
     items: FormItem[]
 }
 
-const CheckboxGroup = (props: OtherProps & FormikProps<FormValues>) => {
+const CheckboxGroup = (props: Props & FormikProps<FormValues>) => {
     const { values, handleChange, items, handleSubmit } = props
     return (
         <FormContainerMobile handleSubmit={handleSubmit}>
@@ -32,7 +32,7 @@ const CheckboxGroup = (props: OtherProps & FormikProps<FormValues>) => {
                     <FormElement
                         onChange={handleChange}
                         key={index}
-                        theme={OFormType.checkbox}
+                        formType={OFormType.checkbox}
                         value={item}
                         name={item.value}
                         checked={values[`${item.value}`]}

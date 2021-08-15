@@ -8,8 +8,7 @@ import RadioSingle from './radioSingle'
 import { FormType, OFormType } from '../../../global/o'
 
 interface IListItemProps {
-    theme: FormType
-    children?: React.ReactNode
+    formType: FormType
     onChange: any
     value: any
     name: any
@@ -23,7 +22,7 @@ interface IListItemProps {
 
 class FormItems extends React.Component<IListItemProps, {}> {
     renderListItem(props: any) {
-        switch (props.theme) {
+        switch (props.formType) {
             case OFormType.radio:
                 return (
                     <RadioSingle

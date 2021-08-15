@@ -6,7 +6,7 @@ import CenteredBodyMobile from '../../templates/containers/bodyContainers/center
 import QuestionNumber from '../../atoms/typography/questionNumber'
 import Title from '../../atoms/typography/title'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import { OFormType, OTypographyStyle } from '../../../global/o'
+import { OFormType, OtypographyOptions } from '../../../global/o'
 import FormNavigator from '../../molecules/formElements/formNavigator'
 import { Question } from 'types'
 
@@ -56,9 +56,9 @@ class EditFormMaker extends React.Component<Props, {}> {
                         current={props.current_index}
                     />
                     <Title
-                        typographyStyle={[
-                            OTypographyStyle.Narrow,
-                            OTypographyStyle.Center,
+                        typographyOptions={[
+                            OtypographyOptions.Narrow,
+                            OtypographyOptions.Center,
                         ]}
                     >
                         {props.question.title}

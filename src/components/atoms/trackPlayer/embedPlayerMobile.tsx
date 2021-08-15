@@ -5,7 +5,7 @@ type IStyledProps = {
     size?: 'default' | 'big'
 }
 
-const PlayerElem = styled.iframe<IStyledProps>`
+const Player = styled.iframe<IStyledProps>`
     height: 100px;
     width: ${(props) => (props.size === 'big' ? '90vw' : '78vw')};
     height: ${(props) => (props.size === 'big' ? '100px' : '77px')};
@@ -18,26 +18,22 @@ const PlayerElem = styled.iframe<IStyledProps>`
     padding-bottom: 10px;
 `
 
-type Props = {
+type PlayerProps = {
     title: string
     embed_url?: string
     size?: 'default' | 'big'
 }
 
-class EmbedPlayerMobile extends React.Component<Props, {}> {
-    render() {
-        let { ...props } = this.props
-        return (
-            <PlayerElem
-                title={props.title}
-                src={props.embed_url}
-                frameBorder={0}
-                allowTransparency={true}
-                allow="encrypted-media"
-                size={props.size}
-            ></PlayerElem>
-        )
-    }
+const EmbedPlayerMobile: React.FunctionComponent<PlayerProps> = (props) => {
+    return (
+        <Player
+            title={props.title}
+            src={props.embed_url}
+            frameBorder={0}
+            allowTransparency={true}
+            allow="encrypted-media"
+            size={props.size}
+        ></Player>
+    )
 }
-
 export default EmbedPlayerMobile

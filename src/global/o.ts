@@ -33,9 +33,6 @@ export const OFormType = {
     checkbox: 'CHECKBOX',
     radio: 'RADIO',
     rating: 'RATING',
-    // rating_heart: 'RATING_HEART',
-    //  rating_sentiment: 'RATING_SENTIMENT',
-    //  rating_grade: 'RATING_GRADE',
 } as const
 
 export type FormType = typeof OFormType[keyof typeof OFormType]
@@ -49,8 +46,8 @@ export const ORatingType = {
 
 export type RatingType = typeof ORatingType[keyof typeof ORatingType]
 
-// TYPOGRAPHY TYPES
-export const OTypographyStyle = {
+// TYPOGRAPHY OPTIONS
+export const OtypographyOptions = {
     Default: 'default',
     Narrow: 'narrow',
     Large: 'large',
@@ -59,11 +56,11 @@ export const OTypographyStyle = {
     Right: 'right',
 } as const
 
-export type TypographyStyle =
-    typeof OTypographyStyle[keyof typeof OTypographyStyle]
+export type typographyOptions =
+    typeof OtypographyOptions[keyof typeof OtypographyOptions]
 
 // MY ICON TYPES
-export const OMyIcon = {
+export const OIcon = {
     Logo: 'logo',
     DoubleArrows: 'double_arrows',
     Close: 'close',
@@ -71,7 +68,7 @@ export const OMyIcon = {
     SomethingElse: 'something_else',
 } as const
 
-export type MyIcon = typeof OMyIcon[keyof typeof OMyIcon]
+export type MyIcon = typeof OIcon[keyof typeof OIcon]
 
 // ORIENTATION TYPES
 export const OOrientation = {

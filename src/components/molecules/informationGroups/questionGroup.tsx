@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { OTypographyStyle } from '../../../global/o'
+import { OtypographyOptions } from '../../../global/o'
 import FullWidthImageMobile from '../../atoms/images/fullWidthImageMobile'
 import QuestionNumber from '../../atoms/typography/questionNumber'
 import Title from '../../atoms/typography/title'
@@ -34,9 +34,9 @@ const QuestionGroup: React.FunctionComponent<Props> = (props) => {
                 current={props.current_index}
             />
             <Title
-                typographyStyle={[
-                    OTypographyStyle.Narrow,
-                    OTypographyStyle.Center,
+                typographyOptions={[
+                    OtypographyOptions.Narrow,
+                    OtypographyOptions.Center,
                 ]}
             >
                 {props.title}

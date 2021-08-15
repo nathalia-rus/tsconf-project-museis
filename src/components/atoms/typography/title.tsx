@@ -1,10 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { OTypographyStyle, TypographyStyle } from '../../../global/o'
+import { OtypographyOptions, typographyOptions } from '../../../global/o'
 import { device } from '../../templates/devices/devices'
 
 interface StyleProps {
-    typographyStyle?: TypographyStyle[]
+    typographyOptions?: typographyOptions[]
 }
 
 const Text = styled.div<StyleProps>`
@@ -12,13 +12,11 @@ const Text = styled.div<StyleProps>`
     font-size: 15px;
     color: black;
     text-align: ${(props) =>
-        props.typographyStyle?.includes(OTypographyStyle.Left) 
+        props.typographyOptions?.includes(OtypographyOptions.Left)
             ? 'left'
-            : 
-              props.typographyStyle?.includes(OTypographyStyle.Left) 
+            : props.typographyOptions?.includes(OtypographyOptions.Left)
             ? 'right'
-            : 
-              props.typographyStyle?.includes(OTypographyStyle.Center) 
+            : props.typographyOptions?.includes(OtypographyOptions.Center)
             ? 'center'
             : 'left'};
     text-transform: capitalize;
@@ -32,28 +30,23 @@ const Text = styled.div<StyleProps>`
     }
 
     width: ${(props) =>
-        props.typographyStyle?.includes(OTypographyStyle.Narrow)
+        props.typographyOptions?.includes(OtypographyOptions.Narrow)
             ? '70vw'
             : 'auto'};
 `
 
 type Props = {
     children: React.ReactNode
-    typographyStyle?: TypographyStyle[]
+    typographyOptions?: typographyOptions[]
 }
 
-// comment: either using props type like above, either using O like in here, 
+// comment: either using props type like above, either using O like in here,
 
-class Title extends React.Component<Props, {}> {
-    render() {
-        const { ...props } = this.props
-
-        return (
-            <Text typographyStyle={props.typographyStyle}>
-                {props.children}
-            </Text>
-        )
-    }
+const Title: React.FunctionComponent<Props> = (props) => {
+    return (
+        <Text typographyOptions={props.typographyOptions}>
+            {props.children}
+        </Text>
+    )
 }
-
 export default Title
