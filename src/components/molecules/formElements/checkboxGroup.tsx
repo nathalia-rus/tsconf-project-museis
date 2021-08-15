@@ -7,7 +7,6 @@ import FormElement from '../../atoms/formItems'
 
 import FormContainerMobile from '../../templates/containers/formContainers/formContainerMobile'
 import { OFormType } from '../../../global/o'
-import { makeValidationSchema } from '../../../helpers/validationSchema/makeValidationSchema'
 
 type Props = {
     items: FormItem[]
@@ -45,8 +44,9 @@ const CheckboxGroup = (props: Props & FormikProps<FormValues>) => {
 }
 
 const FormikSelectItemsList = withFormik<MyFormProps, FormValues>({
-    validationSchema: (props: Props) =>
-        makeValidationSchema(props.items, props.hasValidationOptions),
+    // validationSchema: (props: Props) =>
+    // this is where you will return the relevant validation schema object
+    // makeValidationSchema(props.items, props.hasValidationOptions),
 
     // do submitting things
     handleSubmit: (values, { props, setSubmitting }) => {
