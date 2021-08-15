@@ -11,7 +11,7 @@ import { makeValidationSchema } from '../../../helpers/validationSchema/makeVali
 
 type Props = {
     items: FormItem[]
-    hasValidation?: ValidationOptions
+    hasValidationOptions?: ValidationOptions
 }
 
 type FormValues = {
@@ -46,12 +46,10 @@ const CheckboxGroup = (props: Props & FormikProps<FormValues>) => {
 
 const FormikSelectItemsList = withFormik<MyFormProps, FormValues>({
     validationSchema: (props: Props) =>
-        props.hasValidation &&
-        makeValidationSchema(props.items, props.hasValidation),
+        makeValidationSchema(props.items, props.hasValidationOptions),
 
+    // do submitting things
     handleSubmit: (values, { props, setSubmitting }) => {
-        // do submitting things
-
         let finalValues = Object.keys(values).map((key) => {
             return { value: key, checked: values[key] }
         })
