@@ -1,5 +1,5 @@
 declare module 'types' {
-    import { NavigationItem, FormType, RatingType } from './o'
+    import { NavigationItem } from './o'
 
     export type MenuItem = {
         name: string
@@ -14,18 +14,8 @@ declare module 'types' {
     }
 
     export type FormItem = {
-        id: any
+        id: string
         value: string
-        hasValidation?: ValidationOptions
-    }
-
-    export type Question = {
-        title: string
-        formType: FormType
-        answer: string[]
-        options: FormItem[]
-        ratingType?: RatingType
-        img_url?: string
     }
 
     export type CategoryItemBody = {

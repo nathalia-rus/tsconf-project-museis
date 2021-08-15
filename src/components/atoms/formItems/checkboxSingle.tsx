@@ -7,9 +7,9 @@ import './antd.css'
 import { device } from '../../templates/devices/devices'
 
 interface IListItemProps {
-    onChange: any
-    name: any
-    checked?: any
+    onChange: () => any
+    name: string
+    checked?: boolean
 }
 
 const Text = styled.div`

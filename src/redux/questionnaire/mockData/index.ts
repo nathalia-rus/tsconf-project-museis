@@ -1,6 +1,6 @@
-import { QuestionsData } from 'reducer-types'
 import { OFormType, ORatingType } from '../../../global/o'
 import painting_example from '../../../assets/mockAssets/paintings/painting_example.png'
+import { QuestionsData } from '../reducer/types'
 
 export const questionsMockOrderedListID: string[] = [
     'q001',
@@ -46,7 +46,7 @@ export const questionsMockData: QuestionsData = {
     },
 
     q004: {
-        title: 'this is the title of the first question, q001',
+        title: 'this is the title of the fourth question',
         formType: OFormType.rating,
         ratingType: ORatingType.grade,
         options: [
@@ -75,7 +75,7 @@ export const questionsMockData: QuestionsData = {
         formType: OFormType.radio,
         options: [
             { id: 'adjective_1', value: 'adjective 1' },
-            { id: 'adjective_2', value: 'adjective 3' },
+            { id: 'adjective_2', value: 'adjective 2' },
             { id: 'adjective_3', value: 'adjective 3' },
             { id: 'adjective_4', value: 'adjective 4' },
         ],

@@ -1,5 +1,5 @@
-import { QuestionnaireReducerType } from 'reducer-types'
 import { questionsMockData, questionsMockOrderedListID } from '../mockData'
+import { QuestionnaireReducerType } from './types'
 
 const initialState: QuestionnaireReducerType = {
     questionsOrderedListID: questionsMockOrderedListID,

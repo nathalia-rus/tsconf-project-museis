@@ -6,9 +6,8 @@ import CenteredBodyMobile from '../../templates/containers/bodyContainers/center
 import QuestionNumber from '../../atoms/typography/questionNumber'
 import Title from '../../atoms/typography/title'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import { OFormType, OtypographyOptions } from '../../../global/o'
+import { OFormType, OtypographyOptions, Question } from '../../../global/o'
 import FormNavigator from '../../molecules/formElements/formNavigator'
-import { Question } from 'types'
 
 interface Props extends RouteComponentProps<any> {
     question: Question

@@ -1,18 +1,17 @@
 import * as React from 'react'
 import { withFormik, FormikProps } from 'formik'
-import * as Yup from 'yup'
-// import { register } from "../../../redux/features/user/actions/thunks";
 import { connect } from 'react-redux'
-
-import { FormItem } from 'types'
+import { FormItem, ValidationOptions } from 'types'
 
 import FormElement from '../../atoms/formItems'
 
 import FormContainerMobile from '../../templates/containers/formContainers/formContainerMobile'
 import { OFormType } from '../../../global/o'
+import { makeValidationSchema } from '../../../helpers/validationSchema/makeValidationSchema'
 
 type Props = {
     items: FormItem[]
+    hasValidation?: ValidationOptions
 }
 
 type FormValues = {
@@ -46,15 +45,13 @@ const CheckboxGroup = (props: Props & FormikProps<FormValues>) => {
 }
 
 const FormikSelectItemsList = withFormik<MyFormProps, FormValues>({
-    mapPropsToValues: (props) => ({}),
-    validationSchema: Yup.object().shape({
-        value: Yup.array().of(Yup.object().shape({ val: Yup.boolean() })),
-    }),
+    validationSchema: (props: Props) =>
+        props.hasValidation &&
+        makeValidationSchema(props.items, props.hasValidation),
 
     handleSubmit: (values, { props, setSubmitting }) => {
         // do submitting things
 
-        // props.register(values.fullname, values.email, values.password);
         let finalValues = Object.keys(values).map((key) => {
             return { value: key, checked: values[key] }
         })

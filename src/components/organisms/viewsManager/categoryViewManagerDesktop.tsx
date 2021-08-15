@@ -1,8 +1,7 @@
 import * as React from 'react'
 
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-
-import { Question } from 'types'
+import { Question } from '../../../global/o'
 
 interface Props extends RouteComponentProps<any> {
     question: Question
@@ -11,7 +10,6 @@ interface Props extends RouteComponentProps<any> {
 class CategoryViewManagerDesktop extends React.Component<Props, {}> {
     renderFormBody = (item: Question) => {
         switch (item.formType) {
-
             default:
                 return undefined
         }
@@ -20,15 +18,7 @@ class CategoryViewManagerDesktop extends React.Component<Props, {}> {
     render() {
         const { ...props } = this.props
 
-        return (
-            <>
-
-                    {this.renderFormBody(props.question)}
-           
-
-
-            </>
-        )
+        return <>{this.renderFormBody(props.question)}</>
     }
 }
 

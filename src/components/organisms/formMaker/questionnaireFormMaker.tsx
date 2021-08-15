@@ -4,9 +4,9 @@ import * as FormElements from '../../molecules/formElements'
 import CenteredBodyMobile from '../../templates/containers/bodyContainers/centeredBodyMobile'
 
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import { OFormType } from '../../../global/o'
+import { OFormType, Question } from '../../../global/o'
 import FormNavigator from '../../molecules/formElements/formNavigator'
-import { Question } from 'types'
+
 import QuestionGroup from '../../molecules/informationGroups/questionGroup'
 
 interface Props extends RouteComponentProps<any> {
@@ -61,17 +61,17 @@ class QuestionnaireFormMaker extends React.Component<Props, {}> {
         return (
             <>
                 <CenteredBodyMobile>
-                    {/* QUESTION */}
+                    {/*  QUESTION - constant - */}
                     <QuestionGroup
                         current_index={props.current_index}
                         last_index={props.last_index}
                         title={props.question.title}
                         img_url={props.question.img_url}
                     />
-                    {/* FORM */}
+                    {/* FORM - changing formType var -  */}
                     {this.renderFormBody(props.question)}
                 </CenteredBodyMobile>
-                {/* NAVIGATOR */}
+                {/* NAVIGATOR - constant - */}
                 <FormNavigator
                     goNext={() => this.navigate('next')}
                     goPrevious={() => this.navigate('previous')}

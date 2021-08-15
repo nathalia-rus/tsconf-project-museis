@@ -9,7 +9,7 @@ import FavBtn from './favBtn'
 
 export type BtnProps = {
     btn: Btn
-    onClick: any
+    onClick: () => any
     children?: React.ReactNode
     active?: boolean
     height?: string

@@ -1,3 +1,5 @@
+import { FormItem, ValidationOptions } from 'types'
+
 // GLOBAL STYLES TYPES
 export const OColourPalette = {
     primary: 'var(--color-primary)',
@@ -28,6 +30,15 @@ export const ONavigationItem = {
 export type NavigationItem =
     typeof ONavigationItem[keyof typeof ONavigationItem]
 
+// RATING TYPES
+export const ORatingType = {
+    heart: 'HEART',
+    sentiment: 'SENTIMENT',
+    grade: 'GRADE',
+} as const
+
+export type RatingType = typeof ORatingType[keyof typeof ORatingType]
+
 // FORM TYPES
 export const OFormType = {
     checkbox: 'CHECKBOX',
@@ -37,14 +48,15 @@ export const OFormType = {
 
 export type FormType = typeof OFormType[keyof typeof OFormType]
 
-// RATING TYPES
-export const ORatingType = {
-    heart: 'HEART',
-    sentiment: 'SENTIMENT',
-    grade: 'GRADE',
-} as const
-
-export type RatingType = typeof ORatingType[keyof typeof ORatingType]
+export type Question = {
+    title: string
+    answer: string[]
+    options: FormItem[]
+    formType: FormType
+    ratingType?: RatingType
+    hasValidation?: ValidationOptions
+    img_url?: string
+}
 
 // TYPOGRAPHY OPTIONS
 export const OtypographyOptions = {
