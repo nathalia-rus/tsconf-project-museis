@@ -14,9 +14,9 @@ export interface GlobalLayoutProps {
     children?: React.ReactNode
 }
 
-const DesktopDisplayOnly: React.SFC<GlobalLayoutProps> = (props) => (
-    <OnlyDesktopWrapper>{props.children}</OnlyDesktopWrapper>
-)
+const DesktopDisplayOnly: React.FunctionComponent<GlobalLayoutProps> = (
+    props
+) => <OnlyDesktopWrapper>{props.children}</OnlyDesktopWrapper>
 DesktopDisplayOnly.defaultProps = {
     children: null,
 }

@@ -12,7 +12,7 @@ interface Props {
     children?: React.ReactNode
 }
 
-const PageWrapper = styled.div`
+const GreyBodyWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,8 +28,8 @@ const PageWrapper = styled.div`
     }
 `
 
-const GreyWrapper: React.SFC<Props> = (props) => (
-    <PageWrapper>{props.children}</PageWrapper>
+const GreyWrapper: React.FunctionComponent<Props> = (props) => (
+    <GreyBodyWrapper>{props.children}</GreyBodyWrapper>
 )
 
 export default connect(mapStateToProps, {})(GreyWrapper)

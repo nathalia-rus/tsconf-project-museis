@@ -13,9 +13,9 @@ export interface GlobalLayoutProps {
     children?: React.ReactNode
 }
 
-const IpadAndMobileDisplay: React.SFC<GlobalLayoutProps> = (props) => (
-    <OnlyMobileIpad>{props.children}</OnlyMobileIpad>
-)
+const IpadAndMobileDisplay: React.FunctionComponent<GlobalLayoutProps> = (
+    props
+) => <OnlyMobileIpad>{props.children}</OnlyMobileIpad>
 IpadAndMobileDisplay.defaultProps = {
     children: null,
 }

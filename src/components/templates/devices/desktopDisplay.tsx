@@ -5,7 +5,7 @@ export interface GlobalLayoutProps {
     children?: React.ReactNode
 }
 
-const DesktopDisplay: React.SFC<GlobalLayoutProps> = (props) => (
+const DesktopDisplay: React.FunctionComponent<GlobalLayoutProps> = (props) => (
     <div className="desktop-displayed ipad-displayed">{props.children}</div>
 )
 DesktopDisplay.defaultProps = {

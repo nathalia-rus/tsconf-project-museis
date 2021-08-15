@@ -13,8 +13,6 @@ declare module 'types' {
         minChar?: number
     }
 
-    // show use of that in Yup stuff
-
     export type FormItem = {
         id: any
         value: string
