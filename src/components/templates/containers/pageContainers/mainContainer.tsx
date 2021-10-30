@@ -28,6 +28,7 @@ const PageWrapper = styled.div`
     }
 
     @media ${device.beyond_ipad_mobile} {
+        display: none;
         width: 60vw;
         justify-content: center;
         align-items: center;

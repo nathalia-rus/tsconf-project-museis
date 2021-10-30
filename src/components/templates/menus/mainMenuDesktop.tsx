@@ -13,9 +13,8 @@ import { menuItemsIDsListDesktop, menuItemsObj } from './mainMenuData'
 
 const MenuContainer = styled.div`
     display: none;
-
     @media ${device.beyond_ipad_mobile} {
-        display: flex;
+        /* display: flex; */
         flex-direction: column;
         align-items: start;
         justify-content: start;
@@ -56,6 +55,7 @@ class MainMenuDesktop extends React.Component<{}, {}> {
     render() {
         return (
             <DesktopDisplay>
+                this is mobile-only for now
                 <MenuContainer>
                     <Icon icon={OIcon.Logo} height="5vw" width="5vw" />
                     <Padding />
