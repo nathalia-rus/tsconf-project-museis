@@ -71,7 +71,7 @@ class Icon extends React.Component<IconProps, {}> {
                 )
 
             default:
-                return <div>hello</div>
+                return <>hello</>
         }
     }
     render() {

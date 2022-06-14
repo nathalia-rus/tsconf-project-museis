@@ -4,8 +4,8 @@ import { RouteComponentProps, withRouter } from 'react-router-dom'
 import { BodySectionID } from 'reducer-types'
 import { CategoryItem } from 'types'
 
+import Paragraph from '../../atoms/typography/paragraph'
 import SectionHeader from '../../atoms/typography/sectionHeader'
-import { BodyParagraphs } from '../../molecules/textSections/paragraphs'
 
 interface Props extends RouteComponentProps {
     item: CategoryItem
@@ -13,6 +13,11 @@ interface Props extends RouteComponentProps {
 }
 
 class ItemBodyMaker extends React.Component<Props> {
+    renderParagraphs = (s: BodySectionID) =>
+        this.props.item.body[s].map((sectionContent: string, index: number) => {
+            return <Paragraph>{sectionContent}</Paragraph>
+        })
+
     render() {
         let { ...props } = this.props
 
@@ -20,7 +25,7 @@ class ItemBodyMaker extends React.Component<Props> {
             return (
                 <>
                     <SectionHeader title={s} />
-                    <BodyParagraphs item={props.item} bodySectionID={s} />
+                    {this.renderParagraphs(s)}
                 </>
             )
         })
