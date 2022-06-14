@@ -11,6 +11,8 @@ import CategoryCardsListMaker from '../organisms/listMaker/categoryCardsListMake
 import GreyContainer from '../templates/containers/bodyContainers/greyContainer'
 import MobileDefaultPadding from '../templates/containers/bodyContainers/mobileDefaultPadding'
 import MainContainer from '../templates/containers/pageContainers/mainContainer'
+import DesktopDisplay from '../templates/devices/desktopDisplay'
+import MobileDisplay from '../templates/devices/mobileDisplay'
 
 interface Props extends RouteComponentProps<any> {
     categoriesData: { [x: string]: CategoryItemData }
@@ -34,25 +36,30 @@ class CategoryPage extends React.Component<Props> {
 
         return (
             <MainContainer>
-                <GreyContainer>
-                    {category && categoryID && (
-                        <>
-                            <MobileDefaultPadding>
-                                <SectionHeader
-                                    title={
-                                        props.categoriesInfo[categoryID].name
-                                    }
-                                />
-                            </MobileDefaultPadding>
+                <MobileDisplay>
+                    <GreyContainer>
+                        {category && categoryID && (
+                            <>
+                                <MobileDefaultPadding>
+                                    <SectionHeader
+                                        title={
+                                            props.categoriesInfo[categoryID]
+                                                .name
+                                        }
+                                    />
+                                </MobileDefaultPadding>
 
-                            <CategoryCardsListMaker
-                                data={category.data}
-                                listID={category.listID}
-                                category={categoryID}
-                            />
-                        </>
-                    )}
-                </GreyContainer>
+                                <CategoryCardsListMaker
+                                    data={category.data}
+                                    listID={category.listID}
+                                    category={categoryID}
+                                />
+                            </>
+                        )}
+                    </GreyContainer>
+                </MobileDisplay>
+
+                <DesktopDisplay>desktop</DesktopDisplay>
             </MainContainer>
         )
     }
