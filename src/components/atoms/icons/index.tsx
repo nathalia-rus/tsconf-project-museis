@@ -34,8 +34,8 @@ const IconStyle = styled.img<IconProps>`
     cursor: 'pointer';
 `
 
-class Icon extends React.Component<IconProps, {}> {
-    renderIcon(props: IconProps) {
+export function Icon(props: IconProps) {
+    let renderIcon = React.useCallback(() => {
         switch (props.icon) {
             case 'logo':
                 return (
@@ -73,10 +73,9 @@ class Icon extends React.Component<IconProps, {}> {
             default:
                 return <>hello</>
         }
-    }
-    render() {
-        return this.renderIcon(this.props)
-    }
+    }, [props])
+
+    return renderIcon()
 }
 
 export default Icon
