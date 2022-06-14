@@ -18,7 +18,7 @@ const PrimaryBtnStyle = styled.button<StyledProps>`
     min-width: ${(props) => (props.width ? props.width : '130px')};
     height: ${(props) => (props.height ? props.height : '45px')};
     text-transform: capitalize;
-    font-family: 'Roboto-Light';
+    font-family: Arial;
     transition: all 0.1s;
     cursor: pointer;
     filter: drop-shadow(0px 4px 4px rgba(221, 221, 221, 0.25));

@@ -27,7 +27,6 @@ const mapStateToProps = (state: RootState) => {
 }
 
 class CategoryPage extends React.Component<Props> {
-    componentDidMount() {}
     render() {
         let { ...props } = this.props
         let categoryID: Category | undefined = props.match.params.categoryid
